@@ -1,7 +1,7 @@
 * Getting started
 
-  * [Quick start](quickstart.md)
-  * [First Neutralino App](more-pages.md)
+  * [Quick start](gettingstarted/quickstart.md)
+  * [First Neutralino App](gettingstarted/firstapp.md)
 
 * API
 
@@ -10,4 +10,4 @@
 
 * Neutralino
 
-  * [Change log](api/changelog.md)
+  * [Change log](other/changelog.md)
