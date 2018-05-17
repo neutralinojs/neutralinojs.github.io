@@ -3090,7 +3090,8 @@
 	#banner {
 		padding: 16em 0 13em 0;
 		background-attachment: fixed;
-		background-image: url("images/overlay.png"), url("../../images/banner.jpg");
+		/*background-image: url("images/overlay.png"), url("../../images/banner.jpg");*/
+		background-color: #222222;
 		background-position: center top;
 		background-size: cover;
 		line-height: 1.75;
@@ -3107,6 +3108,11 @@
 			font-size: 3.5em;
 			line-height: 1.35;
 			margin-bottom: 0.5em;
+			text-transform: none;
+		}
+
+		#banner h2 span {
+			color: #f89901;
 		}
 
 		#banner p {
@@ -3265,4 +3271,11 @@
 					padding: 0;
 				}
 
+		}
+
+
+		/*  edited    */
+
+		img.logo {
+			width: 150px;
 		}
