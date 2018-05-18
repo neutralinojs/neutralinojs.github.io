@@ -2,7 +2,7 @@
 
 > `os` module has system functions related to operating system of the current user.
 
-## `os.runCommand(string command, function success(data), function error)`
+## os.runCommand(string command, function success(data), function error)
 
 ### Parameters
 
