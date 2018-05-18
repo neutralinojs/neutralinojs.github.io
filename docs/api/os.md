@@ -14,6 +14,11 @@ command you want to execute
 
 function that will be fired when connection is successful with Neutralino server. `data` is json content that has content as per below.
 
+#### *function error()*
+
+function that will be fired when a problem is occured with Neutralino server connectivity. 
+
+
 ```js
 {
   "success" : "Command successfully executed",
