@@ -39,3 +39,4 @@ Neutralino.os.runCommand('help',
 );
 ```
 
+## os.getEnvar(string key, function success(data), function error)
