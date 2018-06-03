@@ -3,6 +3,5 @@
 </div>
 
 
-<div align="center">
-  Develop cross-platform apps with native functions and run in browsers. 
-</div>
+### Develop cross-platform apps with native functions and run in browsers. 
+
