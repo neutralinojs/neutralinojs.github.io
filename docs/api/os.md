@@ -12,7 +12,7 @@ command you want to execute
 
 #### *function success(data)*
 
-function that will be fired when connection is successful with Neutralino server. `data` is json content that has content as per below.
+function will be fired when connection is successful with Neutralino server. `data` is json content that has content as per below.
 
 #### *function error()*
 
