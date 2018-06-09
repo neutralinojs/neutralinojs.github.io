@@ -44,16 +44,16 @@ Neutralino.os.runCommand('help',
 
 ### Parameters
 
-#### *string command*
+#### *string key*
 
-command you want to execute 
+the environment variable that you want to get the value of 
 
 #### *function success(data)*
 
 function that will be fired when connection is successful with Neutralino server. `data` has json content and the structure is shown as below. 
 ```js
 {
-  "value" : "<Output of command>"
+  "value" : "<value of environmental variable >"
 }
 ```
 #### *function error()*
