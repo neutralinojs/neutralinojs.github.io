@@ -91,4 +91,6 @@ Click `neutralino` binary file to launch your app on web browser.
 
 <img src="https://cdn.rawgit.com/neutralinojs/neutralinojs.github.io/33d6f695/docs/browserapp.png">
 
+Find source code [here](https://github.com/neutralinojs/neutralinojs-samples/tree/master/greetingsapp)
+
 Happy coding!
