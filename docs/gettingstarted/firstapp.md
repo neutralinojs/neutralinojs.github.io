@@ -89,4 +89,6 @@ Neutralino.init({
 
 Click `neutralino` binary file to launch your app on web browser.
 
+<img src="https://cdn.rawgit.com/neutralinojs/neutralinojs.github.io/33d6f695/docs/browserapp.png">
+
 Happy coding!
