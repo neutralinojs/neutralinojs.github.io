@@ -2,7 +2,7 @@
 
 > `filesystem` module has system functions related to file handling.
 
-## os.createDirectory(string dirName,function success(data), function error)
+## filesystem.createDirectory(string dirName,function success(data), function error)
 
 
 ### Parameters
@@ -42,7 +42,7 @@ Neutralino.os.createDirectory('abcd',
 
 
 
-## os.removeDirectory(string dirName,function success(data), function error)
+## filesystem.removeDirectory(string dirName,function success(data), function error)
 
 ### Parameters
 
@@ -80,7 +80,7 @@ Neutralino.os.removeDirectory('abcd',
 ```
 
 
-## os.writeFile(string filename, string content,function success(data), function error)
+## filesystem.writeFile(string filename, string content,function success(data), function error)
 
 ### Parameters
 
@@ -118,7 +118,7 @@ Neutralino.os.writeFile('file1.txt', 'hello world',
 );
 ```
 
-## os.readFile(string filename, function success(data), function error)
+## filesystem.readFile(string filename, function success(data), function error)
 ### Parameters
 
 #### *string filename*
@@ -156,7 +156,7 @@ Neutralino.os.readFile('file1.txt',
 ```
 
 
-## os.removeFile(string filename, function success(data), function error)
+## filesystem.removeFile(string filename, function success(data), function error)
 ### Parameters
 
 #### *string filename*
