@@ -40,4 +40,14 @@ Download portable SDK related to your platform (Currently Windows and Linux). Ex
 - `settings.json` - Store your app settings. Required parameters are `appport` and `appname`
 - `neutralino` - Platform dependent executable to run your app.
 
+## Neutralino Super Globals
+
+These js variables can be used anywhere inside your js files or in `index.html`.
+
+| Variable      | Are                                              |
+| ------------- |:------------------------------------------------:|
+| `NL_OS`       | Operating System name of the current user        |
+| `NL_NAME`     | Neutralino app name loaded from `settings.json`  |
+| `NL_PORT`     | Neutralino app port loaded from `settings.json`  |
+
  
