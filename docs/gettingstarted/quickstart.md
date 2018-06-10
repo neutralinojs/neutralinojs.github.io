@@ -34,4 +34,10 @@ Download portable SDK related to your platform (Currently Windows and Linux). Ex
 |  └── settings.json
 └── neutralino
 ```
+
+- `app/assets` - Directory for Neutralino js library and your custom js and css. By default there is `app.css` and `app.js`
+- `index.html` - Build your application interfaces here.
+- `settings.json` - Store your app settings. Required parameters are `appport` and `appname`
+- `neutralino` - Platform dependent executable to run your app.
+
  
