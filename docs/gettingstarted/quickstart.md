@@ -44,7 +44,7 @@ Download portable SDK related to your platform (Currently Windows and Linux). Ex
 
 These js variables can be used anywhere inside your js files or in `index.html`.
 
-| Variable      | Are                                              |
+| Variable      | Description                                      |
 | ------------- |:------------------------------------------------:|
 | `NL_OS`       | Operating System name of the current user        |
 | `NL_NAME`     | Neutralino app name loaded from `settings.json`  |
