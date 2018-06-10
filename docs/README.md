@@ -5,7 +5,9 @@
 
 ### Develop cross-platform apps with native functions and run in browsers. 
 
-NeutralinoJs gives you portalble development environment for browser based cross platform app development. Neutralino apps has native functionalities and also will be executed in user's browser ulike electron and node webkit.
+NeutralinoJs gives you portalble development environment for browser based cross platform app development. Neutralino apps has native functionalities and also will be executed in user's browser ulike electron and nwjs.
+
+In electron and nwjs you have to install NodeJs, hundreds of dependance libraries and also the bundled app size is large even we write `hello world` due to embedded chromium and Node runtime. Neutralino is lightweight solution for this issue. 
 
 ### Features of Neutralino apps
 
