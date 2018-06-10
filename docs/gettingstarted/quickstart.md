@@ -50,6 +50,6 @@ These js variables can be used anywhere inside your js files or in `index.html`.
 | `NL_NAME`     | Neutralino app name loaded from `settings.json`  |
 | `NL_PORT`     | Neutralino app port loaded from `settings.json`  |
 
-Wow! Now you know the basics. Build simple app to start developing with Neutralino. Go to [My first app](gettingstarted/firstapp) tutorial.
+Wow! Now you know the basics. Build simple app to start developing with Neutralino. Go to [My first app](gettingstarted/firstapp/#) tutorial.
 
  
