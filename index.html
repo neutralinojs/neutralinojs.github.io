@@ -23,7 +23,13 @@
 
 	</head>
 	<body class="landing">
-
+		<!--Loader-->
+			<div class="welcome">
+				<div class="holder">
+					<div class="preloader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+				  </div>			
+			</div>
+			<!--End Loader-->
 		<!-- Header -->
 			<header id="header" class="alt">
 				<!--<h1>Built in ❤️ UWU</h1>-->
@@ -169,6 +175,13 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script>
+				$("nav").hide();
+				$(document).ready(function(){
+					$("nav").show();
+			 $('.welcome').fadeOut('slow', function() { $(this).css({visibility: 'hidden', opacity: 0})});
+	   });
+	
+	   </script>
 	</body>
 </html>
