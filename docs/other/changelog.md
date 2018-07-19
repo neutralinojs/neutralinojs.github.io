@@ -7,6 +7,7 @@
 
 [Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.2-beta) this release
 
+
 ### Version 1.0.1-alpha
 **2018-07-12**
 
@@ -15,6 +16,7 @@
 - SDK improvements
 
 [Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.1-alpha) this release
+
 
 ### Version 1.0.0-beta
 **2018-06-14**
