@@ -7,6 +7,7 @@
   * [filesystem](api/filesystem.md)  
   * [os](api/os.md)  
   * [computer](api/computer.md)  
+  * [storage](api/storage.md)
 
 * Neutralino
   * [Change log](other/changelog.md)
