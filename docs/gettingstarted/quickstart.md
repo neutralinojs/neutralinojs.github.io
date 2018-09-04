@@ -5,7 +5,7 @@ Now you have an idea why NeutralinoJs is important. This section will give you s
 
 ## Download portable SDK
 
-Download portable SDK related to your platform (Currently Windows and Linux). Extract the zip file and there is app template and Neutralino runtime. 
+Download portable SDK (Currently supports Windows and Linux). Extract the zip file and Find the app template and Neutralino runtime binaries. 
 
 ## Neutralio app structure
 
@@ -20,25 +20,14 @@ Download portable SDK related to your platform (Currently Windows and Linux). Ex
 |  ├── index.html
 |  └── settings.json
 └── neutralino.exe
-```
-
-**Linux**
-
-```
-├── app
-|  ├── assets
-|  |  ├── app.css
-|  |  ├── app.js
-|  |  └── neutralino.js
-|  ├── index.html
-|  └── settings.json
 └── neutralino
 ```
 
 - `app/assets` - Directory for Neutralino js library and your custom js and css. By default there is `app.css` and `app.js`
 - `index.html` - Build your application interfaces here.
 - `settings.json` - Store your app settings. Required parameters are `appport` and `appname`
-- `neutralino` - Platform dependent executable to run your app.
+- `neutralino` - Linux runtime.
+- `neutralino.exe` - Windows runtime.
 
 ## Neutralino Super Globals
 
