@@ -3,7 +3,7 @@
   * [First Neutralino App](gettingstarted/firstapp.md)
  
 * Configuration
-  * [Quick start](configuration/settings.json.md)
+  * [settings.json](configuration/settings.json.md)
 
 * API
   * [settings](api/settings.md)
