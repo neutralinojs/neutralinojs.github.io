@@ -15,7 +15,7 @@ Apps built with NeutralinoJs: [NeutralinoJs Samples](https://github.com/neutrali
 
 
 ## Contribution
-Want to contribute to this project? [View Contribution Guide]('contribution.md')
+Want to contribute to this project? [View Contribution Guide](contribution.md)
 
 ## License 
 `MIT` (Docs Only) + `CC3`
