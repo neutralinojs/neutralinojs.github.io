@@ -13,6 +13,7 @@ NeutralnoJS Source: [View](https://github.com/neutralinojs/neutralinojs)
 
 Apps built with NeutralinoJs: [NeutralinoJs Samples](https://github.com/neutralinojs/neutralinojs-samples)
 
+[Changelog](https://neutralino.js.org/docs/#/other/changelog)
 
 ## Contribution
 Want to contribute to this project? [View Contribution Guide](contribution.md)
