@@ -1,5 +1,14 @@
 ## Change log
 
+### Version 1.0.5
+**2018-09-29**
+
+[Feature Update]
+- Support for Windows child process (Silent commands mode)
+- Bug fixes
+
+[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.5) this release
+
 ### Version 1.0.4-alpha
 **2018-08-26**
 
