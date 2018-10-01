@@ -3,7 +3,6 @@
 ### Version 1.0.5
 **2018-09-29**
 
-[Feature Update]
 - Support for Windows child process (Silent commands mode)
 - Bug fixes
 
