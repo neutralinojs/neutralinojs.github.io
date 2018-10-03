@@ -3,7 +3,7 @@
 </div>
 
 
-### Develop cross-platform apps with native functions and run in browsers. 
+### Develop web apps with native os functions.
 
 NeutralinoJs is a portable and lightweight framework. It lets you develop apps with native functions that can run inside web browsers. 
 
