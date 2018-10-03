@@ -30,7 +30,7 @@ function that will be fired when a problem is occured with Neutralino server con
 ### Example
 
 ```js
-Neutralino.os.createDirectory('abcd', 
+Neutralino.filesystem.createDirectory('abcd', 
   (data) => {
     console.log(data);
   },
@@ -69,7 +69,7 @@ function that will be fired when a problem is occured with Neutralino server con
 ### Example
 
 ```js
-Neutralino.os.removeDirectory('abcd', 
+Neutralino.filesystem.removeDirectory('abcd', 
   (data) => {
     console.log(data);
   },
@@ -108,7 +108,7 @@ function that will be fired when a problem is occured with Neutralino server con
 ### Example
 
 ```js
-Neutralino.os.writeFile('file1.txt', 'hello world',
+Neutralino.filesystem.writeFile('file1.txt', 'hello world',
   (data) => {
     console.log(data);
   },
@@ -145,7 +145,7 @@ function that will be fired when a problem is occured with Neutralino server con
 ### Example
 
 ```js
-Neutralino.os.readFile('file1.txt',
+Neutralino.filesystem.readFile('file1.txt',
   (data) => {
     console.log(data);
   },
@@ -183,7 +183,7 @@ function that will be fired when a problem is occured with Neutralino server con
 ### Example
 
 ```js
-Neutralino.os.removeFile('file1.txt',
+Neutralino.filesystem.removeFile('file1.txt',
   (data) => {
     console.log(data);
   },
