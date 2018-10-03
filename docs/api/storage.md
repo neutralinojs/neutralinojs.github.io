@@ -15,21 +15,25 @@ a callback function, it is executed if any kind error occurs while storing the d
 ```javascript 
 // Javascript Object to be stored as JSON
 let data = { 
-            bucket : 'test', 
-            content : { 
-                       item : 10 
-                       } 
-            }
+    bucket : 'test', 
+    content : { 
+            item : 10 
+    } 
+}
 // stores the data into JSON based data store.           
 Neutralino.storage.putData(data,
+
 // executes on successful storage of data
-() => {
+    () => {
     console.log('Data saved to storage/test.json');
-},
+
+    },
 // executes if an error occurs
-() => {
+
+    () => {
     console.log('An error occured while saving the Data');
-}
+    
+    }
 );
 ```
 
@@ -50,14 +54,17 @@ a callback function, which is executed when an error occurs.
 // The stored data is being retrieved from the JSON based data store. 
 Neutralino.storage.getData('test',
 // executes when data is successfully retrieved.
-(content) => {
+    (content) => {
     console.log('The data you requested for \n');
+
     // the data that has been retrieved.
     console.log(content);
-},
+
+    },
 // executes if an error occurs
-() => {
+    () => {
     console.log('An error occured while retrieving the data.');
-}
+
+    }
 );
 ```
