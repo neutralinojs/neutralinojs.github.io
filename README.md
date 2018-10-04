@@ -11,7 +11,7 @@ Buid your first Neutralino App: [Get Started](https://neutralinojs.github.io/doc
 
 NeutralnoJS Source: [View](https://github.com/neutralinojs/neutralinojs)
 
-Apps built with NeutralinoJs: [NeutralinoJs Samples](https://github.com/neutralinojs/neutralinojs-samples)
+Sample apps built with NeutralinoJs: [NeutralinoJs Samples](https://github.com/neutralinojs/neutralinojs-samples)
 
 [Changelog](https://neutralino.js.org/docs/#/other/changelog)
 
