@@ -2,7 +2,7 @@
   <img src="https://cdn.rawgit.com/neutralinojs/neutralinojs.github.io/b667f2c2/docs/nllogo.png" style="width:300px;"/>
 </div>
 
-This repository contains source for NeutralinoJs Docs and Website. [View Website](https://neutralinojs.github.io)
+This repository contains source for NeutralinoJs Docs and Website. [View Website](https://neutralino.js.org)
 
 # What is NeutralinoJs? 
 NeutralinoJs is a portable cross-platform and lightweight framework to create desktop/cloud based apps that ultimately run inside your browser. 
