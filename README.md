@@ -9,7 +9,7 @@ NeutralinoJs is a portable cross-platform and lightweight framework to create de
 
 Buid your first Neutralino App: [Get Started](https://neutralino.js.org/docs/#/gettingstarted/quickstart)
 
-NeutralnoJS Source: [View](https://github.com/neutralinojs/neutralinojs)
+NeutralnoJS source: [View](https://github.com/neutralinojs/neutralinojs)
 
 Sample apps built with NeutralinoJs: [NeutralinoJs Samples](https://github.com/neutralinojs/neutralinojs-samples)
 
