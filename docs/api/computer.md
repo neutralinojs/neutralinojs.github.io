@@ -1,6 +1,6 @@
 # computer
 
-> `computer` module has system functions related to physical hardware.
+> The `computer` module has system functions related to physical hardware.
 
 ## os.getRamUsage(function success(data), function error)
 
@@ -9,7 +9,7 @@
 
 #### *function success(data)*
 
-function that will be fired when connection is successful with Neutralino server. `data` has json content and the structure is shown as below. 
+A function that will be fired when a connection with the Neutralino server is successful. The `data` variable is a json object with the structure shown below. 
 
 ```js
 {
@@ -23,7 +23,7 @@ function that will be fired when connection is successful with Neutralino server
 
 #### *function error()*
 
-function that will be fired when a problem is occured with Neutralino server connectivity. 
+A function that will be fired when a problem occurs with Neutralino server connectivity. 
 
 
 

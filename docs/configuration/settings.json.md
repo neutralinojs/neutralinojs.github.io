@@ -30,7 +30,7 @@ This sets the enviornment you want to run your Neutralino app on. The available 
 ```
 
 ### cloud
-It is used when the enviornment variable is set to `cloud`. It supports settings that can be used configured when cloud mode is on i.e, Neutralino application is meant to be hosted on cloud platorm. 
+It is used when the enviornment variable is set to `cloud`. It supports settings that can be used when cloud mode is enabled i.e, Neutralino application is meant to be hosted on a cloud platorm. 
 
 ```json
 { 
@@ -41,7 +41,7 @@ It is used when the enviornment variable is set to `cloud`. It supports settings
 }
 ````
 ### cloud.blacklist 
-It is used to disable a set one or more of commands, when the app is set to run in cloud mode. It accepts the set of blacklisted commands as an array.
+It is used to disable a set of one or more commands, when the app is set to run in the cloud mode. It accepts a set of blacklisted commands as an array.
 
 ```json
 {
@@ -53,7 +53,7 @@ It is used to disable a set one or more of commands, when the app is set to run 
 ```
 
 ### globals 
-Define all the custom global constants of your Neutralino app.
+Defines all custom global constants of the Neutralino app.
 
 ```json
 { 

@@ -2,14 +2,14 @@
 > The `storage` module allows you to store or retrieve **JSON based data** on or from the system. 
 
 ## storage.putData(object data, function success(), function error())
-It allows you to store JSON based data onto the system disk. <br/>
+Allows the ability to store JSON based data onto the system disk. <br/>
 ### Parameters
 #### *object data*
-a Javascript object, that will be stored as JSON on the disk. <br/>
+A javascript object, that will be stored as a JSON object on the disk. <br/>
 #### *function success()* 
-a callback function, it is executed when the data is successfully stored on the disk. 
+A callback function, that is executed when the data is successfully stored on the disk. 
 #### *function error()* - 
-a callback function, it is executed if any kind error occurs while storing the data. 
+A callback function, that is executed if an error occurs while storing the data. 
 <br/>
  
 ```javascript 
@@ -38,15 +38,15 @@ Neutralino.storage.putData(data,
 ```
 
 ## storage.getData(string key,function success(content),function error())
-It is used to retrieve the JSON app data already been stored onto the system. <br/>
+Retrieve the JSON app data currently stored on the system. <br/>
 
 ### Parameters
 #### *string key*
-a key to search for JSON data
+A key to search for JSON data
 #### *function success(content)*
-a callback function, which is executed when the data is successfully retrieved. The data is passed as argument to the function.
+A callback function, that is executed when the data is successfully retrieved. The data is passed as an argument to the function.
 #### *function error()*
-a callback function, which is executed when an error occurs. 
+A callback function, that is executed when an error occurs. 
 
 <br/>
 
