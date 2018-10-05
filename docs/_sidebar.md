@@ -1,6 +1,9 @@
 * Getting started
   * [Quick start](gettingstarted/quickstart.md)
   * [First Neutralino App](gettingstarted/firstapp.md)
+ 
+* Configuration
+  * [settings.json](configuration/settings.json.md)
 
 * API
   * [settings](api/settings.md)

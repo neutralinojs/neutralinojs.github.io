@@ -38,7 +38,7 @@
 		content: '';
 		content: none;
 	}
-	
+
 	table {
 		border-collapse: collapse;
 		border-spacing: 0;
@@ -1945,6 +1945,10 @@
 			background-color: #f89901;
 			color: #ffffff !important;
 		}
+		.button.yellow {
+			background-color: #F9EA09;
+			color: #ffffff !important;
+		}
 
 			input[type="submit"].special:hover,
 			input[type="reset"].special:hover,
@@ -2558,7 +2562,7 @@
 	}
 
 	header p {
-		
+
 		color: #aaa;
 		position: relative;
 		margin: 0 0 1.5em 0;
@@ -3582,3 +3586,8 @@
     opacity: 1;
   }
 }
+
+#change-log {
+	color: #f49904 !important;
+}
+		
