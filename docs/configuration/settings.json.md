@@ -51,3 +51,16 @@ It is used to disable a set one or more of commands, when the app is set to run 
    }
 }
 ```
+
+### globals 
+Define all the custom global constants of your Neutralino app.
+
+```json
+{ 
+   "globals": {
+      "AP" : "Njs"
+   }
+}
+```
+
+`NL_AP` will return `Njs` anywhere in your app
