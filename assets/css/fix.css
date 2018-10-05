@@ -1,0 +1,32 @@
+section#banner {
+    background: #222222;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+section#one {
+height: 100vh;
+display: flex;
+flex-direction: column-reverse;
+}
+
+section#two {
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+section#four {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
