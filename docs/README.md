@@ -9,6 +9,8 @@ NeutralinoJs is a portable and lightweight framework. It lets you develop apps w
 
 In electron and NWjs you have to install NodeJs and hundreds of dependency libraries. Embedded Chromium and Node creates large overhead and makes even simple apps like “hello world” considerable in size. Neutralino offers a solution for this issue.
 
+Now with Neutralinojs cloud preview you can take control of your virtual machines or bare metal servers or even your computer inside a private network from your web browser.
+
 ### Features of Neutralino apps
 
 - Portable development and deployment
