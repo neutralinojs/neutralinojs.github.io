@@ -1,5 +1,20 @@
 ## Change log
 
+### Version 1.0.6-alpha
+**2018-10-06**
+
+[Feature Update]
+- Angularjs [template](https://github.com/neutralinojs/neutralinojs-angularjs-template) for Neutralinojs
+- Reactjs [template](https://github.com/neutralinojs/neutralinojs-reactjs-template) for Neutralinojs
+- Vuejs [template](https://github.com/neutralinojs/neutralinojs-vuejs-template) for Neutralinojs
+- `NL_MODE` global constant - see [docs](https://neutralino.js.org/docs/#/gettingstarted/quickstart?id=neutralino-super-globals)
+- Custom global constants can be defined from `settings.json` - see [docs](https://neutralino.js.org/docs/#/configuration/settings.json?id=globals)
+- See sample for Neutralino cloud [here](https://github.com/neutralinojs/neutralinojs-cloud-samples)
+- Bug fixes
+
+[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.6-alpha) this release.
+
+
 ### Version 1.0.5
 **2018-09-29**
 
