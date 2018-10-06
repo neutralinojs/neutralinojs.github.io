@@ -6,7 +6,7 @@
 - Support for Windows child process (Silent commands mode)
 - Bug fixes
 
-[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.5) this release
+[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.5) this release.
 
 ### Version 1.0.4-alpha
 **2018-08-26**
@@ -16,7 +16,7 @@
 - support for blacklisting commands when in cloud mode.
 - added configuration for cloud/desktop based apps in `settings.json`.
 
-[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.4-alpha) this release
+[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.4-alpha) this release.
 
 ### Version 1.0.3-alpha
 **2018-07-28**
@@ -25,7 +25,7 @@
 - JSON based data store features.
 - API for JSON based Storage.
 
-[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.3-alpha) this release
+[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.3-alpha) this release.
 
 
 ### Version 1.0.2-beta
@@ -33,7 +33,7 @@
 
 - Bug fixes
 
-[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.2-beta) this release
+[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.2-beta) this release.
 
 
 ### Version 1.0.1-alpha
@@ -43,7 +43,7 @@
 - Basic (Token based) authorization method to protect inside Networks
 - SDK improvements
 
-[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.1-alpha) this release
+[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.1-alpha) this release.
 
 
 ### Version 1.0.0-beta
@@ -54,4 +54,4 @@
 - 4 core modules
 - Global variables
 
-[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.0-beta) this release
+[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.0-beta) this release.
