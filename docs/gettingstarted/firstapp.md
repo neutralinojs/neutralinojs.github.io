@@ -1,16 +1,16 @@
 # Writing your first app
 
-Awesome! Now you got introduction about Neutralino apps. Let's build a very simple app.
+Awesome! Now you got an introduction about Neutralino apps, let's build a very simple app.
 
 ## Greetings from Neutralino
 
-We are going to create very simple app that display `Hi.. <Your Name>` on screen `<Your Name>` should be the logged user's name.
+We are going to create a very simple app that display `Hi.. <Your Name>` on the screen. `<Your Name>` should be the name of the currently logged in user's.
 
-### Step 1 - Download SDK
+### Step 1 - Download the SDK
 
-Download SDK for your current platform.
+Download the SDK for your current platform.
 
-### Step 2 - Build Interface
+### Step 2 - Build the Interface
 
 `app/index.html`
 
@@ -87,10 +87,10 @@ Neutralino.init({
 
 ### Step 4 - Run your app
 
-Click `neutralino` binary file to launch your app on web browser.
+Click the `neutralino` binary file to launch your app on your web browser.
 
 <img src="https://cdn.rawgit.com/neutralinojs/neutralinojs.github.io/33d6f695/docs/browserapp.png">
 
-Find source code [here](https://github.com/neutralinojs/neutralinojs-samples/tree/master/greetingsapp)
+Find the source code, [here](https://github.com/neutralinojs/neutralinojs-samples/tree/master/greetingsapp)
 
 Happy coding!
