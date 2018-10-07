@@ -22,7 +22,7 @@ You can also contribute to NeutralinoJs by sharing your NeutralinoJs apps on thi
 <br/> View all NeutralinoJs Repositories: [Click here](https://github.com/neutralinojs)
 
 ## How to contribute? 
-1. Choose a eutralinoJS Repository you want to contribute to.
+1. Choose a NeutralinoJS Repository you want to contribute to.
 2. View an area on the repository, you feel like that has a problem.It can range from a typo to something bigger and more sensitive. 
 3. Fork the repository. 
 4. Make file changes, commit with an appropriate message on the forked repository. 
