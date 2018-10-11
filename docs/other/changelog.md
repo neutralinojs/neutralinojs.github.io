@@ -1,5 +1,29 @@
 ## Change log
 
+### Version 1.0.7-alpha
+**2018-10-11**
+
+[Feature Update]
+
+Announcing Window mode - See [wiki](https://github.com/neutralinojs/neutralinojs/wiki/Experimental-Window-mode)
+
+- `desktop-window` mode will render njs app in a native window.
+```json
+{
+    "appname" : "myapp",
+    "appport" : "8080",
+    "mode" : "desktop-window",
+    "desktopwindow" : {
+        "width" : "1000",
+        "height" : "700"
+    }
+}
+```
+
+- Single release for all three modes `desktop`, `desktop-window` and `cloud`
+
+[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.7-alpha) this release.
+
 ### Version 1.0.6-alpha
 **2018-10-06**
 
