@@ -13,11 +13,11 @@ Now with Neutralinojs cloud preview you can take control of your virtual machine
 
 ### Features of Neutralino apps
 
-- Portable development and deployment
+- Fully Portable
 - Zero additional dependencies
-- Do native functionalities in your app - Read files, run system commands just using js.
-- Super performance and lightweight
+- Native functions support - Read files, run system commands,. just using js.
+- Less resource consumption
 
 ### Starting with Neutralino
 
-Learning Neutralino is very simple. Get started with [quick start](gettingstarted/quickstart) and build your [first Neutralino app](gettingstarted/firstapp)
+Learning Neutralino is very easy. Get started with [quick start](gettingstarted/quickstart) and build your [first Neutralino app](gettingstarted/firstapp)
