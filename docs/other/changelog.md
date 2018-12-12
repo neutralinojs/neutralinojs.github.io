@@ -15,10 +15,10 @@
 `browser` - Debug using a web browser
 `cloud` - Runs as a server in background
 
-- Use ping feature automatically with `browser` mode
+- Automatic ping feature(self shutdown) with `browser` mode
 - Neutralino was [compared](https://github.com/neutralinojs/evaluation) with Electron and NW.js
 - window mode was selected as default
-- `neutralino.exe` was updated with icon and publisher details (can be modified using a resource editing tool)
+- `neutralino.exe` was updated with an icon and publisher details (can be modified using a resource editing tool)
 
 #### Bug fixes
 
