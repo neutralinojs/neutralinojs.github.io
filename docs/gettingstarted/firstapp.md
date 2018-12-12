@@ -66,8 +66,8 @@ html, body{
 `app/app.js`
 
 ```js
-let getUsername = function () {
-    let key = NL_OS == 'Windows' ? 'USERNAME' : 'USER';
+var getUsername = function () {
+    var key = NL_OS == 'Windows' ? 'USERNAME' : 'USER';
     Neutralino.os.getEnvar(key, function(data) {
         document.getElementById('name').innerText = data.value;
     },
