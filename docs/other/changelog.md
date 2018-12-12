@@ -9,12 +9,10 @@
 
 - Default app was updated
 - `NL_VERSION` global variable added
-
-###### Neutralino mode changes
-`window` - Runs on a native window
-`browser` - Debug using a web browser
-`cloud` - Runs as a server in background
-
+- Neutralino mode changes
+  - `window` - Runs on a native window
+  - `browser` - Debug using a web browser
+  - `cloud` - Runs as a server in background
 - Automatic ping feature(self shutdown) with `browser` mode
 - Neutralino was [compared](https://github.com/neutralinojs/evaluation) with Electron and NW.js
 - window mode was selected as default
