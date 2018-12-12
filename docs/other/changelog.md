@@ -1,5 +1,30 @@
 ## Change log
 
+### Version 1.0.8
+**2018-10-11**
+
+[Stable release]
+
+#### What's new
+
+- Default app was updated
+- `NL_VERSION` global variable added
+
+###### Neutralino mode changes
+`window` - Runs on a native window
+`browser` - Runs on default web browser
+`cloud` - Runs as a server in background
+
+- Use ping feature automatically with `browser` mode
+- Neutralino was [compared](https://github.com/neutralinojs/evaluation) with Electron and NW.js
+- window mode was selected as default
+- `neutralino.exe` was updated with icon and publisher details (can be modified using a resource editing tool)
+
+#### Bug fixes
+
+- There are several bug fixes and improvements
+ 
+
 ### Version 1.0.7-alpha
 **2018-10-11**
 
