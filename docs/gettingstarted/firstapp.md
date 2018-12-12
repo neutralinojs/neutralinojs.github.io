@@ -66,12 +66,12 @@ html, body{
 `app/app.js`
 
 ```js
-let getUsername = () => {
+let getUsername = function () {
     let key = NL_OS == 'Windows' ? 'USERNAME' : 'USER';
-    Neutralino.os.getEnvar(key, (data) => {
+    Neutralino.os.getEnvar(key, function(data) {
         document.getElementById('name').innerText = data.value;
     },
-    () => {
+    function () {
         //handle error
     }
     );
@@ -79,7 +79,7 @@ let getUsername = () => {
 }
 
 Neutralino.init({
-    load: () => {
+    load: function () {
         getUsername();
     }
 });
@@ -87,9 +87,12 @@ Neutralino.init({
 
 ### Step 4 - Run your app
 
-Click the `neutralino` binary file to launch your app on your web browser.
+Click the `neutralino` binary file to launch your app.
 
-<img src="https://cdn.rawgit.com/neutralinojs/neutralinojs.github.io/33d6f695/docs/browserapp.png">
+
+### Step 5 - Debugging
+
+Change neutralino mode in to `browser`. It will run your app inside the default browser. Open developer tools and start debugging.
 
 Find the source code, [here](https://github.com/neutralinojs/neutralinojs-samples/tree/master/greetingsapp)
 
