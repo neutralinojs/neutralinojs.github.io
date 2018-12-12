@@ -21,25 +21,21 @@ The port to run your Neutralino app on. The default is 8080.
 ```
 
 ### mode
-This sets the enviornment you want to run your Neutralino app on. The available enviornment options are `desktop` or `cloud`. <br/>
+This sets the enviornment you want to run your Neutralino app on. The available enviornment options are `window` or `browser` and `cloud`. <br/>
 
 ```json
 {
-   "mode": "desktop"
+   "mode": "window"
 }
 ```
 
-### cloud
-It is used when the enviornment variable is set to `cloud`. It supports settings that can be used when cloud mode is enabled i.e, Neutralino application is meant to be hosted on a cloud platorm. 
+| Variable      | Description                                      |
+| ------------- |:------------------------------------------------:|
+| `window`      | Runs application in a native window              |
+| `browser`     | Debug mode. Runs in the default browser          |
+| `cloud`       | Runs as a background server                      |
 
-```json
-{ 
-   "mode":"cloud",
-   "cloud" :{
-   
-    } 
-}
-````
+
 ### cloud.blacklist 
 It is used to disable a set of one or more commands, when the app is set to run in the cloud mode. It accepts a set of blacklisted commands as an array.
 
