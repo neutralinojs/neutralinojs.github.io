@@ -12,7 +12,7 @@
 
 ###### Neutralino mode changes
 `window` - Runs on a native window
-`browser` - Runs on default web browser
+`browser` - Debug using a web browser
 `cloud` - Runs as a server in background
 
 - Use ping feature automatically with `browser` mode
