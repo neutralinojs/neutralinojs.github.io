@@ -21,7 +21,8 @@
 #### Bug fixes
 
 - There are several bug fixes and improvements
- 
+
+[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.0.8) this release. 
 
 ### Version 1.0.7-alpha
 **2018-10-11**
