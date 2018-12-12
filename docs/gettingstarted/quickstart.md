@@ -5,7 +5,7 @@ Now you have an idea why NeutralinoJs is important, this section will give you a
 
 ## Download the Portable SDK
 
-[Download portable SDK](https://github.com/neutralinojs/neutralinojs/releases) (Currently supports Windows and Linux). Extract the zip file and find the app template and Neutralino runtime binaries. 
+[Download portable SDK](https://github.com/neutralinojs/neutralinojs/releases) (Currently supports Windows and Linux). Extract the zip file and find the app template and Neutralino launchers. 
 
 ## Neutralino App Structure
 
