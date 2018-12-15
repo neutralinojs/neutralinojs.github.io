@@ -21,6 +21,7 @@ Now you have an idea why NeutralinoJs is important, this section will give you a
 |  └── settings.json
 └── neutralino.exe
 └── neutralino
+└── storage
 ```
 
 - `app/assets` - Directory for Neutralino js library and your custom .js and .css files. By default, there is `app.css` and `app.js`
@@ -28,6 +29,7 @@ Now you have an idea why NeutralinoJs is important, this section will give you a
 - `settings.json` - Store your app settings. Required parameters are `appport` and `appname`
 - `neutralino` - Linux launcher.
 - `neutralino.exe` - Windows launcher.
+- `storage` - Contains JSON storage data
 
 ## Neutralino Super Globals
 
