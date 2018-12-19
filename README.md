@@ -4,17 +4,6 @@
 
 This repository contains source for NeutralinoJs Docs and Website. [View Website](https://neutralino.js.org)
 
-# What is NeutralinoJs?
-NeutralinoJs is a portable cross-platform and lightweight framework to create desktop/cloud based apps that ultimately run inside your browser.
-
-Buid your first Neutralino App: [Get Started](https://neutralino.js.org/docs/#/gettingstarted/quickstart)
-
-NeutralnoJs Source: [View](https://github.com/neutralinojs/neutralinojs)
-
-Sample apps built with NeutralinoJs: [NeutralinoJs Samples](https://github.com/neutralinojs/neutralinojs-samples)
-
-[Changelog](https://neutralino.js.org/docs/#/other/changelog)
-
 ## Contribution
 Want to contribute to this project? [View Contribution Guide](contribution.md)
 
