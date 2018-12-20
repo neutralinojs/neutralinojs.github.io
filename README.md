@@ -8,5 +8,5 @@ This repository contains source for NeutralinoJs Docs and Website. [View Website
 Want to contribute to this project? [View Contribution Guide](contribution.md)
 
 ## License
-`MIT` (Docs Only) + `CC3`
+`MIT` (Docs Only) + `CC3` (Website Template)
 
