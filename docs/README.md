@@ -3,7 +3,7 @@
 </div>
 
 
-### Develop web apps with native os functions.
+### Develop cross-platform applications using JavaScript, HTML and CSS.
 
 Neutralino is a lightweight and portable application development framework. It lets you develop cross-platform applications using JavaScript, HTML and CSS.
 
