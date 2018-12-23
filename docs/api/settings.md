@@ -13,11 +13,11 @@ A callback function, executed when the app settings are retrieved successfully. 
 // A call to os.getSettings()
 Neutralino.settings.getSettings(
   // executes on successfull retrieval of settings
-  (settingsData) => {
+  function (settingsData) {
     console.log(settingsData);
   },
   // executes when a error occurs
-  () => {
+  function () {
     console.log('An error occured while trying to retrieve the settings.');
   }
 );
