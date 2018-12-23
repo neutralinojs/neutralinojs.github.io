@@ -24,13 +24,13 @@ let data = {
 Neutralino.storage.putData(data,
 
 // executes on successful storage of data
-    () => {
+    function () {
     console.log('Data saved to storage/test.json');
 
     },
 // executes if an error occurs
 
-    () => {
+    function () {
     console.log('An error occured while saving the Data');
     
     }
@@ -54,7 +54,7 @@ A callback function, that is executed when an error occurs.
 // The stored data is being retrieved from the JSON based data store. 
 Neutralino.storage.getData('test',
 // executes when data is successfully retrieved.
-    (content) => {
+    function(content) {
     console.log('The data you requested for \n');
 
     // the data that has been retrieved.
@@ -62,7 +62,7 @@ Neutralino.storage.getData('test',
 
     },
 // executes if an error occurs
-    () => {
+   function () {
     console.log('An error occured while retrieving the data.');
 
     }
