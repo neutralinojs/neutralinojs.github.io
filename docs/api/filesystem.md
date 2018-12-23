@@ -31,10 +31,10 @@ A function that will be fired, when a problem occurs with Neutralino server conn
 
 ```js
 Neutralino.filesystem.createDirectory('abcd', 
-  (data) => {
+  function (data) {
     console.log(data);
   },
-  () => {
+  function () {
     console.error('error');
   }
 );
@@ -70,10 +70,10 @@ A function that will be fired, when a problem occurs with Neutralino server conn
 
 ```js
 Neutralino.filesystem.removeDirectory('abcd', 
-  (data) => {
+  function (data) {
     console.log(data);
   },
-  () => {
+  function () {
     console.error('error');
   }
 );
@@ -109,10 +109,10 @@ A function that will be fired when a problem occurs with Neutralino server conne
 
 ```js
 Neutralino.filesystem.writeFile('file1.txt', 'hello world',
-  (data) => {
+  function (data) {
     console.log(data);
   },
-  () => {
+  function (){
     console.error('error');
   }
 );
@@ -146,10 +146,10 @@ A function that will be fired, when a problem occurs with Neutralino server conn
 
 ```js
 Neutralino.filesystem.readFile('file1.txt',
-  (data) => {
+  function (data) {
     console.log(data);
   },
-  () => {
+  function () {
     console.error('error');
   }
 );
@@ -184,10 +184,10 @@ A function that will be fired, when a problem occurs with Neutralino server conn
 
 ```js
 Neutralino.filesystem.removeFile('file1.txt',
-  (data) => {
+  function (data) {
     console.log(data);
   },
-  () => {
+ function () {
     console.error('error');
   }
 );

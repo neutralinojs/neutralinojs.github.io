@@ -31,10 +31,10 @@ A function that will be fired when a problem occurs with Neutralino server conne
 
 ```js
 Neutralino.computer.getRamUsage( 
-  (data) => {
+  function (data) {
     console.log(data);
   },
-  () => {
+  function () {
     console.error('error');
   }
 );
