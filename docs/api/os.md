@@ -31,10 +31,10 @@ A function that will be fired when a problem occurs with Neutralino server conne
 
 ```js
 Neutralino.os.runCommand('help', 
-  (data) => {
+  function (data) {
     console.log(data);
   },
-  () => {
+  function () {
     console.error('error');
   }
 );
@@ -66,10 +66,10 @@ A function that will be fired, when a problem occurs with Neutralino server conn
 
 ```js
 Neutralino.os.getEnvar('path', 
-  (data) => {
+  function (data) {
     console.log(data);
   },
-  () => {
+  function () {
     console.error('error');
   }
 );
