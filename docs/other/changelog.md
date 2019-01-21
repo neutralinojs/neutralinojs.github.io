@@ -1,5 +1,21 @@
 ## Change log
 
+### Version 1.1.0
+**2018-10-11**
+
+[Stable release]
+
+#### What's new
+
+- File picker support #133 `Neutralino.os.dialogOpen` and `Neutralino.os.dialogSave` were added
+- Directory read feature added #124 via `Neutralino.filesystem.readDirectory` module
+- Binding to random port option #123 
+- Multiple html layouts support #135 
+
+See Milestone  [#2](https://github.com/neutralinojs/neutralinojs/milestone/2)
+
+[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.1.0) this release. 
+
 ### Version 1.0.8
 **2018-10-11**
 
