@@ -14,5 +14,5 @@
 
 * Neutralino
   * [Change log](other/changelog.md)
-  * [Committers](other/commiters.md)
+  * [Committers](other/committers.md)
   * [NeutralinoJs Home](https://neutralinojs.github.io)
