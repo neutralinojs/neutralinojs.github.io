@@ -4,7 +4,7 @@
 - [Deepal Samarakoon](https://github.com/deepz123) - PMC
 - [Chathumaduri Hettiarachchi](https://github.com/Chathumaduri456) - PMC
 
-See more contributos [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
+See more contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
 ## Become a committer 
 
