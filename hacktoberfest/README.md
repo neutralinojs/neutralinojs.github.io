@@ -8,7 +8,7 @@ Hacktoberfest gives you a free limited edition t-shirt when you submit 4 pull re
 
 ### How to contribute
 
-- Find issues which have `hacktoberfest` label.
+- Find issues which have `hacktoberfest` label from our [repositories list](https://github.com/neutralinojs).
 - Submit us fixes for selected issues via [pull requests](https://help.github.com/en/articles/about-pull-requests) 
 - Wait until it gets merged into master!
 
