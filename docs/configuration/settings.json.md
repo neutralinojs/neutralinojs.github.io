@@ -12,7 +12,7 @@ It configures the url for the browser to run your Neutralino app on. A sample ur
 ```
 
 ### appport 
-The port to run your Neutralino app on. The default is 8080. 
+The port to run your Neutralino app on. The default is 0 (random avaiable port will be used). 
 
 ```json
 { 
@@ -36,7 +36,11 @@ This sets the enviornment you want to run your Neutralino app on. The available 
 | `cloud`       | Runs as a background server                      |
 
 
-### cloud.blacklist 
+### cloud
+
+Sets the properties of cloud mode.
+
+#### cloud.blacklist 
 It is used to disable a set of one or more commands, when the app is set to run in the cloud mode. It accepts a set of blacklisted commands as an array.
 
 ```json
@@ -58,5 +62,35 @@ Defines all custom global constants of the Neutralino app.
    }
 }
 ```
+
+### window
+
+Sets the properties of window mode.
+
+```json
+{
+    "appname" : "myapp",
+    "appport" : "5006",
+    "mode" : "window",
+    "window" : {
+        "width" : "1000",
+        "height" : "700",
+        "fullscreen" : true
+    }
+}
+```
+
+#### window.width
+
+Width of the window in pixels
+
+#### window.height
+
+Height of the window in pixels
+
+#### window.fullscreen
+
+Boolean value saying whether application should be opened in full screen.
+
 
 `NL_AP` will return `Njs` anywhere in your app
