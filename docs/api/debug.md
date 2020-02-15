@@ -2,10 +2,17 @@
 
 > The `debug` module has application debugging features.
 
-## debug.log(log_type, message, function success(data), function error)
+## debug.log(logType, message, function success(data), function error)
 
 ### Parameters
 
+#### *logType*
+
+String values `INFO`,`ERROR`, `WARN`  
+
+#### *message*
+
+Message to be written in to `neutralino.log`
 
 #### *function success(data)*
 
