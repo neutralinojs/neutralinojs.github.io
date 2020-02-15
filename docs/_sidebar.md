@@ -11,6 +11,8 @@
   * [os](api/os.md)  
   * [computer](api/computer.md)  
   * [storage](api/storage.md)
+  * [debug](api/debug.md)
+  * [app](api/app.md)
  
 * Developer Tools
   * [neu CLI](tools/cli.md)
