@@ -7,7 +7,7 @@ Now you have an idea why NeutralinoJs is important, this section will give you a
 
 [Download portable SDK](https://github.com/neutralinojs/neutralinojs/releases). Extract the zip file and find the app template and Neutralino launchers. 
 
-or, if you have Nodejs installed already, simply use [neu-cli](https://neutralino.js.org/docs/#/tools/cli)
+or, if you have Nodejs installed already, simply use [neu-cli](#/tools/cli)
 
 ## Neutralino App file structure
 
