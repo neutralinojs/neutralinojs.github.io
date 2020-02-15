@@ -1,5 +1,38 @@
 ## Change log
 
+### Version 1.3.0
+**2019-12-30**
+
+[Stable-release]
+
+#### What's new
+
+- Fixed build errors on Windows (filesystem headers related)
+- `Neutralino.debug.log()` for all platforms
+- Developer guide for Neutralino-mac was added to the README
+- `Neutralino.app.exit()` for all platforms 
+- Typescript starter app
+- Full screen mode for all platforms 
+
+Eg:-
+
+```json
+{
+    "appname" : "myapp",
+    "appport" : "5006",
+    "mode" : "window",
+    "window" : {
+        "width" : "1000",
+        "height" : "700",
+        "fullscreen" : true
+    }
+}
+```
+
+Milestone [v1.3.0](https://github.com/neutralinojs/neutralinojs/issues?q=is%3Aissue+milestone%3Av1.3.0+is%3Aclosed)
+
+[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.3.0) this release. 
+
 ### Version 1.2.0
 **2019-09-22**
 
