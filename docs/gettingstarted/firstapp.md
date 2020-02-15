@@ -8,9 +8,9 @@ We are going to create a very simple app that display `Hi.. <Your Name>` on the 
 
 ### Step 1 - Download the SDK
 
-Download the SDK for your current platform.
+Download the SDK or use a template with neu-cli.
 
-### Step 2 - Build the Interface
+### Step 2 - Build the view
 
 `app/index.html`
 
