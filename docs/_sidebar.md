@@ -11,8 +11,12 @@
   * [os](api/os.md)  
   * [computer](api/computer.md)  
   * [storage](api/storage.md)
+ 
+* Developer Tools
+  * [neu CLI](tools/cli.md)
 
-* Neutralino
+* Other links
+
   * [Change log](other/changelog.md)
   * [Committers](other/committers.md)
   * [Donate ❤️](https://opencollective.com/neutralinojs)
