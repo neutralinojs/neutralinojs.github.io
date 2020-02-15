@@ -15,7 +15,7 @@
 * Developer Tools
   * [neu CLI](tools/cli.md)
 
-* Other links
+* Other Links
 
   * [Change log](other/changelog.md)
   * [Committers](other/committers.md)
