@@ -5,11 +5,11 @@ Now you have an idea why NeutralinoJs is important, this section will give you a
 
 ## Download the Portable SDK
 
-[Download portable SDK](https://github.com/neutralinojs/neutralinojs/releases) (Currently supports Windows and Linux). Extract the zip file and find the app template and Neutralino launchers. 
+[Download portable SDK](https://github.com/neutralinojs/neutralinojs/releases). Extract the zip file and find the app template and Neutralino launchers. 
 
-## Neutralino App Structure
+or, if you have Nodejs installed already, simply use [neu-cli](https://neutralino.js.org/docs/#/tools/cli)
 
-**Windows**
+## Neutralino App file structure
 
 ```
 ├── app
@@ -19,21 +19,23 @@ Now you have an idea why NeutralinoJs is important, this section will give you a
 |  |  └── neutralino.js
 |  ├── index.html
 |  └── settings.json
-└── neutralino.exe
-└── neutralino
+└── neutralino-win.exe
+└── neutralino-linux
+└── neutralino-mac
 └── storage
 ```
 
 - `app/assets` - Directory for Neutralino js library and your custom .js and .css files. By default, there is `app.css` and `app.js`
 - `index.html` - Build your application interfaces, here.
 - `settings.json` - Store your app settings. Required parameters are `appport` and `appname`
-- `neutralino` - Linux launcher.
-- `neutralino.exe` - Windows launcher.
+- `neutralino-linux` - Linux launcher.
+- `neutralino-win.exe` - Windows launcher.
+- `neutralino-mac.exe` - macOS launcher.
 - `storage` - Contains JSON storage data
 
 ## Neutralino Super Globals
 
-These js variables can be used anywhere inside your js files or in `index.html`.
+These js variables can be used anywhere inside your js files or in the html views`.
 
 | Variable      | Description                                      |
 | ------------- |:------------------------------------------------:|
