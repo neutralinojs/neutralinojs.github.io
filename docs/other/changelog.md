@@ -1,7 +1,20 @@
 ## Change log
 
+### Version 1.2.0
+**2019-09-22**
+
+[Pre-release]
+
+#### What's new
+
+- Mac OS support
+- `Neutralino.debug.log` for Linux version (written to `neutralinojs.log` text file)
+- Neutralino developer logging from c++ code
+
+[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.2.0) this release. 
+
 ### Version 1.1.0
-**2018-10-11**
+**2019-01-20**
 
 [Stable release]
 
@@ -17,7 +30,7 @@ See Milestone  [#2](https://github.com/neutralinojs/neutralinojs/milestone/2)
 [Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.1.0) this release. 
 
 ### Version 1.0.8
-**2018-10-11**
+**2018-12-12**
 
 [Stable release]
 
