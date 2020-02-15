@@ -79,6 +79,55 @@ Neutralino.filesystem.removeDirectory('abcd',
 );
 ```
 
+## filesystem.readDirectory(string dirName,function success(data), function error)
+
+
+### Parameters
+
+#### *string dirName*
+
+Directory path
+
+#### *function success(data)*
+
+A function that will be fired, when a connection with the Neutralino server is successful. The `data` variable is a json object with the structure shown below. 
+
+```js
+{
+    "files" : [ 
+        {
+            "name": "abc",
+            "type": "directory"
+        },
+        {
+            "name": "abc.cpp",
+            "type": "file"
+        }
+        .........
+    ]
+}
+```
+
+
+#### *function error()*
+
+A function that will be fired, when a problem occurs with Neutralino server connectivity. 
+
+
+
+### Example
+
+```js
+Neutralino.filesystem.readDirectory('abcd', 
+  function (data) {
+    console.log(data);
+  },
+  function () {
+    console.error('error');
+  }
+);
+```
+
 
 ## filesystem.writeFile(string filename, string content,function success(data), function error)
 
@@ -192,3 +241,5 @@ Neutralino.filesystem.removeFile('file1.txt',
   }
 );
 ```
+
+
