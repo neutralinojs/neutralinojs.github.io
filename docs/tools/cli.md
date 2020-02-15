@@ -1,17 +1,17 @@
 # neu CLI
 
-You can easily create Neutralino applications with a pre-built templates using neu-cli. 
+You can easily create Neutralino applications with several pre-built templates using neu-cli. 
 
 ```
   $ npm i -g @neutralinojs/neu
 ```
 
-Synopsis
+### Synopsis
 
 - `neu create myapp --template <templateName>`
 - `neu build`
 
-Supported templates
+### Supported templates
 
 Generic
 
