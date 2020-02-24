@@ -17,6 +17,7 @@ Generic
 
 - Javascript `--template js`
 - Typescript `--template ts`
+- Kotlin `--template kotlin`
 
 Frameworks/Libraries
 
