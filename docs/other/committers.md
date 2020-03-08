@@ -4,6 +4,7 @@
 - [Deepal Samarakoon](https://github.com/deepz123) - PMC
 - [Chathumaduri Hettiarachchi](https://github.com/Chathumaduri456) - PMC
 - [Kasun Vithanage](https://github.com/kasvith) - PMC
+- [Momozor](https://github.com/momozor)
 
 See more contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
