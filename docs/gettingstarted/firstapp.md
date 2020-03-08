@@ -4,7 +4,7 @@ Awesome! Now you got an introduction about Neutralino apps, let's build a very s
 
 ## Greetings from Neutralino
 
-We are going to create a very simple app that display `Hi.. <Your Name>` on the screen. `<Your Name>` should be the name of the currently logged in user's.
+We are going to create a very simple app that displays `Hi.. <Your Name>` on the screen. `<Your Name>` should be the name of the currently logged in user's.
 
 ### Step 1 - Download the SDK
 
