@@ -21,6 +21,6 @@ Generic
 
 Frameworks/Libraries
 
-- Angularjs `--template angularjs`
+- React `--template react`
 
-React, Angular, Vue tempaltes are in progress. Whereas you can use legacy templates if you need from [here](https://github.com/neutralinojs?utf8=%E2%9C%93&q=template&type=&language=).
+Angular and Vue tempaltes are in progress. Whereas you can use legacy templates if you need from [here](https://github.com/neutralinojs?utf8=%E2%9C%93&q=template&type=&language=).
