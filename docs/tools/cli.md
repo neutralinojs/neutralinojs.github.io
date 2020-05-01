@@ -6,12 +6,13 @@ You can easily create Neutralino applications with several pre-built templates u
   $ npm i -g @neutralinojs/neu
 ```
 
-### Synopsis
+### Commands
 
-- `neu create myapp --template <templateName>`
-- `neu build`
+`neu create myapp --template <templateName>`
 
-### Supported templates
+Creates new Neutralinojs app using a pre-built template.
+
+**Supported templates**
 
 Generic
 
@@ -24,3 +25,16 @@ Frameworks/Libraries
 - React `--template react`
 
 Angular and Vue tempaltes are in progress. Whereas you can use legacy templates if you need from [here](https://github.com/neutralinojs?utf8=%E2%9C%93&q=template&type=&language=).
+
+`neu build`
+
+Once the sources files are modified (Javascript, TypeScript, CSS like files) you can use this command to transpile those files and apply changes to your application.
+
+`neu run`
+
+Executes current application.(This will execute specific binary depending on your operating system)
+
+`neu release`
+
+For preparing your application for a release. This command will create `dist` folder and put all the required content of the application and it will create a zipped release.
+
