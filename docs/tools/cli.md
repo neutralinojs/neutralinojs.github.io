@@ -10,7 +10,7 @@ You can easily create Neutralino applications with several pre-built templates u
 
 `neu create myapp --template <templateName>`
 
-Creates new Neutralinojs app using a pre-built template.
+Creates a new Neutralinojs app using a pre-built template.
 
 **Supported templates**
 
