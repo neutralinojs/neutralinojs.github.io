@@ -36,5 +36,5 @@ Executes current application.(This will execute specific binary depending on you
 
 `neu release`
 
-For preparing your application for a release. This command will create `dist` folder. Thus, all the required content of the application will be copied and zipped to one file.
+Prepares your application for a release. This command will create `dist` folder. Thus, all the required content of the application will be copied and zipped to one file.
 
