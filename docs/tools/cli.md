@@ -28,7 +28,7 @@ Angular and Vue tempaltes are in progress. Whereas you can use legacy templates 
 
 `neu build`
 
-Once the sources files are modified (Javascript, TypeScript, CSS like files) you can use this command to transpile those files and apply changes to your application.
+Once the source files are modified (Javascript, TypeScript, CSS like files) you can use this command to transpile those files and apply changes to your application.
 
 `neu run`
 
