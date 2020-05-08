@@ -30,7 +30,7 @@ or, if you have Nodejs installed already, simply use [neu-cli](tools/cli)
 - `settings.json` - Store your app settings. Required parameters are `appport` and `appname`
 - `neutralino-linux` - Linux launcher.
 - `neutralino-win.exe` - Windows launcher.
-- `neutralino-mac.exe` - macOS launcher.
+- `neutralino-mac` - macOS launcher.
 - `storage` - Contains JSON storage data
 
 ## Neutralino Super Globals
