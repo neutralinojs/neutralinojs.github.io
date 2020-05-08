@@ -38,3 +38,7 @@ Executes current application.(This will execute specific binary depending on you
 
 Prepares your application for a release. This command will create `dist` folder. Thus, all the required content of the application will be copied and zipped to one file.
 
+`neu update`
+
+This command will replace existing Neutralino binaries with the latest binaries from internet. 
+
