@@ -1,4 +1,6 @@
 # neu CLI
+![npm](https://img.shields.io/npm/v/@neutralinojs/neu)
+![npm](https://img.shields.io/npm/dt/@neutralinojs/neu)
 
 You can easily create Neutralino applications with several pre-built templates using neu-cli. 
 
