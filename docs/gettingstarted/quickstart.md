@@ -44,6 +44,7 @@ These js variables can be used anywhere inside your js files or in the html view
 | `NL_PORT`     | Neutralino app port loaded from `settings.json`  |
 | `NL_MODE`     | Neutralino app mode loaded from `settings.json`  |
 | `NL_VERSION`  | Neutralino version                               |
+| `NL_CWD`      | Current working directory                        |
 
 Wow! You know the basics of Neutralino, let's build a simple app to start developing. Go to the [My first app](gettingstarted/firstapp) tutorial.
 
