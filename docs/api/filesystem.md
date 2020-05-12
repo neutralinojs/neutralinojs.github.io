@@ -209,7 +209,7 @@ A function that will be fired, when a connection with the Neutralino server is s
 
 ```js
 {
-    "stdout" : "<Output of command>*********"
+    "success" : "true"
 }
 ```
 
