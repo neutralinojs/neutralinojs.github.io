@@ -6,13 +6,7 @@
 
 #### *function success(data)*
 
-A function that will be fired when a connection with the Neutralino server is successful. The `data` variable is a json object with the structure shown below. 
-
-```js
-{
-  "message":"Wrote to log file neutralino.log"
-}
-```
+A function that will be fired when a connection with the Neutralino server is successful. The `data` variable is a json object.Whereas in this case it will not be executed since Neutralino runtime is already terminated.
 
 
 #### *function error()*
