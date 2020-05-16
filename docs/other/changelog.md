@@ -49,6 +49,8 @@ Sets an image/icon for Native window and it will appear on the task bar of the o
     }
 }
 ```
+[Download](https://github.com/neutralinojs/neutralinojs/releases/tag/v1.4.0) this release. 
+
 
 ### Version 1.3.0
 **2019-12-30**
