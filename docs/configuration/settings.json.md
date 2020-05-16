@@ -3,8 +3,10 @@ A JSON file to store your app settings in. The settings are provided in JSON for
 
 ## options 
 These are supported in 1.0.4-alpha and above. 
+
 ### appname 
-It configures the url for the browser to run your Neutralino app on. A sample url will be `localhost:8080/appname`. Here, `appname` is the name of the app you provided in settings.json 
+It configures the url for the browser to run your Neutralino app on. A sample url will be `localhost:8080/appname`. Here, `appname` is the name of the app you provided in settings.json. This is more like the application identifier. Therefore, no spaces accepted.
+
 ```json
 {
    "appname" : "my-neutralino-app"
@@ -63,6 +65,8 @@ Defines all custom global constants of the Neutralino app.
 }
 ```
 
+`NL_AP` will return `Njs` anywhere in your app
+
 ### window
 
 Sets the properties of window mode.
@@ -92,5 +96,19 @@ Height of the window in pixels
 
 Boolean value saying whether application should be opened in full screen.
 
+#### window.alwaysontop
 
-`NL_AP` will return `Njs` anywhere in your app
+Boolean value to set window as the top most mode
+
+#### window.iconfile
+
+Sets a transparent image file(`.png` format is recommended) as the application icon. This feature is currently not available in macOs.
+
+#### window.enableinspector
+
+Shows the developer tools window. This feature is currently available only in Linux.
+
+#### window.borderlesswindow
+
+Boolean value to show/hide window border.
+
