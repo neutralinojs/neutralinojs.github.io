@@ -44,3 +44,11 @@ Prepares your application for a release. This command will create `dist` folder.
 
 This command will replace existing Neutralino binaries with the latest binaries from internet. 
 
+
+### Change log
+
+v1.5.4
+
+- New commands added (release, run and update)
+- Removed binaries from templates and CLI will fetch latest binaries
+
