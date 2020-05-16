@@ -69,7 +69,7 @@ Defines all custom global constants of the Neutralino app.
 
 ### window
 
-Sets the properties of window mode.
+Sets properties for the native window.
 
 ```json
 {
@@ -77,12 +77,21 @@ Sets the properties of window mode.
     "appport" : "5006",
     "mode" : "window",
     "window" : {
+        "title": "My app",
         "width" : "1000",
         "height" : "700",
-        "fullscreen" : true
+        "fullscreen" : false,
+        "alwaysontop" : false,
+        "iconfile" : "neutralino.png",
+        "enableinspector" : false,
+        "borderlesswindow" : false
     }
 }
 ```
+
+#### window.title
+
+Window title
 
 #### window.width
 
