@@ -1,5 +1,55 @@
 ## Change log
 
+### Version 1.4.0
+**2020-05-03**
+
+[Stable-release]
+
+Milestone v1.4.0 was closed with [11 issues](https://github.com/neutralinojs/neutralinojs/issues?q=is%3Aopen+is%3Aissue+milestone%3Av1.4.0).
+
+#### What's new
+
+- `window.title` option added. Older setting was used as a shared identifier for url path and title whereas now `appname` is kind of app id (won't support spaces). Thus, `window.title` refers to the Native window title which supports spaces etc.
+
+- More native window properties/configuration added.
+
+`window.alwaysontop [bool] ` on all platforms
+
+If `true` window will appear always on top.
+
+`window.borderless [bool]` on all platforms
+
+If true title bar will be hidden and allows developer to make their own title bar using CSS.
+
+`window.iconfile [string]` on Windows and Linux
+
+Sets an image/icon for Native window and it will appear on the task bar of the operating system. Transparent `.png` is recommended.
+
+- `NL_CWD` global variable was added to all platforms. it has the current working directory. 
+
+- Binary file support was added to all platforms. Eg: `.png` like images will be served by the Neutralino file server.
+
+- Quick build script was added to the macos as well. (`bash build.sh macos` to build and copy all the things to `dist`) 
+
+*Example `settings.json` structure for this version*
+
+```json
+{
+    "appname" : "myapp",
+    "appport" : "5006",
+    "mode" : "window",
+    "window" : {
+        "title": "My app",
+        "width" : "1000",
+        "height" : "700",
+        "fullscreen" : false,
+        "alwaysontop": true,
+        "borderless": false,
+        "iconfile": "neutralino.png"
+    }
+}
+```
+
 ### Version 1.3.0
 **2019-12-30**
 
