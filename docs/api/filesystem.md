@@ -16,7 +16,7 @@ A function that will be fired, when a connection with the Neutralino server is s
 
 ```js
 {
-    'success' : 'true'
+    "success" : "true"
 }
 ```
 
@@ -27,12 +27,12 @@ A function that will be fired, when a problem occurs with Neutralino server conn
 ### Example
 
 ```js
-Neutralino.filesystem.createDirectory("abcd",
+Neutralino.filesystem.createDirectory('abcd',
   function (data) {
     console.log(data);
   },
   function () {
-    console.error("error");
+    console.error('error');
   }
 );
 ```
@@ -51,7 +51,7 @@ A function that will be fired, when a connection with the Neutralino server is s
 
 ```js
 {
-     'success' : 'true'
+     "success" : "true"
 }
 ```
 
@@ -62,12 +62,12 @@ A function that will be fired, when a problem occurs with Neutralino server conn
 ### Example
 
 ```js
-Neutralino.filesystem.removeDirectory( "abcd",
+Neutralino.filesystem.removeDirectory( 'abcd',
   function (data) {
     console.log(data);
   },
   function () {
-    console.error("error");
+    console.error('error');
   }
 );
 ```
@@ -107,12 +107,12 @@ A function that will be fired, when a problem occurs with Neutralino server conn
 ### Example
 
 ```js
-Neutralino.filesystem.readDirectory( "abcd",
+Neutralino.filesystem.readDirectory( 'abcd',
   function (data) {
     console.log(data);
   },
   function () {
-    console.error("error");
+    console.error('error');
   }
 );
 ```
@@ -133,7 +133,7 @@ A function that will be fired, when a connection with the Neutralino server is s
 
 ```js
 {
-    'success' : 'true'
+    "success" : "true"
 }
 ```
 
@@ -144,12 +144,12 @@ A function that will be fired when a problem occurs with Neutralino server conne
 ### Example
 
 ```js
-Neutralino.filesystem.writeFile("file1.txt","hello world",
+Neutralino.filesystem.writeFile('file1.txt','hello world',
   function (data) {
     console.log(data);
   },
   function () {
-    console.error("error");
+    console.error('error');
   }
 );
 ```
@@ -168,7 +168,7 @@ A function that will be fired, when a connection with the Neutralino server is s
 
 ```js
 {
-    'success' : 'true'
+    "success" : "true"
 }
 ```
 
@@ -179,12 +179,12 @@ A function that will be fired, when a problem occurs with Neutralino server conn
 ### Example
 
 ```js
-Neutralino.filesystem.readFile( "file1.txt",
+Neutralino.filesystem.readFile( 'file1.txt',
   function (data) {
     console.log(data);
   },
   function () {
-    console.error("error");
+    console.error('error');
   }
 );
 ```
@@ -203,7 +203,7 @@ A function that will be fired, when a connection with the Neutralino server is s
 
 ```js
 {
-    'success' : 'true'
+    "success" : "true"
 }
 ```
 
@@ -214,12 +214,12 @@ A function that will be fired, when a problem occurs with Neutralino server conn
 ### Example
 
 ```js
-Neutralino.filesystem.removeFile( "file1.txt",
+Neutralino.filesystem.removeFile( 'file1.txt',
   function (data) {
     console.log(data);
   },
   function () {
-    console.error("error");
+    console.error('error');
   }
 );
 ```
