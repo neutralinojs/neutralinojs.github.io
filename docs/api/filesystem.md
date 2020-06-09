@@ -6,11 +6,11 @@
 
 ### Parameters
 
-#### _string dirName_
+#### *string dirName*
 
 Creates a new directory.
 
-#### _function success(data)_
+#### *function success(data)*
 
 A function that will be fired, when a connection with the Neutralino server is successful. The `data` variable is a json object with the structure shown below.
 
@@ -20,15 +20,14 @@ A function that will be fired, when a connection with the Neutralino server is s
 }
 ```
 
-#### _function error()_
+#### *function error()*
 
 A function that will be fired, when a problem occurs with Neutralino server connectivity.
 
 ### Example
 
 ```js
-Neutralino.filesystem.createDirectory(
-  "abcd",
+Neutralino.filesystem.createDirectory("abcd",
   function (data) {
     console.log(data);
   },
@@ -42,11 +41,11 @@ Neutralino.filesystem.createDirectory(
 
 ### Parameters
 
-#### _string dirName_
+#### *string dirName*
 
 Deletes an existing directory.
 
-#### _function success(data)_
+#### *function success(data)*
 
 A function that will be fired, when a connection with the Neutralino server is successful. The `data` variable is a json object with the structure shown below.
 
@@ -56,15 +55,14 @@ A function that will be fired, when a connection with the Neutralino server is s
 }
 ```
 
-#### _function error()_
+#### *function error()*
 
 A function that will be fired, when a problem occurs with Neutralino server connectivity.
 
 ### Example
 
 ```js
-Neutralino.filesystem.removeDirectory(
-  "abcd",
+Neutralino.filesystem.removeDirectory( "abcd",
   function (data) {
     console.log(data);
   },
@@ -78,11 +76,11 @@ Neutralino.filesystem.removeDirectory(
 
 ### Parameters
 
-#### _string dirName_
+#### *string dirName*
 
 Directory path
 
-#### _function success(data)_
+#### *function success(data)*
 
 A function that will be fired, when a connection with the Neutralino server is successful. The `data` variable is a json object with the structure shown below.
 
@@ -102,15 +100,14 @@ A function that will be fired, when a connection with the Neutralino server is s
 }
 ```
 
-#### _function error()_
+#### *function error()*
 
 A function that will be fired, when a problem occurs with Neutralino server connectivity.
 
 ### Example
 
 ```js
-Neutralino.filesystem.readDirectory(
-  "abcd",
+Neutralino.filesystem.readDirectory( "abcd",
   function (data) {
     console.log(data);
   },
@@ -124,13 +121,13 @@ Neutralino.filesystem.readDirectory(
 
 ### Parameters
 
-#### _string filename_
+#### *string filename*
 
-#### _string content_
+#### *string content*
 
 Creates a file and writes content to it.
 
-#### _function success(data)_
+#### *function success(data)*
 
 A function that will be fired, when a connection with the Neutralino server is successful. The `data` variable is a json object with the structure shown below.
 
@@ -140,16 +137,14 @@ A function that will be fired, when a connection with the Neutralino server is s
 }
 ```
 
-#### _function error()_
+#### *function error()*
 
 A function that will be fired when a problem occurs with Neutralino server connectivity.
 
 ### Example
 
 ```js
-Neutralino.filesystem.writeFile(
-  "file1.txt",
-  "hello world",
+Neutralino.filesystem.writeFile("file1.txt","hello world",
   function (data) {
     console.log(data);
   },
@@ -163,11 +158,11 @@ Neutralino.filesystem.writeFile(
 
 ### Parameters
 
-#### _string filename_
+#### *string filename*
 
 Reads the content of a file.
 
-#### _function success(data)_
+#### *function success(data)*
 
 A function that will be fired, when a connection with the Neutralino server is successful. The `data` variable is a json object with the structure shown below.
 
@@ -177,15 +172,14 @@ A function that will be fired, when a connection with the Neutralino server is s
 }
 ```
 
-#### _function error()_
+#### *function error()*
 
 A function that will be fired, when a problem occurs with Neutralino server connectivity.
 
 ### Example
 
 ```js
-Neutralino.filesystem.readFile(
-  "file1.txt",
+Neutralino.filesystem.readFile( "file1.txt",
   function (data) {
     console.log(data);
   },
@@ -199,11 +193,11 @@ Neutralino.filesystem.readFile(
 
 ### Parameters
 
-#### _string filename_
+#### *string filename*
 
 Deletes an existing file.
 
-#### _function success(data)_
+#### *function success(data)*
 
 A function that will be fired, when a connection with the Neutralino server is successful. The `data` variable is a json object with the structure shown below.
 
@@ -213,15 +207,14 @@ A function that will be fired, when a connection with the Neutralino server is s
 }
 ```
 
-#### _function error()_
+#### *function error()*
 
 A function that will be fired, when a problem occurs with Neutralino server connectivity.
 
 ### Example
 
 ```js
-Neutralino.filesystem.removeFile(
-  "file1.txt",
+Neutralino.filesystem.removeFile( "file1.txt",
   function (data) {
     console.log(data);
   },

@@ -43,3 +43,6 @@ Neutralino.debug.log(
     console.error('error');
   }
 );
+```
+
+*NOTE - If you are using [neu-cli](https://neutralino.js.org/docs/#/tools/cli), you can see live log updates with `neu run` command in all supported platforms.*
