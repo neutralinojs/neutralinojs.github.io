@@ -111,7 +111,7 @@ Boolean value to set window as the top most mode
 
 #### window.iconfile
 
-Sets a transparent image file(`.png` format is recommended) as the application icon. This feature is currently not available in macOs.
+Sets a transparent image file(`.png` format is recommended) as the application icon.
 
 #### window.enableinspector
 
