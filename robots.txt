@@ -1,4 +1,4 @@
 User-Agent: *
 Disallow: 
 
-Sitemap: https://neutralino.js.org/sitemap.xml
+Sitemap: https://softwareengineer.lk/sitemap.xml
