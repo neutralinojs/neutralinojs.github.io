@@ -117,7 +117,7 @@ Sets a transparent image file(`.png` format is recommended) as the application i
 
 Shows the developer tools window. This feature is currently available only in Linux.
 
-#### window.borderlesswindow
+#### window.borderless
 
 Boolean value to show/hide window border.
 
