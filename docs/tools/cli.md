@@ -32,13 +32,13 @@ Angular and Vue tempaltes are in progress. Whereas you can use legacy templates 
 
 Once the source files are modified (Javascript, TypeScript, CSS like files) you can use this command to transpile those files and apply changes to your application.
 
-`neu run`
-
-Executes current application.(This will execute specific binary depending on your operating system)
-
 `neu release`
 
 Prepares your application for a release. This command will create `dist` folder. Thus, all the required content of the application will be copied and zipped to one file.
+
+`neu run`
+
+Executes current application.(This will execute specific binary depending on your operating system)
 
 `neu update`
 
