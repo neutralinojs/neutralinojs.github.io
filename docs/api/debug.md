@@ -35,7 +35,7 @@ A function that will be fired when a problem occurs with Neutralino server conne
 
 ```js
 Neutralino.debug.log(
-  'INFO', 'This is a log message'
+  'INFO', 'This is a log message',
   function (data) {
     console.log(data);
   },
