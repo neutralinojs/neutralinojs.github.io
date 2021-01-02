@@ -23,15 +23,3 @@
   * [Committers](other/committers.md)
   * [Donate ❤️](https://opencollective.com/neutralinojs)
   * [NeutralinoJs Home](https://neutralinojs.github.io)
-  
-
-<!-- Responsive h -->
-<ins class="adsbygoogle"
-   style="display:block"
-   data-ad-client="ca-pub-4805219819571962"
-   data-ad-slot="1174653824"
-   data-ad-format="auto"
-   data-full-width-responsive="true"></ins>
-<script>
-   (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
