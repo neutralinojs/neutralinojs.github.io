@@ -76,13 +76,16 @@ Neutralino.os.getEnvar('path',
 ```
 
 
-## os.dialogOpen(string title, function success(data), function error)
+## os.dialogOpen(options, function success(data), function error)
 
 ### Parameters
 
-#### *string title*
+#### *options*
 
-Title text for the window
+`options` is a JSON object with the following fields.
+
+`string title` - Title of the dialog.
+`boolean isDirectoryMode` - Whether it will open directories or files.
 
 #### *function success(data)*
 
@@ -137,6 +140,44 @@ A function that will be fired, when a problem occurs with Neutralino server conn
 
 ```js
 Neutralino.os.dialogSave('Save as a file..', 
+  function (data) {
+    console.log(data);
+  },
+  function () {
+    console.error('error');
+  }
+);
+```
+
+## os.showNotification(options, function success(data), function error)
+
+### Parameters
+
+#### *options*
+
+`options` is a JSON object with the following fields.
+
+`string summary` - Title of the notification.
+`string body` - Content of the notification.
+
+#### *function success(data)*
+
+A function that will be fired, when a connection with the Neutralino server is successful. The `data` variable is a json object with the structure shown below. 
+```js
+{
+  "message" : "Notification is pushed to the system"
+}
+```
+#### *function error()*
+
+A function that will be fired, when a problem occurs with Neutralino server connectivity. 
+
+
+
+### Example
+
+```js
+Neutralino.os.dialogOpen('Open a file..', 
   function (data) {
     console.log(data);
   },
