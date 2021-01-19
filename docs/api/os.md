@@ -177,7 +177,7 @@ A function that will be fired, when a problem occurs with Neutralino server conn
 ### Example
 
 ```js
-Neutralino.os.dialogOpen('Open a file..', 
+Neutralino.os.showNotification({summary: 'My app', body: 'It works!'}, 
   function (data) {
     console.log(data);
   },
