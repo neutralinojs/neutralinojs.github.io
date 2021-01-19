@@ -10,6 +10,8 @@ We are going to create a very simple app that displays `Hi.. <Your Name>` on the
  $ neu create --template hello-world
 ```
 
+If you like you can use several starter projects such as React, TypeScript, and Kotlin. The above command will use JavaScript stater project.
+
 ### Without neu-cli
 
 Download the latest development kit from [releases](https://github.com/neutralinojs/neutralinojs/releases). Thereafter, extract the files and rename the directory to `hello-world`.
