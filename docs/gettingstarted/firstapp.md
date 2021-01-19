@@ -1,16 +1,22 @@
 # Writing your first app
 
-Awesome! Now you got an introduction about Neutralino apps, let's build a very simple app.
+We are going to create a very simple app that displays `Hi.. <Your Name>` on the screen. `<Your Name>` should be the name of the currently logged user.
 
-## Greetings from Neutralino
+### Step 1 - Create new project
 
-We are going to create a very simple app that displays `Hi.. <Your Name>` on the screen. `<Your Name>` should be the name of the currently logged in user's.
+### With neu-cli
 
-### Step 1 - Download the SDK
+```bash
+ $ neu create --template hello-world
+```
 
-Download the SDK or use a template with neu-cli.
+### Without neu-cli
 
-### Step 2 - Build the view
+Download the latest development kit from [releases](https://github.com/neutralinojs/neutralinojs/releases). Thereafter, extract the files and rename the directory to `hello-world`.
+
+### Step 2 - Building the view
+
+Neutralinojs initially loads the contents of `app/index.html` file.
 
 `app/index.html`
 
@@ -61,7 +67,9 @@ html, body{
 }
 ```
 
-### Step 3 - Develop app functions
+### Step 3 - Writing codes
+
+Add the following code to the `app/app.js` file.
 
 `app/app.js`
 
@@ -72,7 +80,7 @@ var getUsername = function () {
         document.getElementById('name').innerText = data.value;
     },
     function () {
-        //handle error
+        //handle the error
     }
     );
         
@@ -85,15 +93,30 @@ Neutralino.init({
 });
 ```
 
-### Step 4 - Run your app
+### Step 4 - Running your application.
 
-Click the `neutralino` binary file to launch your app.
+### With neu-cli
+
+```bash
+ $ neu run 
+ $ neu listen // Execute with the live-reload
+```
+
+### Without neu-cli
+
+Double click on the binary according to your platform.
 
 
 ### Step 5 - Debugging
 
-Change neutralino mode in to `browser`. It will run your app inside the default browser. Open developer tools and start debugging.
+There are several ways to debug. You can select what you like :)
 
-Find the source code, [here](https://github.com/neutralinojs/neutralinojs-samples/tree/master/greetingsapp)
+### Developer tools of the web browser
+
+Change `mode` to `browser` in the `settings.json` file. Whenever you execute the application, it will use your default web browser. Thereafter, you will be able to use the developer tools.
+
+### Enabling WebKit developer tools
+
+If you are developing on Linux, simply set `window.enableinspector` as `true`. Your application will launched with WebKit developer tools.
 
 Happy coding!
