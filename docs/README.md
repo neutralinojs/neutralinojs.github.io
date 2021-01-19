@@ -21,7 +21,7 @@ Ask questions on Stackoverflow using [neutralinojs](https://stackoverflow.com/qu
   <img src="https://raw.githubusercontent.com/neutralinojs/neutralinojs/master/media/architecture.png">
 </div>
 
-### Features of Neutralino apps
+### Features of Neutralinojs apps
 
 - Fully portable development kit.
 - No additional dependencies.
