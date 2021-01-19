@@ -1,8 +1,5 @@
 # settings.json
-A JSON file to store your app settings in. The settings are provided in JSON format. <br/>
-
-## options 
-These are supported in 1.0.4-alpha and above. 
+A JSON file to store your app settings.<br/>
 
 ### appname 
 It configures the url for the browser to run your Neutralino app on. A sample url will be `localhost:8080/appname`. Here, `appname` is the name of the app you provided in settings.json. This is more like the application identifier. Therefore, no spaces accepted.
@@ -14,11 +11,28 @@ It configures the url for the browser to run your Neutralino app on. A sample ur
 ```
 
 ### appport 
-The port to run your Neutralino app on. The default is 0 (random avaiable port will be used). 
+The port to run your Neutralino app on. The default is 0 (An avaiable random port will be used). 
 
 ```json
 { 
    "appport":"8080"
+}
+```
+
+
+### url
+
+The url that will be loaded first. If it is set to `/`, the `app/index.html` file will be loaded. Otherwise, the given URL will be loaded.<br/>
+
+```json
+{
+   "url": "/"
+}
+```
+
+```json
+{
+   "url": "https://github.com"
 }
 ```
 
@@ -33,9 +47,9 @@ This sets the enviornment you want to run your Neutralino app on. The available 
 
 | Variable      | Description                                      |
 | ------------- |:------------------------------------------------:|
-| `window`      | Runs application in a native window              |
-| `browser`     | Debug mode. Runs in the default browser          |
-| `cloud`       | Runs as a background server                      |
+| `window`      | Runs the application in a native window          |
+| `browser`     | Runs the application in the default browser.     |
+| `cloud`       | Runs the application as a background server.     |
 
 
 ### cloud
@@ -76,15 +90,17 @@ Sets properties for the native window.
     "appname" : "myapp",
     "appport" : "5006",
     "mode" : "window",
+    "url": "/",
     "window" : {
         "title": "My app",
-        "width" : "1000",
-        "height" : "700",
-        "fullscreen" : false,
-        "alwaysontop" : false,
-        "iconfile" : "neutralino.png",
-        "enableinspector" : false,
-        "borderlesswindow" : false
+        "width": "1000",
+        "height": "700",
+        "fullscreen": false,
+        "alwaysontop": false,
+        "iconfile": "neutralino.png",
+        "enableinspector": false,
+        "borderlesswindow": false,
+        "maximize": false
     }
 }
 ```
@@ -103,15 +119,15 @@ Height of the window in pixels
 
 #### window.fullscreen
 
-Boolean value saying whether application should be opened in full screen.
+Boolean value saying whether application should be opened in full-screen mode.
 
 #### window.alwaysontop
 
-Boolean value to set window as the top most mode
+Boolean value to set the application window as the top-most window.
 
 #### window.iconfile
 
-Sets a transparent image file(`.png` format is recommended) as the application icon.
+Sets a transparent image file (`.png` format is recommended) as the application icon.
 
 #### window.enableinspector
 
@@ -120,4 +136,8 @@ Shows the developer tools window. This feature is currently available only in Li
 #### window.borderless
 
 Boolean value to show/hide window border.
+
+#### window.maximize
+
+Boolean value to run your application maximized.
 
