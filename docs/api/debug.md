@@ -45,4 +45,4 @@ Neutralino.debug.log(
 );
 ```
 
-*NOTE - If you are using [neu-cli](https://neutralino.js.org/docs/#/tools/cli), you can see live log updates with `neu run` command in all supported platforms.*
+If you are using [neu-cli](https://neutralino.js.org/docs/#/tools/cli), you can see live log updates with either `neu run` or `neu listen` commands in the all supported platforms.
