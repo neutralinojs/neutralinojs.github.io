@@ -32,7 +32,7 @@ The url that will be loaded first. If it is set to `/`, the `app/index.html` fil
 
 ```json
 {
-   "url": "https://github.com"
+   "url": "https://neutralino.js.org"
 }
 ```
 
