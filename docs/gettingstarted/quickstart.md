@@ -7,6 +7,14 @@ This section will give you a simple introduction to the Neutralinojs app develop
 
 If you already have Nodejs and npm installed, you can simply use [neu-cli](tools/cli). Otherwise, download the latest development kit from [releases](https://github.com/neutralinojs/neutralinojs/releases). 
 
+### Creating a project with neu-cli
+
+```bash
+ $ npm install -g @neutralinojs/neu
+ $ neu create --template hello-world
+ $ cd hello-world
+```
+
 
 ## File structure of a generic project
 
