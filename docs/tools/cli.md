@@ -38,9 +38,9 @@ Once the source files are modified (Javascript, TypeScript, CSS like files) you 
 
 Executes the current application (This will execute specific binary depending on your operating system). This command will change execution permissions of the binary files on Linux and macOS.
 
-`neu listen`
+`neu listen [--auto-build]`
 
-This command is similar to `run` but it will enable live-reload for the current application. In other words, when a modification happens to the `app` directly, the Neutralinojs application will be reloaded automatically.
+This command is similar to `run` but it will enable live-reload for the current application. In other words, when a modification happens to the `app` directly, the Neutralinojs application will be reloaded automatically. If `--auto-build` flag is provided, your Neutralinojs application will be automatically built and will be reloaded when the CLI detects a change in your `src` directory. 
 
 `neu release`
 
