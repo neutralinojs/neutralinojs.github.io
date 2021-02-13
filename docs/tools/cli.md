@@ -44,7 +44,7 @@ This command is similar to `run` but it will enable live-reload for the current 
 
 `neu release`
 
-Prepares your application for a release. This command will create `dist` folder. Thus, all the required content of the application will be copied and zipped to one file.
+Prepares your application for a release. This command will create `dist` folder. Thereafter, it will create the `res.neu` resource file from your application resources. Finally, this command will create a zip file of the application bundle. 
 
 `neu update`
 
