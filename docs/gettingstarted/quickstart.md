@@ -11,7 +11,7 @@ If you already have Nodejs and npm installed, you can simply use [neu-cli](tools
 
 ```bash
  $ npm install -g @neutralinojs/neu
- $ neu create --template hello-world
+ $ neu create hello-world
  $ cd hello-world
 ```
 
