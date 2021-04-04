@@ -7,7 +7,7 @@ We are going to create a very simple app that displays `Hi.. <Your Name>` on the
 ### With neu-cli
 
 ```bash
- $ neu create --template js hello-world
+ $ neu create hello-world
 ```
 
 If you like you can use several starter projects such as React, TypeScript, and Kotlin. The above command will use JavaScript stater project.
