@@ -1,12 +1,33 @@
-<div align="center">
-  <img src="https://raw.githubusercontent.com/neutralinojs/neutralinojs.github.io/b667f2c2/docs/nllogo.png" style="width:300px;"/>
-</div>
+# Website
 
-This repository contains source for NeutralinoJs Docs and Website. [View Website](https://neutralino.js.org)
+This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
-## Contribution
-Want to contribute to this project? [View Contribution Guide](contribution.md)
+## Installation
 
-## License
-`MIT` (Docs Only) + `CC3` (Website Template)
+```console
+yarn install
+```
 
+## Local Development
+
+```console
+yarn start
+```
+
+This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
+
+## Build
+
+```console
+yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+## Deployment
+
+```console
+GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
