@@ -1675,7 +1675,6 @@
 		font-weight: 700;
 		line-height: 1em;
 		margin: 0 0 1em 0;
-		text-transform: uppercase;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -2562,11 +2561,9 @@
 	}
 
 	header p {
-
 		color: #aaa;
 		position: relative;
 		margin: 0 0 1.5em 0;
-		text-transform: uppercase;
 	}
 
 	header h2 + p {
@@ -3652,4 +3649,4 @@
   font-size: 9px;
   line-height: 1;
 }
-		
+
