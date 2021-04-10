@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{90:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"What\'s New in Neutralinojs v2","permalink":"/blog/what-is-new-in-v2"}]}')}}]);
