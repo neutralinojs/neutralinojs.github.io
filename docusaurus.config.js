@@ -6,10 +6,14 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'neutralinojs', // Usually your GitHub org/user name.
-  projectName: 'neutralinojs.github.io', // Usually your repo name.
+  favicon: 'img/favicon.png',
+  organizationName: 'neutralinojs',
+  projectName: 'neutralinojs.github.io',
   themeConfig: {
+    gtag: {
+      trackingID: 'UA-120983955-1',
+      anonymizeIP: true,
+    },
     navbar: {
       title: 'Neutralinojs',
       logo: {
@@ -25,8 +29,23 @@ module.exports = {
         },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://www.youtube.com/watch?v=txDlNNsgSh8&list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj&ab_channel=CodeZri',
+          label: 'Tutorial',
+          position: 'left',
+        },
+        {
+          href: 'https://factsoverflow.com/neutralinojs-2021-roadmap',
+          label: 'Roadmap 2021',
+          position: 'left',
+        },
+        {
+          href: 'https://github.com/neutralinojs',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: 'https://www.patreon.com/shalithasuranga',
+          label: '❤️ Donate',
           position: 'right',
         },
       ],
@@ -47,17 +66,29 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Github',
+              href: 'https://github.com/neutralinojs',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/neutralinojs',
             },
+            {
+              label: 'Stack Overflow',
+              href: 'https://stackoverflow.com/questions/tagged/neutralinojs',
+            },
+            {
+              label: 'Medium',
+              href: 'https://medium.com/neutralinojs'
+            },
+            {
+              label: 'YouTube',
+              href: 'https://www.youtube.com/watch?v=txDlNNsgSh8&list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj&ab_channel=CodeZri'
+            },
+            {
+              label: 'Slack',
+              href: 'https://join.slack.com/t/neutralinojs/shared_invite/zt-b7mbivj5-pKpO6U5drmeT68vKD_pc6w'
+            }
           ],
         },
         {
@@ -71,6 +102,10 @@ module.exports = {
               label: 'GitHub',
               href: 'https://github.com/facebook/docusaurus',
             },
+            {
+              label: 'Patreon',
+              href: 'https://www.patreon.com/shalithasuranga'
+            }
           ],
         },
       ],
@@ -83,13 +118,11 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl:
             'https://github.com/neutralinojs/neutralinojs.github.io/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl:
             'https://github.com/neutralinojs/neutralinojs.github.io/',
         },

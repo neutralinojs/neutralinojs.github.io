@@ -6,34 +6,45 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
+const youtubePlaylist = "https://www.youtube.com/watch?v=txDlNNsgSh8&list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj&ab_channel=CodeZri";
 const features = [
   {
-    title: 'Easy to Use',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: 'Native API',
+    imageUrl: 'img/undraw_in_progress_ql66.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Neutralinojs Javascript API exposes access to the operating system level functions such as file manipulation,
+        executing commands, showing native dialog boxes, etc.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: 'Portable & Zero Dependency',
+    imageUrl: 'img/undraw_takeout_boxes_ap54.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        No extra dependencies are required to run Neutralinojs apps. The great advantage is that you can make
+        applications for all platforms on one platform. No compilers are required!
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: 'Cross-Platform Support',
+    imageUrl: 'img/undraw_social_friends_nsbv.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Neutralinojs apps will work on Linux, Windows, macOS, and Web. Single portable application package
+        can be released for all popular operating systems and web browsers.
+      </>
+    ),
+  },
+  {
+    title: 'Lightweight & Fast',
+    imageUrl: 'img/undraw_upgrade_06a0.svg',
+    description: (
+      <>
+        An uncompressed Neutralinojs app is only ~5MB, and a compressed app size is ~1MB. Indeed,
+        it will not consume either physical memory or storage like any other chromium-based cross-platform application development framework.
       </>
     ),
   },
@@ -59,12 +70,16 @@ export default function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}`}
+      description="Neutralinojs is a framework for building lightweight cross-platform desktop apps with JavaScript, HTML, and CSS.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <div>
+              <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
+              <div data-ea-publisher="neutralino" data-ea-type="image"></div>
+          </div>
           <div className={styles.buttons}>
             <Link
               className={clsx(
@@ -77,6 +92,64 @@ export default function Home() {
           </div>
         </div>
       </header>
+      <div className={styles.intro}>
+        <div className="container">
+          <div className="row">
+            <div className="col col--6">
+              <h1>Build once with JavaScript</h1>
+              <p>Run on Linux, Windows, macOS, and Web.</p>
+            </div>
+            <div className="col col--6">
+              <p>
+                Neutralinojs is a lightweight cross-platform application development framework.
+                It lets you develop lightweight, blazing-fast, and portable applications using JavaScript,
+                HTML, and CSS.
+                <br/><br/>
+                In Electron and NWjs, Embedded Chromium and Node make even simple apps bloaty. Neutralinojs
+                offers a lightweight and portable SDK which is an alternative for Electron and NW.js also with many advantages.
+                <br/><br/>
+                If you can build a website, you can build cross-platform desktop apps too - because Neutralinojs is a framework for
+                creating native desktop applications with web technologies like JavaScript, HTML, and CSS. You can indeed use your
+                favorite frontend framework (Angular, React, Svelte, and Vue) for building your next Neutralinojs app.
+              </p>
+            </div>
+            <ins className="adsbygoogle"
+						     style={{'display': 'block'}}
+						     data-ad-client="ca-pub-4805219819571962"
+						     data-ad-slot="1174653824"
+						     data-ad-format="auto"
+						     data-full-width-responsive="true"></ins>
+						<script>
+						     (adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+          </div>
+        </div>
+      </div>
+      <div className={clsx('hero hero--primary', styles.heroBanner)}>
+        <div className="container">
+          <h1 className="hero__title">Learn Neutralinojs in 5 mins</h1>
+          <p className="hero__subtitle">Start building amazing apps</p>
+          <div className={styles.buttons}>
+            <Link
+              className={clsx(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted,
+              )}
+              to={useBaseUrl('docs/')}>
+              Docs
+            </Link>
+            <Link
+              style={{marginLeft: '12px'}}
+              className={clsx(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted,
+              )}
+              to={youtubePlaylist}>
+              Tutorial
+            </Link>
+          </div>
+        </div>
+      </div>
       <main>
         {features && features.length > 0 && (
           <section className={styles.features}>
@@ -90,6 +163,16 @@ export default function Home() {
           </section>
         )}
       </main>
+      <div className={clsx('hero hero--primary', styles.heroBanner)}>
+        <div className="container">
+          <h1 className="hero__title">Start developing lightweight apps today!</h1>
+          <p className="hero__subtitle">
+            <code>
+              npm install -g @neutralinojs/neu
+            </code>
+          </p>
+        </div>
+      </div>
     </Layout>
   );
 }
