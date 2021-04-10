@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
+import {Adsense} from '@ctrl/react-adsense';
 
 const youtubePlaylist = "https://www.youtube.com/watch?v=txDlNNsgSh8&list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj&ab_channel=CodeZri";
 const features = [
@@ -113,15 +114,15 @@ export default function Home() {
                 favorite frontend framework (Angular, React, Svelte, and Vue) for building your next Neutralinojs app.
               </p>
             </div>
-            <ins className="adsbygoogle"
-						     style={{'display': 'block'}}
-						     data-ad-client="ca-pub-4805219819571962"
-						     data-ad-slot="1174653824"
-						     data-ad-format="auto"
-						     data-full-width-responsive="true"></ins>
-						<script>
-						     (adsbygoogle = window.adsbygoogle || []).push({});
-						</script>
+            <div className="col col--12">
+              <Adsense
+                client='ca-pub-4805219819571962'
+                slot='1174653824'
+                style={{ display: 'block' }}
+                layout='in-article'
+                format='auto'
+              />
+            </div>
           </div>
         </div>
       </div>

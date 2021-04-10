@@ -9,6 +9,12 @@ module.exports = {
   favicon: 'img/favicon.png',
   organizationName: 'neutralinojs',
   projectName: 'neutralinojs.github.io',
+  scripts: [
+    {
+      src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      async: true
+    }
+  ],
   themeConfig: {
     gtag: {
       trackingID: 'UA-120983955-1',
