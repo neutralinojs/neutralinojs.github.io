@@ -24,6 +24,7 @@ module.exports = {
       type: 'category',
       label: 'Developer Environment',
       items: [
+        'developer-environment/project-structure',
         'developer-environment/cli',
         'developer-environment/global-variables',
         'developer-environment/modes',
