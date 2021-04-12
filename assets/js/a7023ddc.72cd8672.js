@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[21],{92:function(a){a.exports=JSON.parse('{"neutralinojs":{"allTagsPath":"/blog/tags","slug":"neutralinojs","name":"neutralinojs","count":1,"permalink":"/blog/tags/neutralinojs"},"v-2":{"allTagsPath":"/blog/tags","slug":"v-2","name":"v2","count":1,"permalink":"/blog/tags/v-2"}}')}}]);
