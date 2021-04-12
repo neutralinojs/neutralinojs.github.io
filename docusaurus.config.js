@@ -33,7 +33,6 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        //{to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://www.youtube.com/watch?v=txDlNNsgSh8&list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj&ab_channel=CodeZri',
           label: 'Tutorial',
@@ -101,12 +100,8 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/neutralinojs/neutralinojs',
             },
             {
               label: 'Patreon',
@@ -125,12 +120,12 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/neutralinojs/neutralinojs.github.io/',
+            'https://github.com/neutralinojs/neutralinojs.github.io/edit/main',
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            'https://github.com/neutralinojs/neutralinojs.github.io/',
+            'https://github.com/neutralinojs/neutralinojs.github.io/edit/main',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
