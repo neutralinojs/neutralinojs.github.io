@@ -5,7 +5,7 @@ title: Neutralino.computer
 Neutralino.computer namespace contains methods related to the user's hardware.
 
 ## computer.getRamUsage()
-This method can be used to obtain physical memory details (in megabytes).
+Provides physical memory details (in megabytes).
 
 ### Return object (awaited):
 - `ram`

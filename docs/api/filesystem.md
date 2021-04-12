@@ -5,7 +5,7 @@ title: Neutralino.filesystem
 Neutralino.debug namespace contains methods for handling files.
 
 ## filesystem.createDirectory(CreateDirectoryOptions)
-This method creates a new directory.
+Creates a new directory.
 
 ### CreateDirectoryOptions
 - `path`: New directory path.
@@ -17,7 +17,7 @@ await Neutralino.filesystem.createDirectory({
 ```
 
 ## filesystem.removeDirectory(RemoveDirectoryOptions)
-This method removes given directories.
+Removes given directories.
 
 ### RemoveDirectoryOptions
 
@@ -30,7 +30,7 @@ await Neutralino.filesystem.removeDirectory({
 ```
 
 ## filesystem.writeFile(WriteFileOptions)
-This method can be used to write new files with data.
+Writes new files with data.
 
 ### WriteFileOptions
 - `fileName`: File name.
@@ -44,7 +44,7 @@ await Neutralino.filesystem.writeFile({
 ```
 
 ## filesystem.readFile(ReadFileOptions)
-This method can be used to read files contains text data.
+Reads files contains text data.
 
 ### ReadFileOptions
 
@@ -61,7 +61,7 @@ console.log(`Content: ${response.data}`);
 ```
 
 ## filesystem.removeFile(RemoveFileOptions)
-This method removes given file.
+Removes given file.
 
 ### RemoveFileOptions
 - `fileName`: File name.
@@ -74,7 +74,7 @@ await Neutralino.filesystem.removeFile({
 ```
 
 ## filesystem.readDirectory(ReadFileOptions)
-This method can be used to read a whole directory.
+Reads a whole directory.
 
 ### ReadDirectoryOptions
 

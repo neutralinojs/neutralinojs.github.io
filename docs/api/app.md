@@ -20,7 +20,7 @@ await Neutralino.app.keepAlive();
 ```
 
 ## app.getConfig()
-This method returns the current application configuration as a JSON object.
+Returns the current application configuration as a JSON object.
 
 ### Return object (awaited):
 - `config`: Application configuration
@@ -30,7 +30,7 @@ await Neutralino.app.getConfig();
 ```
 
 ## app.open(OpenActionOptions)
-This method opens a URL with the default web browser. 
+Opens a URL with the default web browser. 
 
 :::tip
 If your application is running the default web browser, this method will open a new tab.

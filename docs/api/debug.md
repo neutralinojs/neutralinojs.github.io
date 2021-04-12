@@ -5,7 +5,7 @@ title: Neutralino.debug
 Neutralino.debug namespace contains application debugging utilities.
 
 ## debug.log(LoggerOptions)
-This method will log messages to `neutralino.log` file. 
+Writes messages to `neutralino.log` file. 
 
 :::tip
 If your application is running via `neu run` or `neu listen`, you can see log
