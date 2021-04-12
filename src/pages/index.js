@@ -71,7 +71,7 @@ export default function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`${siteConfig.title} - ${siteConfig.tagline}`}
+      title={`${siteConfig.tagline}`}
       description="Neutralinojs is a framework for building lightweight cross-platform desktop apps with JavaScript, HTML, and CSS.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
