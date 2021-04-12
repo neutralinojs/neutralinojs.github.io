@@ -106,7 +106,7 @@ export default function Home() {
                 It lets you develop lightweight, blazing-fast, and portable applications using JavaScript,
                 HTML, and CSS.
                 <br/><br/>
-                In Electron and NWjs, Embedded Chromium and Node make even simple apps bloaty. Neutralinojs
+                In Electron and NWjs, Embedded Chromium and Node make simple apps bloaty. Neutralinojs
                 offers a lightweight and portable SDK which is an alternative for Electron and NW.js also with many advantages.
                 <br/><br/>
                 If you can build a website, you can build cross-platform desktop apps too - because Neutralinojs is a framework for

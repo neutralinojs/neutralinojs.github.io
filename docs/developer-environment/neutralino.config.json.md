@@ -21,7 +21,7 @@ This property accepts both relative and absolute URLs.
 An array of native methods needs to be blocked from the frontend of the application.
 
 ## `globalVariables: object[]`
-A key-value-based JavaScript object of custom [global vairables](./global-variables).
+A key-value-based JavaScript object of custom [global vairables](./global-variables#custom-global-variables).
 
 ## `modes.window.title: string`
 Title of the native window.
