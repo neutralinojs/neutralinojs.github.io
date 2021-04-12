@@ -12,7 +12,7 @@ Writes data into Neutralinojs shared storage. 
 ### StorageWriterOptions
 
 - `bucket`: A key to indentify data.
-- `data`: Data as a JSON object.
+- `data`: Data as a string.
 
 ```
 await Neutralino.storage.putData({
@@ -30,7 +30,7 @@ Reads and returns data for a given Neutralinojs shared storage key. 
 - `bucket`: The key of the storage data record.
 
 ### Return object (awaited):
-- `data`: JSON data object of the storage data record.
+- `data`: Data string of the storage record.
 
 ```
 let response = await Neutralino.storage.getData({
