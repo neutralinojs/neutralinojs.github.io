@@ -37,7 +37,7 @@ Reads and returns data for a given Neutralinojs shared storage key. 
 
 ### Return object (awaited):
 - `data`: Data string of the storage record. If this value is `null` or `undefined`,
-data record will be erased from the disk.
+the specific data record will be erased from the disk.
 
 
 ```
