@@ -2,7 +2,7 @@
 title: Neutralino.computer
 ---
 
-Neutralino.computer namespace contains methods related to the user's hardware.
+`Neutralino.computer` namespace contains methods related to the user's hardware.
 
 ## computer.getRamUsage()
 Provides physical memory details (in megabytes).

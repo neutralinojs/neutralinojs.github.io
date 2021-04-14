@@ -2,7 +2,7 @@
 title: Neutralino.os
 ---
 
-Neutralino.os namespace contains methods related to the user's operating system.
+`Neutralino.os` namespace contains methods related to the user's operating system.
 
 ## os.execCommand(ExecCommandOptions)
 Executes a command and returns the output.

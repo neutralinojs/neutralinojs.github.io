@@ -2,7 +2,7 @@
 title: Neutralino.debug
 ---
 
-Neutralino.debug namespace contains application debugging utilities.
+`Neutralino.debug` namespace contains application debugging utilities.
 
 ## debug.log(LoggerOptions)
 Writes messages to `neutralino.log` file. 

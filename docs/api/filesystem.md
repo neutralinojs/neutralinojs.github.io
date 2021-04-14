@@ -2,7 +2,7 @@
 title: Neutralino.filesystem
 ---
 
-Neutralino.debug namespace contains methods for handling files.
+`Neutralino.debug` namespace contains methods for handling files.
 
 ## filesystem.createDirectory(CreateDirectoryOptions)
 Creates a new directory.

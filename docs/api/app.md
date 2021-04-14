@@ -2,7 +2,7 @@
 title: Neutralino.app
 ---
 
-Neutralino.app namespace contains methods related to the current application instance.
+`Neutralino.app` namespace contains methods related to the current application instance.
 
 ## app.exit()
 Terminates the running application.
