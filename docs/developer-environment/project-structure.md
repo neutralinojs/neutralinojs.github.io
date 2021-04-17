@@ -32,3 +32,7 @@ After that, you can set the default build path of the frontend framework to your
 If your application is launched via the neu listen command, when you build a new version of your frontend
 framework code, Neutralinojs will automatically reload the application.
 :::
+
+### Examples
+
+- [Liteman - A simple file viewer made with Angular](https://github.com/shalithasuranga/liteman)
