@@ -13,6 +13,13 @@ The port of your application. If the value is `0`, Neutralinojs will use a rando
 ## `defaultMode: string`
 Mode of the application. Accepted values are `window`, `browser`, and `cloud`.
 
+## `enableHTTPServer: boolean`
+Enables or disables the background server (The static file server and native API).
+
+## `enableNativeAPI: boolean`
+Enables or disables the native API. For better security, this setting should be `false` if you are using a
+remote URL as your web frontend.
+
 ## `url: string`
 The entry URL of the application. Neutralinojs will initially load this URL.
 This property accepts both relative and absolute URLs.
