@@ -11,13 +11,13 @@ Executes a command and returns the output.
 - `command`: The command needs to be executed.
 
 ### Return object (awaited):
-- `stdout`: String data taken from the standard output (STDOUT) of the command's process.
+- `output`: String data taken from the both standard output (STDOUT) and standard error (STDERR) streams of the command's process.
 
 ```
 let response = await Neutralino.os.execCommand({
   command: 'python --version'
 });
-console.log(`Your Python version: ${response.stdout}`);
+console.log(`Your Python version: ${response.output}`);
 ```
 
 ## os.getEnvar(GetEnvarOptions)
