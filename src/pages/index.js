@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -69,6 +69,14 @@ function Feature({imageUrl, title, description}) {
 export default function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
+  const [isInitialized, setIsInitialized] = useState(false);
+  useEffect(() => {
+    if (isInitialized) {
+      return;
+    }
+    setIsInitialized(true);
+    ethicalads.load_placements();
+  });
   return (
     <Layout
       title={`${siteConfig.tagline}`}
@@ -78,8 +86,10 @@ export default function Home() {
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div>
-              <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
-              <div data-ea-publisher="neutralino" data-ea-type="image"></div>
+              <div 
+                data-ea-publisher="neutralino" 
+                data-ea-type="image">
+              </div>
           </div>
           <div className={styles.buttons}>
             <Link

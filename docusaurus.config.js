@@ -1,3 +1,5 @@
+const path = require('path');
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Neutralinojs',
@@ -139,4 +141,7 @@ module.exports = {
       },
     ],
   ],
+  plugins: [
+    path.resolve('./plugins/load-external-assets')
+  ]
 };
