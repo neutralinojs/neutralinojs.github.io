@@ -35,4 +35,4 @@ framework code, Neutralinojs will automatically reload the application.
 
 ### Examples
 
-- [Liteman - A simple file viewer made with Angular](https://github.com/shalithasuranga/liteman)
+- Please browse sample [apps](/apps) section.
