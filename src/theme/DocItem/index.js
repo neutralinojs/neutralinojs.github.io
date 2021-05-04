@@ -55,18 +55,24 @@ function Headings({
 function CustomTOC({toc}) {
   useTOCHighlight(LINK_CLASS_NAME, ACTIVE_LINK_CLASS_NAME, TOP_OFFSET);
   const [isInitialized, setIsInitialized] = useState(false);
+  const [isEthABlocked, setIsEthABlocked] = useState(false)
   useEffect(() => {
     if (isInitialized) {
       return;
     }
     setIsInitialized(true);
-    ethicalads.load_placements();
+    try {
+      setIsEthABlocked(typeof ethicalads === 'undefined')
+      ethicalads.load_placements()
+    } catch (error) {
+      setIsEthABlocked(false)
+    }
   });
   return (
     <div className={clsx(styles.tableOfContents, 'thin-scrollbar')}>
       <div>
-          <div 
-            data-ea-publisher="neutralino" 
+          <div
+            data-ea-publisher="neutralino"
             data-ea-type="image">
           </div>
       </div>

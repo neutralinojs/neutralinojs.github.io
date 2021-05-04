@@ -70,12 +70,18 @@ export default function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   const [isInitialized, setIsInitialized] = useState(false);
+  const [isEthABlocked, setIsEthABlocked] = useState(false)
   useEffect(() => {
     if (isInitialized) {
       return;
     }
     setIsInitialized(true);
-    ethicalads.load_placements();
+    try {
+      setIsEthABlocked(typeof ethicalads === 'undefined')
+      ethicalads.load_placements()
+    } catch (error) {
+      setIsEthABlocked(false)
+    }
   });
   return (
     <Layout
@@ -86,8 +92,8 @@ export default function Home() {
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div>
-              <div 
-                data-ea-publisher="neutralino" 
+              <div
+                data-ea-publisher="neutralino"
                 data-ea-type="image">
               </div>
           </div>
