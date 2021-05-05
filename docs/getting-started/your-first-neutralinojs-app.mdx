@@ -31,6 +31,16 @@ cd myapp
 neu run
 ```
 
+:::info
+If you are on Windows, you might get an empty white screen.
+The reason is that accessing localhost from a UWP context is disabled by default.
+Run the following command with administrative privileges on the command prompt. 
+```
+CheckNetIsolation.exe LoopbackExempt -a -n="Microsoft.Win32WebViewHost_cw5n1h2txyewy"
+```
+You may include this in your Windows setup files (with the user's consent) because users also may get an empty white screen on Windows.
+:::
+
 ## Step 2: Writing JavaScript, HTML, and CSS
 Insert the following content into your application resource files.
 
