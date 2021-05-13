@@ -18,7 +18,8 @@ Writes data into Neutralinojs shared storage. 
 ### StorageWriterOptions
 
 - `bucket`: A key to indentify data.
-- `data`: Data as a string.
+- `data`: Data as a string. If this value is `null` or `undefined`,
+the specific data record will be erased from the disk.
 
 ```
 await Neutralino.storage.putData({
@@ -36,8 +37,7 @@ Reads and returns data for a given Neutralinojs shared storage key. 
 - `bucket`: The key of the storage data record.
 
 ### Return object (awaited):
-- `data`: Data string of the storage record. If this value is `null` or `undefined`,
-the specific data record will be erased from the disk.
+- `data`: Data string of the storage record.
 
 
 ```
