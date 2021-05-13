@@ -23,9 +23,9 @@ Writes data into Neutralinojs shared storage. 
 ```
 await Neutralino.storage.putData({
   bucket: 'userDetails',
-  data: {
+  data: JSON.stringify({
     username: 'TestValue'
-  }
+  })
 });
 ```
 
