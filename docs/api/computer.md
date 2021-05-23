@@ -10,7 +10,7 @@ Provides physical memory details (in megabytes).
 ### Return object (awaited):
 - `ram`
   * `total`: Total physical memory.
-  * `available`: Available physicual memory.
+  * `available`: Available physical memory.
 
 
 ```
