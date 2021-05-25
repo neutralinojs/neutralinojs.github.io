@@ -3,11 +3,6 @@ title: Introduction
 slug: /
 ---
 
-## Notice 🔔
-
-Neutralino v2 is ready for Linux/Windows. You can try this [pre-release](https://github.com/neutralinojs/neutralinojs/releases/tag/v2.0.0).
-Please notice that the macOS version is not yet supporting v2 implementaton (still in v1.5.0). If you are interested, you can [help ❤️](https://github.com/neutralinojs/neutralinojs/issues/395) us to implement v2-spec for macOS.
-
 ## What is Neutralinojs?
 
 Neutralinojs is a lightweight and portable application development framework. It lets you develop cross-platform applications using JavaScript, HTML and CSS. Neutralinojs applications will work on Linux, Windows, macOs, and Web.
