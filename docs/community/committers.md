@@ -7,12 +7,13 @@ title: Committers
 - [Chathumaduri Hettiarachchi](https://github.com/Chathumaduri456) - PMC
 - [Kasun Vithanage](https://github.com/kasvith) - PMC
 - [Momozor](https://github.com/momozor)
+- [Ali Furkan YILDIZ](https://github.com/uAliFurkanY)
 
 See more contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
 ## Become a committer
 
-Submit 3 pull requests, and raise 3 helpful issues to join the Neutralinojs Team!
+You can actively submit patches, bug-reports, and ideas to become a Neutralinojs committer!
 
 ## Become a PMC member
 
