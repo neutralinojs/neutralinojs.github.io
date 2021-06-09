@@ -59,3 +59,8 @@ Overrides the resources path with a relative path or absolute path. This will ch
 ### `--mode=<mode>`
 
 Overrides the default mode. Accepted values are: `window`, `browser`, and `cloud`.
+
+### `--debug-mode`
+
+Starts the development server on port `5050`. When the development server is enabled, each modification done to the resources
+will automatically reload the application. The `neu listen` command executes Neutralinojs with this flag.
