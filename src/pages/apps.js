@@ -19,7 +19,7 @@ const apps = [
       </>
     ),
     tags: ['Angular', 'Material'],
-    githubLink: 'https://github.com/shalithasuranga/liteman'
+    githubLink: 'https://github.com/codezri/liteman'
   },
   {
     title: 'LitePy',
@@ -30,7 +30,7 @@ const apps = [
       </>
     ),
     tags: ['React'],
-    githubLink: 'https://github.com/shalithasuranga/litepy'
+    githubLink: 'https://github.com/codezri/litepy'
   },
 ];
 
