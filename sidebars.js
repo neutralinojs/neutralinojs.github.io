@@ -27,6 +27,7 @@ module.exports = {
         'developer-environment/neutralino.config.json',
         'developer-environment/project-structure',
         'developer-environment/cli',
+        'developer-environment/internal-cli-arguments',
         'developer-environment/global-variables',
         'developer-environment/modes',
       ],

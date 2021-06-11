@@ -40,27 +40,3 @@ This command will replace existing Neutralinojs binaries with the latest binarie
 
 ## Change log
 Please check the version history from [npm](https://www.npmjs.com/package/@neutralinojs/neu).
-
-## Internal CLI arguments
-
-The neu CLI wraps Neutralinojs's internal CLI arguments to provide a simple interface for developers. For example,
-the `neu run` command internally calls `./bin/neutralino-linux --load-dir-res --path=.` on Linux.
-
-Neutralinojs supports the following CLI arguments.
-
-### `--load-dir-res`
-
-Notifies Neutralinojs server to fetch files from the resources directory.
-
-### `--path=<path>`
-
-Overrides the resources path with a relative path or absolute path. This will change the `NL_PATH` global variable.
-
-### `--mode=<mode>`
-
-Overrides the default mode. Accepted values are: `window`, `browser`, and `cloud`.
-
-### `--debug-mode`
-
-Starts the development server on port `5050`. When the development server is enabled, each modification done to the resources
-will automatically reload the application. The `neu listen` command executes Neutralinojs with this flag.
