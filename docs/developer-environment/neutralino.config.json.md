@@ -39,6 +39,18 @@ Width of the native window.
 ## `modes.window.height: number`
 Height of the native window.
 
+## `modes.window.minWidth: number`
+Minimum user-resizable width of the native window.
+
+## `modes.window.minHeight: number`
+Minimum user-resizable height of the native window.
+
+## `modes.window.maxWidth: number`
+Maximum user-resizable width of the native window.
+
+## `modes.window.maxHeight: number`
+Maximum user resizable height of the native window.
+
 ## `modes.window.fullScreen: boolean`
 Activates the full-screen mode.
 
@@ -57,6 +69,12 @@ Activates the borderless mode.
 
 ## `modes.window.maximize: boolean`
 Launches the application maxmized.
+
+## `modes.window.resizable: boolean`
+Make the window resizable or not. The default value is `true`.
+
+## `modes.window.hidden: boolean`
+Make the window invisible. This setting can be used to develop background services.
 
 ## `cli.binaryName: string`
 Binary file name of your application. If it is `myapp`, all brinaries should use
