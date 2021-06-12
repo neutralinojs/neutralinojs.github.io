@@ -40,16 +40,16 @@ Width of the native window.
 Height of the native window.
 
 ## `modes.window.minWidth: number`
-Minimum user-resizable width of the native window.
+Minimum width of the native window.
 
 ## `modes.window.minHeight: number`
-Minimum user-resizable height of the native window.
+Minimum height of the native window.
 
 ## `modes.window.maxWidth: number`
-Maximum user-resizable width of the native window.
+Maximum width of the native window.
 
 ## `modes.window.maxHeight: number`
-Maximum user resizable height of the native window.
+Maximum height of the native window.
 
 ## `modes.window.fullScreen: boolean`
 Activates the full-screen mode.
