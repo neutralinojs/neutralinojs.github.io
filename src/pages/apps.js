@@ -12,7 +12,7 @@ const youtubeChannel = "https://www.youtube.com/channel/UCRUPsj26cnJk5sI6WFHAKmA
 const apps = [
   {
     title: 'LiteMan',
-    imageUrl: 'img/apps/liteman_prev_linux.gif',
+    image: 'liteman_prev_linux.gif',
     description: (
       <>
         A simple file viewer app written in Neutralinojs.
@@ -23,7 +23,7 @@ const apps = [
   },
   {
     title: 'LitePy',
-    imageUrl: 'img/apps/litepy_prev_linux.gif',
+    image: 'litepy_prev_linux.gif',
     description: (
       <>
          World's simplest Python editor built with Neutralinojs
@@ -34,8 +34,8 @@ const apps = [
   },
 ];
 
-function NeutralinoApp({imageUrl, title, description, githubLink, tags}) {
-  const imgUrl = useBaseUrl(imageUrl);
+function NeutralinoApp({image, title, description, githubLink, tags}) {
+  const imgUrl = useBaseUrl(`/img/apps/${image}`);
   return (
     <div className={clsx('col col--6', styles.feature)}>
       {imgUrl && (
