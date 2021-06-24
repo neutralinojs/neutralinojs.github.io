@@ -114,7 +114,7 @@ Creates/updates the tray icon and menu.
 ### TrayMenuItem
 
 - `id`: A unique identifier for each menu item. 
-- `text`: Label of the menu item. This field is a mandatory field. Use `-` (hypen) character for a menu separator.
+- `text`: Label of the menu item. This field is a mandatory field. Use `-` (hyphen) character for a menu separator.
 - `isDisabled`: A boolean flag to disable/enable a specific menu item.
 - `isChecked`: A boolean flag to mark a specific menu item as selected. 
 
