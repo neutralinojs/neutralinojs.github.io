@@ -2,7 +2,7 @@
 title: Global Variables
 ---
 
-These JavaScript variables can be used anywhere because those variables are defined in the window scope.
+These JavaScript variables can be used anywhere because these variables are defined in the window scope.
 
 ## Predefined global variables
 
@@ -12,7 +12,8 @@ These JavaScript variables can be used anywhere because those variables are defi
 | `NL_APPID`    | Application identifier                                        |
 | `NL_PORT`     | Application port                                              |
 | `NL_MODE`     | Mode of the application: `window`, `browser`, or `cloud`      |
-| `NL_VERSION`  | Neutralinojs version                                          |
+| `NL_VERSION`  | Neutralinojs server version                                   |
+| `NL_CVERSION`  | Neutralinojs client version                                  |
 | `NL_CWD`      | Current working directory                                     |
 | `NL_PATH`     | Application path                                              |
 | `NL_ARGS`     | Command-line arguments                                        |

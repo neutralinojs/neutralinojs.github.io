@@ -101,3 +101,39 @@ let response = await Neutralino.os.showDialogSave({
   title: 'Save to a file'
 });
 console.log(`You've selected: ${response.selectedEntry}`);
+```
+
+## os.setTray(TrayOptions)
+Creates/updates the tray icon and menu.
+
+### TrayOptions
+- `icon`: Tray icon path. Eg: `/resources/icons/trayIcon.png`. A 
+          `20x20`-sized PNG image file works fine on all supported operating systems. 
+- `menuItems`: An array of `TrayMenuItem` objects.
+
+### TrayMenuItem
+
+- `id`: A unique identifier for each menu item. 
+- `text`: Label of the menu item. This field is a mandatory field. Use `-` (hypen) character for a menu separator.
+- `isDisabled`: A boolean flag to disable/enable a specific menu item.
+- `isChecked`: A boolean flag to mark a specific menu item as selected. 
+
+```
+let tray = {
+  icon: '/resources/icons/trayIcon.png',
+  menuItems: [
+    {id: "about", text: "About"},
+    {text: "-"},
+    {id: "quit", text: "Quit"}
+  ]
+};
+
+window.Neutralino.events = {
+  onTrayMenuItemClicked: (menuItem) => {
+    console.log(`You've clicked on: ${menuItem}`);
+    // Use menuItem.id to implement menu item-specific logic.
+    // Or, call the setTray(tray) method again to update tray.
+  }
+}
+
+await Neutralino.os.setTray(tray);
