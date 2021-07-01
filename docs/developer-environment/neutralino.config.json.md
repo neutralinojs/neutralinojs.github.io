@@ -86,4 +86,8 @@ Path of your application resources.
 ## `cli.clientLibrary: string`
 Filename of the Neutralinojs JavaScript library.
 
+## `cli.binaryVersion: string`
+Neutralinojs server version. neu CLI adds this property when the project is scaffolded.
 
+## `cli.clientVersion: string`
+Neutralinojs client version. neu CLI adds this property when the project is scaffolded.
