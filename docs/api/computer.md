@@ -14,6 +14,6 @@ Provides physical memory details (in megabytes).
 
 
 ```
-let ramInfo = await Neutralino.app.getRamUsage();
+let ramInfo = await Neutralino.computer.getRamUsage();
 console.log(`Your ram size: ${Math.round(ramInfo.total / 1000000)}GB`);
 ```

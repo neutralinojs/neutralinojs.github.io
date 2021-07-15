@@ -30,7 +30,7 @@ After that, you can set the default build path of the frontend framework to your
 
 :::info
 If your application is launched via the neu listen command, when you build a new version of your frontend
-framework code, Neutralinojs will automatically reload the application.
+framework code, Neutralinojs will automatically reload the application.
 :::
 
 ### Examples
