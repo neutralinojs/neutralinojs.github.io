@@ -68,7 +68,7 @@ Automatically opens the developer tools window.
 Activates the borderless mode.
 
 ## `modes.window.maximize: boolean`
-Launches the application maxmized.
+Launches the application maximized.
 
 ## `modes.window.resizable: boolean`
 Make the window resizable or not. The default value is `true`.
