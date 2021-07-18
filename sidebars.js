@@ -13,6 +13,7 @@ module.exports = {
       label: 'Native API',
       items: [
         'api/app',
+        'api/window',
         'api/filesystem',
         'api/os',
         'api/computer',
