@@ -77,7 +77,7 @@ Make the window resizable or not. The default value is `true`.
 Make the window invisible. This setting can be used to develop background services.
 
 ## `cli.binaryName: string`
-Binary file name of your application. If it is `myapp`, all brinaries should use
+Binary file name of your application. If it is `myapp`, all binaries should use
 `myapp-<platform>` format.
 
 ## `cli.resourcesPath: string`

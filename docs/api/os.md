@@ -31,7 +31,7 @@ Provides the value of a given environment variable.
 
 ```
 let response = await Neutralino.os.getEnvar({
-  command: 'USER'
+  key: 'USER'
 });
 console.log(`USER = ${response.value}`);
 ```
