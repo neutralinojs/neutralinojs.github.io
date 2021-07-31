@@ -47,8 +47,8 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://factsoverflow.com/neutralinojs-2021-roadmap',
-          label: 'Roadmap 2021',
+          href: 'https://github.com/neutralinojs/roadmap',
+          label: 'Roadmap',
           position: 'left',
         },
         {
@@ -101,6 +101,10 @@ module.exports = {
             {
               label: 'Slack',
               href: 'https://join.slack.com/t/neutralinojs/shared_invite/zt-b7mbivj5-pKpO6U5drmeT68vKD_pc6w'
+            },
+            {
+              label: 'Discord',
+              href: 'https://discord.gg/765ESGvG'
             }
           ],
         },
@@ -114,6 +118,10 @@ module.exports = {
             {
               label: 'Patreon',
               href: 'https://www.patreon.com/shalithasuranga'
+            },
+            {
+              label: 'Privacy policy',
+              to: 'privacy-policy'
             }
           ],
         },

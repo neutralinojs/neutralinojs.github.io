@@ -9,9 +9,14 @@ Neutralinojs is a lightweight and portable application development framework. It
 
 ## Why Neutralinojs?
 
-In Electron and NW.js you have to install NodeJS and hundreds of dependency libraries. Embedded Chromium and Node make even simple apps bloaty. Neutralino offers a lightweight and portable SDK which is an alternative for Electron and NW.js also with many advantages.
+In Electron and NW.js you have to install NodeJS and hundreds of dependency libraries. 
+Embedded Chromium and Node make even simple apps bloaty. 
+Neutralino offers a lightweight and portable SDK which is an alternative for Electron and NW.js. 
+Neutralinojs implements a RESTful API for native operations, and it embeds a static web server to serve the web content. Also, it offers a built-in JavaScript client library for developers.
 
-See performance comparison: [Neutralinojs vs Electron vs NW.js (2018)](https://github.com/neutralinojs/evaluation)
+See comparisons: 
+- [Neutralinojs vs Electron vs NW.JS vs Tauri vs NodeGui vs Flutter vs .Net MAUI](https://github.com/Elanis/web-to-desktop-framework-comparison)
+- [Neutralinojs vs Electron vs NW.js (2018)](https://github.com/neutralinojs/evaluation)
 
 ## Highlighted Features
 

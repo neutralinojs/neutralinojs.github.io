@@ -12,6 +12,7 @@ module.exports = {
       type: 'category',
       label: 'Native API',
       items: [
+        'api/introduction',
         'api/app',
         'api/window',
         'api/filesystem',
@@ -23,14 +24,26 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'CLI',
+      items: [
+        'cli/neu-cli',
+        'cli/internal-cli-arguments',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Configuration',
+      items: [
+        'configuration/neutralino.config.json',
+        'configuration/project-structure',
+        'configuration/modes',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Developer Environment',
       items: [
-        'developer-environment/neutralino.config.json',
-        'developer-environment/project-structure',
-        'developer-environment/cli',
-        'developer-environment/internal-cli-arguments',
         'developer-environment/global-variables',
-        'developer-environment/modes',
       ],
     },
     {
