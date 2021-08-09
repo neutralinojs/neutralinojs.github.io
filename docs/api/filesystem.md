@@ -10,7 +10,7 @@ Creates a new directory.
 ### CreateDirectoryOptions
 - `path`: New directory path.
 
-```
+```js
 await Neutralino.filesystem.createDirectory({
   path: './newDirectory',
 });
@@ -23,7 +23,7 @@ Removes given directories.
 
 - `path`: Directory path.
 
-```
+```js
 await Neutralino.filesystem.removeDirectory({
   path: './tmpDirectory',
 });
@@ -36,7 +36,7 @@ Writes new files with data.
 - `fileName`: File name.
 - `data`: Content of the file in string format.
 
-```
+```js
 await Neutralino.filesystem.writeFile({
   fileName: './myFile.txt',
   data: 'Sample content'
@@ -53,7 +53,7 @@ Reads files contains text data.
 ### Return object (awaited):
 - `data`: File content.
 
-```
+```js
 let response = await Neutralino.filesystem.readFile({
   fileName: './myFile.txt'
 });
@@ -67,7 +67,7 @@ Removes given file.
 - `fileName`: File name.
 
 
-```
+```js
 await Neutralino.filesystem.removeFile({
   fileName: './myFile.txt'
 });
@@ -85,7 +85,7 @@ Reads a whole directory.
   * `entry`: file name.
   * `type`: The type of the entry (`FILE` or `DIRECTORY`).
 
-```
+```js
 let response = await Neutralino.filesystem.readDirectory({
   path: NL_PATH
 });

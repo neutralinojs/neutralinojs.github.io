@@ -29,13 +29,11 @@ Finally, this command will create a zip file of the application bundle only if `
 ### `neu run [--mode=<mode>]`
 Executes the current application (This will execute specific binary depending on your operating system).
 This command will change execution permissions (using the `chmod` command) of the binary files on Linux and macOS.
-
-### `neu listen [--mode=<mode>]`
-This command is similar to `run` but it will enable live-reload for the current application.
+Besides, it will enable live-reload for the current application.
 In other words, when a modification happens to application resources, the Neutralinojs application will be reloaded automatically.
 
 ### `neu update`
-This command will replace existing Neutralinojs binaries with the latest binaries from internet.
+This command will update the existing Neutralinojs binaries and client library from the internet.
 
 
 ## Change log

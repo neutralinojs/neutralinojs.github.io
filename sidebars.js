@@ -20,6 +20,7 @@ module.exports = {
         'api/computer',
         'api/storage',
         'api/debug',
+        'api/events',
       ],
     },
     {

@@ -13,7 +13,7 @@ Executes a command and returns the output.
 ### Return object (awaited):
 - `output`: String data taken from the both standard output (STDOUT) and standard error (STDERR) streams of the command's process.
 
-```
+```js
 let response = await Neutralino.os.execCommand({
   command: 'python --version'
 });
@@ -29,7 +29,7 @@ Provides the value of a given environment variable.
 ### Return object (awaited):
 - `value`: Value of the given environment variable.
 
-```
+```js
 let response = await Neutralino.os.getEnvar({
   key: 'USER'
 });
@@ -43,11 +43,12 @@ Shows the file open dialog.
 - `title`: Title of the dialog.
 - `isDirectoryMode`: A boolean value to allow directories to be selected. The
   default value is `false`.
+- `filter`: An array of file extensions to filter the file list. Eg: `filter: ['js', 'ts', '*']`.
 
 ### Return object (awaited):
 - `selectedEntry`: The selected value (a folder or directory).
 
-```
+```js
 let response = await Neutralino.os.showDialogOpen({
   title: 'Select a folder',
   isDirectoryMode: true
@@ -64,7 +65,7 @@ Shows the file save dialog.
 ### Return object (awaited):
 - `selectedEntry`: The selected value (a folder or directory).
 
-```
+```js
 let response = await Neutralino.os.showDialogSave({
   title: 'Save to a file'
 });
@@ -78,7 +79,7 @@ Displays a notification message.
 - `summary`: Caption of the notification message.
 - `body`: Content of the notification.
 
-```
+```js
 await Neutralino.os.showNotification({
   summary: 'Hello world',
   body: 'It works!. Have a nice day'
@@ -96,7 +97,7 @@ Displays a message box.
 ### Return object (awaited):
 - `yesButtonClicked`: A boolean values to indentify whether `Yes` button clicked in the `QUESTION` type messages.
 
-```
+```js
 let response = await Neutralino.os.showDialogSave({
   title: 'Save to a file'
 });
@@ -118,7 +119,7 @@ Creates/updates the tray icon and menu.
 - `isDisabled`: A boolean flag to disable/enable a specific menu item.
 - `isChecked`: A boolean flag to mark a specific menu item as selected. 
 
-```
+```js
 let tray = {
   icon: '/resources/icons/trayIcon.png',
   menuItems: [
@@ -128,12 +129,5 @@ let tray = {
   ]
 };
 
-window.Neutralino.events = {
-  onTrayMenuItemClicked: (menuItem) => {
-    console.log(`You've clicked on: ${menuItem}`);
-    // Use menuItem.id to implement menu item-specific logic.
-    // Or, call the setTray(tray) method again to update tray.
-  }
-}
-
 await Neutralino.os.setTray(tray);
+```

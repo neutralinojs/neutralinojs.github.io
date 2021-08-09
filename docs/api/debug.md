@@ -17,7 +17,7 @@ messages on your terminal.
 - `type`: Type of the message. Accepted values are `INFO`, `WARN`, and `ERROR`.
 - `message`: Content to be logged.
 
-```
+```js
 await Neutralino.debug.log({
   type: 'INFO',
   message: 'Test message'

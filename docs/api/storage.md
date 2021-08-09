@@ -21,7 +21,7 @@ Writes data into Neutralinojs shared storage. 
 - `data`: Data as a string. If this value is `null` or `undefined`,
 the specific data record will be erased from the disk.
 
-```
+```js
 await Neutralino.storage.putData({
   bucket: 'userDetails',
   data: JSON.stringify({
@@ -40,7 +40,7 @@ Reads and returns data for a given Neutralinojs shared storage key. 
 - `data`: Data string of the storage record.
 
 
-```
+```js
 let response = await Neutralino.storage.getData({
   bucket: 'userDetails'
 });

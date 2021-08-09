@@ -7,7 +7,7 @@ title: Neutralino.app
 ## app.exit()
 Terminates the running application.
 
-```
+```js
 await Neutralino.app.exit();
 ```
 
@@ -15,7 +15,7 @@ await Neutralino.app.exit();
 The keepAlive method is responsible for saving the Neutralinojs server instance from the automatic termination.
 This method is called automatically from the client library for the browser mode.
 
-```
+```js
 await Neutralino.app.keepAlive();
 ```
 
@@ -25,7 +25,7 @@ Returns the current application configuration as a JSON object.
 ### Return object (awaited):
 - `config`: Application configuration
 
-```
+```js
 await Neutralino.app.getConfig();
 ```
 
@@ -40,7 +40,7 @@ If your application is running the default web browser, this method will open a 
 
 - `url`: URL to be opened (required).
 
-```
+```js
 await Neutralino.app.open({
   url: 'https://neutralino.js.org'
 });

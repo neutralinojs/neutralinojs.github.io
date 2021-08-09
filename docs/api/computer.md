@@ -13,7 +13,7 @@ Provides physical memory details (in megabytes).
   * `available`: Available physical memory.
 
 
-```
+```js
 let ramInfo = await Neutralino.computer.getRamUsage();
 console.log(`Your ram size: ${Math.round(ramInfo.total / 1000000)}GB`);
 ```
