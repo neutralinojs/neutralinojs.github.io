@@ -2,8 +2,14 @@
 title: Neutralino.events
 ---
 
-`Neutralino.app` namespace contains methods related to the native window events handling. This namespace's methods will work
-with the [`window`](/docs/configuration/modes#window) mode only.
+`Neutralino.events` namespace contains methods related to the native events handling. These events are often initiated by the
+Neutralinojs server based on native state changes.
+
+## Event types
+
+| Event id                    | Description                                             | Available modes
+| --------------------------- | ------------------------------------------------------- | --------
+| `trayMenuItemClicked`       | Occurs when the user clicks on a tray menu item.        | `window`
 
 ## events.on(eventName, handler)
 Registers a new event handler. 

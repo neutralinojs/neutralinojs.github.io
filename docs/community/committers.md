@@ -8,6 +8,7 @@ title: Committers
 - [Kasun Vithanage](https://github.com/kasvith) - PMC
 - [Momozor](https://github.com/momozor)
 - [Ali Furkan YILDIZ](https://github.com/uAliFurkanY)
+- [Adriaan](https://github.com/hypherionmc)
 
 See more contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 

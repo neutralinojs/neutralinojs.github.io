@@ -28,3 +28,4 @@ Neutralinojs offers many native operations for you by using this communication m
 - [Neutralino.os](os)
 - [Neutralino.storage](storage)
 - [Neutralino.window](window)
+- [Neutralino.events](events)
