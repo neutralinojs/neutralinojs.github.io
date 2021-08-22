@@ -8,7 +8,7 @@ These JavaScript variables can be used anywhere because these variables are defi
 
 | Variable      | Description                                                   |
 | --- | --- |
-| `NL_OS`       | Operating system name: `Linux`, `Windows`, or `macOS`         |
+| `NL_OS`       | Operating system name: `Linux`, `Windows`, or `Darwin`        |
 | `NL_APPID`    | Application identifier                                        |
 | `NL_PORT`     | Application port                                              |
 | `NL_MODE`     | Mode of the application: `window`, `browser`, or `cloud`      |
