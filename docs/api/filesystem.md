@@ -30,7 +30,7 @@ await Neutralino.filesystem.removeDirectory({
 ```
 
 ## filesystem.writeFile(WriteFileOptions)
-Writes new files with data.
+Writes new text files with data.
 
 ### WriteFileOptions
 - `fileName`: File name.
@@ -43,8 +43,45 @@ await Neutralino.filesystem.writeFile({
 });
 ```
 
+## filesystem.writeBinaryFile(WriteBinaryFileOptions)
+Writes new binary files with data.
+
+### WriteBinaryFileOptions
+- `fileName`: File name.
+- `data`: Content of the binary file as an 
+[ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
+
+```js
+let rawBin = new ArrayBuffer(1);
+let view = new Uint8Array(rawBin);
+view[0] = 64; // Saves ASCII '@' to the binary file
+await Neutralino.filesystem.writeBinaryFile({
+  fileName: './myFile.bin',
+  data: rawBin
+});
+```
+
 ## filesystem.readFile(ReadFileOptions)
-Reads files contains text data.
+Reads text files.
+
+### ReadFileOptions
+
+- `fileName`: File name.
+
+### Return object (awaited):
+- `data`: Content of the binary file as an 
+[ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
+
+```js
+let response = await Neutralino.filesystem.readBinaryFile({
+  fileName: './myFile.bin'
+});
+let view = new Uint8Array(response.data);
+console.log('Binary content: ', view);
+```
+
+## filesystem.readBinaryFile(ReadBinaryFileOptions)
+Reads binary files.
 
 ### ReadFileOptions
 
@@ -89,5 +126,54 @@ Reads a whole directory.
 let response = await Neutralino.filesystem.readDirectory({
   path: NL_PATH
 });
-console.log(`Content: ${response.entries}`);
+console.log('Content: ', response.entries);
 ```
+
+## filesystem.copyFile(source, destination)
+Copies a file to a new destination.
+
+### Parameters
+
+- `source`: Source file as a string.
+- `destination`: Destionation file as a string.
+
+```js
+await Neutralino.filesystem.copyFile({
+  source: './source.txt',
+  destination: './destination.txt'
+});
+```
+
+## filesystem.moveFile(source, destination)
+Moves a file to a new destination.
+
+### Parameters
+
+- `source`: Source file as a string.
+- `destination`: Destionation file as a string.
+
+```js
+await Neutralino.filesystem.moveFile({
+  source: './source.txt',
+  destination: './destination.txt'
+});
+```
+
+## filesystem.getStats(path)
+Returns file statistics for the given path. If the given path doesn't exist or is unable to access, 
+the awaited method will throw an error.
+
+### Parameters
+
+- `path`: File or directory path.
+
+### Return object (awaited):
+- `size`: Size in bytes.
+- `isFile`: `true` if the path represents a normal file.
+- `isDirectory`: `true` if the path represents a directory.
+
+```js
+let response = await Neutralino.filesystem.getStats({
+  path: './sampleVideo.mp4'
+});
+console.log('Stats:', response);

@@ -4,11 +4,27 @@ title: Neutralino.app
 
 `Neutralino.app` namespace contains methods related to the current application instance.
 
-## app.exit()
+## app.exit(exitCode)
 Terminates the running application.
 
+### Parameters
+
+- `exitCode`: An integer value for the process's exit code. The default value is always `0` (success). 
+
 ```js
+await Neutralino.app.exit(130);
+
 await Neutralino.app.exit();
+```
+
+## app.killProcess()
+Kills the application process. If the application becomes unresponsive, 
+you can use this to terminate the process instantly. However, we recommend you 
+to use the `exit()` method to close your application properly.
+
+
+```js
+await Neutralino.app.killProcess();
 ```
 
 ## app.keepAlive()
@@ -33,7 +49,7 @@ await Neutralino.app.getConfig();
 Opens a URL with the default web browser. 
 
 :::tip
-If your application is running the default web browser, this method will open a new tab.
+If your application is running on the default web browser, this method will open a new tab.
 :::
 
 ### OpenActionOptions

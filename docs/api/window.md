@@ -136,3 +136,33 @@ given DOM element. This feature is suitable to make custom window bars along wit
 ```js
 await Neutralino.window.setDraggableRegion('myCustomTitleBar');
 ```
+
+## window.setSize(WindowSizeOptions)
+Converts a give DOM element to a draggable region. The user will be able to drag the native window by dragging the
+given DOM element. This feature is suitable to make custom window bars along with the [borderless mode](../configuration/neutralino.config.json#modeswindowborderless-boolean). 
+
+### WindowSizeOptions
+
+- `width`: Window width in pixels.
+- `height`: Window height in pixels.
+- `minWidth`: Minimum width of the window in pixels.
+- `minHeight`: Minimum height of the window in pixels.
+- `maxWidth`: Maximum width of the window in pixels.
+- `maxHeight`: Maximum height of the window in pixels.
+- `resizable`: A boolean value to make the window resizable or fixed.
+
+This method always expects width and height couples. 
+For example, if you are sending `minWidth`, you should send `minHeight` too.
+
+```js
+await Neutralino.window.setSize({
+    width: 500,
+    height: 200,
+    maxWidth: 600,
+    maxHeight: 400
+});
+
+await Neutralino.window.setSize({
+    resizable: false
+});
+```
