@@ -122,14 +122,16 @@ export default function Home() {
                 It lets you develop lightweight, blazing-fast, and portable applications using JavaScript,
                 HTML, and CSS.
                 <br/><br/>
-                In Electron and NWjs, Embedded Chromium and Node make simple apps bloaty. Neutralinojs
-                offers a lightweight and portable SDK which is a lightweight alternative for Electron and NW.js.
-                Neutralinojs implements a RESTful API for native operations, and it embeds a static web server to serve the web content.
-                Also, it offers a built-in JavaScript client library for developers.
+                In Electron and NWjs, you have to install NodeJs and hundreds of dependency libraries. 
+                Embedded Chromium and Node make simple apps bloaty. Neutralinojs offers a lightweight and 
+                portable SDK which is an alternative for Electron and NW.js. Neutralinojs doesn't bundle Chromium and uses the existing 
+                web browser library in the operating system (Eg: gtk-webkit2 on Linux). 
+                Neutralinojs implements a RESTful API for native operations and embeds a static web 
+                server to serve the web content. Also, it offers a built-in <Link to="https://github.com/neutralinojs/neutralino.js">JavaScript client library</Link> for developers.
                 <br/><br/>
-                If you can build a website, you can build cross-platform desktop apps too - because Neutralinojs is a framework for
+                If you can build a website, you can build cross-platform desktop apps too because Neutralinojs is a framework for
                 creating native desktop applications with web technologies like JavaScript, HTML, and CSS. You can indeed use your
-                favorite frontend framework (Angular, React, Svelte, and Vue) for building your next Neutralinojs app.
+                favorite frontend framework (Angular, React, Svelte, Vue, etc.) for building your next Neutralinojs app.
               </p>
             </div>
             <div className="col col--12">
