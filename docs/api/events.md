@@ -10,7 +10,7 @@ Neutralinojs server based on native state changes.
 | Event id                    | Description                                             | Available modes
 | --------------------------- | ------------------------------------------------------- | --------
 | `trayMenuItemClicked`       | Occurs when the user clicks on a tray menu item.        | `window`
-| `windowClose`               | Occurs when the user close the window.                  | `window`
+| `windowClose`               | Occurs when the user closes the window.                 | `window`
 
 ## events.on(eventName, handler)
 Registers a new event handler. 
