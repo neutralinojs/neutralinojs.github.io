@@ -20,7 +20,8 @@ Registers a new event handler. 
 
 - `eventName`: Name of the event.
 - `handler`: A function that will be called when the given event occurs. Neutralinojs will call the handler with a 
-  [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) instance by attaching additional data to the `detail` key.
+  [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) instance by attaching additional data 
+  to the `detail` key.
 
 ```js
 function onTrayMenuItemClicked(event) {

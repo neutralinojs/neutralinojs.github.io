@@ -69,15 +69,13 @@ Reads text files.
 - `fileName`: File name.
 
 ### Return object (awaited):
-- `data`: Content of the binary file as an 
-[ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
+- `data`: File content.
 
 ```js
-let response = await Neutralino.filesystem.readBinaryFile({
-  fileName: './myFile.bin'
+let response = await Neutralino.filesystem.readFile({
+  fileName: './myFile.txt'
 });
-let view = new Uint8Array(response.data);
-console.log('Binary content: ', view);
+console.log(`Content: ${response.data}`);
 ```
 
 ## filesystem.readBinaryFile(ReadBinaryFileOptions)
@@ -88,13 +86,15 @@ Reads binary files.
 - `fileName`: File name.
 
 ### Return object (awaited):
-- `data`: File content.
+- `data`: Content of the binary file as an 
+[ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
 
 ```js
-let response = await Neutralino.filesystem.readFile({
-  fileName: './myFile.txt'
+let response = await Neutralino.filesystem.readBinaryFile({
+  fileName: './myFile.bin'
 });
-console.log(`Content: ${response.data}`);
+let view = new Uint8Array(response.data);
+console.log('Binary content: ', view);
 ```
 
 ## filesystem.removeFile(RemoveFileOptions)
@@ -161,7 +161,7 @@ await Neutralino.filesystem.moveFile({
 
 ## filesystem.getStats(path)
 Returns file statistics for the given path. If the given path doesn't exist or is unable to access, 
-the awaited method will throw an error.
+the awaited method will throw an error. Therefore, you can use this method to check the existance of a file or directory.
 
 ### Parameters
 
