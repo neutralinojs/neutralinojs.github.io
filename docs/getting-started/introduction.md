@@ -25,7 +25,7 @@ See comparisons:
 - Less resource consumption compared to chromium-node-based frameworks.
 - Cross-platform: Linux, Windows, macOS, and Web.
 
-## Supported platforms and CPU archirectures
+## Supported platforms and CPU architectures
 
 neu CLI provides you prebuilt binaries for the following platforms and CPU architectures. We will
 add binaries for missing CPU architectures soon. However, you can build Neutralinojs binaries from the source
