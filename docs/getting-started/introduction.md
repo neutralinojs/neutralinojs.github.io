@@ -5,7 +5,9 @@ slug: /
 
 ## What is Neutralinojs?
 
-Neutralinojs is a lightweight and portable application development framework. It lets you develop cross-platform applications using JavaScript, HTML and CSS. Neutralinojs applications will work on Linux, Windows, macOS, and Web.
+Neutralinojs is a lightweight and portable application development framework. 
+It lets you develop cross-platform applications using JavaScript, HTML and CSS. Neutralinojs applications 
+will work on Linux, Windows, macOS, and Web.
 
 ## Why Neutralinojs?
 
@@ -22,3 +24,17 @@ See comparisons:
 - Native functions support: Read files, run system commands, etc.
 - Less resource consumption compared to chromium-node-based frameworks.
 - Cross-platform: Linux, Windows, macOS, and Web.
+
+## Supported platforms and CPU archirectures
+
+neu CLI provides you prebuilt binaries for the following platforms and CPU architectures. We will
+add binaries for missing CPU architectures soon. However, you can build Neutralinojs binaries from the source
+on almost all desktop operating systems out there.
+
+- Linux: x64, ia32, and armhf.
+- macOS: x64 and arm64 (powered by Rosetta).
+- Windows: x64.
+- BSD: Possible to build from the source via `build_freebsd.sh`
+- Web: Deploy your application into a cloud service with a x64 Linux instance.
+
+

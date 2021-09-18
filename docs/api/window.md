@@ -166,3 +166,41 @@ await Neutralino.window.setSize({
     resizable: false
 });
 ```
+
+## window.create(url, WindowOptions)
+Creates a native window. You can use this method to create new window for your multi-window Neutralinojs app.
+Neutralinojs spawns a new process for each native window. Therefore, the new window works as an isolated app
+once the window is created. 
+
+However, you can build communication streams between windows with the 
+[storage API](./storage.md).
+
+### Parameters
+
+- `url`: URL to be loaded. Eg: `/resources/aboutWindow.html`.
+- `options`: an instance of `WindowOptions` type.
+
+### WindowOptions
+
+- `title`: Window title.
+- `icon`: Window icon path.
+- `fullScreen`: Sets full screen mode.
+- `alwaysOnTop`: Activates the top-most mode.
+- `enableInspector`: Activates developer tools and opens the web inspector window.
+- `borderless`: Makes the window borderless.
+- `maximize`: Launches the window maximized.
+- `hidden`: Hides the window.
+- `maximizable`: Makes the window maximizable or not.
+- `processArgs`: Additional command-line arguments for the new window process.
+
+
+```js
+await Neutralino.window.create('/resources/aboutWindow.html', {
+    icon: '/resources/icons/aboutIcon.png',
+    enableInspector: false,
+    width: 500,
+    height: 300,
+    maximizable: false,
+    processArgs: '--window-id=W_ABOUT'
+});
+```
