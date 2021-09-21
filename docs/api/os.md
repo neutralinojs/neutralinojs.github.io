@@ -59,7 +59,7 @@ console.log(`You've selected: ${response.selectedEntry}`);
 ## os.showDialogSave(DialogSaveOptions)
 Shows the file save dialog.
 
-### DialogOpenOptions
+### DialogSaveOptions
 - `title`: Title of the dialog.
 
 ### Return object (awaited):
