@@ -9,6 +9,7 @@ title: Committers
 - [Momozor](https://github.com/momozor)
 - [Ali Furkan YILDIZ](https://github.com/uAliFurkanY)
 - [Adriaan](https://github.com/hypherionmc)
+- [Jean-marie Vrecq](https://github.com/corbane)
 
 See more contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
