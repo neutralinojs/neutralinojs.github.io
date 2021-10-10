@@ -32,9 +32,9 @@ neu run
 ```
 
 :::info
-If you are on Windows, you might get an empty white screen.
-The reason is that accessing localhost from a UWP context is disabled by default.
-Run the following command with administrative privileges on the command prompt. 
+If you are on Windows, you might get a blank white screen.
+The reason for this is, accessing localhost from a UWP context is disabled by default.
+Run the following command with administrative privileges on the command prompt to fix this.
 ```
 CheckNetIsolation.exe LoopbackExempt -a -n="Microsoft.Win32WebViewHost_cw5n1h2txyewy"
 ```
