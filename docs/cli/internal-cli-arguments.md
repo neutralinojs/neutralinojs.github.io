@@ -96,7 +96,7 @@ Overrides the window's maximum height.
 Overrides the window's initial resizability status. 
 
 :::tip
-The right hand value is optinal for the for boolean type CLI arguments. Therefore, you can use `--window-full-screen` 
+The right hand value is optional for the for boolean type CLI arguments. Therefore, you can use `--window-full-screen` 
 instead of `--window-full-screen=true`. However, if you define `window.fullScreen` as `true` and you need to override it as 
 `false` you have to use `--window-full-screen=false`.
 :::
