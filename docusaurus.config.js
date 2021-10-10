@@ -52,6 +52,11 @@ module.exports = {
           position: 'left',
         },
         {
+          href: 'https://github.com/neutralinojs/neutralinojs/milestone/22',
+          label: 'v3 is coming soon with a better API!',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/neutralinojs',
           label: 'GitHub',
           position: 'right',
