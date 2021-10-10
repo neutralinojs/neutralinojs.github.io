@@ -17,7 +17,7 @@ These JavaScript variables can be used anywhere because these variables are defi
 | `NL_CWD`      | Current working directory                                     |
 | `NL_PATH`     | Application path                                              |
 | `NL_ARGS`     | Command-line arguments                                        |
-| `NL_PID`      | Current process's identifier                                  |
+| `NL_PID`      | Identifier of the current process                             |
 
 
 ## Custom global variables
