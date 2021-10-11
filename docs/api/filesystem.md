@@ -135,7 +135,7 @@ Copies a file to a new destination.
 ### Parameters
 
 - `source`: Source file as a string.
-- `destination`: Destionation file as a string.
+- `destination`: Destination file as a string.
 
 ```js
 await Neutralino.filesystem.copyFile({
@@ -150,7 +150,7 @@ Moves a file to a new destination.
 ### Parameters
 
 - `source`: Source file as a string.
-- `destination`: Destionation file as a string.
+- `destination`: Destination file as a string.
 
 ```js
 await Neutralino.filesystem.moveFile({
@@ -161,7 +161,7 @@ await Neutralino.filesystem.moveFile({
 
 ## filesystem.getStats(path)
 Returns file statistics for the given path. If the given path doesn't exist or is unable to access, 
-the awaited method will throw an error. Therefore, you can use this method to check the existance of a file or directory.
+the awaited method will throw an error. Therefore, you can use this method to check the existence of a file or directory.
 
 ### Parameters
 
