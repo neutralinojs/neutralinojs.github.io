@@ -160,8 +160,7 @@ await Neutralino.filesystem.moveFile({
 ```
 
 ## filesystem.getStats(path)
-Returns file statistics for the given path. If the given path doesn't exist or is unable to access, 
-the awaited method will throw an error. Therefore, you can use this method to check the existance of a file or directory.
+Returns file statistics for the given path. If the given path doesn't exist or is inaccessible, an error is thrown. Therefore, you can use this method to check for the existance of a file or directory.
 
 ### Parameters
 
