@@ -2,7 +2,7 @@
 title: Neutralino.window
 ---
 
-`Neutralino.window` namespace contains methods related to the current native window instance. 
+The `Neutralino.window` namespace contains methods related to the current native window instance. 
 This namespace's methods will work only for the [`window`](/docs/configuration/modes#window) mode.
 
 ## window.setTitle(title)
@@ -126,8 +126,7 @@ await Neutralino.window.setIcon(icon);
 ```
 
 ## window.setDraggableRegion(domId)
-Converts a give DOM element to a draggable region. The user will be able to drag the native window by dragging the
-given DOM element. This feature is suitable to make custom window bars along with the [borderless mode](../configuration/neutralino.config.json#modeswindowborderless-boolean). 
+Converts a given DOM element to a draggable region. The user will be able to drag the native window by dragging the given DOM element. This feature is suitable to make custom window bars along with the [borderless mode](../configuration/neutralino.config.json#modeswindowborderless-boolean). 
 
 ### Parameters
 
@@ -138,8 +137,7 @@ await Neutralino.window.setDraggableRegion('myCustomTitleBar');
 ```
 
 ## window.setSize(WindowSizeOptions)
-Converts a give DOM element to a draggable region. The user will be able to drag the native window by dragging the
-given DOM element. This feature is suitable to make custom window bars along with the [borderless mode](../configuration/neutralino.config.json#modeswindowborderless-boolean). 
+This method sets the size of the window.
 
 ### WindowSizeOptions
 
@@ -152,7 +150,7 @@ given DOM element. This feature is suitable to make custom window bars along wit
 - `resizable`: A boolean value to make the window resizable or fixed.
 
 This method always expects width and height couples. 
-For example, if you are sending `minWidth`, you should send `minHeight` too.
+For example, if you are setting `minWidth`, you should set `minHeight` too.
 
 ```js
 await Neutralino.window.setSize({
@@ -169,11 +167,9 @@ await Neutralino.window.setSize({
 
 ## window.create(url, WindowOptions)
 Creates a native window. You can use this method to create new window for your multi-window Neutralinojs app.
-Neutralinojs spawns a new process for each native window. Therefore, the new window works as an isolated app
-once the window is created. 
+Neutralinojs spawns a new process for each native window. Therefore, the new window works as an isolated app once the window is created. 
 
-However, you can build communication streams between windows with the 
-[storage API](./storage.md).
+However, you can build communication streams between windows with the [storage API](./storage.md).
 
 ### Parameters
 
