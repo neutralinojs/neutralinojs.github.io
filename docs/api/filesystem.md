@@ -135,7 +135,7 @@ Copies a file to a new destination.
 ### Parameters
 
 - `source`: Source file as a string.
-- `destination`: Destionation file as a string.
+- `destination`: Destination file as a string.
 
 ```js
 await Neutralino.filesystem.copyFile({
@@ -150,7 +150,7 @@ Moves a file to a new destination.
 ### Parameters
 
 - `source`: Source file as a string.
-- `destination`: Destionation file as a string.
+- `destination`: Destination file as a string.
 
 ```js
 await Neutralino.filesystem.moveFile({
