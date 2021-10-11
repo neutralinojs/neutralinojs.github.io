@@ -95,7 +95,7 @@ Displays a message box.
 - `type`: Message box type. Accepted values are `WARN`, `ERROR`, `INFO`, and `QUESTION`.
 
 ### Return object (awaited):
-- `yesButtonClicked`: A boolean values to indentify whether `Yes` button clicked in the `QUESTION` type messages.
+- `yesButtonClicked`: A boolean value to identify whether `Yes` button is clicked in `QUESTION` type messages.
 
 ```js
 let response = await Neutralino.os.showDialogSave({

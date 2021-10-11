@@ -16,7 +16,7 @@ See comparisons:
 - [Neutralinojs vs Electron vs NW.JS vs Tauri vs NodeGui vs Flutter vs .Net MAUI](https://github.com/Elanis/web-to-desktop-framework-comparison)
 - [Neutralinojs vs Electron vs NW.js (2018)](https://github.com/neutralinojs/evaluation)
 
-## Highlighted Features
+## Highlighted features
 
 - Fully portable development kit.
 - No compilation required for developers.
