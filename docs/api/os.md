@@ -8,7 +8,7 @@ title: Neutralino.os
 Executes a command and returns the output.
 
 ### ExecCommandOptions
-- `command`: The command needs to be executed.
+- `command`: The command that is to be executed.
 
 ### Return object (awaited):
 - `output`: String data taken from the both standard output (STDOUT) and standard error (STDERR) streams of the command's process.

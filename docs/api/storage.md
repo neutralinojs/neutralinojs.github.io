@@ -2,7 +2,7 @@
 title: Neutralino.storage
 ---
 
-Neutralinojs has an in-built shared key-value storage. It's like a
+Neutralinojs has a built-in shared key-value storage. It's like a
 global [`LocalStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) for all Neutralinojs modes.
 `Neutralinos.storage` exposes methods for interacting with this storage feature.
 
@@ -18,8 +18,7 @@ Writes data into Neutralinojs shared storage. 
 ### StorageWriterOptions
 
 - `bucket`: A key to indentify data.
-- `data`: Data as a string. If this value is `null` or `undefined`,
-the specific data record will be erased from the disk.
+- `data`: Data as a string. If this value is `null` or `undefined`, the specific data record will be erased from the disk.
 
 ```js
 await Neutralino.storage.putData({

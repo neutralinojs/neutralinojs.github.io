@@ -19,7 +19,7 @@ await Neutralino.app.exit();
 
 ## app.killProcess()
 Kills the application process. If the application becomes unresponsive, 
-you can use this to terminate the process instantly. However, we recommend you 
+you can use this to terminate the process instantly. It is recommended
 to use the `exit()` method to close your application properly.
 
 
@@ -49,7 +49,7 @@ await Neutralino.app.getConfig();
 Opens a URL with the default web browser. 
 
 :::tip
-If your application is running on the default web browser, this method will open a new tab.
+If your application is running in the default web browser, this method will open a new tab.
 :::
 
 ### OpenActionOptions
