@@ -44,7 +44,7 @@ const features = [
     imageUrl: 'img/undraw_upgrade_06a0.svg',
     description: (
       <>
-        An typical uncompressed Neutralinojs app is only ~2MB, and a compressed app size is ~0.5MB. Indeed,
+        A typical uncompressed Neutralinojs app is only ~2MB, and a compressed app size is ~0.5MB. Indeed,
         it will not consume either physical memory or storage like any other chromium-based cross-platform application development framework.
       </>
     ),
