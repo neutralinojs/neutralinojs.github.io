@@ -17,7 +17,7 @@ Writes data into Neutralinojs shared storage. 
 
 ### StorageWriterOptions
 
-- `bucket`: A key to indentify data.
+- `bucket`: A key to identify data.
 - `data`: Data as a string. If this value is `null` or `undefined`, the specific data record will be erased from the disk.
 
 ```js
