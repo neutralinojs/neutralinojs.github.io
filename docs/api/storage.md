@@ -12,36 +12,31 @@ root directory of your application. If you want to clear all data records,
 delete the `.storage` directory.
 :::
 
-## storage.putData(StorageWriterOptions)
+## storage.setData(key, data)
 Writes data into Neutralinojs shared storage. 
 
-### StorageWriterOptions
+### Parameters
 
-- `bucket`: A key to identify data.
+- `key`: A unique identifier.
 - `data`: Data as a string. If this value is `null` or `undefined`, the specific data record will be erased from the disk.
 
 ```js
-await Neutralino.storage.putData({
-  bucket: 'userDetails',
-  data: JSON.stringify({
-    username: 'TestValue'
-  })
+await Neutralino.storage.setData('userDetails', 
+                        JSON.stringify({ username: 'TestValue'})
 });
 ```
 
-## storage.getData(StorageReaderOptions)
+## storage.getData(key)
 Reads and returns data for a given Neutralinojs shared storage key. 
 
-### StorageReaderOptions
-- `bucket`: The key of the storage data record.
+### Parameters
+- `key`: Storage data record identifier.
 
 ### Return object (awaited):
-- `data`: Data string of the storage record.
+Data string of the storage record.
 
 
 ```js
-let response = await Neutralino.storage.getData({
-  bucket: 'userDetails'
-});
-console.log(`Data: ${response.data}`);
+let data = await Neutralino.storage.getData('userDetails');
+console.log(`Data: ${data}`);
 ```

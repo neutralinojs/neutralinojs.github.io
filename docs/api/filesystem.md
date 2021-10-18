@@ -4,50 +4,45 @@ title: Neutralino.filesystem
 
 `Neutralino.filesystem` namespace contains methods for handling files.
 
-## filesystem.createDirectory(CreateDirectoryOptions)
-Creates a new directory.
+## filesystem.createDirectory(path)
+Creates a new directory. Throws `NE_FS_DIRCRER` if directory creation is not possible.
 
-### CreateDirectoryOptions
+### Parameters
 - `path`: New directory path.
 
 ```js
-await Neutralino.filesystem.createDirectory({
-  path: './newDirectory',
-});
+await Neutralino.filesystem.createDirectory('./newDirectory');
+
+await Neutralino.filesystem.createDirectory(NL_PATH + '/myFolder');
 ```
 
-## filesystem.removeDirectory(RemoveDirectoryOptions)
-Removes given directories.
+## filesystem.removeDirectory(path)
+Removes a given directory. Throws `NE_FS_RMDIRER` if the removal is not possible.
 
-### RemoveDirectoryOptions
+### Parameters
 
 - `path`: Directory path.
 
 ```js
-await Neutralino.filesystem.removeDirectory({
-  path: './tmpDirectory',
-});
+await Neutralino.filesystem.removeDirectory('./tmpDirectory');
 ```
 
-## filesystem.writeFile(WriteFileOptions)
-Writes new text files with data.
+## filesystem.writeFile(filename, data)
+Writes a text file. Throws `NE_FS_FILWRER` for file write errors.
 
-### WriteFileOptions
-- `fileName`: File name.
+### Parameters
+- `filename`: Filename.
 - `data`: Content of the file in string format.
 
 ```js
-await Neutralino.filesystem.writeFile({
-  fileName: './myFile.txt',
-  data: 'Sample content'
-});
+await Neutralino.filesystem.writeFile('./myFile.txt', 'Sample content');
 ```
 
-## filesystem.writeBinaryFile(WriteBinaryFileOptions)
-Writes new binary files with data.
+## filesystem.writeBinaryFile(filename, data)
+Writes a binary file. Throws `NE_FS_FILWRER` for file write errors.
 
-### WriteBinaryFileOptions
-- `fileName`: File name.
+### Parameters
+- `filename`: Filename.
 - `data`: Content of the binary file as an 
 [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
 
@@ -55,112 +50,99 @@ Writes new binary files with data.
 let rawBin = new ArrayBuffer(1);
 let view = new Uint8Array(rawBin);
 view[0] = 64; // Saves ASCII '@' to the binary file
-await Neutralino.filesystem.writeBinaryFile({
-  fileName: './myFile.bin',
-  data: rawBin
-});
+
+await Neutralino.filesystem.writeBinaryFile('./myFile.bin', rawBin);
 ```
 
-## filesystem.readFile(ReadFileOptions)
-Reads text files.
+## filesystem.readFile(filename, data)
+Reads a text file. Throws `NE_FS_FILRDER` for file read errors.
 
-### ReadFileOptions
+### Parameters
 
-- `fileName`: File name.
+- `filename`: Filename.
 
 ### Return object (awaited):
-- `data`: File content.
+File content.
 
 ```js
-let response = await Neutralino.filesystem.readFile({
-  fileName: './myFile.txt'
-});
-console.log(`Content: ${response.data}`);
+let data = await Neutralino.filesystem.readFile('./myFile.txt');
+console.log(`Content: ${data}`);
 ```
 
-## filesystem.readBinaryFile(ReadBinaryFileOptions)
-Reads binary files.
+## filesystem.readBinaryFile(filename)
+Reads binary files. Throws `NE_FS_FILRDER` for file read errors.
 
-### ReadFileOptions
+### Parameters
 
-- `fileName`: File name.
+- `filename`: Filename.
 
 ### Return object (awaited):
-- `data`: Content of the binary file as an 
+- Content of the binary file as an 
 [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
 
 ```js
-let response = await Neutralino.filesystem.readBinaryFile({
+let data = await Neutralino.filesystem.readBinaryFile({
   fileName: './myFile.bin'
 });
-let view = new Uint8Array(response.data);
+let view = new Uint8Array(data);
+
 console.log('Binary content: ', view);
 ```
 
-## filesystem.removeFile(RemoveFileOptions)
-Removes given file.
+## filesystem.removeFile(filename)
+Removes given file. Throws `NE_FS_FILRMER` for file removal errors.
 
-### RemoveFileOptions
-- `fileName`: File name.
+### Parameters
+- `filename`: Filename.
 
 
 ```js
-await Neutralino.filesystem.removeFile({
-  fileName: './myFile.txt'
-});
+await Neutralino.filesystem.removeFile('./myFile.txt');
 ```
 
-## filesystem.readDirectory(ReadFileOptions)
-Reads a whole directory.
+## filesystem.readDirectory(path)
+Reads directory contents. Throws `NE_FS_NOPATHE` if the path doesn't exist.
 
-### ReadDirectoryOptions
+### Parameters
 
-- `path`: File name.
+- `path`: File/directory path.
 
 ### Return object (awaited):
-- `entries`: An array of sub-directories and files.
-  * `entry`: file name.
-  * `type`: The type of the entry (`FILE` or `DIRECTORY`).
+  - `entry`: file name.
+  - `type`: The type of the entry (`FILE` or `DIRECTORY`).
 
 ```js
-let response = await Neutralino.filesystem.readDirectory({
-  path: NL_PATH
-});
-console.log('Content: ', response.entries);
+let entries = await Neutralino.filesystem.readDirectory(NL_PATH);
+console.log('Content: ', entries);
 ```
 
 ## filesystem.copyFile(source, destination)
-Copies a file to a new destination.
+Copies a file to a new destination. Throws `NE_FS_COPYFER` if the system cannot copy the file.
 
 ### Parameters
 
-- `source`: Source file as a string.
-- `destination`: Destination file as a string.
+- `source`: Source path.
+- `destination`: Destination path.
 
 ```js
-await Neutralino.filesystem.copyFile({
-  source: './source.txt',
-  destination: './destination.txt'
-});
+await Neutralino.filesystem.copyFile('./source.txt', './destination.txt');
 ```
 
 ## filesystem.moveFile(source, destination)
-Moves a file to a new destination.
+Moves a file to a new destination. Throws `NE_FS_MOVEFER` if the system cannot move the file.
 
 ### Parameters
 
-- `source`: Source file as a string.
-- `destination`: Destination file as a string.
+- `source`: Source path.
+- `destination`: Destination path.
 
 ```js
-await Neutralino.filesystem.moveFile({
-  source: './source.txt',
-  destination: './destination.txt'
-});
+await Neutralino.filesystem.moveFile('./source.txt', './destination.txt');
 ```
 
 ## filesystem.getStats(path)
-Returns file statistics for the given path. If the given path doesn't exist or is inaccessible, an error is thrown. Therefore, you can use this method to check for the existance of a file or directory.
+Returns file statistics for the given path. If the given path doesn't exist or is inaccessible,`NE_FS_NOPATHE` is thrown. 
+Therefore, you can use this method to check for the existance of a file or directory.
 
 ### Parameters
 
@@ -172,7 +154,5 @@ Returns file statistics for the given path. If the given path doesn't exist or i
 - `isDirectory`: `true` if the path represents a directory.
 
 ```js
-let response = await Neutralino.filesystem.getStats({
-  path: './sampleVideo.mp4'
-});
-console.log('Stats:', response);
+let stats = await Neutralino.filesystem.getStats('./sampleVideo.mp4');
+console.log('Stats:', stats);

@@ -108,7 +108,7 @@ Insert the following content into your application resource files.
     const key = NL_OS == 'Windows' ? 'USERNAME' : 'USER';
     let value = '';
     try {
-        value = (await Neutralino.os.getEnvar({ key })).value;
+        value = await Neutralino.os.getEnv(key);
     }
     catch(e) {
         console.error(e);
@@ -134,14 +134,13 @@ Congrats! your application works.
 ![mypp is running on Linux](../assets/myapp-running-linux.png)
 
 :::info
-
-For debugging purposes, you can use `neu listen` command.
-The `listen` command will reload your application when there is a change in application resources.
+The `neu run` command will reload your application when there is a change in application resources.
+Try to change your `index.html` while the application is running.
 :::
 
 ## Step 4: Building your application 
-To make portable binaries for your application, we can use the build command.
-Enter the following command on your terminal to make final binaries. 
+To make portable binaries for your application, we can use the `build` command.
+Enter the following command on your terminal to make final binaries for all supported platforms. 
 
 ```
 neu build --release
@@ -160,3 +159,8 @@ following topics next.
 - [Global variables](../developer-environment/global-variables)
 - [Application modes](../configuration/modes)
 - [Native API](../api/introduction)
+
+We've built the above example application with vanilla JavaScript. However, you can use your favorite frontend
+framework to build Neutralinojs apps. 
+
+Check more details about frontend framework support [here](../configuration/project-structure#developing-apps-with-frontend-frameworks).

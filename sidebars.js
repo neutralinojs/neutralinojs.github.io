@@ -21,6 +21,7 @@ module.exports = {
         'api/storage',
         'api/debug',
         'api/events',
+        'api/error-codes'
       ],
     },
     {

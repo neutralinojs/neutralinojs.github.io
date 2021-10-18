@@ -29,7 +29,7 @@ You can place your frontend framework code into a separate directory (or root di
 After that, you can set the default build path of the frontend framework to your Neutralinojs resource directory. 
 
 :::info
-If your application is launched via the neu listen command, when you build a new version of your frontend
+If your application is launched via the `neu run` command, when you build a new version of your frontend
 framework code, Neutralinojs will automatically reload the application.
 :::
 

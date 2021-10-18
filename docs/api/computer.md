@@ -8,9 +8,9 @@ title: Neutralino.computer
 Provides physical memory details (in megabytes).
 
 ### Return object (awaited):
-- `ram`
-  * `total`: Total physical memory.
-  * `available`: Available physical memory.
+
+  - `total`: Total physical memory.
+  - `available`: Available physical memory.
 
 
 ```js

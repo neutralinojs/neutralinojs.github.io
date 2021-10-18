@@ -2,15 +2,19 @@
 title: Neutralino.events
 ---
 
-`Neutralino.events` namespace contains methods related to the native events handling. These events are often initiated by the
-Neutralinojs server based on native state changes.
+`Neutralino.events` namespace contains methods related to the native events handling. These events are often initiated 
+by the Neutralinojs server based on native state changes.
 
 ## Event types
 
 | Event id                    | Description                                             | Available modes
 | --------------------------- | ------------------------------------------------------- | --------
-| `trayMenuItemClicked`       | Occurs when the user clicks on a tray menu item.        | `window`
+| `ready`                     | Occurs when the client library is ready to communicate with the framework.  | `all`
+| `trayMenuItemClicked`       | Occurs when the user clicks on a tray menu item.        | `all`
 | `windowClose`               | Occurs when the user closes the window.                 | `window`
+| `serverOffline`             | Occurs when the JavaScript API cannot communicate with the application process. | `all`
+| `clientConnect`             | Occurs when a new client access the application.        | `all`
+| `clientDisconnect`          | Occurs when a connected client leaves the application.  | `all`
 
 ## events.on(eventName, handler)
 Registers a new event handler. 
@@ -50,7 +54,7 @@ Dispatches a new event. Neutralinojs server uses this JavaScript function call i
 ### Parameters
 
 - `eventName`: Name of the event.
-- `data`: Additional data for the event.
+- `data` (optional): Additional data for the event.
 
 ```js
 await Neutralino.events.dispatch('myTestEvent', {myData: 'Test data'});

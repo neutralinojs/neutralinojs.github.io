@@ -187,6 +187,7 @@ However, you can build communication streams between windows with the [storage A
 - `maximize`: Launches the window maximized.
 - `hidden`: Hides the window.
 - `maximizable`: Makes the window maximizable or not.
+- `exitProcessOnClose`: Exits the application process when the user clicks the window's close button.
 - `processArgs`: Additional command-line arguments for the new window process.
 
 
@@ -197,6 +198,7 @@ await Neutralino.window.create('/resources/aboutWindow.html', {
     width: 500,
     height: 300,
     maximizable: false,
+    exitProcessOnClose: true,
     processArgs: '--window-id=W_ABOUT'
 });
 ```

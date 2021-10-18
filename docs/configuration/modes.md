@@ -19,7 +19,7 @@ Example scenario: You can make a web application to control your computer via mo
 :::
 
 :::danger
-Make sure that you are blocking critical native operations via
-`nativeBlockList`. Also, if you started the application with administrator
+Make sure that you are blocking or allowing critical native operations via
+`nativeBlockList`, `nativeAllowList` respectively. Also, if you started the application with administrator
 access, your web application will have the same permission level.
 :::

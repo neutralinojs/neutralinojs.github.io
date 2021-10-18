@@ -26,7 +26,7 @@ Creates a new Neutralinojs app using the [minimal template](https://github.com/n
 This command will create the `dist` folder. Thereafter, it will create the `res.neu` resource file from your application resources.
 Finally, this command will create a zip file of the application bundle only if `--release` flag is provided.
 
-### `neu run [--mode=<mode>, --disable-auto-realod]`
+### `neu run [--mode=<mode>, --disable-auto-realod, --arch=<arch>]`
 Executes the current application (This will execute specific binary depending on your operating system).
 This command will change execution permissions (using the `chmod` command) of the binary files on Linux and macOS.
 It will enable live-reload for the current application. In other words, when a modification happens to application resources, the Neutralinojs application will be reloaded automatically.
@@ -34,6 +34,9 @@ It will enable live-reload for the current application. In other words, when a m
 ### `neu update`
 This command will update the existing Neutralinojs binaries and client library from the internet.
 
+### `neu version`
+Prints all version information. If this command is executed from a Neutralinojs application directory,
+you will see project-specific version details. Otherwise, you will see global version details.
 
 ## Change log
 Please check the version history from [npm](https://www.npmjs.com/package/@neutralinojs/neu).

@@ -4,22 +4,23 @@ title: Neutralino.debug
 
 `Neutralino.debug` namespace contains application debugging utilities.
 
-## debug.log(LoggerOptions)
-Writes messages to `neutralino.log` file. 
+## debug.log(message, type)
+Writes messages to `neutralinojs.log` file or/and standard output streams. 
 
 :::tip
-If your application is running via `neu run` or `neu listen`, you can see log
+If your application is running via `neu run`, you can see log
 messages on your terminal.
 :::
 
-### LoggerOptions
+### Parameters
 
-- `type`: Type of the message. Accepted values are `INFO`, `WARN`, and `ERROR`.
 - `message`: Content to be logged.
+- `type` (optional): Type of the message. Accepted values are `INFO`, `WARNING`, and `ERROR`. The default value is `INFO`.
 
 ```js
-await Neutralino.debug.log({
-  type: 'INFO',
-  message: 'Test message'
-});
+await Neutralino.debug.log('Hello Neutralinojs');
+
+await Neutralino.debug.log('An error occured', 'ERROR');
+
+await Neutralino.debug.log('A warning message', 'WARNING');
 ```

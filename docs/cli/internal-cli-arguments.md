@@ -35,6 +35,14 @@ will automatically reload the application. The `neu listen` command executes Neu
 
 Overrides the URL on the application.
 
+### `--logging-enabled=<true|false>`
+
+Overrides the logging feature status.
+
+### `--logging-write-to-log-file=<true|false>`
+
+Overrides the log file feature status.
+
 ### `--window-title=<title>`
 
 Overrides the window title.
@@ -94,6 +102,10 @@ Overrides the window's maximum height.
 ### `--window-resizable=<true|false>`
 
 Overrides the window's initial resizability status. 
+
+### `--window-exit-process-on-close=<true|false>`
+
+Overrides the close button's behavior.
 
 :::tip
 The right hand value is optional for the for boolean type CLI arguments. Therefore, you can use `--window-full-screen` 

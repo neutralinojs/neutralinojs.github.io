@@ -39,25 +39,26 @@ await Neutralino.app.keepAlive();
 Returns the current application configuration as a JSON object.
 
 ### Return object (awaited):
-- `config`: Application configuration
+The current application configuration. Sometimes, this configuration object is not identical to your configuration file
+because the framework updates the configuration during several situations such as config overriding via CLI arguments 
+and using `0` as the port. 
 
 ```js
-await Neutralino.app.getConfig();
+let config = await Neutralino.app.getConfig();
+console.log('URL = ', config.url);
 ```
 
-## app.open(OpenActionOptions)
+## app.open(url)
 Opens a URL with the default web browser. 
 
 :::tip
 If your application is running in the default web browser, this method will open a new tab.
 :::
 
-### OpenActionOptions
+### Parameters
 
-- `url`: URL to be opened (required).
+- `url`: URL to be opened.
 
 ```js
-await Neutralino.app.open({
-  url: 'https://neutralino.js.org'
-});
+await Neutralino.app.open('https://neutralino.js.org');
 ```
