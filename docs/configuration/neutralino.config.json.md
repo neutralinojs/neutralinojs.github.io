@@ -25,10 +25,22 @@ The entry URL of the application. Neutralinojs will initially load this URL.
 This property accepts both relative and absolute URLs.
 
 ## `nativeBlockList: string[]`
-An array of native methods needs to be blocked from the frontend of the application.
+An array of native methods needs to be blocked from the frontend of the application. The wildcard character `*` is allowed
+inside entries.
+
+```json
+nativeBlockList: ['os.execCommand'] // Blocks only one method
+nativeBlockList: ['app.*'] // Blocks a namespace
+```
 
 ## `nativeAllowList: string[]`
-An array of native methods needs to be allowed from the frontend of the application.
+An array of native methods needs to be allowed from the frontend of the application. The wildcard character `*` is allowed
+inside entries.
+
+```json
+nativeAllowList: ['os.getEnv'] // Allows only one method
+nativeAllowList: ['storage.*'] // Allows a namespace
+```
 
 ## `globalVariables: object[]`
 A key-value-based JavaScript object of custom [global variables](../developer-environment/global-variables#custom-global-variables).
