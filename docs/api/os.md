@@ -61,7 +61,7 @@ let entries = await Neutralino.os.showOpenDialog('Save your diagram', {
     {name: 'All files', extensions: ['*']}
   ]
 });
-console.log('You've selected:', entries);
+console.log('You have selected:', entries);
 ```
 
 ## os.showSaveDialog(title, options)
@@ -88,7 +88,7 @@ let entry = await Neutralino.os.showSaveDialog('Open a file', {
     {name: 'All files', extensions: ['*']}
   ]
 });
-console.log('You've selected:', entry);
+console.log('You have selected:', entry);
 ```
 
 ## os.showNotification(title, content, icon)
@@ -137,7 +137,7 @@ Creates/updates the tray icon and menu.
 ### Options
 - `icon`: Tray icon path. Eg: `/resources/icons/trayIcon.png`. A 
           `20x20`-sized PNG image file works fine on all supported operating systems. 
-- `menuItems` (optional): An array of `TrayMenuItem` objects.
+- `menuItems`: An array of `TrayMenuItem` objects.
 
 #### TrayMenuItem
 

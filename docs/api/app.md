@@ -27,6 +27,19 @@ to use the `exit()` method to close your application properly.
 await Neutralino.app.killProcess();
 ```
 
+## app.restartProcess(options)
+Restarts the current application instance.
+
+### Options
+
+- `args`: Additional command-line arguments that need to be passed to the new application instance's process.  
+
+```js
+await Neutralino.app.restartProcess();
+
+await Neutralino.app.restartProcess({ args: '--restarted' });
+```
+
 ## app.keepAlive()
 The keepAlive method is responsible for saving the Neutralinojs server instance from the automatic termination.
 This method is called automatically from the client library for the browser mode.
