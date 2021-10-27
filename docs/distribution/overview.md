@@ -5,9 +5,9 @@ title: Distribution Overview
 There are several ways to distribute Neutralinojs apps: creating portable zip files, standalone setup files, and network-based 
 small setup files. You can select an option according to your application distribution preference.
 
-## Application build files
+## Application build results
 
-The `neu build` command generates the following files on any supported operating system.
+The `neu build` command generates the following files on any supported operating system into the `dist` directory.
 
 | Filename            |  OS     | CPU architecture  | Type                    |
 | ------------------- | ------- | --------- | ------------------------------- |
