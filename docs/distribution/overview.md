@@ -2,8 +2,8 @@
 title: Distribution Overview
 ---
 
-There are several ways to distribute Neutralinojs apps: via portable zip files, standalone setup files, and network-based 
-small setup files. You can choose an option according to your application distribution preference.
+There are several ways to distribute Neutralinojs apps: creating portable zip files, standalone setup files, and network-based 
+small setup files. You can select an option according to your application distribution preference.
 
 ## Application build files
 
