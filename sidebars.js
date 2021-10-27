@@ -12,7 +12,8 @@ module.exports = {
       type: 'category',
       label: 'Native API',
       items: [
-        'api/introduction',
+        'api/overview',
+        'api/init',
         'api/app',
         'api/window',
         'api/filesystem',
@@ -21,7 +22,7 @@ module.exports = {
         'api/storage',
         'api/debug',
         'api/events',
-        'api/error-codes'
+        'api/error-codes',
       ],
     },
     {
@@ -46,6 +47,13 @@ module.exports = {
       label: 'Developer Environment',
       items: [
         'developer-environment/global-variables',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Distribution',
+      items: [
+        'distribution/overview',
       ],
     },
     {

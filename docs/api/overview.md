@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Native API Overview
 ---
 
 Neutralinojs offers a JavaScript client library (also known as Neutralino.js) for developers to interact 
@@ -24,6 +24,7 @@ Neutralinojs offers many native operations for you by using this communication m
 
 ## Native API namespaces
 
+- [Neutralino.init](init)
 - [Neutralino.app](app)
 - [Neutralino.computer](computer)
 - [Neutralino.debug](debug)
