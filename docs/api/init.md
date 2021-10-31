@@ -17,7 +17,7 @@ native API function. The `init` function does the following tasks when it's call
 Neutralino.init();
 
 Neutralino.events.on('ready', () => {
-    Neutralino.os.showMessage('Welcome', 'Hello Neutralinojs');
+    Neutralino.os.showMessageBox('Welcome', 'Hello Neutralinojs');
 });
 ```
 
