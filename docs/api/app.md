@@ -60,18 +60,3 @@ and using `0` as the port.
 let config = await Neutralino.app.getConfig();
 console.log('URL = ', config.url);
 ```
-
-## app.open(url)
-Opens a URL with the default web browser. 
-
-:::tip
-If your application is running in the default web browser, this method will open a new tab.
-:::
-
-### Parameters
-
-- `url`: URL to be opened.
-
-```js
-await Neutralino.app.open('https://neutralino.js.org');
-```

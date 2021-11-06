@@ -173,3 +173,18 @@ User action.
 let downloadsPath = await Neutralino.os.getPath('downloads');
 console.log(`Downloads folder: ${downloadsPath}`);
 ```
+
+## os.open(url)
+Opens a URL with the default web browser. 
+
+:::tip
+If your application is running in the default web browser, this method will open a new tab.
+:::
+
+### Parameters
+
+- `url`: URL to be opened.
+
+```js
+Neutralino.os.open('https://neutralino.js.org');
+```
