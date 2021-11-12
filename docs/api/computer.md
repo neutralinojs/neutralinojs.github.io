@@ -4,7 +4,7 @@ title: Neutralino.computer
 
 `Neutralino.computer` namespace contains methods related to the user's hardware.
 
-## computer.getRamUsage()
+## computer.getMemoryInfo()
 Provides physical memory details (in megabytes).
 
 ### Return object (awaited):
@@ -14,6 +14,6 @@ Provides physical memory details (in megabytes).
 
 
 ```js
-let ramInfo = await Neutralino.computer.getRamUsage();
-console.log(`Your ram size: ${Math.round(ramInfo.total / 1000000)}GB`);
+let memoryInfo = await Neutralino.computer.getMemoryInfo();
+console.log(`Your ram size: ${Math.round(memoryInfo.total / 1000000)}GB`);
 ```
