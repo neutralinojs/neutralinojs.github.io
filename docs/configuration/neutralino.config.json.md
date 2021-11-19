@@ -43,13 +43,13 @@ nativeAllowList: ['storage.*'] // Allows a namespace
 ```
 
 ## `globalVariables: object[]`
-A key-value-based JavaScript object of custom [global variables](../developer-environment/global-variables#custom-global-variables).
+A key-value-based JavaScript object of custom [global variables](../api/global-variables#custom-global-variables).
 
 ## `logging.enabled: boolean`
 Enables or disables the logging feature.
 
 ## `logging.writeToLogFile: boolean`
-Enables or disables log file. If this setting is `false`, the framework won't write log to `neutralinojs.log`, 
+Enables or disables log file. If this setting is `false`, the framework won't write log to `neutralinojs.log`,
 and it will write logs to standard streams.
 
 ## `modes.window.title: string`
@@ -99,7 +99,7 @@ Make the window resizable or not. The default value is `true`.
 Make the window invisible. This setting can be used to develop background services.
 
 ## `modes.window.exitProcessOnClose: boolean`
-If this setting is `true`, the app process will exit when the user clicks on the close button. Otherwise, 
+If this setting is `true`, the app process will exit when the user clicks on the close button. Otherwise,
 the framework will dispatch the `windowClose` event.
 
 ## `cli.binaryName: string`
