@@ -23,6 +23,7 @@ module.exports = {
         'api/debug',
         'api/events',
         'api/error-codes',
+        'api/global-variables'
       ],
     },
     {
@@ -44,13 +45,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Developer Environment',
-      items: [
-        'developer-environment/global-variables',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Distribution',
       items: [
         'distribution/overview',
@@ -58,10 +52,11 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Community',
+      label: 'Contributing',
       items: [
-        'community/committers',
-        'community/developer-support',
+        'contributing/framework-developer-guide',
+        'contributing/developer-support',
+        'contributing/committers',
       ],
     },
   ],

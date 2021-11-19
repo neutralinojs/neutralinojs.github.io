@@ -1,0 +1,175 @@
+---
+title: Framework Developer Guide
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Great open-source software is a result of collaboration of enthusiatic developers. Anyone can help Neutralino
+by contributing code and reporting bugs. This document explains how you can start contributing Neutralinojs.
+
+Note that this guide is for contributors if you are getting started with Neutralinojs app development,
+you can start from [here](../getting-started/your-first-neutralinojs-app).
+
+## Setup and build the framework
+
+First, clone the main repository.
+
+```bash
+git clone https://github.com/neutralinojs/neutralinojs.git
+cd neutralinojs
+```
+
+### Linux
+
+No need for separate compilers because Linux distributions usually have GNU C/C++ compilers installed already.
+
+Install GTK, webkit, boost and other required libraries
+
+**Ubuntu**
+
+If you are using a newer version of Ubuntu, some libraries may be pre-installed.
+
+```bash
+sudo apt-get install \
+    libboost-all-dev \
+    libgtk-3-dev \
+    libwebkit2gtk-4.0-37 \
+    libwebkit2gtk-4.0-dev \
+    libappindicator3-dev
+```
+
+**Fedora**
+
+```bash
+sudo dnf install \
+    @development-tools \
+    libappindicator-gtk3.x86_64 \
+    gtk3 \
+    webkit2gtk3.x86_64 \
+    webkit2gtk3-devel.x86_64 \
+    boost-devel
+```
+
+Compile the Neutralinojs framework.
+
+```bash
+bash build_linux.sh # [ia32, x64, armhf, arm64]
+```
+
+### Windows
+
+Install the latest Visual Studio IDE. Neutralinojs compilation on Windows will use MSVC (aka `cl.exe`) C++ compiler. Install Boost libraries via Chocolatey.
+
+```bash
+choco install boost-msvc-14.1
+```
+
+Compile the Neutralinojs framework.
+
+```bash
+./build_windows.bat # [ia32, x64, armhf, arm64]
+```
+
+### macOS
+
+Install Xcode Command Line Tools. Install Boost libraries via Homebrew.
+
+```bash
+brew install boost@1.76
+```
+
+Compile the Neutralinojs framework.
+
+```bash
+bash build_macos.sh # [ia32, x64, armhf, arm64]
+```
+
+## Setup and build the client
+
+Neutralinojs apps communicate with the Neutralinojs process via a WebSocket connection. This WebSocket connection
+gets initiated by the Neutralinojs client.
+
+Clone the client repository to the same directory where you downloaded the main repository.
+
+```bash
+git clone https://github.com/neutralinojs/neutralino.js.git
+cd neutralino.js
+```
+
+Install developer dependencies.
+
+```bash
+npm install
+```
+
+## Executing the test app
+
+The main repository has a simple test application that you can use during development related activities.
+You can enter the following command from the main repository to build and update the test app's client.
+
+```bash
+bash ./scripts/update_client.sh
+```
+
+Now run the newly compiled test app with the following command.
+
+<Tabs
+  defaultValue="Linux"
+  values={[
+    {label: 'Linux', value: 'Linux'},
+    {label: 'macOS', value: 'macOS'},
+    {label: 'Windows', value: 'Windows'},
+  ]}>
+  <TabItem value="Linux">
+
+  ```bash
+    ./bin/neutralino-linux_x64 --load-dir-res
+  ```
+
+  </TabItem>
+  <TabItem value="macOS">
+
+  ```bash
+    ./bin/neutralino-mac_x64 --load-dir-res
+  ```
+
+  </TabItem>
+  <TabItem value="Windows">
+
+  ```bash
+    ./bin/neutralino-win_x64.exe --load-dir-res
+  ```
+
+  </TabItem>
+</Tabs>
+
+## Testing
+
+Testing is a crucial part in every development activity. Every pull request in the main codebase will trigger
+the following automated tests.
+
+- Builds on Linux, macOS, and Windows with x64 machines.
+- Integration test suite.
+
+However, you can run our integration test suite from your local computer too with the following command
+from the main codebase's directory.
+
+```
+cd spec
+npm run test
+```
+
+## Contribution guidelines
+
+Before, contributing to the codebase, please check the following things.
+
+- Discuss the feature/improvement/bug-fix with the Neutralinojs team via GitHub discussions.
+- Get familiar with the code style. There is no specific code style guide yet, but, the codebase inherits
+some guidelines from the [Google C++ code style guide](https://google.github.io/styleguide/cppguide.html).
+- Become familiar with all modules in the codebase.
+- Avoid adding new features to only one platform.
+
+Thanks for helping us to make Neutralinojs better!
+
+
+
