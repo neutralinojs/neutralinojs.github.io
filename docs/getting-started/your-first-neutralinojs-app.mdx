@@ -117,7 +117,9 @@ Insert the following content into your application resource files.
   }
 
   Neutralino.init();
-  getUsername();
+  Neutralino.events.on("ready", () => {
+    getUsername();
+  });
   ```
 
   </TabItem>
