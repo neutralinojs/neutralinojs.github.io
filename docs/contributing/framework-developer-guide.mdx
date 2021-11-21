@@ -155,10 +155,47 @@ the following automated tests.
 However, you can run our integration test suite from your local computer too with the following command
 from the main codebase's directory.
 
-```
+```bash
 cd spec
+npm install
 npm run test
 ```
+
+It's always good to run the test suite for the module you've updated with the following command.
+
+```bash
+npm run test <module> # Eg: npm run test filesystem
+```
+
+:::info
+If you need to run tests for the `extensions` module, make sure to enter `npm install` from
+`./bin/extensions/sampleextension` first.
+:::
+
+The above command will run test only for the given module.
+
+## Project directory structure
+
+### Framework
+
+Source: [github.com/neutralinojs/neutralinojs](https://github.com/neutralinojs/neutralinojs)
+
+- `api`: The native API implementation and controllers. Written in REST API style.
+- `auth`: Authentication and permissions-related logic.
+- `bin`: Test app source code.
+- `lib`: Third-party libraries' source files.
+- `server`: WebSocket/HTTP communication endpoints.
+- `spec`: Integration/API test suite.
+
+### Client library
+
+Source: [github.com/neutralinojs/neutralino.js](https://github.com/neutralinojs/neutralino.js)
+
+- `src/api`: JavaScript API frontend and implementaion.
+- `src/browser`: Browser-related API implementation.
+- `src/debug`: Developer mode features.
+- `src/ws`: WebSocket client implementaion.
+
 
 ## Contribution guidelines
 
