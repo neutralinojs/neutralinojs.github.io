@@ -30,23 +30,29 @@ Sets the document root for the static server. For example, if you need to use `r
 the document root, you can use setup `documentRoot` as follows.
 
 ```json
-documentRoot: "/resources/"
-url: "/"
+{
+    "documentRoot": "/resources/",
+    "url": "/"
+}
 ```
 
 Make sure to configure `url` properly with the document root. The following configuration is **wrong**, it
 instructs the static server to fetch resources from `./resources/resources`.
 
 ```json
-documentRoot: "/resources/"
-url: "/resources/"
+{
+    "documentRoot": "/resources/",
+    "url": "/resources/"
+}
 ```
 
 However, you can use a sub-directory in URL, as shown below.
 
 ```json
-documentRoot: "/"
-url: "/resources/"
+{
+    "documentRoot": "/",
+    "url": "/resources/"
+}
 ```
 
 ## `exportAuthInfo: boolean`
@@ -54,8 +60,8 @@ Exports authentication details to the `${NL_PATH}/.tmp/auth_info.json` file with
 
 ```json
 {
-    port: <port>,
-    accessToken: "<access_token>"
+    "port": "<port>",
+    "accessToken": "<access_token>"
 }
 ```
 
@@ -67,8 +73,10 @@ An array of native methods needs to be blocked from the frontend of the applicat
 inside entries.
 
 ```json
-nativeBlockList: ['os.execCommand'] // Blocks only one method
-nativeBlockList: ['app.*'] // Blocks a namespace
+{
+    "nativeBlockList": ["os.execCommand"],
+    "nativeBlockList": ["app.*"]
+}
 ```
 
 ## `nativeAllowList: string[]`
@@ -76,8 +84,10 @@ An array of native methods needs to be allowed from the frontend of the applicat
 inside entries.
 
 ```json
-nativeAllowList: ['os.getEnv'] // Allows only one method
-nativeAllowList: ['storage.*'] // Allows a namespace
+{
+    nativeAllowList: ["os.getEnv"],
+    nativeAllowList: ["storage.*"]
+}
 ```
 
 ## `globalVariables: object[]`
