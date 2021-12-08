@@ -6,10 +6,10 @@ If a particular native API call fails, Neutralinojs client library rejects the p
 
 The error object has the following structure.
 
-```json
+```js
 {
-    code: "CODE"
-    message: "MESSAGE"
+    code: "<code>",
+    message: "<message>"
 }
 ```
 
