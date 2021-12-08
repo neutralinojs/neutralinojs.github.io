@@ -85,8 +85,8 @@ inside entries.
 
 ```json
 {
-    nativeAllowList: ["os.getEnv"],
-    nativeAllowList: ["storage.*"]
+    "nativeAllowList": ["os.getEnv"],
+    "nativeAllowList": ["storage.*"]
 }
 ```
 
