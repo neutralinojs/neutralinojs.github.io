@@ -11,16 +11,20 @@ Executes a command and returns the output.
 - `command`: The command that is to be executed.
 
 ### Options
-- `shouldRunInBackground`: Executes the command in background and resolve the Promise immediately.
+- `background`: Executes the command in background and resolve the Promise immediately if this is set to `true`.
+- `stdIn`: Standard input as a string.
 
 ### Return object (awaited):
-String data taken from the both standard output (STDOUT) and standard error (STDERR) streams of the command's process.
+- `pid`: Process identifier.
+- `stdOut`: Standard output.
+- `stdErr`: Standard error.
+- `exitCode`: Exit code of the process.
 
 ```js
-let output = await Neutralino.os.execCommand('python --version');
-console.log(`Your Python version: ${output}`);
+let info = await Neutralino.os.execCommand('python --version');
+console.log(`Your Python version: ${info.stdOut}`);
 
-await Neutralino.os.execCommand('npm start', { shouldRunInBackground: true });
+await Neutralino.os.execCommand('npm start', { background: true });
 ```
 
 ## os.getEnv(key)
@@ -97,7 +101,7 @@ Displays a notification message.
 ### Parameters
 - `title`: Notification title.
 - `content`: Content of the notification.
-- `icon` (optional): Icon name. Accpeted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is 
+- `icon` (optional): Icon name. Accpeted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is
         `INFO`
 
 ```js
@@ -112,7 +116,7 @@ Displays a message box.
 ### Parameters
 - `title`: Title of the message box.
 - `content`: Content of the message box.
-- `choice` (optional): Message box buttons. Accpeted values are: `OK`, `OK_CANCEL`, `YES_NO`, `YES_NO_CANCEL`, `RETRY_CANCEL`, 
+- `choice` (optional): Message box buttons. Accpeted values are: `OK`, `OK_CANCEL`, `YES_NO`, `YES_NO_CANCEL`, `RETRY_CANCEL`,
       and `ABORT_RETRY_IGNORE`. The default value is `OK`.
 - `icon` (optional): Icon name. Accpeted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is `INFO`.
 
@@ -123,7 +127,7 @@ User action.
 await Neutralino.os.showMessageBox('Hello', 'Welcome');
 
 let button = await Neutralino.os
-            .showMessageBox('Confirm', 
+            .showMessageBox('Confirm',
                             'Are you sure you want to quit?',
                             'YES_NO', 'QUESTION');
 if(button == 'YES') {
@@ -135,16 +139,16 @@ if(button == 'YES') {
 Creates/updates the tray icon and menu.
 
 ### Options
-- `icon`: Tray icon path. Eg: `/resources/icons/trayIcon.png`. A 
-          `20x20`-sized PNG image file works fine on all supported operating systems. 
+- `icon`: Tray icon path. Eg: `/resources/icons/trayIcon.png`. A
+          `20x20`-sized PNG image file works fine on all supported operating systems.
 - `menuItems`: An array of `TrayMenuItem` objects.
 
 #### TrayMenuItem
 
-- `id`: A unique identifier for each menu item. 
+- `id`: A unique identifier for each menu item.
 - `text`: Label of the menu item. This field is a mandatory field. Use `-` (hyphen) character for a menu separator.
 - `isDisabled`: A boolean flag to disable/enable a specific menu item.
-- `isChecked`: A boolean flag to mark a specific menu item as selected. 
+- `isChecked`: A boolean flag to mark a specific menu item as selected.
 
 ```js
 let tray = {

@@ -10,6 +10,7 @@ These JavaScript variables can be used anywhere because these variables are defi
 | --- | --- |
 | `NL_OS`       | Operating system name: `Linux`, `Windows`, or `Darwin`        |
 | `NL_APPID`    | Application identifier                                        |
+| `NL_APPVERSION` | Application version                                         |
 | `NL_PORT`     | Application port                                              |
 | `NL_MODE`     | Mode of the application: `window`, `browser`, or `cloud`      |
 | `NL_VERSION`  | Neutralinojs server version                                   |

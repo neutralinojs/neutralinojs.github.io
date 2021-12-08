@@ -14,15 +14,53 @@ The port of your application. If the value is `0`, Neutralinojs will use a rando
 Mode of the application. Accepted values are `window`, `browser`, and `cloud`.
 
 ## `enableServer: boolean`
-Enables or disables the WebSocket server (The static file server and native API messaging).
+Enables or disables the background server (Disables static file servering feature and native API messaging).
+If you load a remote URL to the webview, you can set this option to `true`.
 
 ## `enableNativeAPI: boolean`
-Enables or disables the native API. For better security, this setting should be `false` if you are using a
-remote URL as your web frontend.
+Enables or disables the native API. If you don't use any native API functions, you can set this option to `true`.
 
 ## `url: string`
 The entry URL of the application. Neutralinojs will initially load this URL.
 This property accepts both relative and absolute URLs.
+
+## `documentRoot: string`
+
+Sets the document root for the static server. For example, if you need to use `resources` directory as
+the document root, you can use setup `documentRoot` as follows.
+
+```json
+documentRoot: "/resources/"
+url: "/"
+```
+
+Make sure to configure `url` properly with the document root. The following configuration is **wrong**, it
+instructs the static server to fetch resources from `./resources/resources`.
+
+```json
+documentRoot: "/resources/"
+url: "/resources/"
+```
+
+However, you can use a sub-directory in URL, as shown below.
+
+```json
+documentRoot: "/"
+url: "/resources/"
+```
+
+## `exportAuthInfo: boolean`
+Exports authentication details to the `${NL_PATH}/.tmp/auth_info.json` file with the following JSON structure.
+
+```json
+{
+    port: <port>,
+    accessToken: "<access_token>"
+}
+```
+
+You can use the above authentication details to connect with Neutralinojs from external processes by using
+WebSocket as an IPC mechanism.
 
 ## `nativeBlockList: string[]`
 An array of native methods needs to be blocked from the frontend of the application. The wildcard character `*` is allowed

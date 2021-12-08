@@ -2,7 +2,7 @@
 title: Neutralino.events
 ---
 
-`Neutralino.events` namespace contains methods related to the native events handling. These events are often initiated 
+`Neutralino.events` namespace contains methods related to the native events handling. These events are often initiated
 by the Neutralinojs server based on native state changes.
 
 ## Event types
@@ -15,6 +15,11 @@ by the Neutralinojs server based on native state changes.
 | `serverOffline`             | Occurs when the JavaScript API cannot communicate with the application process. | `all`
 | `clientConnect`             | Occurs when a new client access the application.        | `all`
 | `clientDisconnect`          | Occurs when a connected client leaves the application.  | `all`
+| `appClientConnect`          | Occurs when a new application instance starts.          | `all`
+| `appClientDisconnect`       | Occurs when an application instance ends.               | `all`
+| `extClientConnect`          | Occurs when a new extension connects.                   | `all`
+| `extClientDisconnect`       | Occurs when an extension disconnects.                   | `all`
+| `extensionReady`            | Occurs when an extension is ready to communicate with the app.    | `all`
 
 ## events.on(eventName, handler)
 Registers a new event handler. 
@@ -23,8 +28,8 @@ Registers a new event handler. 
 ### Parameters
 
 - `eventName`: Name of the event.
-- `handler`: A function that will be called when the given event occurs. Neutralinojs will call the handler with a 
-  [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) instance by attaching additional data 
+- `handler`: A function that will be called when the given event occurs. Neutralinojs will call the handler with a
+  [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) instance by attaching additional data
   to the `detail` key.
 
 ```js
