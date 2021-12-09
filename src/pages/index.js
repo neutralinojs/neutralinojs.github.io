@@ -66,7 +66,7 @@ const features = [
     description: (
       <>
         You can build Neutralinojs apps with any frontend framework. Also, you can use Neutralinojs
-        as a part of your project with the child process IPC. Moreover, you can extend Neutralinojs API
+        as a part of any source file with the child process IPC. Moreover, you can extend Neutralinojs API
         with any backend language with the extensions IPC.
       </>
     ),
