@@ -68,6 +68,9 @@ Exports authentication details to the `${NL_PATH}/.tmp/auth_info.json` file with
 You can use the above authentication details to connect with Neutralinojs from external processes by using
 WebSocket as an IPC mechanism.
 
+## `enableExtensions: boolean`
+Enables/disables extensions.
+
 ## `nativeBlockList: string[]`
 An array of native methods needs to be blocked from the frontend of the application. The wildcard character `*` is allowed
 inside entries.

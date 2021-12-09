@@ -6,12 +6,22 @@ title: Neutralino.init
 
 ## init()
 
-The application developer needs to call this method explicitly via a JavaScript source file before using any 
+The application developer needs to call this method explicitly via a JavaScript source file before using any
 native API function. The `init` function does the following tasks when it's called.
 
-- Starts a WebSocket connection with the Neutralinojs server.
+- Starts a WebSocket connection with the Neutralinojs server asynchronously.
 - Starts listening to the development server if the `--debug-mode` flag (the `neu run` command sets this flag) is provided.
 - Defines `NL_CVERSION` with the client libary version in the `window` scope.
+
+You can call native API calls right after the `init` function call, as shown below.
+
+```js
+Neutralino.init();
+
+Neutralino.os.showMessageBox('Welcome', 'Hello Neutralinojs');
+```
+
+Also, you can wrap immediate native calls with the `ready` event callback if you like.
 
 ```js
 Neutralino.init();
@@ -21,10 +31,9 @@ Neutralino.events.on('ready', () => {
 });
 ```
 
-:::danger
-Aways use the `ready` event to call native API functions immediately. Don't call native API functions before the `init()` call 
-or right after the `init()` call because the `init()` function doesn't synchronously wait until the WebSocket connection is 
-established.
+:::info
+Neutralinojs client library typically queues and sends native API calls to the server when the WebSocket connection
+is established. Therefore, you don't need to use the `ready` event callback always.
 :::
 
 

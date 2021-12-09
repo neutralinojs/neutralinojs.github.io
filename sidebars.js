@@ -10,6 +10,14 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'How To',
+      items: [
+        'how-to/extensions-overview',
+        'how-to/auto-updater',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Native API',
       items: [
         'api/overview',
@@ -22,6 +30,8 @@ module.exports = {
         'api/storage',
         'api/debug',
         'api/events',
+        'api/extensions',
+        'api/updater',
         'api/error-codes',
         'api/global-variables'
       ],

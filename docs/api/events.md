@@ -9,10 +9,10 @@ by the Neutralinojs server based on native state changes.
 
 | Event id                    | Description                                             | Available modes
 | --------------------------- | ------------------------------------------------------- | --------
-| `ready`                     | Occurs when the client library is ready to communicate with the framework.  | `all`
+| `ready`                     | Occurs when the client library connects with the Neutralino server.  | `all`
 | `trayMenuItemClicked`       | Occurs when the user clicks on a tray menu item.        | `all`
 | `windowClose`               | Occurs when the user closes the window.                 | `window`
-| `serverOffline`             | Occurs when the JavaScript API cannot communicate with the application process. | `all`
+| `serverOffline`             | Occurs when the Neutralino server is offline | `all`
 | `clientConnect`             | Occurs when a new client access the application.        | `all`
 | `clientDisconnect`          | Occurs when a connected client leaves the application.  | `all`
 | `appClientConnect`          | Occurs when a new application instance starts.          | `all`
@@ -53,7 +53,8 @@ await Neutralino.events.off('trayMenuItemClicked', onTrayMenuItemClicked);
 ```
 
 ## events.dispatch(eventName, data)
-Dispatches a new event. Neutralinojs server uses this JavaScript function call internally with native events. 
+Dispatches a new event to the current app instance. Neutralinojs client uses this JavaScript function call
+internally to dispatch native events. 
 
 
 ### Parameters
@@ -63,4 +64,21 @@ Dispatches a new event. Neutralinojs server uses this JavaScript function call i
 
 ```js
 await Neutralino.events.dispatch('myTestEvent', {myData: 'Test data'});
+```
+
+## events.broadcast(eventName, data)
+Dispatches a new event to all clients (both app and extension clients).
+
+
+### Parameters
+
+- `eventName`: Name of the event.
+- `data` (optional): Additional data for the event.
+
+```js
+await Neutralino.events.broadcast('myTestEvent', 'Hello');
+
+await Neutralino.events.broadcast('myTestEvent', {myData: 'Test data'});
+
+await Neutralino.events.broadcast('myTestEvent'); // without any data payload
 ```

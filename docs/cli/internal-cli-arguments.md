@@ -10,7 +10,7 @@ default configuration defined inside the `neutralino.config.json` file.
 
 ### `--load-dir-res`
 
-Notifies Neutralinojs server to fetch files from the resources directory. 
+Notifies Neutralinojs server to fetch files from the resources directory.
 
 :::tip
 If Neutralinojs fails to load resources `res.neu`,
@@ -42,6 +42,14 @@ Overrides the logging feature status.
 ### `--logging-write-to-log-file=<true|false>`
 
 Overrides the log file feature status.
+
+### `--export-auth-info=<true|false>`
+
+Overrides auth details export setting.
+
+### `--enable-extensions=<true|false>`
+
+Overrides extensions feature's availability.
 
 ### `--window-title=<title>`
 
@@ -89,7 +97,7 @@ Overrides the window's minimum width.
 
 ### `--window-min-height=<number>`
 
-Overrides the window's minimum height. 
+Overrides the window's minimum height.
 
 ### `--window-max-width=<number>`
 
@@ -97,18 +105,18 @@ Overrides the window's maximum width.
 
 ### `--window-max-height=<number>`
 
-Overrides the window's maximum height. 
+Overrides the window's maximum height.
 
 ### `--window-resizable=<true|false>`
 
-Overrides the window's initial resizability status. 
+Overrides the window's initial resizability status.
 
 ### `--window-exit-process-on-close=<true|false>`
 
 Overrides the close button's behavior.
 
 :::tip
-The right hand value is optional for the for boolean type CLI arguments. Therefore, you can use `--window-full-screen` 
-instead of `--window-full-screen=true`. However, if you define `window.fullScreen` as `true` and you need to override it as 
+The right hand value is optional for the for boolean type CLI arguments. Therefore, you can use `--window-full-screen`
+instead of `--window-full-screen=true`. However, if you define `window.fullScreen` as `true` and you need to override it as
 `false` you have to use `--window-full-screen=false`.
 :::

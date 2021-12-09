@@ -49,6 +49,28 @@ const features = [
       </>
     ),
   },
+  {
+    title: 'Simple & Flexible',
+    imageUrl: 'img/undraw_happy_announcement_re_tsm0.svg',
+    description: (
+      <>
+        Neutralinojs team always tend to offer simple and flexible development interfaces for programmers.
+        The framework has simple auto updater and CLI. We don't use OOP-based classes everywhere to complicate
+        your work.
+      </>
+    ),
+  },
+  {
+    title: 'Any Backend, Any Frontend',
+    imageUrl: 'img/undraw_work_together_re_5yhn.svg',
+    description: (
+      <>
+        You can build Neutralinojs apps with any frontend framework. Also, you can use Neutralinojs
+        as a part of your project with the child process IPC. Moreover, you can extend Neutralinojs API
+        with any backend language with the extensions IPC.
+      </>
+    ),
+  },
 ];
 
 function Feature({imageUrl, title, description}) {
@@ -118,15 +140,16 @@ export default function Home() {
             </div>
             <div className="col col--6">
               <p>
-                Neutralinojs is a lightweight cross-platform application development framework.
-                It lets you develop lightweight, blazing-fast, and portable applications using JavaScript,
-                HTML, and CSS.
+                Neutralinojs is a lightweight and portable desktop application development framework.
+                It lets you develop lightweight cross-platform desktop applications using JavaScript,
+                HTML and CSS. You can extend Neutralinojs with any programming language (via extensions IPC) and
+                use Neutralinojs as a part of any source file (via child processes IPC).
                 <br/><br/>
-                In Electron and NWjs, you have to install NodeJs and hundreds of dependency libraries. 
-                Embedded Chromium and Node make simple apps bloaty. Neutralinojs offers a lightweight and 
-                portable SDK which is an alternative for Electron and NW.js. Neutralinojs doesn't bundle Chromium and uses the existing 
-                web browser library in the operating system (Eg: gtk-webkit2 on Linux). 
-                Neutralinojs implements a WebSocket connection for native operations and embeds a static web server 
+                In Electron and NWjs, you have to install NodeJs and hundreds of dependency libraries.
+                Embedded Chromium and Node make simple apps bloaty. Neutralinojs offers a lightweight and
+                portable SDK which is an alternative for Electron and NW.js. Neutralinojs doesn't bundle Chromium and uses the existing
+                web browser library in the operating system (Eg: gtk-webkit2 on Linux).
+                Neutralinojs implements a WebSocket connection for native operations and embeds a static web server
                 to serve the web content. Also, it offers a built-in <Link to="https://github.com/neutralinojs/neutralino.js">JavaScript client library</Link> for developers.
                 <br/><br/>
                 If you can build a website, you can build cross-platform desktop apps too because Neutralinojs is a framework for
