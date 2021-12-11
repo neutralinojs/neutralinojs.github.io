@@ -22,6 +22,8 @@ module.exports = {
         'api/storage',
         'api/debug',
         'api/events',
+        'api/extensions',
+        'api/updater',
         'api/error-codes',
         'api/global-variables'
       ],
@@ -41,6 +43,14 @@ module.exports = {
         'configuration/neutralino.config.json',
         'configuration/project-structure',
         'configuration/modes',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'How To',
+      items: [
+        'how-to/extensions-overview',
+        'how-to/auto-updater',
       ],
     },
     {
