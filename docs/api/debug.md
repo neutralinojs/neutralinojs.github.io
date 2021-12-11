@@ -14,8 +14,8 @@ messages on your terminal.
 
 ### Parameters
 
-- `message`: Content to be logged.
-- `type` (optional): Type of the message. Accepted values are `INFO`, `WARNING`, and `ERROR`. The default value is `INFO`.
+- `message` String: Content to be logged.
+- `type` String (optional): Type of the message. Accepted values are `INFO`, `WARNING`, and `ERROR`. The default value is `INFO`.
 
 ```js
 await Neutralino.debug.log('Hello Neutralinojs');

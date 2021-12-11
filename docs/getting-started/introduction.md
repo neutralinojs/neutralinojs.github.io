@@ -5,9 +5,10 @@ slug: /
 
 ## What is Neutralinojs?
 
-Neutralinojs is a lightweight and portable application development framework.
-It lets you develop cross-platform applications using JavaScript, HTML and CSS. Neutralinojs applications
-will work on Linux, Windows, macOS, and Web.
+Neutralinojs is a lightweight and portable desktop application development framework.
+It lets you develop lightweight cross-platform desktop applications using JavaScript, HTML and CSS.
+You can extend Neutralinojs with any programming language (via extensions IPC) and use Neutralinojs as a
+part of any source file (via child processes IPC).
 
 ## Why Neutralinojs?
 
@@ -22,14 +23,24 @@ See comparisons:
 - [Neutralinojs vs Electron vs NW.JS vs Tauri vs NodeGui vs Flutter vs .Net MAUI](https://github.com/Elanis/web-to-desktop-framework-comparison)
 - [Neutralinojs vs Electron vs NW.js (2018)](https://github.com/neutralinojs/evaluation)
 
+When you start learning Neutralinojs, you will realize that Neutralinojs answers endless use cases. For example,
+you can use Neutralinojs for the following scenarios.
+
+- Cross-platform desktop app development.
+- Building web apps with native operations.
+- Using as a cloud message broker.
+- Connecting multiple processes by using as an IPC broker.
+- and more...
+
 ## Highlighted features
 
-- Fully portable development kit.
-- No compilation required for developers.
+- Portable development kit.
+- No compilation required for application developers.
 - No additional dependencies required for users.
 - Native functions support: Read files, run system commands, etc.
 - Less resource intensive compared to chromium-node-based frameworks.
 - Cross-platform: Neutralinojs apps work on Linux, Windows, macOS, and Web.
+- Simple and flexible development environment.
 
 ## Supported platforms and CPU architectures
 

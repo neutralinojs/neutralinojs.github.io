@@ -9,7 +9,7 @@ Terminates the running application.
 
 ### Parameters
 
-- `exitCode`: An integer value for the process's exit code. The default value is always `0` (success).
+- `exitCode` Number: Process's exit code. The default value is always `0` (success).
 
 ```js
 await Neutralino.app.exit(130);
@@ -32,7 +32,7 @@ Restarts the current application instance.
 
 ### Options
 
-- `args`: Additional command-line arguments that need to be passed to the new application instance's process.
+- `args` String: Additional command-line arguments that need to be passed to the new application instance's process.
 
 ```js
 await Neutralino.app.restartProcess();
@@ -59,8 +59,8 @@ Dispatches a new event to all app instances.
 
 ### Parameters
 
-- `eventName`: Name of the event.
-- `data` (optional): Additional data for the event.
+- `eventName` String: Name of the event.
+- `data` Object (optional): Additional data for the event.
 
 ```js
 await Neutralino.app.broadcast('myTestEvent', 'Hello');

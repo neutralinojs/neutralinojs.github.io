@@ -10,7 +10,7 @@ The application developer needs to call this method explicitly via a JavaScript 
 native API function. The `init` function does the following tasks when it's called.
 
 - Starts a WebSocket connection with the Neutralinojs server asynchronously.
-- Starts listening to the development server if the `--debug-mode` flag (the `neu run` command sets this flag) is provided.
+- Registers auto-reload event handler if the `--neu-dev-auto-reload` flag (the `neu run` command sets this flag) is provided.
 - Defines `NL_CVERSION` with the client libary version in the `window` scope.
 
 You can call native API calls right after the `init` function call, as shown below.

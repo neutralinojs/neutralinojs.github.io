@@ -17,11 +17,11 @@ Writes data into Neutralinojs shared storage. 
 
 ### Parameters
 
-- `key`: A unique identifier.
-- `data`: Data as a string. If this value is `null` or `undefined`, the specific data record will be erased from the disk.
+- `key` String: A unique identifier.
+- `data` Object (optional): Data as a string. If this value is `null` or `undefined`, the specific data record will be erased from the disk.
 
 ```js
-await Neutralino.storage.setData('userDetails', 
+await Neutralino.storage.setData('userDetails',
                         JSON.stringify({ username: 'TestValue'})
 });
 ```
@@ -30,7 +30,7 @@ await Neutralino.storage.setData('userDetails',
 Reads and returns data for a given Neutralinojs shared storage key. 
 
 ### Parameters
-- `key`: Storage data record identifier.
+- `key` String: Storage data record identifier.
 
 ### Return object (awaited):
 Data string of the storage record.

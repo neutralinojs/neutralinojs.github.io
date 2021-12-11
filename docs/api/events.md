@@ -7,19 +7,19 @@ by the Neutralinojs server based on native state changes.
 
 ## Event types
 
-| Event id                    | Description                                             | Available modes
-| --------------------------- | ------------------------------------------------------- | --------
-| `ready`                     | Occurs when the client library connects with the Neutralino server.  | `all`
-| `trayMenuItemClicked`       | Occurs when the user clicks on a tray menu item.        | `all`
-| `windowClose`               | Occurs when the user closes the window.                 | `window`
-| `serverOffline`             | Occurs when the Neutralino server is offline | `all`
-| `clientConnect`             | Occurs when a new client access the application.        | `all`
-| `clientDisconnect`          | Occurs when a connected client leaves the application.  | `all`
-| `appClientConnect`          | Occurs when a new application instance starts.          | `all`
-| `appClientDisconnect`       | Occurs when an application instance ends.               | `all`
-| `extClientConnect`          | Occurs when a new extension connects.                   | `all`
-| `extClientDisconnect`       | Occurs when an extension disconnects.                   | `all`
-| `extensionReady`            | Occurs when an extension is ready to communicate with the app.    | `all`
+| Event id                    | Description                                             | Available modes | Data
+| --------------------------- | ------------------------------------------------------- | -------- | -------
+| `ready`                     | Occurs when the client library connects with the Neutralino server.  | `all` | `null`
+| `trayMenuItemClicked`       | Occurs when the user clicks on a tray menu item.        | `all` | `TrayMenuItem`
+| `windowClose`               | Occurs when the user closes the window.                 | `window` | `null`
+| `serverOffline`             | Occurs when the Neutralino server is offline | `all` | `null`
+| `clientConnect`             | Occurs when a new client access the application.        | `all` | Total clients
+| `clientDisconnect`          | Occurs when a connected client leaves the application.  | `all` | Total clients
+| `appClientConnect`          | Occurs when a new application instance starts.          | `all` | Total app clients
+| `appClientDisconnect`       | Occurs when an application instance ends.               | `all` | Total app clients
+| `extClientConnect`          | Occurs when a new extension connects.                   | `all` | Extension identifier
+| `extClientDisconnect`       | Occurs when an extension disconnects.                   | `all` | Extension identifer
+| `extensionReady`            | Occurs when an extension is ready to communicate with the app.    | `all` | Extension identifier
 
 ## events.on(eventName, handler)
 Registers a new event handler. 
@@ -27,8 +27,8 @@ Registers a new event handler. 
 
 ### Parameters
 
-- `eventName`: Name of the event.
-- `handler`: A function that will be called when the given event occurs. Neutralinojs will call the handler with a
+- `eventName` String: Name of the event.
+- `handler` Function: A function that will be called when the given event occurs. Neutralinojs will call the handler with a
   [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) instance by attaching additional data
   to the `detail` key.
 
@@ -45,8 +45,8 @@ Unregisters an event handler. 
 
 ### Parameters
 
-- `eventName`: Name of the event.
-- `handler`: A function reference.
+- `eventName` String: Name of the event.
+- `handler` Function: A function reference.
 
 ```js
 await Neutralino.events.off('trayMenuItemClicked', onTrayMenuItemClicked);
@@ -59,8 +59,8 @@ internally to dispatch native events. 
 
 ### Parameters
 
-- `eventName`: Name of the event.
-- `data` (optional): Additional data for the event.
+- `eventName` String: Name of the event.
+- `data` Object (optional): Additional data for the event.
 
 ```js
 await Neutralino.events.dispatch('myTestEvent', {myData: 'Test data'});
@@ -72,8 +72,8 @@ Dispatches a new event to all clients (both app and extension clients).
 
 ### Parameters
 
-- `eventName`: Name of the event.
-- `data` (optional): Additional data for the event.
+- `eventName` String: Name of the event.
+- `data` Object (optional): Additional data for the event.
 
 ```js
 await Neutralino.events.broadcast('myTestEvent', 'Hello');

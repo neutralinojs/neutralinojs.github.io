@@ -13,6 +13,9 @@ The error object has the following structure.
 }
 ```
 
+- `code` String: Error code.
+- `message` String: Error message
+
 ## Native API error codes
 
 | Error code                    | Message                                             | Thrown by

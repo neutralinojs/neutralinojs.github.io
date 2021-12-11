@@ -10,14 +10,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'How To',
-      items: [
-        'how-to/extensions-overview',
-        'how-to/auto-updater',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Native API',
       items: [
         'api/overview',
@@ -51,6 +43,14 @@ module.exports = {
         'configuration/neutralino.config.json',
         'configuration/project-structure',
         'configuration/modes',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'How To',
+      items: [
+        'how-to/extensions-overview',
+        'how-to/auto-updater',
       ],
     },
     {

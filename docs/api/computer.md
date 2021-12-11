@@ -9,8 +9,8 @@ Provides physical memory details (in megabytes).
 
 ### Return object (awaited):
 
-  - `total`: Total physical memory.
-  - `available`: Available physical memory.
+  - `total` Number: Total physical memory.
+  - `available` Number: Available physical memory.
 
 
 ```js

@@ -6,6 +6,8 @@ title: Neutralino.updater
 a built-in client-based updating mechanism. Therefore, you can update Neutralinojs apps without even calling
 third-party update services, operating system level services, or other binaries/scripts.
 
+Learn more about extensions with [this guide](../how-to/auto-updater).
+
 
 ## updater.checkForUpdates(url)
 Checks latest updates from the given URL. The URL should return a valid Neutralinojs update manifest with
@@ -15,7 +17,7 @@ for network connectivity issues.
 
 ### Parameters
 
-- `url`: URL to fetch update manifest.
+- `url` String: URL to fetch update manifest.
 
 ### Return object (awaited):
 Update manifest.
@@ -27,13 +29,7 @@ let manifest = await Neutralino.updater.checkForUpdates(url);
 
 ## updater.install()
 Installs updates from the downloaded update manifest. Throws `NE_UP_UPDNOUF` if the manifest isn't loaded.
-If the update process fails, this function will throw `NE_UP_UPDINER`.
-
-
-### Parameters
-
-- `eventName`: Name of the event.
-- `data` (optional): Additional data for the event.
+If the update installation process fails, this function will throw `NE_UP_UPDINER`.
 
 ```js
 let url = 'https://example.com/updates/manifest.json';

@@ -23,16 +23,30 @@ These JavaScript variables can be used anywhere because these variables are defi
 
 ## Custom global variables
 
-You make custom global variables too via `neutralino.config.json`, as shown
+You can make custom global variables too via `neutralino.config.json`, as shown
 below.
 
-```
-....
+```json
 "globalVariables": {
     "TEST": "Test Value"
-},
-....
+}
 ```
 
-The above custom global variable's value can be accessed with `NL_TEST`.
+The above custom global variable's value can be accessed with `NL_TEST`. You can set any data type for
+custom global variables. Look at the following examples.
+
+```json
+"globalVariables": {
+    "TEST_1": 1,
+    "TEST_2": null,
+    "TEST_3": 3.5,
+    "TEST_4": [3, 5, 4, 5],
+    "TEST_5": {
+        "key": "value",
+        "anotherKey": 100
+    }
+}
+```
+
+Avoid overriding predefined global variables.
 

@@ -5,6 +5,8 @@ title: Neutralino.extensions
 `Neutralino.extensions` namespace contains methods related to Neutralino extensions. Extensions let
 developers write custom backend APIs for Neutralinojs applications.
 
+Learn more about extensions with [this guide](../how-to/extensions-overview).
+
 
 ## events.dispatch(extensionId, eventName, data)
 Dispatches a new event to an extension instance. If the targeted extension is not connected yet,
@@ -13,9 +15,9 @@ Neutralino client library will queue the function call and send whenever the ext
 
 ### Parameters
 
-- `extensionId`: Extension identifier.
-- `eventName`: Name of the event.
-- `data` (optional): Additional data for the event.
+- `extensionId` String: Extension identifier.
+- `eventName` String: Name of the event.
+- `data` Object (optional): Additional data for the event.
 
 ```js
 await Neutralino.extensions.dispatch('js.neutralino.sampleextension',
@@ -31,8 +33,8 @@ Dispatches a new event to all extensions.
 
 ### Parameters
 
-- `eventName`: Name of the event.
-- `data` (optional): Additional data for the event.
+- `eventName` String: Name of the event.
+- `data` Object (optional): Additional data for the event.
 
 ```js
 await Neutralino.extensions.broadcast('myTestEvent', 'Hello');
@@ -46,8 +48,8 @@ await Neutralino.extensions.broadcast('myTestEvent');
 Returns details about connected and loaded extensions.
 
 ### Return object (awaited):
-- `loaded`: An array of loaded extensions.
-- `connected`: An array of connected extensions. These extensions has an active WebSocket-based IPC connection
+- `loaded` String[]: An array of loaded extensions.
+- `connected` String[]: An array of connected extensions. These extensions has an active WebSocket-based IPC connection
                 with the main process.
 
 ```js

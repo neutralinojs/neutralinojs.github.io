@@ -2,7 +2,14 @@
 title: neutralino.config.json
 ---
 
-`neutralino.config.json` file contains the application configuration details. 
+`neutralino.config.json` file contains the application configuration details. Every Neutralinojs app requires
+the following mandatory keys from the config file.
+
+- `applicationId`
+- `url`
+- `defaultMode`
+
+Other configuration properties are optional and has default values.
 
 ## `applicationId: string`
 Unique string to identify your application. Eg: `js.neutralino.sample`
@@ -22,7 +29,18 @@ Enables or disables the native API. If you don't use any native API functions, y
 
 ## `url: string`
 The entry URL of the application. Neutralinojs will initially load this URL.
-This property accepts both relative and absolute URLs.
+This property accepts both relative and absolute URLs. See following examples.
+
+```json
+"url": "/"
+```
+
+The above config loads `http://localhost:<port>/` URL initially (internally `/index.html` is loaded).
+You can use remote urls too.
+
+```json
+"url": "http://example.com"
+```
 
 ## `documentRoot: string`
 
@@ -70,6 +88,9 @@ WebSocket as an IPC mechanism.
 
 ## `enableExtensions: boolean`
 Enables/disables extensions.
+
+## `extensions: object[]`
+An array of extension definitions. Learn more about this option [here](../how-to/extensions-overview#defining-the-extensions)
 
 ## `nativeBlockList: string[]`
 An array of native methods needs to be blocked from the frontend of the application. The wildcard character `*` is allowed
@@ -154,17 +175,20 @@ If this setting is `true`, the app process will exit when the user clicks on the
 the framework will dispatch the `windowClose` event.
 
 ## `cli.binaryName: string`
-Binary file name of your application. If it is `myapp`, all binaries should use
-`myapp-<platform>` format.
+Binary file name of your application. If it is `myapp`, all binaries will use
+`myapp-<platform>_<arch>` format.
 
 ## `cli.resourcesPath: string`
 Path of your application resources.
+
+## `cli.extensionsPath: string`
+Path of your application extensions.
 
 ## `cli.clientLibrary: string`
 Filename of the Neutralinojs JavaScript library.
 
 ## `cli.binaryVersion: string`
-Neutralinojs server version. neu CLI adds this property when the project is scaffolded.
+Neutralinojs server version.
 
 ## `cli.clientVersion: string`
-Neutralinojs client version. neu CLI adds this property when the project is scaffolded.
+Neutralinojs client version.

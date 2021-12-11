@@ -2,14 +2,14 @@
 title: Neutralino.window
 ---
 
-The `Neutralino.window` namespace contains methods related to the current native window instance. 
+The `Neutralino.window` namespace contains methods related to the current native window instance.
 This namespace's methods will work only for the [`window`](/docs/configuration/modes#window) mode.
 
 ## window.setTitle(title)
-Sets the title of the native window. 
+Sets the title of the native window.
 
 ### Parameters
-- `title`: Title of the window as a string.
+- `title` String (optional): Title of the window. Clears the title, if the function was called without the parameter.
 
 ```js
 await Neutralino.window.setTitle('New title');
@@ -40,7 +40,7 @@ await Neutralino.window.unmaximize();
 Returns `true` if the native window is maximized.
 
 ### Return object (awaited):
-- `boolean`: `true` or `false` based on current maximized status.
+- `true` or `false` based on current maximized status.
 
 ```js
 let status = await Neutralino.window.isMaximized();
@@ -64,7 +64,7 @@ await Neutralino.window.exitFullScreen();
 Returns `true` if the native window is in the full screen mode.
 
 ### Return object (awaited):
-- `boolean`: `true` or `false` based on current full screen status.
+- `true` or `false` based on current full screen status.
 
 ```js
 let status = await Neutralino.window.isFullScreen();
@@ -88,7 +88,7 @@ await Neutralino.window.hide();
 Returns `true` if the native window is visible.
 
 ### Return object (awaited):
-- `boolean`: `true` or `false` based on current visibility status.
+- `true` or `false` based on current visibility status.
 
 ```js
 let status = await Neutralino.window.isVisible();
@@ -103,11 +103,11 @@ await Neutralino.window.focus();
 
 ## window.move(x, y)
 Moves the native window into given coordinates. Neutralinojs's cross-platform coordinate system starts from top-left corner of the screen.
-In other words, `x=0,y=0` point refers to the top-left corner of the device's main screen. 
+In other words, `x=0,y=0` point refers to the top-left corner of the device's main screen.
 
 ### Parameters
-- `x`: A integer value for the horizontal position.
-- `y`: A integer value for the vertical position.
+- `x` Number: A integer value for the horizontal position.
+- `y` Number: A integer value for the vertical position.
 
 ```js
 await Neutralino.window.move(200, 400);
@@ -118,7 +118,7 @@ Sets an icon for the native window or Dock. 
 
 ### Parameters
 
-- `icon`: Path of the icon. A `200x200` PNG image file works fine on all supported operating systems.
+- `icon` String: Path of the icon. A `200x200` PNG image file works fine on all supported operating systems.
 
 ```js
 const icon = '/resources/icons/appIcon.png';
@@ -126,30 +126,41 @@ await Neutralino.window.setIcon(icon);
 ```
 
 ## window.setDraggableRegion(domId)
-Converts a given DOM element to a draggable region. The user will be able to drag the native window by dragging the given DOM element. This feature is suitable to make custom window bars along with the [borderless mode](../configuration/neutralino.config.json#modeswindowborderless-boolean). 
+Converts a given DOM element to a draggable region. The user will be able to drag the native window by dragging the given DOM element. This feature is suitable to make custom window bars along with the [borderless mode](../configuration/neutralino.config.json#modeswindowborderless-boolean).
 
 ### Parameters
 
-- `domId`: A DOM element identifier as a string.
+- `domId` String | HTMLElement: A DOM element identifier.
 
 ```js
 await Neutralino.window.setDraggableRegion('myCustomTitleBar');
 ```
 
-## window.setSize(WindowSizeOptions)
+## window.unsetDraggableRegion(domId)
+Converts a draggable region to a normal DOM elements by removing drag event handlers.
+
+### Parameters
+
+- `domId` String | HTMLElement: A DOM element identifier.
+
+```js
+await Neutralino.window.unsetDraggableRegion('myCustomTitleBar');
+```
+
+## window.setSize(Options)
 This method sets the size of the window.
 
-### WindowSizeOptions
+### Options
 
-- `width`: Window width in pixels.
-- `height`: Window height in pixels.
-- `minWidth`: Minimum width of the window in pixels.
-- `minHeight`: Minimum height of the window in pixels.
-- `maxWidth`: Maximum width of the window in pixels.
-- `maxHeight`: Maximum height of the window in pixels.
-- `resizable`: A boolean value to make the window resizable or fixed.
+- `width` Number (optional): Window width in pixels.
+- `height` Number (optional): Window height in pixels.
+- `minWidth` Number (optional): Minimum width of the window in pixels.
+- `minHeight` Number (optional): Minimum height of the window in pixels.
+- `maxWidth` Number (optional): Maximum width of the window in pixels.
+- `maxHeight` Number (optional): Maximum height of the window in pixels.
+- `resizable` Boolean (optional): A boolean value to make the window resizable or fixed.
 
-This method always expects width and height couples. 
+This method always expects width and height couples.
 For example, if you are setting `minWidth`, you should set `minHeight` too.
 
 ```js
@@ -167,28 +178,28 @@ await Neutralino.window.setSize({
 
 ## window.create(url, WindowOptions)
 Creates a native window. You can use this method to create new window for your multi-window Neutralinojs app.
-Neutralinojs spawns a new process for each native window. Therefore, the new window works as an isolated app once the window is created. 
+Neutralinojs spawns a new process for each native window. Therefore, the new window works as an isolated app once the window is created.
 
 However, you can build communication streams between windows with the [storage API](./storage.md).
 
 ### Parameters
 
-- `url`: URL to be loaded. Eg: `/resources/aboutWindow.html`.
-- `options`: an instance of `WindowOptions` type.
+- `url` String: URL to be loaded. Eg: `/resources/aboutWindow.html`.
+- `options` (optional): an instance of `WindowOptions` type.
 
 ### WindowOptions
 
-- `title`: Window title.
-- `icon`: Window icon path.
-- `fullScreen`: Sets full screen mode.
-- `alwaysOnTop`: Activates the top-most mode.
-- `enableInspector`: Activates developer tools and opens the web inspector window.
-- `borderless`: Makes the window borderless.
-- `maximize`: Launches the window maximized.
-- `hidden`: Hides the window.
-- `maximizable`: Makes the window maximizable or not.
-- `exitProcessOnClose`: Exits the application process when the user clicks the window's close button.
-- `processArgs`: Additional command-line arguments for the new window process.
+- `title` String: Window title.
+- `icon` String: Window icon path.
+- `fullScreen` Boolean: Sets full screen mode.
+- `alwaysOnTop` Boolean: Activates the top-most mode.
+- `enableInspector` Boolean: Activates developer tools and opens the web inspector window.
+- `borderless` Boolean: Makes the window borderless.
+- `maximize` Boolean: Launches the window maximized.
+- `hidden` Boolean: Hides the window.
+- `maximizable` Boolean: Makes the window maximizable or not.
+- `exitProcessOnClose` Boolean: Exits the application process when the user clicks the window's close button.
+- `processArgs` String: Additional command-line arguments for the new window process.
 
 
 ```js

@@ -3,17 +3,21 @@ title: Internal CLI Arguments
 ---
 
 neu CLI wraps Neutralinojs's internal CLI arguments to provide a simple interface for developers. For example,
-the `neu run` command internally calls `./bin/neutralino-linux --load-dir-res --path=.` on Linux.
+the `neu run` command internally calls `./bin/neutralino-linux_x64 --load-dir-res --path=. --neu-dev-auto-reload`
+on Linux. You can build neu CLI, Node.js, and npm to build Neutralinojs apps. But, neu CLI
+offers a simple, fast, and easy tooling for application developers to create, manage, and bundle Neutralinojs apps.
 
 Neutralinojs supports the following CLI arguments. Many internal CLI arguments help developers to override
-default configuration defined inside the `neutralino.config.json` file.
+default configuration defined inside the `neutralino.config.json` file. If you use Neutralinojs as a part of your
+source files via child process API, you can use the following arguments to configure the application instance.
 
 ### `--load-dir-res`
 
-Notifies Neutralinojs server to fetch files from the resources directory.
+Notifies Neutralinojs server to fetch files from the resources directory. If this flag is not provided,
+Neutralinojs server will load resources from the `resources.neu` file.
 
 :::tip
-If Neutralinojs fails to load resources `res.neu`,
+If Neutralinojs fails to load resources `resources.neu`,
 this flag is automatically enabled internally to find resources from the app directory.
 Therefore, you can double click on the binary instead of `neu run` while developing apps.
 :::
@@ -26,10 +30,15 @@ Overrides the resources path with a relative path or absolute path. This will ch
 
 Overrides the default mode. Accepted values are: `window`, `browser`, and `cloud`.
 
-### `--debug-mode`
+### `--neu-dev-auto-reload`
 
-Starts the development server on port `5050`. When the development server is enabled, each modification done to the resources
-will automatically reload the application. The `neu listen` command executes Neutralinojs with this flag.
+Listens to the `neuDev_reloadApp` event. When this CLI argument is provided, each modification done to the
+resources will automatically reload the application. The `neu run` command executes Neutralinojs with
+this flag by default.
+
+`--neu-dev-` is a reserved CLI argument prefix for Neutralinojs process. Therefore, avoid adding
+custom arguments with `--neu-dev-` prefix. Feel free to use the `--dev-` prefix
+ for your development-related CLI flags.
 
 ### `--url=<url>`
 

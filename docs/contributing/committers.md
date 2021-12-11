@@ -10,8 +10,9 @@ title: Committers
 - [Ali Furkan YILDIZ](https://github.com/uAliFurkanY)
 - [Adriaan](https://github.com/hypherionmc)
 - [Jean-marie Vrecq](https://github.com/corbane)
+- [Lanka Rathanyaka](https://github.com/Lahirutech)
 
-See more contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
+See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
 ## Become a committer
 
@@ -20,5 +21,6 @@ You can actively submit patches, bug-reports, and ideas to become a Neutralinojs
 ## Become a PMC member
 
 PMC (Project Management Committee) members usually take decisions about project's future.
-Active committers will be added to the PMC list frequently by the existing PMC members according to their commitment.
+Active committers will be added to the PMC list frequently by the existing PMC members
+according to their commitment.
 

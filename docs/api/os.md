@@ -8,17 +8,17 @@ title: Neutralino.os
 Executes a command and returns the output.
 
 ### Parameters
-- `command`: The command that is to be executed.
+- `command` String: The command that is to be executed.
 
 ### Options
-- `background`: Executes the command in background and resolve the Promise immediately if this is set to `true`.
-- `stdIn`: Standard input as a string.
+- `background` Boolean: Executes the command in background and resolve the Promise immediately if this is set to `true`.
+- `stdIn` String: Standard input as a string.
 
 ### Return object (awaited):
-- `pid`: Process identifier.
-- `stdOut`: Standard output.
-- `stdErr`: Standard error.
-- `exitCode`: Exit code of the process.
+- `pid` Number: Process identifier.
+- `stdOut` String: Standard output.
+- `stdErr` String: Standard error.
+- `exitCode` Number: Exit code of the process.
 
 ```js
 let info = await Neutralino.os.execCommand('python --version');
@@ -31,7 +31,7 @@ await Neutralino.os.execCommand('npm start', { background: true });
 Provides the value of a given environment variable. Throws `NE_OS_ENVNOEX` if the key is not defined in environment variables.
 
 ### Parameters
-- `key`: The name of the environment variable.
+- `key` String: The name of the environment variable.
 
 ### Return object (awaited):
 Value of the given environment variable.
@@ -45,15 +45,15 @@ console.log(`USER = ${value}`);
 Shows the file open dialog.
 
 ### Parameters
-- `title`: Title of the dialog.
+- `title` String (optional): Title of the dialog.
 
 #### Options
-- `filter`: An array of Filter objects to filter the files list.
-- `multiSelections`: Enables multi selections.
+- `filter` Filter[] (optional): An array of Filter objects to filter the files list.
+- `multiSelections` (optional): Enables multi selections.
 
 #### Filter
-- `name`: Filter name.
-- `extensions`: Array of file extensions. Eg: `['jpg', 'png']`
+- `name` String: Filter name.
+- `extensions` String: Array of file extensions. Eg: `['jpg', 'png']`
 
 ### Return object (awaited):
 An array of selected entries.
@@ -72,18 +72,18 @@ console.log('You have selected:', entries);
 Shows the file open dialog.
 
 ### Parameters
-- `title`: Title of the dialog.
+- `title` String (optional): Title of the dialog.
 
 #### Options
-- `filter`: An array of Filter objects to filter the files list.
-- `forceOverwrite`: Skips file overwrite warning message.
+- `filter` Filter[] (optional): An array of Filter objects to filter the files list.
+- `forceOverwrite` Boolean (optional): Skips file overwrite warning message.
 
 #### Filter
-- `name`: Filter name.
-- `extensions`: Array of file extensions. Eg: `['jpg', 'png']`
+- `name` String: Filter name.
+- `extensions` String[]: Array of file extensions. Eg: `['jpg', 'png']`
 
 ### Return object (awaited):
-Filename.
+Selected filename.
 
 ```js
 let entry = await Neutralino.os.showSaveDialog('Open a file', {
@@ -99,9 +99,9 @@ console.log('You have selected:', entry);
 Displays a notification message.
 
 ### Parameters
-- `title`: Notification title.
-- `content`: Content of the notification.
-- `icon` (optional): Icon name. Accpeted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is
+- `title` String: Notification title.
+- `content` String: Content of the notification.
+- `icon` String (optional): Icon name. Accpeted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is
         `INFO`
 
 ```js
@@ -114,14 +114,14 @@ await Neutralino.os.showNotification('Oops :/', 'Something went wrong', 'ERROR')
 Displays a message box.
 
 ### Parameters
-- `title`: Title of the message box.
-- `content`: Content of the message box.
-- `choice` (optional): Message box buttons. Accpeted values are: `OK`, `OK_CANCEL`, `YES_NO`, `YES_NO_CANCEL`, `RETRY_CANCEL`,
+- `title` String: Title of the message box.
+- `content` String: Content of the message box.
+- `choice` String (optional): Message box buttons. Accpeted values are: `OK`, `OK_CANCEL`, `YES_NO`, `YES_NO_CANCEL`, `RETRY_CANCEL`,
       and `ABORT_RETRY_IGNORE`. The default value is `OK`.
-- `icon` (optional): Icon name. Accpeted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is `INFO`.
+- `icon` String (optional): Icon name. Accpeted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is `INFO`.
 
 ### Return object (awaited):
-User action.
+User's `choice`.
 
 ```js
 await Neutralino.os.showMessageBox('Hello', 'Welcome');
@@ -139,16 +139,16 @@ if(button == 'YES') {
 Creates/updates the tray icon and menu.
 
 ### Options
-- `icon`: Tray icon path. Eg: `/resources/icons/trayIcon.png`. A
+- `icon` String: Tray icon path. Eg: `/resources/icons/trayIcon.png`. A
           `20x20`-sized PNG image file works fine on all supported operating systems.
-- `menuItems`: An array of `TrayMenuItem` objects.
+- `menuItems` TrayMenuItem[]: An array of `TrayMenuItem` objects.
 
 #### TrayMenuItem
 
-- `id`: A unique identifier for each menu item.
-- `text`: Label of the menu item. This field is a mandatory field. Use `-` (hyphen) character for a menu separator.
-- `isDisabled`: A boolean flag to disable/enable a specific menu item.
-- `isChecked`: A boolean flag to mark a specific menu item as selected.
+- `id` String (optional): A unique identifier for each menu item.
+- `text` String: Label of the menu item. This field is a mandatory field. Use `-` (hyphen) character for a menu separator.
+- `isDisabled` Boolean (optional): A boolean flag to disable/enable a specific menu item.
+- `isChecked` Boolean (optional): A boolean flag to mark a specific menu item as selected.
 
 ```js
 let tray = {
@@ -167,7 +167,7 @@ await Neutralino.os.setTray(tray);
 Returns known platform-specific folders such as Downloads, Music, Videos, etc.
 
 ### Parameters
-- `title`: Name of the folder. Accepted values are: `config`, `data`, `cache`, `documents`, `pictures`, `music`, `video`,
+- `title` String: Name of the folder. Accepted values are: `config`, `data`, `cache`, `documents`, `pictures`, `music`, `video`,
             `downloads`, `savedGames1`, and `savedGames2`. Throws `NE_OS_INVKNPT` for invalid folder names.
 
 ### Return object (awaited):
@@ -187,7 +187,7 @@ If your application is running in the default web browser, this method will open
 
 ### Parameters
 
-- `url`: URL to be opened.
+- `url` String: URL to be opened.
 
 ```js
 Neutralino.os.open('https://neutralino.js.org');
