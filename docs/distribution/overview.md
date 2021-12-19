@@ -14,7 +14,7 @@ The `neu build` command generates the following files on any supported operating
 | `myapp-linux_x64`   | Linux   | `x64`     | Application binary              |
 | `myapp-macos_x64`   | macOS   | `x64`     | Application binary              |
 | `myapp-win_x64`     | Windows | `x64`     | Application binary              |
-| `resources.neu`           | all     | `all`     | Application resource file       |
+| `resources.neu`     | all     | `all`     | Application resource file       |
 
 Neutralinojs officially offers only `x64` pre-built binaries. If you need binaries for other CPU architectures,
 consider building binaries from source with [this guide](../contributing/framework-developer-guide).

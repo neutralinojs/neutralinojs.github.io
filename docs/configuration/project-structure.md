@@ -2,12 +2,13 @@
 title: Project Structure
 ---
 
-Neutralinojs has a flexible project structure. Imagine a structure of a typical web application.
+Neutralinojs has a flexible project structure. Imagine a structure of a normal web application.
 We may separate resources into folders such as assets, styles, images, etc. Similarly, developers can
 decide the Neutralinojs project structure as they wish.
 
 However, we should load the `neutralino.js` JavaScript file always into all the
-HTML files. neu CLI will scaffold a simple structure for you. But, you can indeed
+HTML files. neu CLI will scaffold a simple structure for you by downloading the
+[minimal template](https://github.com/neutralinojs/neutralinojs-minimal). But, you can indeed
 change it.
 
 ## Developing apps with vanilla Js

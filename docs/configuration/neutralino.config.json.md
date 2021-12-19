@@ -88,9 +88,12 @@ WebSocket as an IPC mechanism.
 
 ## `enableExtensions: boolean`
 Enables/disables extensions.
+Learn more about this option [here](../how-to/extensions-overview#enable-the-extensions-feature)
+
 
 ## `extensions: object[]`
-An array of extension definitions. Learn more about this option [here](../how-to/extensions-overview#defining-the-extensions)
+An array of extension definitions.
+Learn more about this option [here](../how-to/extensions-overview#defining-the-extensions)
 
 ## `nativeBlockList: string[]`
 An array of native methods needs to be blocked from the frontend of the application. The wildcard character `*` is allowed
