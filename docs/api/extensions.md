@@ -8,7 +8,7 @@ developers write custom backend APIs for Neutralinojs applications.
 Learn more about extensions with [this guide](../how-to/extensions-overview).
 
 
-## events.dispatch(extensionId, eventName, data)
+## extensions.dispatch(extensionId, eventName, data)
 Dispatches a new event to an extension instance. If the targeted extension is not connected yet,
 Neutralino client library will queue the function call and send whenever the extension comes online.
 
@@ -28,7 +28,9 @@ await Neutralino.extensions.dispatch('js.neutralino.sampleextension',
 ```
 
 ## extensions.broadcast(eventName, data)
-Dispatches a new event to all extensions.
+Dispatches a new event to all connected extensions. If an extension is loaded but not connected yet,
+the particular extension won't get the new event. Use [`extensions.dispatch`](#extensionsdispatchextensionid-eventname-data)
+ to send messages even if the extension is not connected to the main process.
 
 
 ### Parameters
