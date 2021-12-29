@@ -70,8 +70,20 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Getting Started',
+              label: 'Getting started',
               to: 'docs/',
+            },
+            {
+              label: 'API reference',
+              to: 'docs/api/overview',
+            },
+            {
+              label: 'CLI',
+              to: 'docs/cli/neu-cli',
+            },
+            {
+              label: 'Contributing',
+              to: 'docs/contributing/framework-developer-guide',
             },
           ],
         },
@@ -105,6 +117,10 @@ module.exports = {
             {
               label: 'Discord',
               href: 'https://discord.gg/cybpp4guTJ'
+            },
+            {
+              label: 'Reddit',
+              href: 'https://www.reddit.com/r/neutralinojs/'
             }
           ],
         },
@@ -122,7 +138,11 @@ module.exports = {
             {
               label: 'Privacy policy',
               to: 'privacy-policy'
-            }
+            },
+            {
+              label: 'Blog',
+              href: 'https://codezri.org/blog/'
+            },
           ],
         },
       ],

@@ -15,6 +15,17 @@ Sets the title of the native window.
 await Neutralino.window.setTitle('New title');
 ```
 
+## window.getTitle()
+Returns the title of the native window.
+
+### Return String (awaited):
+The current title of the native window instance.
+
+```js
+let title = await Neutralino.window.getTitle();
+console.log(`title = ${title}`);
+```
+
 ## window.minimize()
 Minimizes the native window.
 
@@ -39,7 +50,7 @@ await Neutralino.window.unmaximize();
 ## window.isMaximized()
 Returns `true` if the native window is maximized.
 
-### Return object (awaited):
+### Return Boolean (awaited):
 - `true` or `false` based on current maximized status.
 
 ```js
@@ -63,7 +74,7 @@ await Neutralino.window.exitFullScreen();
 ## window.isFullScreen()
 Returns `true` if the native window is in the full screen mode.
 
-### Return object (awaited):
+### Return Boolean (awaited):
 - `true` or `false` based on current full screen status.
 
 ```js
@@ -87,7 +98,7 @@ await Neutralino.window.hide();
 ## window.isVisible()
 Returns `true` if the native window is visible.
 
-### Return object (awaited):
+### Return Boolean (awaited):
 - `true` or `false` based on current visibility status.
 
 ```js
@@ -201,6 +212,11 @@ However, you can build communication streams between windows with the [storage A
 - `exitProcessOnClose` Boolean: Exits the application process when the user clicks the window's close button.
 - `processArgs` String: Additional command-line arguments for the new window process.
 
+### Return Object (awaited):
+- `pid` Number: Process identifier.
+- `stdOut` String: Standard output. This value is always empty since the new window process starts asynchronously.
+- `stdErr` String: Standard error. This value is always empty since the new window process starts asynchronously.
+- `exitCode` Number: Exit code of the process.
 
 ```js
 await Neutralino.window.create('/resources/aboutWindow.html', {

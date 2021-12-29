@@ -22,7 +22,6 @@ Kills the application process. If the application becomes unresponsive,
 you can use this to terminate the process instantly. It is recommended
 to use the `exit()` method to close your application properly.
 
-
 ```js
 await Neutralino.app.killProcess();
 ```
@@ -31,7 +30,6 @@ await Neutralino.app.killProcess();
 Restarts the current application instance.
 
 ### Options
-
 - `args` String: Additional command-line arguments that need to be passed to the new application instance's process.
 
 ```js
@@ -43,7 +41,7 @@ await Neutralino.app.restartProcess({ args: '--restarted' });
 ## app.getConfig()
 Returns the current application configuration as a JSON object.
 
-### Return object (awaited):
+### Return Object (awaited):
 The current application configuration. Sometimes, this configuration object is not identical to your configuration file
 because the framework updates the configuration during several situations such as config overriding via CLI arguments
 and using `0` as the port.
@@ -55,7 +53,6 @@ console.log('URL = ', config.url);
 
 ## app.broadcast(eventName, data)
 Dispatches a new event to all app instances.
-
 
 ### Parameters
 

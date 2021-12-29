@@ -14,7 +14,6 @@ Neutralino client library will queue the function call and send whenever the ext
 
 
 ### Parameters
-
 - `extensionId` String: Extension identifier.
 - `eventName` String: Name of the event.
 - `data` Object (optional): Additional data for the event.
@@ -34,7 +33,6 @@ the particular extension won't get the new event. Use [`extensions.dispatch`](#e
 
 
 ### Parameters
-
 - `eventName` String: Name of the event.
 - `data` Object (optional): Additional data for the event.
 
@@ -49,7 +47,7 @@ await Neutralino.extensions.broadcast('myTestEvent');
 ## extensions.getStats()
 Returns details about connected and loaded extensions.
 
-### Return object (awaited):
+### Return Object (awaited):
 - `loaded` String[]: An array of loaded extensions.
 - `connected` String[]: An array of connected extensions. These extensions has an active WebSocket-based IPC connection
                 with the main process.

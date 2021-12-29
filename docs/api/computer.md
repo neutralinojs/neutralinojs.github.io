@@ -7,8 +7,7 @@ title: Neutralino.computer
 ## computer.getMemoryInfo()
 Provides physical memory details (in megabytes).
 
-### Return object (awaited):
-
+### Return Object (awaited):
   - `total` Number: Total physical memory.
   - `available` Number: Available physical memory.
 

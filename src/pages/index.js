@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 import {Adsense} from '@ctrl/react-adsense';
 
-const youtubePlaylist = "https://www.youtube.com/watch?v=txDlNNsgSh8&list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj&ab_channel=CodeZri";
+const youtubePlaylist = "https://www.youtube.com/playlist?list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj";
 const features = [
   {
     title: 'Native API',
@@ -34,7 +34,7 @@ const features = [
     imageUrl: 'img/undraw_social_friends_nsbv.svg',
     description: (
       <>
-        Neutralinojs apps will work on Linux, Windows, macOS, and Web. Single portable application package
+        Neutralinojs apps will work on Linux, Windows, macOS, Web, and Chrome. Single portable application
         can be released for all popular operating systems and web browsers.
       </>
     ),
@@ -136,7 +136,7 @@ export default function Home() {
           <div className="row">
             <div className="col col--6">
               <h1>Build once with JavaScript</h1>
-              <p>Run on Linux, Windows, macOS, and Web.</p>
+              <p>Run on Linux, Windows, macOS, Web, and Chrome.</p>
             </div>
             <div className="col col--6">
               <p>
@@ -150,11 +150,13 @@ export default function Home() {
                 portable SDK which is an alternative for Electron and NW.js. Neutralinojs doesn't bundle Chromium and uses the existing
                 web browser library in the operating system (Eg: gtk-webkit2 on Linux).
                 Neutralinojs implements a WebSocket connection for native operations and embeds a static web server
-                to serve the web content. Also, it offers a built-in <Link to="https://github.com/neutralinojs/neutralino.js">JavaScript client library</Link> for developers.
+                to serve the web content. Also, it offers a built-in <Link href="https://github.com/neutralinojs/neutralino.js">JavaScript client library</Link> for developers.
                 <br/><br/>
                 If you can build a website, you can build cross-platform desktop apps too because Neutralinojs is a framework for
                 creating native desktop applications with web technologies like JavaScript, HTML, and CSS. You can indeed use your
                 favorite frontend framework (Angular, React, Svelte, Vue, etc.) for building your next Neutralinojs app.
+
+                Read more about
               </p>
             </div>
             <div className="col col--12">
@@ -172,7 +174,7 @@ export default function Home() {
       <div className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">Learn Neutralinojs in 5 mins</h1>
-          <p className="hero__subtitle">Start building amazing apps</p>
+          <p className="hero__subtitle">Start building lightweight apps</p>
           <div className={styles.buttons}>
             <Link
               className={clsx(
@@ -209,7 +211,7 @@ export default function Home() {
       </main>
       <div className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">Start developing lightweight apps today!</h1>
+          <h1 className="hero__title">Start building lightweight apps!</h1>
           <p className="hero__subtitle">
             <code>
               npm install -g @neutralinojs/neu

@@ -14,7 +14,7 @@ Executes a command and returns the output.
 - `background` Boolean: Executes the command in background and resolve the Promise immediately if this is set to `true`.
 - `stdIn` String: Standard input as a string.
 
-### Return object (awaited):
+### Return Object (awaited):
 - `pid` Number: Process identifier.
 - `stdOut` String: Standard output.
 - `stdErr` String: Standard error.
@@ -28,13 +28,13 @@ await Neutralino.os.execCommand('npm start', { background: true });
 ```
 
 ## os.getEnv(key)
-Provides the value of a given environment variable. Throws `NE_OS_ENVNOEX` if the key is not defined in environment variables.
+Provides the value of a given environment variable.
 
 ### Parameters
 - `key` String: The name of the environment variable.
 
-### Return object (awaited):
-Value of the given environment variable.
+### Return String (awaited):
+Value of the given environment variable. Returns an empty string if the environment variable is not defined.
 
 ```js
 let value = await Neutralino.os.getEnvar('USER');
@@ -55,7 +55,7 @@ Shows the file open dialog.
 - `name` String: Filter name.
 - `extensions` String: Array of file extensions. Eg: `['jpg', 'png']`
 
-### Return object (awaited):
+### Return Object (awaited):
 An array of selected entries.
 
 ```js
@@ -82,7 +82,7 @@ Shows the file open dialog.
 - `name` String: Filter name.
 - `extensions` String[]: Array of file extensions. Eg: `['jpg', 'png']`
 
-### Return object (awaited):
+### Return String (awaited):
 Selected filename.
 
 ```js
@@ -120,7 +120,7 @@ Displays a message box.
       and `ABORT_RETRY_IGNORE`. The default value is `OK`.
 - `icon` String (optional): Icon name. Accpeted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is `INFO`.
 
-### Return object (awaited):
+### Return String (awaited):
 User's `choice`.
 
 ```js
@@ -170,8 +170,8 @@ Returns known platform-specific folders such as Downloads, Music, Videos, etc.
 - `title` String: Name of the folder. Accepted values are: `config`, `data`, `cache`, `documents`, `pictures`, `music`, `video`,
             `downloads`, `savedGames1`, and `savedGames2`. Throws `NE_OS_INVKNPT` for invalid folder names.
 
-### Return object (awaited):
-User action.
+### Return String (awaited):
+Path.
 
 ```js
 let downloadsPath = await Neutralino.os.getPath('downloads');

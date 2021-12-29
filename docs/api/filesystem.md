@@ -61,7 +61,7 @@ Reads a text file. Throws `NE_FS_FILRDER` for file read errors.
 
 - `filename`: Filename.
 
-### Return object (awaited):
+### Return String (awaited):
 File content.
 
 ```js
@@ -76,8 +76,8 @@ Reads binary files. Throws `NE_FS_FILRDER` for file read errors.
 
 - `filename` String: Filename.
 
-### Return object (awaited):
-- Content of the binary file as an
+### Return Object (awaited):
+Content of the binary file as an
 [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
 
 ```js
@@ -107,7 +107,7 @@ Reads directory contents. Throws `NE_FS_NOPATHE` if the path doesn't exist.
 
 - `path` String: File/directory path.
 
-### Return object (awaited):
+### Return Object (awaited):
   - `entry` String: file name.
   - `type` String: The type of the entry (`FILE` or `DIRECTORY`).
 
@@ -148,7 +148,7 @@ Therefore, you can use this method to check for the existance of a file or direc
 
 - `path` String: File or directory path.
 
-### Return object (awaited):
+### Return Object (awaited):
 - `size` Number: Size in bytes.
 - `isFile` Boolean: `true` if the path represents a normal file.
 - `isDirectory` Boolean: `true` if the path represents a directory.

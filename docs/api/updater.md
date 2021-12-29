@@ -19,7 +19,7 @@ for network connectivity issues.
 
 - `url` String: URL to fetch update manifest.
 
-### Return object (awaited):
+### Return Object (awaited):
 Update manifest.
 
 ```js

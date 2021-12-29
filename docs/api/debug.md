@@ -13,7 +13,6 @@ messages on your terminal.
 :::
 
 ### Parameters
-
 - `message` String: Content to be logged.
 - `type` String (optional): Type of the message. Accepted values are `INFO`, `WARNING`, and `ERROR`. The default value is `INFO`.
 

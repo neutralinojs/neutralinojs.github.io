@@ -32,7 +32,7 @@ Reads and returns data for a given Neutralinojs shared storage key. 
 ### Parameters
 - `key` String: Storage data record identifier.
 
-### Return object (awaited):
+### Return String (awaited):
 Data string of the storage record.
 
 
