@@ -73,7 +73,9 @@ function CustomTOC({toc}) {
       <div>
           <div
             data-ea-publisher="neutralino"
-            data-ea-type="image">
+            data-ea-type="image"
+            id="neutralino-docs"
+            >
           </div>
       </div>
       <Headings toc={toc} />

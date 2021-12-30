@@ -94,15 +94,16 @@ export default function Home() {
   const [isInitialized, setIsInitialized] = useState(false);
   const [isEthABlocked, setIsEthABlocked] = useState(false)
   useEffect(() => {
-    if (isInitialized) {
+    if(isInitialized) {
       return;
     }
     setIsInitialized(true);
     try {
-      setIsEthABlocked(typeof ethicalads === 'undefined')
-      ethicalads.load_placements()
-    } catch (error) {
-      setIsEthABlocked(false)
+      setIsEthABlocked(typeof ethicalads === 'undefined');
+      ethicalads.load_placements();
+    }
+    catch (error) {
+      setIsEthABlocked(false);
     }
   });
   return (
@@ -116,7 +117,9 @@ export default function Home() {
           <div>
               <div
                 data-ea-publisher="neutralino"
-                data-ea-type="image">
+                data-ea-type="image"
+                id="neutralino-front"
+                >
               </div>
           </div>
           <div className={styles.buttons}>
