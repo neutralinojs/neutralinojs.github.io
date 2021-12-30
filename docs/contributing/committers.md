@@ -11,6 +11,7 @@ title: Committers
 - [Adriaan](https://github.com/hypherionmc)
 - [Jean-marie Vrecq](https://github.com/corbane)
 - [Lanka Rathanyaka](https://github.com/Lahirutech)
+- [Orent](https://github.com/orent)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
