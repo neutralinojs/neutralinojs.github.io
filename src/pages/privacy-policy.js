@@ -24,15 +24,20 @@ export default function Home() {
           <div className="row">
             <div className="col col--12">
               <p>
-                  Neutralinojs framework or CLI doesn't collect user information for analytical and statistical purposes. 
-                  However, we use Google Analytics in our website and documentation to understand our developer audience. Therefore, 
-                  Google Analytics may place cookies inside your browser via the Neutralinojs website. If you wish not to allow those cookies, 
-                  please disable cookies for the Neutralinojs website.
+                  Neutralinojs framework or CLI doesn't collect user information for analytical and statistical purposes.
+                  However, we use Google Analytics in our website and documentation to understand our developer audience. Therefore,
+                  Google Analytics may place cookies inside your browser via the Neutralinojs website. Also, we display a
+                  few ads via Google Adsense which may also place cookies inside your browser to improve their ad experience for users.
+                  If you wish not to allow those cookies, please kindly disable cookies for the Neutralinojs website.
                   <br/><br/>
-                  We use Google Analytics data to identify frequently visited pages. 
+                  We use Google Analytics data to identify frequently visited pages.
                   We often make tutorials based on those frequently visited page details.
+                  Please note that
+                  this privacy policy statement is valid only for the official website domain <code>neutralino.js.org</code>.
+                  Make sure that you are browsing the right official domain name which adheres to this privacy policy statement.
+
                   <br/><br/>
-                  Last updated date: 2021-07-31
+                  Last updated date: 2022-01-01
               </p>
             </div>
           </div>
