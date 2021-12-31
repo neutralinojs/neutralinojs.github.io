@@ -26,13 +26,19 @@ npx @neutralinojs/neu <command>
 ### `neu create <binaryName>`
 
 Creates a new Neutralinojs app using the [minimal template](https://github.com/neutralinojs/neutralinojs-minimal).
-`<binaryName>` is the name of your application's binary file. For example, if you used `myapp`,
+
+#### Parameters
+
+- `<binaryName>`: The name of your application's binary file. For example, if you used `myapp`,
 the final application binaries will become `myapp-<platform>_<arch>`.
 
-### `neu build [--release]`
+### `neu build [--release, --copy-storage]`
 This command will create the `dist` folder. Thereafter, it will create the `resources.neu` resource file from
-your application resources. Finally, this command will create a zip file of the application bundle
-if `--release` flag is provided.
+your application resources.
+
+#### Options
+- `--release`: Creates a portable ZIP file of the application bundle.
+- `--copy-storage`: Copies the current snapshot of the Neutralinojs storage to the application bundle.
 
 ### `neu run [--mode=<mode>, --disable-auto-realod, --arch=<arch>]`
 Executes the current application (This will execute specific binary depending on your operating system).
@@ -40,6 +46,12 @@ This command will change execution permissions (using the `chmod` command) of th
 It will enable live-reload for the current application.
 In other words, when a modification happens to application resources,
 the Neutralinojs application will be reloaded automatically.
+
+#### Options
+- `--mode=<mode>`: Overrides the default mode.
+- `--disable-auto-reload`: Disables the auto-reloading feature.
+- `--arch=<arch>`: Explicitly set the CPU architecture. This option is helpful if you use a 32-bit Node.js process
+on a 64-bit computer.
 
 ### `neu update`
 This command will update the existing Neutralinojs binaries and client library from the internet.

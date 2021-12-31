@@ -231,3 +231,20 @@ Neutralinojs server version.
 
 ### `cli.clientVersion: string`
 Neutralinojs client version.
+
+### `cli.autoReloadExclude: string`
+A JavaScript regular expression to exclude files from the auto-reload file watcher. For example, the
+following configuration will disable auto-reloading for SASS stylesheets (`.scss`).
+
+```json
+{
+    "autoReloadExclude": ".*\\.scss$"
+}
+```
+Use `|` character to set multiple regular expressions, as shown below.
+
+```json
+{
+    "autoReloadExclude": ".*\\.scss$|.*\\.less$"
+}
+```

@@ -95,6 +95,21 @@ let entry = await Neutralino.os.showSaveDialog('Open a file', {
 console.log('You have selected:', entry);
 ```
 
+
+## os.showFolderDialog(title)
+Shows the folder open dialog.
+
+### Parameters
+- `title` String (optional): Title of the dialog.
+
+### Return String (awaited):
+Selected folder.
+
+```js
+let entry = await Neutralino.os.showFolderDialog('Select installation directory');
+console.log('You have selected:', entry);
+```
+
 ## os.showNotification(title, content, icon)
 Displays a notification message.
 
