@@ -82,6 +82,10 @@ module.exports = {
               to: 'docs/cli/neu-cli',
             },
             {
+              label: 'Modes',
+              to: 'docs/configuration/modes',
+            },
+            {
               label: 'Contributing',
               to: 'docs/contributing/framework-developer-guide',
             },
@@ -91,7 +95,7 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Github',
+              label: 'GitHub',
               href: 'https://github.com/neutralinojs',
             },
             {
