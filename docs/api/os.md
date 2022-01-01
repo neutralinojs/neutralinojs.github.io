@@ -37,7 +37,7 @@ Provides the value of a given environment variable.
 Value of the given environment variable. Returns an empty string if the environment variable is not defined.
 
 ```js
-let value = await Neutralino.os.getEnvar('USER');
+let value = await Neutralino.os.getEnv('USER');
 console.log(`USER = ${value}`);
 ```
 
