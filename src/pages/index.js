@@ -131,6 +131,14 @@ export default function Home() {
               to={useBaseUrl('docs/')}>
               Get Started
             </Link>
+            <Link
+              className={clsx(
+                'button button--outline button--secondary button--lg margin-left--sm',
+                styles.getStarted,
+              )}
+              href="https://discord.gg/cybpp4guTJ">
+              Join Discord
+            </Link>
           </div>
         </div>
       </header>
