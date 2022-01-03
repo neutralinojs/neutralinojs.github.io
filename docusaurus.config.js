@@ -150,7 +150,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Neutralinojs | innovation by <a href="https://codezri.org/">codezri</a> project.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Neutralinojs | innovation by <a href="https://codezri.org/">CodeZri.org</a>`,
     },
   },
   presets: [
