@@ -32,26 +32,34 @@ Creates a new Neutralinojs app using the [minimal template](https://github.com/n
 - `<binaryName>`: The name of your application's binary file. For example, if you used `myapp`,
 the final application binaries will become `myapp-<platform>_<arch>`.
 
-### `neu build [--release, --copy-storage]`
-This command will create the `dist` folder. Thereafter, it will create the `resources.neu` resource file from
-your application resources.
+#### Options
+- `--template`: Sets the application template via GitHub repository identifier with the `<account>/<repo>` format.
+The default value is [`neutralinojs/neutralinojs-minimal`](https://github.com/neutralinojs/neutralinojs-minimal)
+
+### `neu build`
+This command will create the `dist` folder. Thereafter, it will produce the binaries for all supported
+platforms and `resources.neu` resource file from your application resources.
 
 #### Options
 - `--release`: Creates a portable ZIP file of the application bundle.
 - `--copy-storage`: Copies the current snapshot of the Neutralinojs storage to the application bundle.
 
-### `neu run [--mode=<mode>, --disable-auto-realod, --arch=<arch>]`
+### `neu run`
 Executes the current application (This will execute specific binary depending on your operating system).
 This command will change execution permissions (using the `chmod` command) of the binary files on Linux and macOS.
-It will enable live-reload for the current application.
+Also, it enables auto-reload for the current application.
 In other words, when a modification happens to application resources,
 the Neutralinojs application will be reloaded automatically.
 
 #### Options
-- `--mode=<mode>`: Overrides the default mode.
 - `--disable-auto-reload`: Disables the auto-reloading feature.
 - `--arch=<arch>`: Explicitly set the CPU architecture. This option is helpful if you use a 32-bit Node.js process
 on a 64-bit computer.
+- `--verbose`: Shows STDERR and STDOUT of the application process when the application is terminated. This option
+is helpful for detecting framework initialization issues during development.
+- `-- <process-args>`: Sets additional CLI arguments for the Neutralinojs application process. For example,
+you can enable the `browser` mode by entering `neu run -- --mode=browser`. See all accepted arguments from
+[here](./internal-cli-arguments.md).
 
 ### `neu update`
 This command will update the existing Neutralinojs binaries and client library from the internet.
@@ -60,5 +68,15 @@ This command will update the existing Neutralinojs binaries and client library f
 Prints all version information. If this command is executed from a Neutralinojs application directory,
 you will see project-specific version details. Otherwise, you will see global version details.
 
-## Change log
-Please check the change log from [GitHub](https://github.com/neutralinojs/neutralinojs-cli/blob/master/CHANGELOG.md).
+### `neu plugins [plugin]`
+
+#### Parameters
+- `plugin`: Plugin identifier. This value is usually the npm package identifer.
+
+#### Options
+- `--add`: Registers a new plugin to neu CLI. neu CLI downloads plugins to the CLI's `node_modules`
+directory and loads during the bootstrap process. Plugins can introduce new commands to the CLI.
+- `--remove`: Unregisters an existing plugin.
+
+## Changelog
+Please check the changelog from [GitHub](https://github.com/neutralinojs/neutralinojs-cli/blob/master/CHANGELOG.md).
