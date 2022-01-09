@@ -81,11 +81,12 @@ directory and loads during the bootstrap process. Plugins can introduce new comm
 
 ## Plugins
 
-Neutralinojs app developers are able to write custom `neu-cli` plugins to add their own commands to the main CLI. Plugins can be developed as explained below.
+Neutralinojs app developers are able to write plugins to add their own commands to the neu CLI.
+You can develop CLI plugins with the folllowing steps.
 
 ### Developing a plugin
 
-`neu-cli` will register plugins using `index.js` as an interface. Create a new npm package with `index.js` and
+neu CLI will register plugins using `index.js` as an interface. Create a new npm package with `index.js` and
 add the following code snippet.
 
 ```js
@@ -101,16 +102,16 @@ module.exports = {
 }
 ```
 
-`command` is the CLI command string with actions. the `register` function will be called when plugin is
-being registered with `neu-cli`. Also, it has the command object and
+`command` is the CLI command string with actions. The `register` function will be called when plugin is
+being registered. Also, it has the command object and
 [standard modules object](https://github.com/neutralinojs/neutralinojs-cli/blob/master/src/modules/index.js)
-as parameters. Please check [commander](https://www.npmjs.com/package/commander) for more information about
-commands and objects.
+as parameters. Please check [commander](https://www.npmjs.com/package/commander) package documentation
+for more information about commands and callback parameters.
 
 ### Publishing your plugin
 
-Once you publish your `neu-cli` plugin to npm registry as a public package, anyone will be able
-to use it using:
+Once you publish your plugin to the npm registry as a public package, anyone will be able
+to install it using:
 
 ```bash
  $ neu plugins --add <package-name>
