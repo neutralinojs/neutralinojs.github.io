@@ -57,7 +57,11 @@ the Neutralinojs application will be reloaded automatically.
 on a 64-bit computer.
 - `--verbose`: Shows STDERR and STDOUT of the application process when the application is terminated. This option
 is helpful for detecting framework initialization issues during development.
-- `-- <process-args>`: Sets additional CLI arguments for the Neutralinojs application process. For example,
+- `--frontend-lib-dev`: Enables both frontend library's development environment and Neutralinojs's
+development evironment at the same time. This option patches the main HTML file with the Neutralinojs
+client library path to expose the native API to the frontend library's development server.
+- `-- <process-args>`: Sets additional CLI arguments for the Neutralinojs
+- application process. For example
 you can enable the `browser` mode by entering `neu run -- --mode=browser`. See all accepted arguments from
 [here](./internal-cli-arguments.md).
 

@@ -55,7 +55,7 @@ const features = [
     description: (
       <>
         Neutralinojs team always tend to offer simple and flexible development interfaces for programmers.
-        The framework has simple auto updater and CLI. We don't use OOP-based classes everywhere to complicate
+        The framework has simple portable auto-updater and CLI. We don't use OOP-based classes everywhere to complicate
         your work.
       </>
     ),
@@ -65,8 +65,10 @@ const features = [
     imageUrl: 'img/undraw_work_together_re_5yhn.svg',
     description: (
       <>
-        You can build Neutralinojs apps with any frontend framework. Also, you can use Neutralinojs
-        as a part of any source file with the child process IPC. Moreover, you can extend Neutralinojs API
+        You can build Neutralinojs apps with any frontend framework with your favorite features
+        like <Link href="https://webpack.js.org/concepts/hot-module-replacement/">HMR</Link>.
+        Also, you can use Neutralinojs
+        as a part of any source file with the child process IPC or extend Neutralinojs API
         with any backend language with the extensions IPC.
       </>
     ),
