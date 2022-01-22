@@ -178,6 +178,8 @@ neu run --frontend-lib-dev
 Make sure to build your frontend app once before entering the above command since it loads the client
 library from the Neutralinojs application resources directory (not from your frontend framework's directory).
 
+See the full source code of this tutorial [here](https://github.com/codezri/neutralinojs-react).
+
 
 
 
