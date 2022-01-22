@@ -9,7 +9,7 @@ decide the Neutralinojs project structure as they wish.
 However, we should load the `neutralino.js` JavaScript file always into all the
 HTML files. neu CLI will scaffold a simple structure for you by downloading the
 [minimal template](https://github.com/neutralinojs/neutralinojs-minimal). But, you can indeed
-change it.
+change it or use the [zero template](https://github.com/neutralinojs/neutralinojs-zero) to start from scratch.
 
 ## Developing apps with vanilla Js
 If you like to develop Neutralinojs applications with vanilla JavaScript, you can place all application resources in one directory.
@@ -25,14 +25,9 @@ After that, you can update the `neutralino.config.json` file with the following 
 You can choose a name for `<resourceDir>`. But, by default neu CLI will use `resources`.
 
 ## Developing apps with frontend frameworks
-Any frontend framework can be used to make Neutralinojs applications.
-You can place your frontend framework code into a separate directory (or root directory).
-After that, you can set the default build path of the frontend framework to your Neutralinojs resource directory. 
-
-:::info
-If your application is launched via the `neu run` command, when you build a new version of your frontend
-framework code, Neutralinojs will automatically reload the application.
-:::
+Any frontend framework can be used to make Neutralinojs applications. You can use any pattern as you wish
+to include both Neutralinojs app and frontend app in one repository. You can check our recommended approach
+from [this](../how-to/use-a-frontend-library) guide.
 
 ### Examples
 

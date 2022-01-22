@@ -31,6 +31,7 @@ Neutralinojs offers many native operations for you by using this communication m
 - [Neutralino.filesystem](filesystem)
 - [Neutralino.os](os)
 - [Neutralino.storage](storage)
+- [Neutralino.clipboard](clipboard)
 - [Neutralino.window](window)
 - [Neutralino.events](events)
 - [Neutralino.extensions](extensions)

@@ -12,13 +12,14 @@ These JavaScript variables can be used anywhere because these variables are defi
 | `NL_APPID`    | Application identifier                                        |
 | `NL_APPVERSION` | Application version                                         |
 | `NL_PORT`     | Application port                                              |
-| `NL_MODE`     | Mode of the application: `window`, `browser`, or `cloud`      |
+| `NL_MODE`     | Mode of the application: `window`, `browser`, `cloud`, or `chrome`      |
 | `NL_VERSION`  | Neutralinojs server version                                   |
 | `NL_CVERSION`  | Neutralinojs client version                                  |
 | `NL_CWD`      | Current working directory                                     |
 | `NL_PATH`     | Application path                                              |
 | `NL_ARGS`     | Command-line arguments                                        |
 | `NL_PID`      | Identifier of the current process                             |
+| `NL_RESMODE`  | Source of application resources: `bundle` or `directory`      |
 
 
 ## Custom global variables

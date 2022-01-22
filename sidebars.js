@@ -20,6 +20,7 @@ module.exports = {
         'api/os',
         'api/computer',
         'api/storage',
+        'api/clipboard',
         'api/debug',
         'api/events',
         'api/extensions',
@@ -51,6 +52,7 @@ module.exports = {
       items: [
         'how-to/extensions-overview',
         'how-to/auto-updater',
+        'how-to/use-a-frontend-library',
       ],
     },
     {

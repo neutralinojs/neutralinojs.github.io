@@ -17,6 +17,9 @@ The following configuraion values cannot be overridden in different Neutralinojs
 ### `applicationId: string`
 Unique string to identify your application. Eg: `js.neutralino.sample`
 
+### `version: string`
+Application version. Eg: `2.4.22`
+
 ### `defaultMode: string`
 Mode of the application. Accepted values are `window`, `browser`, and `cloud`.
 
@@ -145,6 +148,18 @@ Enables or disables the logging feature.
 Enables or disables log file. If this setting is `false`, the framework won't write log to `neutralinojs.log`,
 and it will write logs to standard streams.
 
+### `serverHeaders: object[]`
+Custom headers for the static server and Websocket handshake process. For example, the following configuration
+sends a custom header with every outgoing HTTP response.
+
+```json
+{
+    "serverHeaders": {
+        "Test-Header-Option": "Value"
+    }
+}
+```
+
 ## Window mode
 The following configuration values are used when the application runs with the window mode.
 
@@ -208,7 +223,8 @@ Width of the chrome window.
 Height of the chrome window.
 
 ### `modes.chrome.args: string`
-Additional command-line arguments for the Chrome process.
+Additional command-line arguments for the Chrome process. Read more about chrome mode
+from [here](./modes#chrome)
 
 ## CLI
 The following configuration values are used neu CLI.
@@ -248,3 +264,8 @@ Use `|` character to set multiple regular expressions, as shown below.
     "autoReloadExclude": ".*\\.scss$|.*\\.less$"
 }
 ```
+
+### `cli.frontendLibrary: object`
+
+Enables frontend development tools (HMR, etc) for the `neu run --frontend-lib-dev` command. Learn more about frontend
+framework integration from [here](../how-to/use-a-frontend-library)
