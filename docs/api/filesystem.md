@@ -54,7 +54,7 @@ view[0] = 64; // Saves ASCII '@' to the binary file
 await Neutralino.filesystem.writeBinaryFile('./myFile.bin', rawBin);
 ```
 
-## filesystem.readFile(filename, data)
+## filesystem.readFile(filename)
 Reads a text file. Throws `NE_FS_FILRDER` for file read errors.
 
 ### Parameters
