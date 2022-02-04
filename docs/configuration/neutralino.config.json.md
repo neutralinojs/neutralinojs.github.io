@@ -48,6 +48,24 @@ If you load a remote URL to the webview, you can set this option to `true`.
 ### `enableNativeAPI: boolean`
 Enables or disables the native API. If you don't use any native API functions, you can set this option to `true`.
 
+### `tokenSecurity: string`
+Neutralinojs uses a client-server communication pattern with a local WebSocket to handle native calls. This
+local server is protected with an auto-generated token. This option defines the security implementation for the
+token.
+
+Accepts the following values:
+
+- `one-time` **(Recommended)** : Server sends the access token only once, and the client persists it in the
+`sessionStorage`. If another client (Eg: browser) tries to access the app, `NE_RT_INVTOKN` error message will be
+shown instead of the application. Using this option is recommended since it reduces security issues.
+
+- `none` : Server sends the access token always, so any new client can see the application.
+
+:::danger
+If you are using native APIs that can access your computer's internals such as `os`, `filesystem`, modules,
+never use `none` option since any new client can use those APIs.
+:::
+
 ### `url: string`
 The entry URL of the application. Neutralinojs will initially load this URL.
 This property accepts both relative and absolute URLs. See following examples.

@@ -20,6 +20,7 @@ These JavaScript variables can be used anywhere because these variables are defi
 | `NL_ARGS`     | Command-line arguments                                        |
 | `NL_PID`      | Identifier of the current process                             |
 | `NL_RESMODE`  | Source of application resources: `bundle` or `directory`      |
+| `NL_EXTENABLED` | Returns `true` if extensions are enabled     |
 
 
 ## Custom global variables

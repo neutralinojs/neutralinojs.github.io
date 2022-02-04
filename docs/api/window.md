@@ -112,6 +112,19 @@ Focuses the native window.
 await Neutralino.window.focus();
 ```
 
+## window.setAlwaysOnTop(onTop)
+Activates or deactivates the always on top mode. 
+
+### Parameters
+
+- `onTop` Boolean (optional): Says whether the on top mode should be activated or not. The default value
+is `true`.
+
+```js
+await Neutralino.window.setAlwaysOnTop(true); // or setAlwaysOnTop();
+await Neutralino.window.setAlwaysOnTop(false);
+```
+
 ## window.move(x, y)
 Moves the native window into given coordinates. Neutralinojs's cross-platform coordinate system starts from top-left corner of the screen.
 In other words, `x=0,y=0` point refers to the top-left corner of the device's main screen.
@@ -185,6 +198,26 @@ await Neutralino.window.setSize({
 await Neutralino.window.setSize({
     resizable: false
 });
+```
+
+## window.getSize()
+Returns window size information.
+
+### Return Boolean (awaited):
+
+- `width` Number: Window width in pixels.
+- `height` Number: Window height in pixels.
+- `minWidth` Number Minimum width of the window in pixels.
+- `minHeight` Number: Minimum height of the window in pixels.
+- `maxWidth` Number: Maximum width of the window in pixels.
+- `maxHeight` Number: Maximum height of the window in pixels.
+- `resizable` Boolean: Says whether the window resizable or fixed.
+
+
+```js
+let sizeInfo = await Neutralino.window.getSize();
+
+console.log(sizeInfo);
 ```
 
 ## window.create(url, WindowOptions)
