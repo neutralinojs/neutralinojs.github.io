@@ -61,6 +61,8 @@ shown instead of the application. Using this option is recommended since it redu
 
 - `none` : Server sends the access token always, so any new client can see the application.
 
+The default value becomes `one-time` if this setting is not specified by the developer.
+
 :::danger
 If you are using native APIs that can access your computer's internals such as `os`, `filesystem`, modules,
 never use `none` option since any new client can use those APIs.
