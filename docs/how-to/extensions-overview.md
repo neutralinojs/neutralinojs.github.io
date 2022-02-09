@@ -29,7 +29,7 @@ First, you need to define extensions you use in `neutralinojs.config.json` with 
 ]
 ```
 
-- `id` String: A unique key to identify each extension.
+- `id` String: A unique key to identify each extension. This id cannot contain any characters except for letters, numbers, and periods.
 - `command` String (optional): A cross-platform command to start the extension. Eg: `node ${NL_PATH}/extensions/binary/main.js`
 will work on every platform.
 - `commandLinux` String (optional): Extension startup command for Linux.
