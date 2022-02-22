@@ -12,6 +12,7 @@ title: Committers
 - [Jean-marie Vrecq](https://github.com/corbane)
 - [Lanka Rathanyaka](https://github.com/Lahirutech)
 - [Orent](https://github.com/orent)
+- [Fabian Bergström](https://github.com/fabjan)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
