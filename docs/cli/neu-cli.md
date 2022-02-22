@@ -5,7 +5,7 @@ title: neu CLI
 ![npm](https://img.shields.io/npm/v/@neutralinojs/neu)
 ![npm](https://img.shields.io/npm/dt/@neutralinojs/neu)
 
-You can easily manage Neutralinojs applications with neu CLI.
+You can easily create, run, and build Neutralinojs applications with neu CLI.
 
 ## Installation
 
@@ -25,7 +25,7 @@ npx @neutralinojs/neu <command>
 
 ### `neu create <binaryName>`
 
-Creates a new Neutralinojs app using the [minimal template](https://github.com/neutralinojs/neutralinojs-minimal).
+Creates a new Neutralinojs app based on a template.
 
 #### Parameters
 
@@ -51,12 +51,12 @@ Also, it enables auto-reload for the current application.
 In other words, when a modification happens to application resources,
 the Neutralinojs application will be reloaded automatically.
 
+You can see Neutralinojs process and extensions output streams while the application is running.
+
 #### Options
 - `--disable-auto-reload`: Disables the auto-reloading feature.
 - `--arch=<arch>`: Explicitly set the CPU architecture. This option is helpful if you use a 32-bit Node.js process
 on a 64-bit computer.
-- `--verbose`: Shows STDERR and STDOUT of the application process when the application is terminated. This option
-is helpful for detecting framework initialization issues during development.
 - `--frontend-lib-dev`: Enables both frontend library's development environment and Neutralinojs's
 development evironment at the same time. This option patches the main HTML file with the Neutralinojs
 client library path to expose the native API to the frontend library's development server.
@@ -119,13 +119,13 @@ Once you publish your plugin to the npm registry as a public package, anyone wil
 to install it using:
 
 ```bash
- $ neu plugins --add <package-name>
+neu plugins --add <package-name>
 ```
 
 and it can be removed using:
 
 ```bash
- $ neu plugins --remove <package-name>
+neu plugins --remove <package-name>
 ```
 
 See the [Appify plugin source](https://github.com/neutralinojs/neutralinojs-cli-appify) for further
