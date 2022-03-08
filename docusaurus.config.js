@@ -52,6 +52,11 @@ module.exports = {
           position: 'left',
         },
         {
+          href: 'https://github.com/neutralinojs/gsoc2022',
+          label: 'GSoC 2022',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/neutralinojs',
           label: 'GitHub',
           position: 'right',
