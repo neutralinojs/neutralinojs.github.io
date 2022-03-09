@@ -24,15 +24,15 @@ Neutralinojs offers many native operations for you by using this communication m
 
 ## Native API namespaces
 
-- [Neutralino.init](../api/init.md)
 - [Neutralino.app](../api/app.md)
-- [Neutralino.window](../api/window.md)
-- [Neutralino.filesystem](../api/filesystem.md)
-- [Neutralino.os](../api/os.md)
-- [Neutralino.computer](../api/computer.md)
-- [Neutralino.storage](../api/storage.md)
 - [Neutralino.clipboard](../api/clipboard.md)
+- [Neutralino.computer](../api/computer.md)
 - [Neutralino.debug](../api/debug.md)
 - [Neutralino.events](../api/events.md)
 - [Neutralino.extensions](../api/extensions.md)
+- [Neutralino.filesystem](../api/filesystem.md)
+- [Neutralino.init](../api/init.md)
+- [Neutralino.os](../api/os.md)
+- [Neutralino.storage](../api/storage.md)
 - [Neutralino.updater](../api/updater.md)
+- [Neutralino.window](../api/window.md)
