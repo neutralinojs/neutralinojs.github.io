@@ -149,7 +149,7 @@ export default function Home() {
           <div className="row">
             <div className="col col--6">
               <h1>Build once with JavaScript</h1>
-              <p>Run on Linux, Windows, macOS, Web, and Chrome.</p>
+              <p>Run on Linux, Windows, macOS, Web, and Chrome Browser.</p>
             </div>
             <div className="col col--6">
               <p>
@@ -169,7 +169,7 @@ export default function Home() {
                 creating native desktop applications with web technologies like JavaScript, HTML, and CSS. You can indeed use your
                 favorite frontend framework (Angular, React, Svelte, Vue, etc.) for building your next Neutralinojs app.
 
-                Read more about
+                <br/><Link to={useBaseUrl('docs/how-to/use-a-frontend-library')}>Read more about using frontend libraries.</Link>
               </p>
             </div>
             <div className="col col--12">
