@@ -142,10 +142,11 @@ Congrats! your application works.
 
 ![mypp is running on Linux](../media/myapp-running-linux.png)
 
-:::info
+<!-- Currently Commented Since This Statement is false, as application doesn't reload, i am trying to figure out why. -->
+<!-- :::info
 The `neu run` command will reload your application when there is a change in application resources.
 Try to change your `index.html` while the application is running.
-:::
+::: -->
 
 ## Step 4: Building your application 
 To make portable binaries for your application, we can use the `build` command.
@@ -155,7 +156,7 @@ Enter the following command on your terminal to make final binaries for all supp
 neu build --release
 ```
 
-The above command will produce binaries for all platforms into the `dist` directory.
+The above command will produce binaries for all platforms into the `dist` directory and the `--release` flag will also package your binaries into a .zip file.
 This command will do the work blazing fast because there is no compilation process behind.
 
 ## What's next?
