@@ -220,6 +220,21 @@ let sizeInfo = await Neutralino.window.getSize();
 console.log(sizeInfo);
 ```
 
+## window.getPosition()
+Returns window position coordinates.
+
+### Return Boolean (awaited):
+
+- `x` Number: Horizontal coordinate of the left edge of the window.
+- `y` Number: Vertical coordinate of the top edge of the window.
+
+
+```js
+let position = await Neutralino.window.getPosition();
+
+console.log(position);
+```
+
 ## window.create(url, WindowOptions)
 Creates a native window. You can use this method to create new window for your multi-window Neutralinojs app.
 Neutralinojs spawns a new process for each native window. Therefore, the new window works as an isolated app once the window is created.

@@ -38,6 +38,19 @@ Writes a text file. Throws `NE_FS_FILWRER` for file write errors.
 await Neutralino.filesystem.writeFile('./myFile.txt', 'Sample content');
 ```
 
+## filesystem.appendFile(filename, data)
+Appends text content to file. Throws `NE_FS_FILWRER` for file write errors. If the provided file doesn't exist,
+this function creates a new file with `data`.
+
+### Parameters
+- `filename` String: Filename.
+- `data` String: Content to append.
+
+```js
+await Neutralino.filesystem.appendFile('./myFile.txt', 'Sample ');
+await Neutralino.filesystem.appendFile('./myFile.txt', 'content');
+```
+
 ## filesystem.writeBinaryFile(filename, data)
 Writes a binary file. Throws `NE_FS_FILWRER` for file write errors.
 
@@ -52,6 +65,24 @@ let view = new Uint8Array(rawBin);
 view[0] = 64; // Saves ASCII '@' to the binary file
 
 await Neutralino.filesystem.writeBinaryFile('./myFile.bin', rawBin);
+```
+
+## filesystem.appendBinaryFile(filename, data)
+Appends binary data to a file. Throws `NE_FS_FILWRER` for file write errors. If the provided file doesn't exist,
+this function creates a new file with `data`.
+
+### Parameters
+- `filename` String: Filename.
+- `data` ArrayBuffer: Binary content to append as an
+[ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
+
+```js
+let rawBin = new ArrayBuffer(1);
+let view = new Uint8Array(rawBin);
+view[0] = 64; // Saves ASCII '@' to the binary file
+
+await Neutralino.filesystem.appendBinaryFile('./myFile.bin', rawBin);
+await Neutralino.filesystem.appendBinaryFile('./myFile.bin', rawBin);
 ```
 
 ## filesystem.readFile(filename)
