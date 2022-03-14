@@ -33,7 +33,7 @@ sudo apt install \
     libgtk-3-dev \
     libwebkit2gtk-4.0-37 \
     libwebkit2gtk-4.0-dev \
-    libappindicator3-dev
+    libayatana-appindicator3-dev
 ```
 
 **Fedora**
@@ -61,7 +61,7 @@ MSVC (aka `cl.exe`) C++ compiler.
 Compile the Neutralinojs framework.
 
 ```bash
-./build_windows.bat # [ia32, x64, armhf, arm64]
+./build_windows.bat # [ia32, x64]
 ```
 
 ### macOS
@@ -113,21 +113,21 @@ Now run the newly compiled test app with the following command.
   <TabItem value="Linux">
 
   ```bash
-    ./bin/neutralino-linux_x64 --load-dir-res
+./bin/neutralino-linux_x64 --load-dir-res
   ```
 
   </TabItem>
   <TabItem value="macOS">
 
   ```bash
-    ./bin/neutralino-mac_x64 --load-dir-res
+./bin/neutralino-mac_x64 --load-dir-res
   ```
 
   </TabItem>
   <TabItem value="Windows">
 
   ```bash
-    ./bin/neutralino-win_x64.exe --load-dir-res
+./bin/neutralino-win_x64.exe --load-dir-res
   ```
 
   </TabItem>
@@ -172,7 +172,7 @@ Source: [github.com/neutralinojs/neutralinojs](https://github.com/neutralinojs/n
 - `api`: The native API implementation and controllers. Written in REST API style.
 - `auth`: Authentication and permissions-related logic.
 - `bin`: Test app source code.
-- `lib`: Third-party libraries' source files.
+- `lib`: Third-party libraries source files.
 - `server`: WebSocket/HTTP communication endpoints.
 - `spec`: Integration/API test suite.
 
