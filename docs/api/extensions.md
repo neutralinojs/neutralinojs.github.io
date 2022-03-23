@@ -49,7 +49,7 @@ Returns details about connected and loaded extensions.
 
 ### Return Object (awaited):
 - `loaded` String[]: An array of loaded extensions.
-- `connected` String[]: An array of connected extensions. These extensions has an active WebSocket-based IPC connection
+- `connected` String[]: An array of connected extensions. These extensions have an active WebSocket-based IPC connection
                 with the main process.
 
 ```js

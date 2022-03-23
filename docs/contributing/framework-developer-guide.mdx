@@ -9,7 +9,7 @@ Anyone can help Neutralino by contributing code and reporting bugs. This documen
 start contributing Neutralinojs.
 
 Note that this guide is for contributors. If you are getting started with Neutralinojs app development,
-you can start from [here](../getting-started/your-first-neutralinojs-app).
+you can start from [here](../getting-started/your-first-neutralinojs-app.mdx).
 
 ## Setup and build the framework
 
@@ -33,7 +33,7 @@ sudo apt install \
     libgtk-3-dev \
     libwebkit2gtk-4.0-37 \
     libwebkit2gtk-4.0-dev \
-    libappindicator3-dev
+    libayatana-appindicator3-dev
 ```
 
 **Fedora**
@@ -61,7 +61,7 @@ MSVC (aka `cl.exe`) C++ compiler.
 Compile the Neutralinojs framework.
 
 ```bash
-./build_windows.bat # [ia32, x64, armhf, arm64]
+./build_windows.bat # [ia32, x64]
 ```
 
 ### macOS
@@ -113,21 +113,21 @@ Now run the newly compiled test app with the following command.
   <TabItem value="Linux">
 
   ```bash
-    ./bin/neutralino-linux_x64 --load-dir-res
+./bin/neutralino-linux_x64 --load-dir-res
   ```
 
   </TabItem>
   <TabItem value="macOS">
 
   ```bash
-    ./bin/neutralino-mac_x64 --load-dir-res
+./bin/neutralino-mac_x64 --load-dir-res
   ```
 
   </TabItem>
   <TabItem value="Windows">
 
   ```bash
-    ./bin/neutralino-win_x64.exe --load-dir-res
+./bin/neutralino-win_x64.exe --load-dir-res
   ```
 
   </TabItem>
@@ -172,7 +172,7 @@ Source: [github.com/neutralinojs/neutralinojs](https://github.com/neutralinojs/n
 - `api`: The native API implementation and controllers. Written in REST API style.
 - `auth`: Authentication and permissions-related logic.
 - `bin`: Test app source code.
-- `lib`: Third-party libraries' source files.
+- `lib`: Third-party libraries source files.
 - `server`: WebSocket/HTTP communication endpoints.
 - `spec`: Integration/API test suite.
 
@@ -191,8 +191,8 @@ Source: [github.com/neutralinojs/neutralino.js](https://github.com/neutralinojs/
 Before, contributing to the codebase, please check the following things.
 
 - Discuss the feature/improvement/bug-fix with the Neutralinojs team via GitHub discussions.
-- Get familiar with the code style. There is no specific code style guide yet, but, the codebase inherits
-some guidelines from the [Google C++ code style guide](https://google.github.io/styleguide/cppguide.html).
+- Get familiar with the code style. Write your code according to the
+[Neutralinojs code style guide](code-style-guide.md).
 - Become familiar with all modules in the codebase.
 - Avoid adding new features to only one platform.
 

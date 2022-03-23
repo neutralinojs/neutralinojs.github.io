@@ -11,7 +11,7 @@ The client library exposes its JavaScript APIs to the browser's window scope, an
 via `Neutralino` or `window.Neutralino` from vanilla JavaScript or any frontend framework.
 
 Assume that you need to get an environment variable value from the operating system. You can call the
-[`Neutralino.os.getEnv`](../api/os#osgetenvkey)
+[`Neutralino.os.getEnv`](os.md#osgetenvkey)
 JavaScript method. The client library will call the Neutralinojs server with a WebSocket message once you invoke
 the `getEnv` method. After that, the Neutralinojs server will execute the native operation to fetch the given
 environment variable.
@@ -24,15 +24,15 @@ Neutralinojs offers many native operations for you by using this communication m
 
 ## Native API namespaces
 
-- [Neutralino.init](init)
-- [Neutralino.app](app)
-- [Neutralino.computer](computer)
-- [Neutralino.debug](debug)
-- [Neutralino.filesystem](filesystem)
-- [Neutralino.os](os)
-- [Neutralino.storage](storage)
-- [Neutralino.clipboard](clipboard)
-- [Neutralino.window](window)
-- [Neutralino.events](events)
-- [Neutralino.extensions](extensions)
-- [Neutralino.updater](updater)
+- [Neutralino.app](../api/app.md)
+- [Neutralino.clipboard](../api/clipboard.md)
+- [Neutralino.computer](../api/computer.md)
+- [Neutralino.debug](../api/debug.md)
+- [Neutralino.events](../api/events.md)
+- [Neutralino.extensions](../api/extensions.md)
+- [Neutralino.filesystem](../api/filesystem.md)
+- [Neutralino.init](../api/init.md)
+- [Neutralino.os](../api/os.md)
+- [Neutralino.storage](../api/storage.md)
+- [Neutralino.updater](../api/updater.md)
+- [Neutralino.window](../api/window.md)

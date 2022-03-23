@@ -23,7 +23,7 @@ Writes data into Neutralinojs shared storage. 
 ```js
 await Neutralino.storage.setData('userDetails',
                         JSON.stringify({ username: 'TestValue'})
-});
+);
 ```
 
 ## storage.getData(key)
