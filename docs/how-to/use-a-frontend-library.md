@@ -152,7 +152,7 @@ You can add the following section to your configuration file for activating hot-
   "cli": {
     // --- other options
     "frontendLibrary": {
-        "patchFile": "/litepy-react/public/index.html",
+        "patchFile": "/myapp-react/public/index.html",
         "devUrl": "http://localhost:3000"
     }
   }
