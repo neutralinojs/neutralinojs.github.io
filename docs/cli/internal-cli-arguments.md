@@ -9,7 +9,7 @@ on Linux. You can build neu CLI, Node.js, and npm to build Neutralinojs apps. Bu
 offers a simple, fast, and easy tooling for application developers to create, manage, and bundle Neutralinojs apps.
 
 Neutralinojs supports the following CLI arguments. Many internal CLI arguments help developers to override
-default configuration defined inside the [`neutralino.config.json`](../configuration/neutralino.config.json) file. If you use Neutralinojs as a part of your
+default configuration defined inside the [`neutralino.config.json`](../configuration/neutralino.config.json.md) file. If you use Neutralinojs as a part of your
 source files via child process API, you can use the following arguments to configure the application instance.
 
 ## General
