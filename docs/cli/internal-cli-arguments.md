@@ -9,7 +9,7 @@ on Linux. You can build neu CLI, Node.js, and npm to build Neutralinojs apps. Bu
 offers a simple, fast, and easy tooling for application developers to create, manage, and bundle Neutralinojs apps.
 
 Neutralinojs supports the following CLI arguments. Many internal CLI arguments help developers to override
-default configuration defined inside the `neutralino.config.json` file. If you use Neutralinojs as a part of your
+default configuration defined inside the [`neutralino.config.json`](../configuration/neutralino.config.json.md) file. If you use Neutralinojs as a part of your
 source files via child process API, you can use the following arguments to configure the application instance.
 
 ## General
@@ -53,6 +53,10 @@ loaded from a directory (won't work for end-users).
 
 Overrides the URL on the application.
 
+### `--port=<port>`
+
+Overrides the application port and will change the `NL_PORT` global variable. If `0` is given, Neutralino will use a random available port.
+
 ### `--logging-enabled=<true|false>`
 
 Overrides the logging feature status.
@@ -68,6 +72,11 @@ Overrides auth details export setting.
 ### `--enable-extensions=<true|false>`
 
 Overrides extensions feature's availability.
+
+### `--enable-server=<true|false>`
+
+Enables or disables the background server (Disables static file servering feature and native API messaging).  
+If you load a remote URL to the webview, you can set this option to `true`.
 
 ## Window mode
 
@@ -136,6 +145,10 @@ Overrides the window's initial resizability status.
 ### `--window-exit-process-on-close=<true|false>`
 
 Overrides the close button's behavior.
+
+### `--window-enable-inspector=<true|false>`
+
+Automatically opens the developer tools window.
 
 
 ## Chrome mode
