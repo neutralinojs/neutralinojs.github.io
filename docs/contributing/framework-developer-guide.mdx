@@ -1,8 +1,9 @@
 ---
 title: Framework Developer Guide
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 Great open-source software is a result of the collaboration of enthusiastic developers.
 Anyone can help Neutralino by contributing code and reporting bugs. This document explains how to
@@ -14,6 +15,7 @@ you can start from [here](../getting-started/your-first-neutralinojs-app.mdx).
 ## Setup and build the framework
 
 ### Cloning the repository
+
 First, clone the main repository.
 
 ```bash
@@ -22,6 +24,7 @@ cd neutralinojs
 ```
 
 ### Installing compilation tools and dependencies
+
 ### Linux
 
 No need for separate compilers because Linux distributions usually have GNU C/C++ compilers installed already.
@@ -34,7 +37,7 @@ Install GTK, WebKit, other libraries with the following command.
 sudo apt install \
     libgtk-3-dev \
     libwebkit2gtk-4.0-37 \
-    libwebkit2gtk-4.0-dev 
+    libwebkit2gtk-4.0-dev
 ```
 
 **Fedora**
@@ -71,6 +74,7 @@ Run the following script in order build the framework.
 ```bash
 python scripts/bz.py
 ```
+
 :::info
 You need to have the [Python](https://www.python.org/downloads/) interpreter (version 3.x) installed to run this script.
 :::
@@ -113,23 +117,23 @@ Now run the newly compiled test app with the following command.
   ]}>
   <TabItem value="Linux">
 
-  ```bash
+```bash
 ./bin/neutralino-linux_x64 --load-dir-res
-  ```
+```
 
   </TabItem>
   <TabItem value="macOS">
 
-  ```bash
+```bash
 ./bin/neutralino-mac_x64 --load-dir-res
-  ```
+```
 
   </TabItem>
   <TabItem value="Windows">
 
-  ```bash
+```bash
 ./bin/neutralino-win_x64.exe --load-dir-res
-  ```
+```
 
   </TabItem>
 </Tabs>
@@ -176,6 +180,7 @@ Source: [github.com/neutralinojs/neutralinojs](https://github.com/neutralinojs/n
 - `lib`: Third-party libraries source files.
 - `server`: WebSocket/HTTP communication endpoints.
 - `spec`: Integration/API test suite.
+- `scripts`: Contains python scripts to build the client and to manage the python scripts. Also contains bash scripts to update the client and to build res.neu for the test the test app.
 
 ### Client library
 
@@ -185,7 +190,7 @@ Source: [github.com/neutralinojs/neutralino.js](https://github.com/neutralinojs/
 - `src/browser`: Browser-related API implementation.
 - `src/debug`: Developer mode features.
 - `src/ws`: WebSocket client implementaion.
-
+- `scripts`: Python script to manage release notes.
 
 ## Contribution guidelines
 
@@ -193,11 +198,8 @@ Before, contributing to the codebase, please check the following things.
 
 - Discuss the feature/improvement/bug-fix with the Neutralinojs team via GitHub discussions.
 - Get familiar with the code style. Write your code according to the
-[Neutralinojs code style guide](code-style-guide.md).
+  [Neutralinojs code style guide](code-style-guide.md).
 - Become familiar with all modules in the codebase.
 - Avoid adding new features to only one platform.
 
 Thanks for helping us to make Neutralinojs better!
-
-
-
