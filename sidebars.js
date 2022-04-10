@@ -70,6 +70,7 @@ module.exports = {
         'contributing/code-style-guide',
         'contributing/developer-support',
         'contributing/committers',
+        'contributing/frequently-asked-questions',
       ],
     },
   ],
