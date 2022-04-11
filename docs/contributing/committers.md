@@ -14,6 +14,7 @@ title: Committers
 - [Orent](https://github.com/orent)
 - [Fabian Bergström](https://github.com/fabjan)
 - [Sainath Rao P](https://github.com/pathange-s)
+- [Carlonn Rivers](https://github.com/danidre14)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
