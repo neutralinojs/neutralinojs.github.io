@@ -5,6 +5,13 @@ title: Neutralino.window
 The `Neutralino.window` namespace contains methods related to the current native window instance.
 This namespace's methods will work only for the [`window`](/docs/configuration/modes#window) mode.
 
+## window.create('/index.html')
+Creates the native window.
+
+```js
+Neutralino.window.create('/index.html')
+```
+
 ## window.setTitle(title)
 Sets the title of the native window.
 
