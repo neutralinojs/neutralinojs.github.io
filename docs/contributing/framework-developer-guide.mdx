@@ -22,13 +22,14 @@ cd neutralinojs
 ```
 
 ### Installing compilation tools and dependencies
-#### For Linux
+
+#### Linux
 
 No need for separate compilers because Linux distributions usually have GNU C/C++ compilers installed already.
 
 Install GTK, WebKit, other libraries with the following command.
 
-##### **Debian**
+##### Debian
 
 ```bash
 sudo apt install \
@@ -37,7 +38,7 @@ sudo apt install \
     libwebkit2gtk-4.0-dev 
 ```
 
-##### **Fedora**
+##### Fedora
 
 ```bash
 sudo dnf install \
@@ -47,7 +48,7 @@ sudo dnf install \
     webkit2gtk3-devel.x86_64
 ```
 
-##### **Arch**
+##### Arch
 
 ```bash
 sudo pacman -S \
@@ -55,18 +56,18 @@ sudo pacman -S \
     webkit2gtk
 ```
 
-#### For Windows
+#### Windows
 
 Install the latest Visual Studio IDE. Neutralinojs compilation on Windows will use
 MSVC (aka `cl.exe`) C++ compiler.
 
-#### For macOS
+#### macOS
 
 Install Xcode Command Line Tools.
 
 ### Compile the Neutralinojs framework.
 
-Run the following script in order to build the framework and generate your binary.
+Run the following script in order to build the framework binaries.
 
 ```bash
 python scripts/bz.py
@@ -87,7 +88,7 @@ git clone https://github.com/neutralinojs/neutralino.js.git
 cd neutralino.js
 ```
 
-Install developer dependencies inside your client repository.
+Install developer dependencies.
 
 ```bash
 npm install
