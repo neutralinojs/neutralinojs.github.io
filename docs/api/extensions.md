@@ -5,7 +5,7 @@ title: Neutralino.extensions
 `Neutralino.extensions` namespace contains methods related to Neutralino extensions. Extensions let
 developers write custom backend APIs for Neutralinojs applications.
 
-Learn more about extensions with [this guide](../how-to/extensions-overview).
+Learn more about extensions with [this guide](../how-to/extensions-overview.md).
 
 
 ## extensions.dispatch(extensionId, eventName, data)
