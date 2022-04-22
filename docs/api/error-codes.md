@@ -22,6 +22,7 @@ The error object has the following structure.
 | --------------------------- | ------------------------------------------------------- | --------
 | `NE_FS_DIRCRER`| Unable to create directory.        | `os.createDirectory`
 | `NE_FS_RMDIRER`| Unable to remove directory.        | `os.removeDirectory`
+| `NE_OS_TRAYIER`| Unable to initialize the tray menu. This error is typically thrown when GNU/Linux systems don't contain an app indicator library.        | `os.setTray`
 | `NE_FS_FILRDER`| File read error.        | `filesystem.readFile`, `filesystem.readBinaryFile`
 | `NE_FS_FILWRER`| File write error.        | `filesystem.writeFile`, `filesystem.writeBinaryFile`
 | `NE_FS_FILRMER`| File remove error.        | `filesystem.removeFile`

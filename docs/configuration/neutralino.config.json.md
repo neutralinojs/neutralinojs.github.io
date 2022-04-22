@@ -263,10 +263,10 @@ Path of your application extensions.
 Filename of the Neutralinojs JavaScript library.
 
 ### `cli.binaryVersion: string`
-Neutralinojs server version.
+Neutralinojs server version. Get nightly builds by using the `nightly` tag.
 
 ### `cli.clientVersion: string`
-Neutralinojs client version.
+Neutralinojs client version.  Get nightly builds by using the `nightly` tag.
 
 ### `cli.autoReloadExclude: string`
 A JavaScript regular expression to exclude files from the auto-reload file watcher. For example, the

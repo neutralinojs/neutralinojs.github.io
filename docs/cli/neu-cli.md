@@ -67,7 +67,14 @@ you can enable the `browser` mode by entering `neu run -- --mode=browser`. See a
 [here](./internal-cli-arguments.md).
 
 ### `neu update`
-This command will update the existing Neutralinojs binaries and client library from the internet.
+This command will update the existing Neutralinojs binaries and client library from the internet. You can
+use the `nightly` tag for the `cli.binaryVersion` and `cli.clientVersion` to download daily pre-releases.
+
+:::warning
+Nightly builds refers to automatically generated daily builds, so these builds can contain experimental or
+incomplete features. Therefore, avoid using `nightly` versions in your production apps. Use `nightly` versions
+to try out latest features, but use a stable version for production apps.
+:::
 
 ### `neu version`
 Prints all version information. If this command is executed from a Neutralinojs application directory,

@@ -13,7 +13,7 @@ These JavaScript variables can be used anywhere because these variables are defi
 | `NL_APPVERSION` | Application version                                         |
 | `NL_PORT`     | Application port                                              |
 | `NL_MODE`     | Mode of the application: `window`, `browser`, `cloud`, or `chrome`      |
-| `NL_VERSION`  | Neutralinojs server version                                   |
+| `NL_VERSION`  | Neutralinojs framework version                                   |
 | `NL_CVERSION`  | Neutralinojs client version                                  |
 | `NL_CWD`      | Current working directory                                     |
 | `NL_PATH`     | Application path                                              |
@@ -21,6 +21,12 @@ These JavaScript variables can be used anywhere because these variables are defi
 | `NL_PID`      | Identifier of the current process                             |
 | `NL_RESMODE`  | Source of application resources: `bundle` or `directory`      |
 | `NL_EXTENABLED` | Returns `true` if extensions are enabled     |
+| `NL_COMMIT` | Framework binary's release commit hash     |
+| `NL_CCOMMIT` | Client librar's release commit hash     |
+
+:::tip
+You can use `NL_COMMIT` and `NL_CCOMMIT` values to identify the codebase snapshot if you use nightly releases.
+:::
 
 
 ## Custom global variables

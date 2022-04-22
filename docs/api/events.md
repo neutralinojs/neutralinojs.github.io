@@ -12,6 +12,8 @@ by the Neutralinojs server based on native state changes.
 | `ready`                     | Occurs when the client library connects with the Neutralino server.  | `all` | `null`
 | `trayMenuItemClicked`       | Occurs when the user clicks on a tray menu item.        | `all` | `TrayMenuItem`
 | `windowClose`               | Occurs when the user closes the window.                 | `window` | `null`
+| `windowFocus`               | Occurs when the window gets focused.                 | `window` | `null`
+| `windowBlur`               | Occurs when the window focus state is gone.                 | `window` | `null`
 | `serverOffline`             | Occurs when the Neutralino server is offline | `all` | `null`
 | `clientConnect`             | Occurs when a new client access the application.        | `all` | Total clients
 | `clientDisconnect`          | Occurs when a connected client leaves the application.  | `all` | Total clients
