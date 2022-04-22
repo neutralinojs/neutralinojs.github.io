@@ -132,6 +132,22 @@ Insert the following content into your application resource files.
   </TabItem>
 </Tabs>
 
+Neutralinojs prevents arbitary native API function execution unlike Node.js environments.
+Here we used the `os.getEnv` native function, so check whether your application configuration allows
+the application frontend to execute it. The default configuration already allows the entire `os` namespace
+with the following `nativeAllowList` permission setup:
+
+```json
+"nativeAllowList": [
+    "app.*",
+    "os.*",
+    "debug.log"
+],
+```
+
+We don't need to update anything in the permission setup since it already allows `os.getEnv` native function
+calls.
+
 ## Step 3: Running your application
 
 As mentioned above, you can use the `run` command to start your application.

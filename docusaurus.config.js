@@ -42,8 +42,8 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://www.youtube.com/watch?v=txDlNNsgSh8&list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj&ab_channel=CodeZri',
-          label: 'Tutorial',
+          href: 'https://www.youtube.com/c/CodeZri',
+          label: 'Videos',
           position: 'left',
         },
         {
