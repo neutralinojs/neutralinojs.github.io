@@ -120,7 +120,7 @@ Displays a notification message.
         `INFO`
 
 ```js
-await Neutralino.os.showNotification('Hello world', 'It works!. Have a nice day');
+await Neutralino.os.showNotification('Hello world', 'It works! Have a nice day');
 
 await Neutralino.os.showNotification('Oops :/', 'Something went wrong', 'ERROR');
 ```
