@@ -37,7 +37,7 @@ Our GitHub Actions [deployment workflow](https://github.com/neutralinojs/neutral
 
 ### Contributing to Neutralinojs
 
-We really appreciate your code contributions. Please read [this contribution guide](https://neutralino.js.org/docs/contributing/framework-developer-guide#contribution-guidelines) before sending a pull request. Thanks for your contributions.
+We really appreciate your code contributions. Please read [this contribution guide](https://neutralino.js.org/docs/contributing/framework-developer-guide#contribution-guidelines) before sending a pull request. Thanks for your contributions. Check out [FAQs](http://neutralino.js.org/docs/contributing/frequently-asked-questions) in case of general queries.
 
 ### Contributors
 
