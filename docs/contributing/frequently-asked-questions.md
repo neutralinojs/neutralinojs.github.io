@@ -22,4 +22,4 @@ Make sure to run the above commands with `sudo`. Check [the package information]
 
 ### What should I do when I get `Missing permission to execute the native method: <namespace.func>` error ?
 
-This error occurs when permissions are not given to execute a specific native method. To be able to run this native method, add the `namespace.func` to the `nativeAllowList`. To allow all functions of the particular namespace, use `namespace.*`. Check [here](https://neutralino.js.org/docs/configuration/neutralino.config.json/#nativeallowlist-string) to learn more about allowlists.
+This error occurs when permissions are not given to execute a specific native method. To be able to run this function, add the `namespace.func` to the `nativeAllowList`. To allow all functions of the particular namespace, use `namespace.*`. Check [here](https://neutralino.js.org/docs/configuration/neutralino.config.json/#nativeallowlist-string) to learn more about allowlists.
