@@ -67,6 +67,7 @@ module.exports = {
       label: 'Contributing',
       items: [
         'contributing/framework-developer-guide',
+        'contributing/architecture',
         'contributing/code-style-guide',
         'contributing/developer-support',
         'contributing/committers',
