@@ -5,7 +5,7 @@ title: Neutralino.clipboard
 `Neutralino.clipboard` namespace offers functions to access system clipboard.
 
 ## clipboard.writeText(text)
-Writes data into Neutralinojs shared storage. 
+Writes text into the system clipboard. 
 
 ### Parameters
 
