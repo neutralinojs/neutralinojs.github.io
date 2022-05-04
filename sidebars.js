@@ -68,6 +68,7 @@ module.exports = {
       items: [
         'contributing/framework-developer-guide',
         'contributing/architecture',
+        'contributing/security',
         'contributing/code-style-guide',
         'contributing/developer-support',
         'contributing/committers',
