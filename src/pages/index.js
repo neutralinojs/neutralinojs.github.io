@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 import {Adsense} from '@ctrl/react-adsense';
+import logo from '../../static/logo.gif';
 
 const youtubePlaylist = "https://www.youtube.com/playlist?list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj";
 const features = [
@@ -124,6 +125,7 @@ export default function Home() {
                 >
               </div>
           </div>
+          <img src={logo} alt="Neutralinojs" />
           <div className={styles.buttons}>
             <Link
               className={clsx(
