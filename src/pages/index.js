@@ -95,7 +95,7 @@ export default function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   const [isInitialized, setIsInitialized] = useState(false);
-  const [isEthABlocked, setIsEthABlocked] = useState(false)
+  const [isEthABlocked, setIsEthABlocked] = useState(false);
   useEffect(() => {
     if(isInitialized) {
       return;
@@ -125,7 +125,7 @@ export default function Home() {
                 >
               </div>
           </div>
-          <img src={logo} alt="Neutralinojs" />
+          <img src={`${logo}?${new Date().getTime()}`} alt="Neutralinojs" />
           <div className={styles.buttons}>
             <Link
               className={clsx(
