@@ -15,6 +15,7 @@ title: Committers
 - [Fabian Bergström](https://github.com/fabjan)
 - [Sainath Rao P](https://github.com/pathange-s)
 - [Carlonn Rivers](https://github.com/danidre14)
+- [Ayman](https://github.com/Ayman161803)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
