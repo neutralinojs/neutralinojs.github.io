@@ -125,7 +125,7 @@ export default function Home() {
                 >
               </div>
           </div>
-          <img src={`${logo}?${new Date().getTime()}`} alt="Neutralinojs" />
+          <img src={`${logo}?v=${new Date().getTime()}`} alt="Neutralinojs" />
           <div className={styles.buttons}>
             <Link
               className={clsx(
