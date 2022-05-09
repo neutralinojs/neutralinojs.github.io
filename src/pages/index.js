@@ -95,7 +95,7 @@ export default function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   const [isInitialized, setIsInitialized] = useState(false);
-  const [isEthABlocked, setIsEthABlocked] = useState(false)
+  const [isEthABlocked, setIsEthABlocked] = useState(false);
   useEffect(() => {
     if(isInitialized) {
       return;
@@ -115,7 +115,7 @@ export default function Home() {
       description="Neutralinojs is a framework for building lightweight cross-platform desktop apps with JavaScript, HTML, and CSS.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <img src={logo + '?v=' + new Date().getTime() } alt="Neutralinojs" />
+          <img src={logo + '?v=' + new Date().getTime() } alt="Neutralinojs logo animation" />
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div>
