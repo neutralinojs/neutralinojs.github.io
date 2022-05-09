@@ -115,7 +115,7 @@ export default function Home() {
       description="Neutralinojs is a framework for building lightweight cross-platform desktop apps with JavaScript, HTML, and CSS.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <img src={logo + '?v=' + new Date().getTime() } alt="Neutralinojs logo animation" />
+          <img src={logo + '?v=' + Math.floor(Math.random() * 10000) } alt="Neutralinojs logo animation" />
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div>
