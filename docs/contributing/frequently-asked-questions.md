@@ -26,6 +26,12 @@ This error occurs when permissions are not given to execute a specific native me
 
 ### `yarn global add @neutralinojs/neu` doesn't complete the installation process.
 
-When `yarn` is used to install `neu`, the output shows `success Installed "@neutralinojs/neu"`. But neu commands don't work even after installation. `which neu` outputs nothing. Check [here](https://github.com/neutralinojs/neutralinojs-cli/issues/64) for further information about the issue.
+When `yarn` is used to install `neu`, the output shows `success Installed "@neutralinojs/neu"`. But neu commands don't work even after installation. `which neu` outputs nothing. Check [here](https://github.com/neutralinojs/neutralinojs-cli/issues/64) for further information about the particular issue.
 
-This error is more of an yarn issue. To fix it, the user needs to add `yarn global bin` to `$PATH` i.e. `export PATH="$(yarn global bin):$PATH"`. For more information, check official documentation of yarn [here](https://classic.yarnpkg.com/en/docs/cli/global).
+This error is more of an yarn issue. To fix it, the developer needs to add the `yarn global bin` command output to `$PATH`. For example, we can add the following command to the `.bashrc` file (or other Shell interpreter initialization scripts):
+
+```bash
+export PATH="$(yarn global bin):$PATH"
+```
+
+For more information, check the official documentation of yarn [here](https://classic.yarnpkg.com/en/docs/cli/global).
