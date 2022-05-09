@@ -45,8 +45,8 @@ const features = [
     imageUrl: 'img/undraw_upgrade_06a0.svg',
     description: (
       <>
-        A typical uncompressed Neutralinojs app is only ~2MB, and a compressed app size is ~0.5MB. Indeed,
-        it will not consume either physical memory or storage like any other chromium-based cross-platform application development framework.
+        A simple uncompressed Neutralinojs app is only ~2MB, and a compressed app size is ~0.5MB. Indeed,
+        it will not consume either physical memory or storage like any other Chromium-based cross-platform application development framework.
       </>
     ),
   },
@@ -56,8 +56,8 @@ const features = [
     description: (
       <>
         Neutralinojs team always tend to offer simple and flexible development interfaces for programmers.
-        The framework has simple portable auto-updater and CLI. We don't use OOP-based classes everywhere to complicate
-        your work.
+        The framework has simple portable auto-updater and CLI. We don't use OOP-based classes everywhere and
+        time-consuming setups to complicate your work.
       </>
     ),
   },
@@ -115,6 +115,7 @@ export default function Home() {
       description="Neutralinojs is a framework for building lightweight cross-platform desktop apps with JavaScript, HTML, and CSS.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
+          <img src={logo + '?v=' + new Date().getTime() } alt="Neutralinojs" />
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div>
@@ -125,7 +126,6 @@ export default function Home() {
                 >
               </div>
           </div>
-          <img src={logo} alt="Neutralinojs" />
           <div className={styles.buttons}>
             <Link
               className={clsx(
@@ -160,18 +160,27 @@ export default function Home() {
                 HTML and CSS. You can extend Neutralinojs with any programming language (via extensions IPC) and
                 use Neutralinojs as a part of any source file (via child processes IPC).
                 <br/><br/>
-                In Electron and NWjs, you have to install NodeJs and hundreds of dependency libraries.
-                Embedded Chromium and Node make simple apps bloaty. Neutralinojs offers a lightweight and
+                In Electron and NWjs, you have to install Node.js and hundreds of dependency libraries.
+                Embedded Chromium and Node.js make simple apps bloaty &mdash; in most scenarios, framework weights more than your app source. Neutralinojs offers a lightweight and
                 portable SDK which is an alternative for Electron and NW.js. Neutralinojs doesn't bundle Chromium and uses the existing
                 web browser library in the operating system (Eg: gtk-webkit2 on Linux).
-                Neutralinojs implements a WebSocket connection for native operations and embeds a static web server
+                Neutralinojs implements a <Link to={useBaseUrl('docs/contributing/security')}>secure</Link> WebSocket connection for native operations and embeds a static web server
                 to serve the web content. Also, it offers a built-in <Link href="https://github.com/neutralinojs/neutralino.js">JavaScript client library</Link> for developers.
                 <br/><br/>
                 If you can build a website, you can build cross-platform desktop apps too because Neutralinojs is a framework for
                 creating native desktop applications with web technologies like JavaScript, HTML, and CSS. You can indeed use your
                 favorite frontend framework (Angular, React, Svelte, Vue, etc.) for building your next Neutralinojs app.
 
-                <br/><Link to={useBaseUrl('docs/how-to/use-a-frontend-library')}>Read more about using frontend libraries.</Link>
+                <br/><br/>
+
+                <ul>
+                  <li>
+                    <Link to={useBaseUrl('docs/how-to/use-a-frontend-library')}>Learn how to use your favorite frontend library.</Link>
+                  </li>
+                  <li>
+                    <Link to={useBaseUrl('docs/how-to/extensions-overview')}>Learn how to use your favorite backend language.</Link>
+                  </li>
+                </ul>
               </p>
             </div>
             <div className="col col--12">
