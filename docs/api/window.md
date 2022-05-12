@@ -243,7 +243,7 @@ However, you can build communication streams between windows with the [storage A
 
 ### Parameters
 
-- `url` String: URL to be loaded. Eg: `/resources/aboutWindow.html`.
+- `url` String: URL to be loaded. Eg: `/resources/aboutWindow.html`. Supports loading both local and remote app resources. Local resource paths need to begin with `/`.
 - `options` (optional): an instance of `WindowOptions` type.
 
 ### WindowOptions
