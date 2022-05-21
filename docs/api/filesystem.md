@@ -183,8 +183,8 @@ Therefore, you can use this method to check for the existance of a file or direc
 - `size` Number: Size in bytes.
 - `isFile` Boolean: `true` if the path represents a normal file.
 - `isDirectory` Boolean: `true` if the path represents a directory.
-<!-- - `createdAt` Number: On Windows, returns Unix milliseconds of the file creation time &mdash; On Unix or Unix-like platforms, returns Unix milliseconds of the last [inode](https://en.wikipedia.org/wiki/Inode) modification time.
-- `modifiedAt` Number: Unix milliseconds of the last file modification time.-->
+- `createdAt` Number: On Windows, returns Unix milliseconds of the file creation time &mdash; On Unix or Unix-like platforms, returns Unix milliseconds of the last [inode](https://en.wikipedia.org/wiki/Inode) modification time.
+- `modifiedAt` Number: Unix milliseconds of the last file modification time.
 
 ```js
 let stats = await Neutralino.filesystem.getStats('./sampleVideo.mp4');
