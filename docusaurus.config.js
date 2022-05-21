@@ -52,7 +52,7 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://github.com/neutralinojs/gsoc2022',
+          href: 'https://summerofcode.withgoogle.com/programs/2022/organizations/neutralinojs',
           label: 'GSoC 2022',
           position: 'left',
         },
