@@ -46,7 +46,7 @@ Enables or disables the background server (Disables static file servering featur
 If you load a remote URL to the webview, you can set this option to `true`.
 
 ### `enableNativeAPI: boolean`
-Enables or disables the native API. If you don't use any native API functions, you can set this option to `true`.
+Enables or disables the native API. If you don't use any native API functions, you can set this option to `false`.
 
 ### `tokenSecurity: string`
 Neutralinojs uses a client-server communication pattern with a local WebSocket to handle native calls. This
