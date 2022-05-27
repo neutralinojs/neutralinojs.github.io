@@ -11,7 +11,9 @@ Executes a command and returns the output.
 - `command` String: The command that is to be executed.
 
 ### Options
-- `background` Boolean: Executes the command in background and resolve the Promise immediately if this is set to `true`.
+- `background` Boolean: Executes the command in background and resolve the Promise immediately
+if this is set to `true`. This option makes the process detached from the API function call, so if you need to
+connect with the newly created process later, consider using `os.spawnProcess`.
 - `stdIn` String: Standard input as a string.
 
 ### Return Object (awaited):
@@ -25,6 +27,92 @@ let info = await Neutralino.os.execCommand('python --version');
 console.log(`Your Python version: ${info.stdOut}`);
 
 await Neutralino.os.execCommand('npm start', { background: true });
+```
+
+## os.spawnProcess(command)
+Spawns a process based on a command in background and let developers control it.
+
+### Parameters
+- `command` String: The command that is to be executed in a new process.
+
+### Return Object (awaited):
+- `id` Number: A Neutralino-scoped process identifier. This value is used for controlling the
+process via the native API.
+- `pid` Number: Process identifier from the operating system.
+
+```js
+let pingProc = await Neutralino.os.spawnProcess('ping neutralino.js.org');
+
+Neutralino.events.on('spawnedProcess', (evt) => {
+    if(pingProc.id == evt.detail.id) {
+        switch(evt.detail.action) {
+            case 'stdOut':
+                console.log(evt.detail.data);
+                break;
+            case 'stdErr':
+                console.error(evt.detail.data);
+                break;
+            case 'exit':
+                console.log(`Ping process terminated with exit code: ${evt.detail.data}`);
+                break;
+        }
+    }
+});
+```
+
+## os.updateSpawnedProcess(id, action, data)
+Updates a spawned process based on a provided action and data. Throws `NE_OS_UNLTOUP` if the process cannot be
+updated.
+
+### Parameters
+- `id` Number: Neutralino-scoped process identifier.
+- `action` String: An action to take. Accepts only the following values:
+    - `stdIn`: Sends data to the process via the standard input stream.
+    - `stdInEnd`: Closes the standard input stream file descriptor.
+    - `exit`: Terminates the process.
+- `data` Object (optional): Additional data for the `action`. Send stardard input string if the `action`
+    is `stdIn`.
+
+
+```js
+let nodeProc = await Neutralino.os.spawnProcess('node');
+
+Neutralino.events.on('spawnedProcess', (evt) => {
+    if(nodeProc.id == evt.detail.id) {
+        switch(evt.detail.action) {
+            case 'stdOut':
+                console.log(evt.detail.data); // 10
+                break;
+            case 'stdErr':
+                console.error(evt.detail.data);
+                break;
+            case 'exit':
+                console.log(`Node.js process terminated with exit code: ${evt.detail.data}`);
+                break;
+        }
+    }
+});
+
+await Neutralino.os.updateSpawnedProcess(nodeProc.id, 'stdIn', 'console.log(5 + 5);');
+await Neutralino.os.updateSpawnedProcess(nodeProc.id, 'stdInEnd');
+```
+
+## os.getSpawnedProcesses()
+Returns all spawned processes.
+
+### Return Object (awaited):
+An array of `SpawnedProcess` objects.
+
+#### SpawnedProcess
+- `id` Number: A Neutralino-scoped process identifier..
+- `pid` Number: Process identifier from the operating system.
+
+```js
+await Neutralino.os.spawnProcess('ping neutralino.js.org');
+await Neutralino.os.spawnProcess('ping codezri.org');
+
+let processes = await Neutralino.getSpawnedProcesses();
+console.log(processes);
 ```
 
 ## os.getEnv(key)

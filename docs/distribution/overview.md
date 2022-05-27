@@ -12,12 +12,16 @@ The `neu build` command generates the following files on any supported operating
 | Filename            |  OS     | CPU architecture  | Type                    |
 | ------------------- | ------- | --------- | ------------------------------- |
 | `myapp-linux_x64`   | Linux   | `x64`     | Application binary              |
+| `myapp-linux_armhf`   | Linux   | `armhf`     | Application binary              |
+| `myapp-linux_arm64`   | Linux   | `arm64`     | Application binary              |
 | `myapp-macos_x64`   | macOS   | `x64`     | Application binary              |
 | `myapp-win_x64`     | Windows | `x64`     | Application binary              |
-| `resources.neu`     | all     | `all`     | Application resource file       |
+| `resources.neu`     | all     | `N/A`     | Application resource file       |
 
-Neutralinojs officially offers only `x64` pre-built binaries. If you need binaries for other CPU architectures,
-consider building binaries from source with [this guide](../contributing/framework-developer-guide).
+Neutralinojs officially offers only pre-built `x64` and `armhf/arm64` Linux-only binaries.
+If you need binaries for other CPU architectures, consider building binaries from the source
+with [this guide](../contributing/framework-developer-guide). We are trying to officially support all CPU
+architectures soon!
 
 ## Selecting files for packaging
 
@@ -41,7 +45,7 @@ The following guides are not documented yet.
 
 ### Creating a portable application package for macOS
 
-The `neu build` process creates a binary file for macOS, but that file can not be executed by a double-click action on macOS as a normal application. 
+The `neu build` process creates a binary file for macOS, but that file can not be executed by a double-click action on macOS as a normal application.
 The following steps shows how to create a simple double-clickable executable on macOS.
 
 1. Open Terminal.

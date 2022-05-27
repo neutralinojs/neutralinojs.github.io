@@ -44,7 +44,9 @@ you can use Neutralinojs for the following scenarios.
 
 ## Supported platforms and CPU architectures
 
-neu CLI provides you pre-built x64 binaries for Linux, macOS, and Windows. However, you can build Neutralinojs
+neu CLI provides you pre-built x64 binaries for Linux, macOS, and Windows. Additionally, it provides
+ARM (armhf/arm64) Linux binaries with the Neutralinojs framework v4.6.0 or newer versions. We are trying to
+officially support all popular CPU architectures with the CLI soon! However, you can build Neutralinojs
 binaries from the source on almost all desktop operating systems and CPU architectures out there.
 
 If you need Neutralinojs binaries for non-x64 CPU, learn how to build Neutralinojs from source

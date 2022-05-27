@@ -29,6 +29,7 @@ The error object has the following structure.
 | `NE_FS_NOPATHE`| No file or directory.        | `filesystem.getStats`, `filesystem.readDirectory`
 | `NE_FS_COPYFER`| File copy error.        | `filesystem.copyFile`
 | `NE_FS_MOVEFER`| File move error.        | `filesystem.moveFile`
+| `NE_OS_UNLTOUP`| Unable to update the spawned process due to an invalid process identifier or action. | `os.updateSpawnedProcess`
 | `NE_OS_INVMSGA`| Invalid message box arguments.        | `os.showMessageBox`
 | `NE_OS_INVKNPT`| Invalid platform path name.        | `os.getPath`
 | `NE_ST_INVSTKY`| Invalid storage key.        | `storage.getData`, `storage.setData`
