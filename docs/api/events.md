@@ -7,7 +7,7 @@ by the Neutralinojs server based on native state changes.
 
 ## Event types
 
-| Event id                    | Description                                             | Available modes | Data
+| Event id                    | Description                                             | Available modes | Additional data
 | --------------------------- | ------------------------------------------------------- | -------- | -------
 | `ready`                     | Occurs when the client library connects with the Neutralino server.  | `all` | `null`
 | `trayMenuItemClicked`       | Occurs when the user clicks on a tray menu item.        | `all` | `TrayMenuItem`
@@ -22,6 +22,7 @@ by the Neutralinojs server based on native state changes.
 | `extClientConnect`          | Occurs when a new extension connects.                   | `all` | Extension identifier
 | `extClientDisconnect`       | Occurs when an extension disconnects.                   | `all` | Extension identifer
 | `extensionReady`            | Occurs when an extension is ready to communicate with the app.    | `all` | Extension identifier
+| `spawnedProcess`            | Occurs then there is an update in the spawned process.    | `all` | [`SpawnedProcess`](os.md#spawnedprocess) with `action` (`stdOut`, `stdErr`, and `exit`) and `data` (Action data)
 
 ## events.on(eventName, handler)
 Registers a new event handler. 
