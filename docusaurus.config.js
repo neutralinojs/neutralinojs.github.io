@@ -18,6 +18,11 @@ module.exports = {
     }
   ],
   themeConfig: {
+    algolia: {
+      apiKey: '34cd59c8ce7c13835150430465590c56',
+      indexName: 'neu',
+      appId: 'BTDR2QNX5J',
+    },
     gtag: {
       trackingID: 'UA-120983955-1',
       anonymizeIP: true,
