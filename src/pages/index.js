@@ -149,11 +149,11 @@ export default function Home() {
       <div className={styles.intro}>
         <div className="container">
           <div className="row">
-            <div className="col col--6">
+            <div className="col col--12">
               <h1>Build once with JavaScript</h1>
               <p>Run on Linux, Windows, macOS, Web, and Chrome Browser.</p>
             </div>
-            <div className="col col--6">
+            <div className="col col--12">
               <p>
                 Neutralinojs is a lightweight and portable desktop application development framework.
                 It lets you develop lightweight cross-platform desktop applications using JavaScript,
