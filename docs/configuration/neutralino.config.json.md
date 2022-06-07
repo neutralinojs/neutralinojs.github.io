@@ -43,10 +43,10 @@ The port of your application. If the value is `0`, Neutralinojs will use a rando
 
 ### `enableServer: boolean`
 Enables or disables the background server (Disables static file servering feature and native API messaging).
-If you load a remote URL to the webview, you can set this option to `true`.
+If you load a remote URL to the webview, you can set this option to `false`. Make sure to set this option to `true` if you load resources from local sources. The default value is `false`.
 
 ### `enableNativeAPI: boolean`
-Enables or disables the native API. If you want use any native API functions, you can set this option to `true`.
+Enables or disables the native API. If you want to use any native API functions, you can set this option to `true`. The default value is `false`.
 
 ### `tokenSecurity: string`
 Neutralinojs uses a client-server communication pattern with a local WebSocket to handle native calls. This
