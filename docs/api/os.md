@@ -138,6 +138,7 @@ Shows the file open dialog.
 #### Options
 - `filter` Filter[] (optional): An array of Filter objects to filter the files list.
 - `multiSelections` (optional): Enables multi selections.
+- `defaultPath` String (optional): Initial path/filename displayed by the dialog.
 
 #### Filter
 - `name` String: Filter name.
@@ -148,6 +149,7 @@ An array of selected entries.
 
 ```js
 let entries = await Neutralino.os.showOpenDialog('Save your diagram', {
+  defaultPath: '/home/my/directory/',
   filters: [
     {name: 'Images', extensions: ['jpg', 'png']},
     {name: 'All files', extensions: ['*']}
@@ -165,6 +167,7 @@ Shows the file open dialog.
 #### Options
 - `filter` Filter[] (optional): An array of Filter objects to filter the files list.
 - `forceOverwrite` Boolean (optional): Skips file overwrite warning message.
+- `defaultPath` String (optional): Initial path/filename displayed by the dialog.
 
 #### Filter
 - `name` String: Filter name.
@@ -175,6 +178,7 @@ Selected filename.
 
 ```js
 let entry = await Neutralino.os.showSaveDialog('Open a file', {
+  defaultPath: 'untitled.jpg',
   filters: [
     {name: 'Images', extensions: ['jpg', 'png']},
     {name: 'All files', extensions: ['*']}
@@ -190,11 +194,16 @@ Shows the folder open dialog.
 ### Parameters
 - `title` String (optional): Title of the dialog.
 
+#### Options
+- `defaultPath` String (optional): Initial path displayed by the dialog.
+
 ### Return String (awaited):
 Selected folder.
 
 ```js
-let entry = await Neutralino.os.showFolderDialog('Select installation directory');
+let entry = await Neutralino.os.showFolderDialog('Select installation directory', {
+  defaultPath: '/home/my/directory/'
+});
 console.log('You have selected:', entry);
 ```
 
