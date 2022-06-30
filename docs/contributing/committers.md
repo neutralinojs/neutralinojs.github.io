@@ -6,6 +6,7 @@ title: Committers
 - [Deepal Samarakoon](https://github.com/deepz123) - PMC
 - [Chathumaduri Hettiarachchi](https://github.com/Chathumaduri456) - PMC
 - [Kasun Vithanage](https://github.com/kasvith) - PMC
+- [Sainath Rao P](https://github.com/pathange-s) - PMC
 - [Momozor](https://github.com/momozor)
 - [Ali Furkan YILDIZ](https://github.com/uAliFurkanY)
 - [Adriaan](https://github.com/hypherionmc)
@@ -13,7 +14,6 @@ title: Committers
 - [Lanka Rathanyaka](https://github.com/Lahirutech)
 - [Orent](https://github.com/orent)
 - [Fabian Bergström](https://github.com/fabjan)
-- [Sainath Rao P](https://github.com/pathange-s)
 - [Carlonn Rivers](https://github.com/danidre14)
 - [Ayman](https://github.com/Ayman161803)
 
