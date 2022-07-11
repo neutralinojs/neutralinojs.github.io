@@ -68,7 +68,7 @@ you can enable the `browser` mode by entering `neu run -- --mode=browser`. See a
 
 ### `neu update`
 This command will update the existing Neutralinojs binaries and client library from the internet. You can
-use the `nightly` tag for the `cli.binaryVersion` and `cli.clientVersion` to download daily pre-releases.
+use the `nightly` tag for the `cli.binaryVersion` and `cli.clientVersion` in the `neutralino.config.json` to download daily pre-releases.
 
 :::warning
 Nightly builds refers to automatically generated daily builds, so these builds can contain experimental or
