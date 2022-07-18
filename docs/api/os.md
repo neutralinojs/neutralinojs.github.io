@@ -282,7 +282,7 @@ console.log(`Downloads folder: ${downloadsPath}`);
 ```
 
 ## os.open(url)
-Opens a URL with the default web browser. 
+Opens a URL with the default web browser.
 
 :::tip
 If your application is running in the default web browser, this method will open a new tab.

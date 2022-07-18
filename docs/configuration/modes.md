@@ -33,9 +33,8 @@ access, your web application will have the same permission level.
 :::
 
 ## chrome
-Neutralinojs app will run as a Chrome application. The framework use several Chrome command-line arguments to
-make the application look more like a native app. Neutralinojs chrome mode starts a new Chrome process with the
-following default command-line arguments.
+Neutralinojs app will run as a Chrome application. The framework use the following Chrome command-line
+arguments to make the web application look more like a native app.
 
 ```
 --disable-background-networking
@@ -60,7 +59,6 @@ following default command-line arguments.
 --no-first-run
 --no-default-browser-check
 --safebrowsing-disable-auto-update
---enable-automation
 --password-store=basic
 --use-mock-keychain
 --user-data-dir=${NL_PATH}/.tmp/chromedata
