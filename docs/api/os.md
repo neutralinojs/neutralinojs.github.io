@@ -135,7 +135,7 @@ Shows the file open dialog.
 ### Parameters
 - `title` String (optional): Title of the dialog.
 
-#### Options
+### Options
 - `filter` Filter[] (optional): An array of Filter objects to filter the files list.
 - `multiSelections` (optional): Enables multi selections.
 - `defaultPath` String (optional): Initial path/filename displayed by the dialog.
@@ -164,7 +164,7 @@ Shows the file open dialog.
 ### Parameters
 - `title` String (optional): Title of the dialog.
 
-#### Options
+### Options
 - `filter` Filter[] (optional): An array of Filter objects to filter the files list.
 - `forceOverwrite` Boolean (optional): Skips file overwrite warning message.
 - `defaultPath` String (optional): Initial path/filename displayed by the dialog.
@@ -194,7 +194,7 @@ Shows the folder open dialog.
 ### Parameters
 - `title` String (optional): Title of the dialog.
 
-#### Options
+### Options
 - `defaultPath` String (optional): Initial path displayed by the dialog.
 
 ### Return String (awaited):
