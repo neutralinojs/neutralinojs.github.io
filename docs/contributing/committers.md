@@ -16,6 +16,7 @@ title: Committers
 - [Fabian Bergström](https://github.com/fabjan)
 - [Carlonn Rivers](https://github.com/danidre14)
 - [Ayman](https://github.com/Ayman161803)
+- [Kodaloid](https://github.com/kodaloid)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
