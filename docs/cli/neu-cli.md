@@ -65,7 +65,7 @@ Learn how to setup this feature from [this](../how-to/use-a-frontend-library) gu
 
 ### `neu update`
 This command will update the existing Neutralinojs binaries and client library from the internet. You can
-use the `nightly` tag for the `cli.binaryVersion` and `cli.clientVersion` in the `neutralino.config.json` to download daily pre-releases.
+use the `nightly` tag for the `cli.binaryVersion` and `cli.clientVersion` in the `neutralino.config.json` file to use experimental daily pre-releases.
 
 :::warning
 Nightly builds refers to automatically generated daily builds, so these builds can contain experimental or
