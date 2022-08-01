@@ -61,14 +61,11 @@ on a 64-bit computer.
 development evironment at the same time. This option patches the main HTML file with the Neutralinojs
 client library path to expose the native API to the frontend library's development server.
 Learn how to setup this feature from [this](../how-to/use-a-frontend-library) guide.
-- `-- <process-args>`: Sets additional CLI arguments for the Neutralinojs
-- application process. For example
-you can enable the `browser` mode by entering `neu run -- --mode=browser`. See all accepted arguments from
-[here](./internal-cli-arguments.md).
+- `-- <process-args>`: Sets additional CLI arguments for the Neutralinojs application process. For example you can enable the `browser` mode by entering `neu run -- --mode=browser`. See all accepted arguments from [here](./internal-cli-arguments.md).
 
 ### `neu update`
 This command will update the existing Neutralinojs binaries and client library from the internet. You can
-use the `nightly` tag for the `cli.binaryVersion` and `cli.clientVersion` to download daily pre-releases.
+use the `nightly` tag for the `cli.binaryVersion` and `cli.clientVersion` in the `neutralino.config.json` file to use experimental daily pre-releases.
 
 :::warning
 Nightly builds refers to automatically generated daily builds, so these builds can contain experimental or
