@@ -150,7 +150,7 @@ export default function Home() {
         <div className="container">
           <div className="row">
             <div className="col col--12">
-              <h1 style={{textAlign:"center"}}>Build once with JavaScript</h1>
+              <h1 className="text--center">Build once with JavaScript</h1>
               <p>Run on Linux, Windows, macOS, Web, and Chrome Browser.</p>
             </div>
             <div className="col col--12">
