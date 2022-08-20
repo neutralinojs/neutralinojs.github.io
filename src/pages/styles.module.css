@@ -12,6 +12,10 @@
   overflow: hidden;
 }
 
+.feature {
+  margin-top: 2rem;
+}
+
 @media screen and (max-width: 966px) {
   .heroBanner {
     padding: 2rem;
