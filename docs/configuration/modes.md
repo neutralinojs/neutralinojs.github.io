@@ -23,7 +23,7 @@ You will be able to expose your application to a public network or the internet.
 Example scenario: You can make a web application to control your computer via mobile phones.
 :::
 
-Besides, you can the Neutralinojs server on bare-metal servers, virtual machines, and application containers as a
+Besides, you can run the Neutralinojs server on bare-metal servers, virtual machines, and application containers as a
 lightweight message broker. You may find endless use-cases for this framework mode.
 
 :::danger
