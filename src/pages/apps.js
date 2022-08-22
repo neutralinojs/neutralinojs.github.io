@@ -32,6 +32,17 @@ const apps = [
     tags: ['React'],
     githubLink: 'https://github.com/codezri/litepy'
   },
+  {
+    title: 'Fonline Name Colorizing',
+    image: 'fonline-name-colorizing.gif',
+    description: (
+      <>
+         A lightweight application built with Neutralinojs and Preact
+      </>
+    ),
+    tags: ['Preact', 'TypeScript', 'Redux'],
+    githubLink: 'https://github.com/ernest-rudnicki/fonline-name-colorizing'
+  }
 ];
 
 function NeutralinoApp({image, title, description, githubLink, tags}) {
