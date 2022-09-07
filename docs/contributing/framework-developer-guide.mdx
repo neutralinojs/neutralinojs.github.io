@@ -60,8 +60,11 @@ sudo pacman -S \
 
 #### Windows
 
-Install the latest Visual Studio IDE. Neutralinojs compilation on Windows will use
-MSVC (aka `cl.exe`) C++ compiler.
+Install the latest Visual Studio IDE with Windows SDK:
+
+While installing it in the Visual Studio Installer, go to tab Workloads, section "Desktop & Mobile" and select "Desktop development with C++". On the right in "Installation details" > "Desktop development with C++" > "Optional", make sure "Windows 10 SDK" is checked.
+
+The Neutralinojs compilation will use the MSVC C++ compiler (aka `cl.exe`).
 
 #### macOS
 
