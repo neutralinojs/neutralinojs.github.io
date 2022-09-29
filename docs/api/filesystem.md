@@ -90,13 +90,21 @@ Reads a text file. Throws `NE_FS_FILRDER` for file read errors.
 
 ### Parameters
 
-- `filename`: Filename.
+- `filename` String: Filename.
+- `pos` Number (optional): File cursor position in bytes.
+- `size` Number (optional): File reader buffer size in bytes.
 
 ### Return String (awaited):
 File content.
 
 ```js
 let data = await Neutralino.filesystem.readFile('./myFile.txt');
+console.log(`Content: ${data}`);
+
+let data = await Neutralino.filesystem.readFile('./myFile.txt', {
+    pos: 2,
+    size: 10
+});
 console.log(`Content: ${data}`);
 ```
 
@@ -106,6 +114,8 @@ Reads binary files. Throws `NE_FS_FILRDER` for file read errors.
 ### Parameters
 
 - `filename` String: Filename.
+- `pos` Number (optional): File cursor position in bytes.
+- `size` Number (optional): File reader buffer size in bytes.
 
 ### Return Object (awaited):
 Content of the binary file as an

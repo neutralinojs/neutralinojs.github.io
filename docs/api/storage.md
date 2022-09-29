@@ -40,3 +40,15 @@ Data string of the storage record.
 let data = await Neutralino.storage.getData('userDetails');
 console.log(`Data: ${data}`);
 ```
+
+## storage.getKeys()
+Returns all storage keys.
+
+### Return Array (awaited):
+A string array of existing storage keys.
+
+
+```js
+let keys = await Neutralino.storage.getKeys();
+console.log('Keys: ', keys);
+```

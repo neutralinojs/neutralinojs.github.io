@@ -130,8 +130,8 @@ Moves the native window into given coordinates. Neutralinojs's cross-platform co
 In other words, `x=0,y=0` point refers to the top-left corner of the device's main screen.
 
 ### Parameters
-- `x` Number: A integer value for the horizontal position.
-- `y` Number: A integer value for the vertical position.
+- `x` Number: An integer value for the horizontal position.
+- `y` Number: An integer value for the vertical position.
 
 ```js
 await Neutralino.window.move(200, 400);

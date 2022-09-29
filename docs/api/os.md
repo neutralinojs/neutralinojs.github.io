@@ -129,6 +129,18 @@ let value = await Neutralino.os.getEnv('USER');
 console.log(`USER = ${value}`);
 ```
 
+## os.getEnvs()
+Returns all environment variables and their values.
+
+### Return Object (awaited):
+Environment variables details in key-value pairs.
+
+```js
+let envs = await Neutralino.os.getEnvs();
+console.log(envs);
+```
+
+
 ## os.showOpenDialog(title, options)
 Shows the file open dialog.
 

@@ -101,3 +101,16 @@ for(let display of displays) {
     console.log(display);
 }
 ```
+
+## computer.getMousePosition()
+Returns the current mouse cursor position.
+
+### Return Object (awaited):
+- `x` Number: Distance from the left edge of the screen in pixels.
+- `y` Number: Distance from the top edge of the screen in pixels.
+
+
+```js
+let pos = await Neutralino.computer.getMousePosition();
+console.log(`Pos: ${pos.x}, ${pos.y}`);
+```
