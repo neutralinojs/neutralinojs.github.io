@@ -158,7 +158,7 @@ inside entries.
 }
 ```
 
-### `globalVariables: object[]`
+### `globalVariables: object`
 A key-value-based JavaScript object of custom [global variables](../api/global-variables#custom-global-variables).
 
 ### `logging.enabled: boolean`
