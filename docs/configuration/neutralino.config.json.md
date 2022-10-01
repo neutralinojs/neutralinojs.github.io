@@ -129,12 +129,12 @@ WebSocket as an IPC mechanism.
 
 ### `enableExtensions: boolean`
 Enables/disables extensions.
-Learn more about this option [here](../how-to/extensions-overview#enable-the-extensions-feature)
+Learn more about this option [here](../how-to/extensions-overview.md#enable-the-extensions-feature)
 
 
 ### `extensions: object[]`
 An array of extension definitions.
-Learn more about this option [here](../how-to/extensions-overview#defining-the-extensions)
+Learn more about this option [here](../how-to/extensions-overview.md#defining-the-extensions)
 
 ### `nativeBlockList: string[]`
 An array of native methods needs to be blocked from the frontend of the application. The wildcard character `*` is allowed
@@ -159,7 +159,7 @@ inside entries.
 ```
 
 ### `globalVariables: object`
-A key-value-based JavaScript object of custom [global variables](../api/global-variables#custom-global-variables).
+A key-value-based JavaScript object of custom [global variables](../api/global-variables.md#custom-global-variables).
 
 ### `logging.enabled: boolean`
 Enables or disables the logging feature.
@@ -244,7 +244,7 @@ Height of the chrome window.
 
 ### `modes.chrome.args: string`
 Additional command-line arguments for the Chrome process. Read more about chrome mode
-from [here](./modes#chrome)
+from [here](./modes.md#chrome)
 
 ## CLI
 The following configuration values are used neu CLI.
@@ -288,4 +288,4 @@ Use `|` character to set multiple regular expressions, as shown below.
 ### `cli.frontendLibrary: object`
 
 Enables frontend development tools (HMR, etc) for the `neu run --frontend-lib-dev` command. Learn more about frontend
-framework integration from [here](../how-to/use-a-frontend-library)
+framework integration from [here](../how-to/use-a-frontend-library.md)
