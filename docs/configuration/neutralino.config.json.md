@@ -168,7 +168,7 @@ Enables or disables the logging feature.
 Enables or disables log file. If this setting is `false`, the framework won't write log to `neutralinojs.log`,
 and it will write logs to standard streams.
 
-### `serverHeaders: object[]`
+### `serverHeaders: object`
 Custom headers for the static server and Websocket handshake process. For example, the following configuration
 sends a custom header with every outgoing HTTP response.
 
@@ -247,7 +247,7 @@ Additional command-line arguments for the Chrome process. Read more about chrome
 from [here](./modes.md#chrome)
 
 ## CLI
-The following configuration values are used neu CLI.
+The following configuration values are used for the neu CLI.
 
 ### `cli.binaryName: string`
 Binary file name of your application. If it is `myapp`, all binaries will use
