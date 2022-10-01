@@ -33,7 +33,7 @@ access, your web application will have the same permission level.
 :::
 
 ## chrome
-Neutralinojs app will run as a Chrome application. The framework use the following Chrome command-line
+Neutralinojs app will run as a Chrome application. The framework uses the following Chrome command-line
 arguments to make the web application look more like a native app.
 
 ```
@@ -67,5 +67,5 @@ Neutralinojs chrome mode works on a computer that has a pre-installed version of
 browser. If no installation was detected, Neutralinojs displays an error message by asking the user to install
 a Chromium-based browser.
 
-You can provide additional arguments (Eg: `--disable-web-security`) to the Chrome process via [`args`](./neutralino.config.json#modeschromeargs-string)
+You can provide additional arguments (Eg: `--disable-web-security`) to the Chrome process via [`args`](./neutralino.config.json.md#modeschromeargs-string)
  configuration attribute. Browse all supported Chromium command-line arguments [here](https://peter.sh/experiments/chromium-command-line-switches/)
