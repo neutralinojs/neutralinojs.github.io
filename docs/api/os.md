@@ -160,7 +160,7 @@ Shows the file open dialog.
 An array of selected entries.
 
 ```js
-let entries = await Neutralino.os.showOpenDialog('Save your diagram', {
+let entries = await Neutralino.os.showOpenDialog('Upload existing file', {
   defaultPath: '/home/my/directory/',
   filters: [
     {name: 'Images', extensions: ['jpg', 'png']},
@@ -171,7 +171,7 @@ console.log('You have selected:', entries);
 ```
 
 ## os.showSaveDialog(title, options)
-Shows the file open dialog.
+Shows the file save dialog. You can use it to create new files.
 
 ### Parameters
 - `title` String (optional): Title of the dialog.
@@ -189,7 +189,7 @@ Shows the file open dialog.
 Selected filename.
 
 ```js
-let entry = await Neutralino.os.showSaveDialog('Open a file', {
+let entry = await Neutralino.os.showSaveDialog('Save your work', {
   defaultPath: 'untitled.jpg',
   filters: [
     {name: 'Images', extensions: ['jpg', 'png']},
