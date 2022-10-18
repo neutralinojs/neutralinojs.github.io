@@ -73,6 +73,7 @@ module.exports = {
         'contributing/developer-support',
         'contributing/committers',
         'contributing/frequently-asked-questions',
+        'contributing/about-neutralinojs'
       ],
     },
   ],
