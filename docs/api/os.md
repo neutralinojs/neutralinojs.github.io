@@ -111,7 +111,7 @@ An array of `SpawnedProcess` objects.
 await Neutralino.os.spawnProcess('ping neutralino.js.org');
 await Neutralino.os.spawnProcess('ping codezri.org');
 
-let processes = await Neutralino.getSpawnedProcesses();
+let processes = await Neutralino.os.getSpawnedProcesses();
 console.log(processes);
 ```
 
