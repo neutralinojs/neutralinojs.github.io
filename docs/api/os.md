@@ -142,7 +142,7 @@ console.log(envs);
 
 
 ## os.showOpenDialog(title, options)
-Shows the file open dialog.
+Shows the file open dialog. You can use this function to obtain paths of existing files.
 
 ### Parameters
 - `title` String (optional): Title of the dialog.
@@ -160,7 +160,7 @@ Shows the file open dialog.
 An array of selected entries.
 
 ```js
-let entries = await Neutralino.os.showOpenDialog('Save your diagram', {
+let entries = await Neutralino.os.showOpenDialog('Open a file', {
   defaultPath: '/home/my/directory/',
   filters: [
     {name: 'Images', extensions: ['jpg', 'png']},
@@ -171,7 +171,7 @@ console.log('You have selected:', entries);
 ```
 
 ## os.showSaveDialog(title, options)
-Shows the file open dialog.
+Shows the file save dialog. You can use this function to obtain a path to create a new file.
 
 ### Parameters
 - `title` String (optional): Title of the dialog.
@@ -189,7 +189,7 @@ Shows the file open dialog.
 Selected filename.
 
 ```js
-let entry = await Neutralino.os.showSaveDialog('Open a file', {
+let entry = await Neutralino.os.showSaveDialog('Save as', {
   defaultPath: 'untitled.jpg',
   filters: [
     {name: 'Images', extensions: ['jpg', 'png']},
