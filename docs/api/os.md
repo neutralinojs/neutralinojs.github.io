@@ -142,7 +142,7 @@ console.log(envs);
 
 
 ## os.showOpenDialog(title, options)
-Shows the file open dialog.
+Shows the file open dialog. You can use this function to obtain paths of existing files.
 
 ### Parameters
 - `title` String (optional): Title of the dialog.
@@ -171,7 +171,7 @@ console.log('You have selected:', entries);
 ```
 
 ## os.showSaveDialog(title, options)
-Shows the file save dialog. You can use it to obtain a path to a create new file.
+Shows the file save dialog. You can use this function to obtain a path to create a new file.
 
 ### Parameters
 - `title` String (optional): Title of the dialog.
