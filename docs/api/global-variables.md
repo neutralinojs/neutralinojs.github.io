@@ -23,6 +23,7 @@ These JavaScript variables can be used anywhere because these variables are defi
 | `NL_EXTENABLED` | Returns `true` if extensions are enabled     |
 | `NL_COMMIT` | Framework binary's release commit hash     |
 | `NL_CCOMMIT` | Client librar's release commit hash     |
+| `NL_CMETHODS` | Custom method identifiers (Returns the same output that [`custom.getMethods`](custom.md#customgetmethods) returns). |
 
 :::tip
 You can use `NL_COMMIT` and `NL_CCOMMIT` values to identify the codebase snapshot if you use nightly releases.

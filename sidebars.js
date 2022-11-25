@@ -16,6 +16,7 @@ module.exports = {
         'api/app',
         'api/clipboard',
         'api/computer',
+        'api/custom',
         'api/debug',
         'api/events',
         'api/extensions',

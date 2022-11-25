@@ -4,7 +4,7 @@ title: Error Codes
 
 If a particular native API call fails, Neutralinojs client library rejects the pending Promise with an error object.
 
-The error object has the following structure.
+The error object has the following structure:
 
 ```js
 {
@@ -25,6 +25,9 @@ The error object has the following structure.
 | `NE_OS_TRAYIER`| Unable to initialize the tray menu. This error is typically thrown when GNU/Linux systems don't contain an app indicator library.        | `os.setTray`
 | `NE_FS_FILRDER`| File read error.        | `filesystem.readFile`, `filesystem.readBinaryFile`
 | `NE_FS_FILWRER`| File write error.        | `filesystem.writeFile`, `filesystem.writeBinaryFile`
+| `NE_FS_FILOPER`| File open error.        | `filesystem.openFile`
+| `NE_FS_UNLTOUP`| Unable to update opened file id.        | `filesystem.updateOpenedFile`
+| `NE_FS_UNLTFOP`| Unable to find opened file id.        | `filesystem.getOpenedFileInfo`
 | `NE_FS_FILRMER`| File remove error.        | `filesystem.removeFile`
 | `NE_FS_NOPATHE`| No file or directory.        | `filesystem.getStats`, `filesystem.readDirectory`
 | `NE_FS_COPYFER`| File copy error.        | `filesystem.copyFile`

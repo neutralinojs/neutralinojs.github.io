@@ -130,6 +130,78 @@ let view = new Uint8Array(data);
 console.log('Binary content: ', view);
 ```
 
+## filesystem.openFile(filename)
+Creates a readable file stream. Throws `NE_FS_FILOPER` for file open errors.
+
+### Parameters
+
+- `filename` String: Filename.
+
+### Return Number (awaited):
+File stream identifier.
+
+```js
+let fileId = await Neutralino.filesystem.openFile('./myFile.txt');
+console.log(`ID: ${fileId}`);
+```
+
+## filesystem.updateOpenedFile(id, action, data)
+Invokes file stream actions. Throws `NE_FS_UNLTOUP` if the framework can't update the stream. Call this method
+to read and seek an opened file (aka a readable stream).
+
+### Parameters
+- `id` Number: File stream identifier.
+- `action` String: An action to take. Accepts only the following values:
+    - `read`: Reads a bytes segment from the file stream.
+    - `readAll`: Triggers the `read` action until file stream cursor position reaches
+    [EOF](https://en.wikipedia.org/wiki/End-of-file).
+    - `seek`: Sets the file cursor position.
+- `data` Object (optional): Additional data for the `action`. Send the buffer size in bytes (default: 256 bytes)
+ if the `action` is `read` or `readAll`. Send the file stream cursor position if the action is `seek`.
+
+```js
+let fileId = await Neutralino.filesystem.openFile('./myFile.txt');
+
+let content = '';
+Neutralino.events.on('openedFile', (evt) => {
+  if(evt.detail.id == fileId) {
+    switch(evt.detail.action) {
+      case 'data':
+        content += evt.detail.data;
+        break;
+      case 'end':
+        console.log(content);
+        break;
+    }
+  }
+});
+
+// Sets the file stream cursor to 10th byte
+await Neutralino.filesystem.updateOpenedFile(fileId, 'seek', 10);
+// Reads 2 bytes from the cursor position
+await Neutralino.filesystem.updateOpenedFile(fileId, 'read', 2);
+// Reads the next bytes until the cursor reaches EOF (buffer size: 2)
+await Neutralino.filesystem.updateOpenedFile(fileId, 'readAll', 2);
+```
+
+## filesystem.getOpenedFileInfo(id)
+Returns file stream details. Throws `NE_FS_UNLTFOP` if the file stream identifier is not valid.
+
+### Parameters
+
+- `id` Number: File stream identifier.
+
+### Return Object (awaited):
+- `id` Number: File stream identifier.
+- `eof` Boolean: Becomes `true` if the stream reached EOF.
+- `pos` Number: File stream cursor position.
+- `lastRead` Number: Last read bytes.
+
+```js
+let info = await Neutralino.filesystem.getOpenedFileInfo(0);
+console.log(info);
+```
+
 ## filesystem.removeFile(filename)
 Removes given file. Throws `NE_FS_FILRMER` for file removal errors.
 
