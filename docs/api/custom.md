@@ -16,6 +16,9 @@ separate namespace, a function template, inbuilt helper functions (i.e., to get 
 validation, etc.), and a developer guide to add custom APIs to the Neutralinojs framework without
 updating the framework core.
 
+
+
+
 ## custom.getMethods()
 Returns all custom methods added by the app developer.
 
@@ -55,6 +58,47 @@ let sum;
 sum = await Neutralino.custom.add(10, 10); // 20
 sum = await Neutralino.custom.add(1, 1, { addExtraFive: true, addExtraTen: true }); // 17
 ```
+
+## Inbuilt Helper Functions
+
+When you will use `add` method the inbuilt helper functions will help you in validation and window handling.
+
+### Validate
+
+```js
+if(!helpers::hasRequiredFields(input, {"arg0", "arg1"})) {
+         output["error"] = errors::makeMissingArgErrorPayload();
+         return output;
+     }
+```
+Internally `hasRequiredFields` works like this:
+
+```js
+bool hasRequiredFields(const json &input, const vector<string> &keys);
+```
+
+###Handle options
+
+```js
+if(helpers::hasField(input, "addExtraFive")) {
+         if(input["addExtraFive"].get<bool>()) {
+             sum += 5;
+         }
+     }
+     if(helpers::hasField(input, "addExtraTen")) {
+        if(input["addExtraTen"].get<bool>()) {
+             sum += 10;
+         }
+     }
+```
+
+Internally `hasField` works like this:
+
+```js
+bool hasField(const json &input, const string &key);
+```
+
+You can check out [helper.h](https://github.com/neutralinojs/neutralinojs/blob/main/helpers.h) to know more about the inbuilt helper functions.
 
 Check the `add` method implementation and learn how to capture, validate, and process parameters in C++.
 For compiling your Neutralinojs fork, you can use the existing
