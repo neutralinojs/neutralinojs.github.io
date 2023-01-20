@@ -2,6 +2,10 @@
 title: Using Frontend Libraries
 ---
 
+:::caution
+This article is outdated and we are working on an article re-write. The reason is that now you can import [`@neutralinojs/lib`](https://www.npmjs.com/package/@neutralinojs/lib) in frontend libraries without using the global `Neutralino` object.
+:::
+
 You can build Neutralinojs apps with vanilla JavaScript or using any frontend library. This tutorial guides you
 to set up your favorite frontend library for Neutralinojs application development.
 
