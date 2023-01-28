@@ -148,7 +148,7 @@ Shows the file open dialog. You can use this function to obtain paths of existin
 - `title` String (optional): Title of the dialog.
 
 ### Options
-- `filter` Filter[] (optional): An array of Filter objects to filter the files list.
+- `filters` Filter[] (optional): An array of Filter objects to filter the files list.
 - `multiSelections` (optional): Enables multi selections.
 - `defaultPath` String (optional): Initial path/filename displayed by the dialog.
 
@@ -160,7 +160,7 @@ Shows the file open dialog. You can use this function to obtain paths of existin
 An array of selected entries.
 
 ```js
-let entries = await Neutralino.os.showOpenDialog('Open a file', {
+let entries = await Neutralino.os.showOpenDialog('Open a diagram', {
   defaultPath: '/home/my/directory/',
   filters: [
     {name: 'Images', extensions: ['jpg', 'png']},
@@ -177,7 +177,7 @@ Shows the file save dialog. You can use this function to obtain a path to create
 - `title` String (optional): Title of the dialog.
 
 ### Options
-- `filter` Filter[] (optional): An array of Filter objects to filter the files list.
+- `filters` Filter[] (optional): An array of Filter objects to filter the files list.
 - `forceOverwrite` Boolean (optional): Skips file overwrite warning message.
 - `defaultPath` String (optional): Initial path/filename displayed by the dialog.
 
@@ -189,7 +189,7 @@ Shows the file save dialog. You can use this function to obtain a path to create
 Selected filename.
 
 ```js
-let entry = await Neutralino.os.showSaveDialog('Save as', {
+let entry = await Neutralino.os.showSaveDialog('Save to file', {
   defaultPath: 'untitled.jpg',
   filters: [
     {name: 'Images', extensions: ['jpg', 'png']},
