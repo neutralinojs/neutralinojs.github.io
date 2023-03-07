@@ -2,13 +2,9 @@
 title: Extensions Overview
 ---
 
-Neutralinos framework offers a native API to perform various operating-system-level operations such as accessing
-filesystem, executing commands, and showing dialog boxes, etc. You may need other native APIs like database connectors
-to build your applications. But, we can't add all specific APIs to the core and make the framework bloaty. Instead,
-we offer a WebSocket-based extension system to extend Neutralinojs API without even asking you to build Neutralinojs from source.
+The Neutralino framework provides a native API that allows users to perform various operating system-level operations such as accessing the filesystem, executing commands, and showing dialog boxes. While users may require additional native APIs like database connectors for building their applications, adding all of them to the core would make the framework bloated. Therefore, the framework offers a WebSocket-based extension system that enables users to extend the Neutralinojs API without having to build the framework from source.
 
-You can write custom backend code for your application with any programming language thanks to the flexible
-extensions API. Also, the extensions API helps you to include Neutralinojs process as a part of any source file.
+The extensions API provides the flexibility to write custom backend code for your application using any programming language. Furthermore, the extensions API allows you to include the Neutralinojs process as a part of any source file.
 
 ## Defining the extensions
 
@@ -31,7 +27,7 @@ First, you need to define extensions you use in `neutralinojs.config.json` with 
 
 - `id` String: A unique key to identify each extension. This id cannot contain any characters except for letters, numbers, and periods.
 - `command` String (optional): A cross-platform command to start the extension. Eg: `node ${NL_PATH}/extensions/binary/main.js`
-will work on every platform.
+  will work on every platform.
 - `commandLinux` String (optional): Extension startup command for Linux.
 - `commandDarwin` String (optional): Extension startup command for macOS.
 - `commandWindows` String (optional): Extension startup command for Windows.
@@ -47,7 +43,7 @@ The extensions API is disabled by default. Enable extensions by adding the follo
 ## Connecting an extension with Neutralinojs
 
 As you already noticed, an extension is just a separate process. Neutralinojs starts spawning extension instances
- during the framework bootstrap process and initiates each extension process with the following process arguments.
+during the framework bootstrap process and initiates each extension process with the following process arguments.
 
 - `--nl-port=<port>`: port of the Neutralinojs server.
 - `--nl-token=<token>`: Access token to use the native API.
@@ -66,10 +62,8 @@ The extensions API uses an event-based messaging protocol. Every message uses th
 
 ```json
 {
-    "event": "<event_name>",
-    "data" : {
-
-    }
+  "event": "<event_name>",
+  "data": {}
 }
 ```
 
@@ -79,7 +73,7 @@ Use the built-in extensions API to send a message to any extension, as shown bel
 let extension = 'js.neutralino.sampleextension';
 let event = 'helloExtension';
 let data = {
-    testValue: 10
+  testValue: 10,
 };
 
 await Neutralino.extensions.dispatch(extension, event, data);
@@ -99,12 +93,10 @@ following format.
 
 ```json
 {
-    "id": "<id>",
-    "method": "<method>",
-    "accessToken": "<token>",
-    "data": {
-
-    }
+  "id": "<id>",
+  "method": "<method>",
+  "accessToken": "<token>",
+  "data": {}
 }
 ```
 
@@ -118,11 +110,54 @@ with the `events.on` in the application code to receive the message send by the 
 
 ## Terminating an extension instance
 
-Neutralinojs doesn't send kill signals to all extension instances during exit. Therefore, you have to stop
-the extension process when the WebSocket-based IPC closes. See the following sample Node.js extension:
+When Neutralino exits, it does not send kill signals to all extension instances. Therefore, it is necessary to stop the extension process when the WebSocket-based IPC (Inter-Process Communication) closes. The following Node.js extension code shows how to do this:
 
+```js
+const WS = require("websocket").w3cwebsocket;
+const { v4: uuidv4 } = require("uuid");
+const chalk = require("chalk");
+
+const { nl_port, nl_token, nl_extension_id } = require("minimist")(
+  process.argv.slice(2)
+);
+
+const client = new WS(
+  `ws://localhost:${nl_port}?extensionId=${nl_extension_id}`
+);
+
+client.onerror = () => log("Connection error!", "ERROR");
+client.onopen = () => log("Connected");
+client.onclose = () => process.exit();
+
+client.onmessage = (e) => {
+  const { event, data } = JSON.parse(e.data);
+
+  if (event === "eventToExtension") {
+    log(data);
+
+    client.send(
+      JSON.stringify({
+        id: uuidv4(),
+        method: "app.broadcast",
+        accessToken: nl_token,
+        data: { event: "eventFromExtension", data: "Hello app!" },
+      })
+    );
+  }
+};
+
+function log(message, type = "INFO") {
+  const logLine = `[${nl_extension_id}]: ${chalk[
+    type === "INFO" ? "green" : "red"
+  ](type)} ${message}`;
+  console[type === "INFO" ? "log" : "error"](logLine);
+}
+```
+
+This code is a sample Node.js extension for Neutralinojs, which establishes a WebSocket connection to the Neutralinojs server and handles incoming messages from the server. It also sends a message to the server using the client.send method when it receives a specific event from the server.
+
+For more information on how to terminate an existing instance, you can refer to the sample-extension.
 https://github.com/neutralinojs/neutralinojs/tree/main/bin/extensions/sampleextension
-
 
 ## Using Neutralinojs from your source files
 
@@ -141,8 +176,8 @@ The above setting exports authentication details to `${NL_PATH}/.tmp/auth_info.j
 
 ```json
 {
-    "port": "<port>",
-    "accessToken": "<token>"
+  "port": "<port>",
+  "accessToken": "<token>"
 }
 ```
 
