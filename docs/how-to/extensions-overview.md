@@ -70,8 +70,8 @@ The extensions API uses an event-based messaging protocol. Every message uses th
 Use the built-in extensions API to send a message to any extension, as shown below.
 
 ```js
-let extension = "js.neutralino.sampleextension";
-let event = "helloExtension";
+let extension = 'js.neutralino.sampleextension';
+let event = 'helloExtension';
 let data = {
   testValue: 10,
 };
