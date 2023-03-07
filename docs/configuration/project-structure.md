@@ -11,7 +11,7 @@ HTML files. neu CLI will scaffold a simple structure for you by downloading the
 [minimal template](https://github.com/neutralinojs/neutralinojs-minimal). But, you can indeed
 change it or use the [zero template](https://github.com/neutralinojs/neutralinojs-zero) to start from scratch.
 
-## Developing apps with vanilla Js
+## Developing apps with vanilla JS
 If you like to develop Neutralinojs applications with vanilla JavaScript, you can place all application resources in one directory.
 After that, you can update the `neutralino.config.json` file with the following values.
 ```json
