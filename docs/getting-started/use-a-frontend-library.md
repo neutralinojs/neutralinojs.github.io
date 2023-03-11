@@ -3,7 +3,7 @@ title: Using Frontend Libraries
 ---
 
 You can build Neutralinojs apps with vanilla JavaScript or with any modern frontend library. This tutorial guides you on how
-to set up your favorite frontend library for Neutralinojs application development.
+to set up your favourite frontend library for Neutralinojs application development.
 
 ## Initializing projects
 
