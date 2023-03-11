@@ -101,7 +101,7 @@ You could run the application with the `neu run` command, but you cannot use the
 npm i @neutralinojs/lib
 ```
 
-The next step is to load neutralino global variables. You can do that by adding JavaScript script to the a root HTML file of a framework of your choice. 
+The next step is to load neutralino [global variables](api/global-variables). You can do that by adding JavaScript script to the a root HTML file of a framework of your choice. 
 
 React typically holds the main HTML file content in the `./public/index.html` file, so we can put the following
 HTML snippet there to load the client library.
