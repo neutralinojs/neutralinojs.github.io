@@ -2,7 +2,7 @@
 title: Using Frontend Libraries
 ---
 
-You can build Neutralinojs apps with vanilla JavaScript or with any modern frontend library. This tutorial guides you
+You can build Neutralinojs apps with vanilla JavaScript or with any modern frontend library. This tutorial guides you on how
 to set up your favorite frontend library for Neutralinojs application development.
 
 ## Initializing projects
@@ -15,7 +15,7 @@ empty project, as shown below.
 neu create myapp --template neutralinojs/neutralinojs-zero
 ```
 
-Now, create a new project with your favorite frontend framework's command-line tools. In this tutorial,
+Now, create a new project with your favourite frontend framework's command-line tools. In this tutorial,
 we are going to use React, but you can use any frontend library as you wish.
 You need to create this project inside the `myapp` directory.
 
@@ -55,7 +55,7 @@ demonstration purposes, let's use the React icon from the `public` directory.
 
 ## Configuring neu CLI
 
-neu CLI wants to know about the client library location and resources directory to run
+neu CLI wants to know about the client library globals location and resources directory to run
  `neu run` and `neu update` commands properly. Store client library into your frontend framework's static
  resources directory and set application resources path with the same value you've used for `documentRoot`.
 
@@ -65,12 +65,12 @@ We can configure CLI for React by using the following options.
   "cli": {
     // --- other options
     "resourcesPath": "/myapp-react/build/",
-    "clientLibrary": "/myapp-react/public/neutralino.js",
+    "clientLibrary": "/myapp-react/public/__neutralino_globals.js",
   }
 ```
 
-When we modify `cli.clientLibrary` property, we need to enter `neu update` to get the client library to
-the new location. Go to `myapp` and update the client library.
+When we modify `cli.clientLibrary` property, we need to enter `neu update` to get the client library globals to
+the new location. Go to `myapp` and update the client library globals.
 
 ```bash
 neu update
@@ -101,7 +101,7 @@ You could run the application with the `neu run` command, but you cannot use the
 npm i @neutralinojs/lib
 ```
 
-The next step is to load neutralino [global variables](api/global-variables). You can do that by adding JavaScript script to the a root HTML file of a framework of your choice. 
+The next step is to load neutralino [global variables](api/global-variables). You can achieve that by including JavaScript script in the root HTML file of a framework of your choice. 
 
 React typically holds the main HTML file content in the `./public/index.html` file, so we can put the following
 HTML snippet there to load the client library.
