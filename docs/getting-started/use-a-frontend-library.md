@@ -98,6 +98,7 @@ neu run
 You could run the application with the `neu run` command, but you cannot use the native API yet because it has not been initialized. To do that you need to install neutralino API package with following command:
 
 ```bash
+cd myapp-react
 npm i @neutralinojs/lib
 ```
 
@@ -107,7 +108,7 @@ React typically holds the main HTML file content in the `./public/index.html` fi
 HTML snippet there to load the client library.
 
 ```html
-<script src="__neutralino_globals.js"></script>
+<script src="%PUBLIC_URL%/__neutralino_globals.js"></script>
 ```
 
 Now make sure to initialize the client library from your frontend application entry point file. React's application entry-point is typically `./src/index.js`. Therefore, we can do the initialization process from there by calling the `init` function from `@neutralinojs/lib` package.
@@ -146,6 +147,7 @@ Firstly you need to update `neutralino.config.json` to allow what API your appli
 Since you changed the configuration file you need to run following command again.
 
 ```bash
+cd ..
 neu update
 ```
 
@@ -182,10 +184,10 @@ export default App;
 The last step is to rebuild your React application and run neutralinojs app with `--window-enable-inspector` which will allow you to open developer tools. 
 
 ```bash
-// in the root of your React application
+cd myapp-react
 npm run build
 
-// in the folder with `neutralino.config.json` config file
+cd ..
 neu run -- --window-enable-inspector
 ```
 
