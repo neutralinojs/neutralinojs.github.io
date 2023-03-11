@@ -181,7 +181,7 @@ function App() {
 export default App;
 ```
 
-The last step is to rebuild your React application and run neutralinojs app with `--window-enable-inspector` which will allow you to open developer tools. 
+The last step is to rebuild your React application and run neutralinojs app with `--window-enable-inspector` argument which will allow you to open developer tools. 
 
 ```bash
 cd myapp-react
