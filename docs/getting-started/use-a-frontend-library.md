@@ -2,13 +2,8 @@
 title: Using Frontend Libraries
 ---
 
-:::caution
-This article is outdated and we are working on an article re-write. The reason is that now you can import [`@neutralinojs/lib`](https://www.npmjs.com/package/@neutralinojs/lib) in frontend libraries without using the `Neutralino` global object.
-:::
-
-You can build Neutralinojs apps with vanilla JavaScript or using any frontend library. This tutorial guides you
+You can build Neutralinojs apps with vanilla JavaScript or with any modern frontend library. This tutorial guides you
 to set up your favorite frontend library for Neutralinojs application development.
-
 
 ## Initializing projects
 
@@ -98,22 +93,24 @@ cd ..
 neu run
 ```
 
-## Configuring the frontend app
+## Initializing native API with `@neutralinojs/lib`
 
-You could run the application with the `neu run` command, but you can't use the native API yet since the
-React application doesn't load the client library. Add a `<script>` tag and load the client library from
-your frontend library's main HTML file.
+You could run the application with the `neu run` command, but you cannot use the native API yet because it has not been initialized. To do that you need to install neutralino API package with following command:
+
+```bash
+npm i @neutralinojs/lib
+```
+
+The next step is to load neutralino global variables. You can do that by adding JavaScript script to the a root HTML file of a framework of your choice. 
 
 React typically holds the main HTML file content in the `./public/index.html` file, so we can put the following
 HTML snippet there to load the client library.
 
 ```html
-<script src="%PUBLIC_URL%/neutralino.js"></script>
+<script src="__neutralino_globals.js"></script>
 ```
 
-Also, make sure to initialize the client library from your frontend application's entry point. React's
-application entry-point is typically `./src/index.js`. Therefore, we can do the initialization process
-from there.
+Now make sure to initialize the client library from your frontend application entry point file. React's application entry-point is typically `./src/index.js`. Therefore, we can do the initialization process from there by calling the `init` function from `@neutralinojs/lib` package.
 
 
 ```jsx
@@ -122,6 +119,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+// Import init function from "@neutralinojs/lib"
+import { init } from "@neutralinojs/lib"
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
@@ -129,17 +129,67 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-window.Neutralino.init(); // Add this function call
+init(); // Add this function call
 ```
 
-Now, build and run your application again with the inspector window.
+Let's validate if the client library loaded properly. To do that let's use `filesystem` API in order to read the current directory of neutralinojs app.
+
+Firstly you need to update `neutralino.config.json` to allow what API your application can call. You can enable the whole namespace `filesystem.*` or just single function from a given namespace like in the snippet below.
+
+```json
+  "nativeAllowList": [
+    "app.*",
+    "filesystem.readDirectory"
+  ],
+```
+
+Since you changed the configuration file you need to run following command again.
 
 ```bash
+neu update
+```
+
+Now let's add following snippet in `./src/App.js` file which will log the current directory or error message when `App` component is mounted.
+
+```jsx
+import { useEffect } from 'react'
+import './App.css';
+
+// Import filesystem namespace
+import { filesystem } from "@neutralinojs/lib"
+
+function App() {
+
+  // Log current directory or error after component is mounted
+  useEffect(() => {
+    filesystem.readDirectory('./').then((data) => {
+      console.log(data)
+    }).catch((err) => {
+      console.log(err)
+    })
+  }, [])
+
+  return (
+    <div className="App">
+      My Neutralinojs App
+    </div>
+  );
+}
+
+export default App;
+```
+
+The last step is to rebuild your React application and run neutralinojs app with `--window-enable-inspector` which will allow you to open developer tools. 
+
+```bash
+// in the root of your React application
+npm run build
+
+// in the folder with `neutralino.config.json` config file
 neu run -- --window-enable-inspector
 ```
 
-Try entering some native API calls from the browser console.
-
+The current directory should be logged to the console. To open developer tools right click anywhere in the neutralinojs application and press `inspect element`.
 
 ## Enabling hot-reload
 
