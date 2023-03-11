@@ -70,7 +70,7 @@ We can configure CLI for React by using the following options.
 ```
 
 When we modify `cli.clientLibrary` property, we need to enter `neu update` to get the client library globals to
-the new location. Go to `myapp` and update the client library globals.
+the new location. Go to `myapp` and run following command to create globals file in `/myapp-react/public` directory.
 
 ```bash
 neu update
