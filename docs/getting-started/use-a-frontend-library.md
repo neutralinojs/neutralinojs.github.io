@@ -55,9 +55,7 @@ demonstration purposes, let's use the React icon from the `public` directory.
 
 ## Configuring neu CLI
 
-neu CLI wants to know about the client library globals location and resources directory to run
- `neu run` and `neu update` commands properly. Store client library into your frontend framework's static
- resources directory and set application resources path with the same value you've used for `documentRoot`.
+By default, the zero template configuration asks the Neutralinojs CLI to download the Neutralinojs client (aka `neutralino.js`) from GitHub releases. Then, the CLI creates your app package by copying the `neutralino.js` file. However,we can download the client library from the NPM registry and bundle with your app frontend. Remove the `clientLibrary` property from the Neutralinojs configuration to avoid fetching the client from GitHub releases:
 
 We can configure CLI for React by using the following options.
 
@@ -65,15 +63,10 @@ We can configure CLI for React by using the following options.
   "cli": {
     // --- other options
     "resourcesPath": "/myapp-react/build/",
-    "clientLibrary": "/myapp-react/public/__neutralino_globals.js",
+    // ---
+    "clientLibrary": "/myapp-react/public/__neutralino_globals.js", // <--- Remove this option
+    // --- 
   }
-```
-
-When we modify `cli.clientLibrary` property, we need to enter `neu update` to get the client library globals to
-the new location. Go to `myapp` and run following command to create globals file in `/myapp-react/public` directory.
-
-```bash
-neu update
 ```
 
 Now, you can build and run the React application as a Neutralinojs application &mdash; it's possible with the
@@ -95,14 +88,14 @@ neu run
 
 ## Initializing native API with `@neutralinojs/lib`
 
-You could run the application with the `neu run` command, but you cannot use the native API yet because it has not been initialized. To do that you need to install neutralino API package with following command:
+You could run the application with the `neu run` command, but you cannot use the native API yet because it has not been initialized. To do that you need to install the Neutralinojs client with following command:
 
 ```bash
 cd myapp-react
-npm i @neutralinojs/lib
+npm install @neutralinojs/lib
 ```
 
-The next step is to load neutralino [global variables](api/global-variables). You can achieve that by including JavaScript script in the root HTML file of a framework of your choice. 
+The next step is to load Neutralinojs [global variables](api/global-variables). You can achieve that by including JavaScript script in the root HTML file of a framework of your choice. 
 
 React typically holds the main HTML file content in the `./public/index.html` file, so we can put the following
 HTML snippet there to load the client library.
@@ -133,7 +126,7 @@ ReactDOM.render(
 init(); // Add this function call
 ```
 
-Let's validate if the client library loaded properly. To do that let's use `filesystem` API in order to read the current directory of neutralinojs app.
+Let's validate if the client library loaded properly. To do that let's use `filesystem` API in order to read the current directory of Neutralinojs app.
 
 Firstly you need to update `neutralino.config.json` to allow what API your application can call. You can enable the whole namespace `filesystem.*` or just single function from a given namespace like in the snippet below.
 
@@ -142,13 +135,6 @@ Firstly you need to update `neutralino.config.json` to allow what API your appli
     "app.*",
     "filesystem.readDirectory"
   ],
-```
-
-Since you changed the configuration file you need to run following command again.
-
-```bash
-cd ..
-neu update
 ```
 
 Now let's add following snippet in `./src/App.js` file which will log the current directory or error message when `App` component is mounted.
@@ -181,7 +167,7 @@ function App() {
 export default App;
 ```
 
-The last step is to rebuild your React application and run neutralinojs app with `--window-enable-inspector` argument which will allow you to open developer tools. 
+The last step is to run your Neutralinojs app with `--window-enable-inspector` argument which will allow you to open developer tools. 
 
 ```bash
 cd myapp-react
