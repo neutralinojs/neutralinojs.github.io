@@ -55,7 +55,7 @@ demonstration purposes, let's use the React icon from the `public` directory.
 
 ## Configuring neu CLI
 
-By default, the zero template configuration asks the Neutralinojs CLI to download the Neutralinojs client (aka `neutralino.js`) from GitHub releases. Then, the CLI creates your app package by copying the `neutralino.js` file. However, we can download the client library from the NPM registry and bundle with your app frontend. Remove the `clientLibrary` property from the Neutralinojs configuration to avoid fetching the client from GitHub releases:
+By default, the zero template configuration asks the Neutralinojs CLI to download the Neutralinojs client (aka `neutralino.js`) from GitHub releases. Then, the CLI creates your app package by copying the `neutralino.js` file. However, you can download the client library from the NPM registry and bundle with your app frontend. Remove the `clientLibrary` property from the Neutralinojs configuration to avoid fetching the client from GitHub releases:
 
 We can configure CLI for React by using the following options.
 
@@ -64,7 +64,7 @@ We can configure CLI for React by using the following options.
     // --- other options
     "resourcesPath": "/myapp-react/build/",
     // ---
-    "clientLibrary": "/myapp-react/public/__neutralino_globals.js", // <--- Remove this option
+    "clientLibrary": "/www/neutralino.js", // <--- Remove this option
     // --- 
   }
 ```
