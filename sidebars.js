@@ -6,6 +6,7 @@ module.exports = {
       items: [
         'getting-started/introduction',
         'getting-started/your-first-neutralinojs-app',
+        'getting-started/use-a-frontend-library',
       ],
     },
     {
@@ -53,7 +54,6 @@ module.exports = {
       items: [
         'how-to/extensions-overview',
         'how-to/auto-updater',
-        'how-to/use-a-frontend-library',
       ],
     },
     {
