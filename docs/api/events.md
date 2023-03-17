@@ -22,9 +22,9 @@ by the Neutralinojs server based on native state changes.
 | `extClientConnect`          | Occurs when a new extension connects.                   | `all` | Extension identifier
 | `extClientDisconnect`       | Occurs when an extension disconnects.                   | `all` | Extension identifer
 | `extensionReady`            | Occurs when an extension is ready to communicate with the app.    | `all` | Extension identifier
-| `spawnedProcess`            | Occurs then there is an update in the spawned process.  | `all` | [`SpawnedProcess`](os.md#spawnedprocess) with `action` (`stdOut`, `stdErr`, and `exit`) and `data` (Action data)
-| `openedFile`                | Occurs for each read action and whenever stream cursor reaches EOF. | `all` | File stream identifier with `action` (`read` and `end`) and `data` (Action data)
-
+| `spawnedProcess`            | Occurs then there is an update in the spawned process.  | `all` | [`SpawnedProcess`](os.md#spawnedprocess) with `action` (`stdOut`, `stdErr`, and `exit`) and `data` (STDOUT, STDERR or exit code)
+| `openedFile`                | Occurs for each read action and whenever stream cursor reaches EOF. | `all` | File stream identifier with `action` (`read` and `end`) and `data` (stream block content)
+| `watchFile`                 | Occurs for each filesystem change events based on watchers. | `all` | File watcher identifier with `action` (`add`, `delete`, `modified`, and `moved`), `dir`, and `filename`
 ## events.on(eventName, handler)
 Registers a new event handler. 
 

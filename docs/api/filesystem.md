@@ -156,6 +156,7 @@ to read and seek an opened file (aka a readable stream).
     - `readAll`: Triggers the `read` action until file stream cursor position reaches
     [EOF](https://en.wikipedia.org/wiki/End-of-file).
     - `seek`: Sets the file cursor position.
+    - `close`: Closes and frees file handler resources.
 - `data` Object (optional): Additional data for the `action`. Send the buffer size in bytes (default: 256 bytes)
  if the `action` is `read` or `readAll`. Send the file stream cursor position if the action is `seek`.
 
@@ -200,6 +201,42 @@ Returns file stream details. Throws `NE_FS_UNLTFOP` if the file stream identifie
 ```js
 let info = await Neutralino.filesystem.getOpenedFileInfo(0);
 console.log(info);
+```
+
+## filesystem.createWatcher(path)
+Creates a filesystem watcher. Throws `NE_FS_UNLCWAT` for watcher creation failures.
+
+### Parameters
+
+- `path` String: Directory path.
+
+### Return Number (awaited):
+File watcher identifier.
+
+```js
+let watcherId = await Neutralino.filesystem.createWatcher(NL_PATH);
+Neutralino.events.on('watchFile', (evt) => {
+    if(watcherId == evt.detail.id) {
+        console.log(evt.detail.data);
+    }
+});
+console.log(`ID: ${watcherId}`);
+```
+
+## filesystem.removeWatcher(watcherId)
+Removes a filesystem watcher. Throws `NE_FS_NOWATID` for watcher removal failures.
+
+### Parameters
+
+- `watcherId` Number: File watcher identifier.
+
+### Return Number (awaited):
+File watcher identifier.
+
+```js
+let watcherId = await Neutralino.filesystem.createWatcher(NL_PATH);
+console.log(`ID: ${watcherId}`);
+await Neutralino.filesystem.removeWatcher(watcherId);
 ```
 
 ## filesystem.removeFile(filename)
