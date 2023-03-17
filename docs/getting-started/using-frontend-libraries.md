@@ -8,7 +8,7 @@ to build Neutralinojs apps with a frontend library, first try to use an existing
 ## React
 
 ```bash
-neu create testapp --template codezri/neutralinojs-react
+neu create myapp --template codezri/neutralinojs-react
 ```
 - Repository: [codezri/neutralinojs-react](https://github.com/codezri/neutralinojs-react)
 
