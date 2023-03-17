@@ -217,7 +217,7 @@ File watcher identifier.
 let watcherId = await Neutralino.filesystem.createWatcher(NL_PATH);
 Neutralino.events.on('watchFile', (evt) => {
     if(watcherId == evt.detail.id) {
-        console.log(evt.detail.data);
+        console.log(evt.detail);
     }
 });
 console.log(`ID: ${watcherId}`);
