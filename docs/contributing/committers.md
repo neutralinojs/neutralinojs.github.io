@@ -17,6 +17,8 @@ title: Committers
 - [Carlonn Rivers](https://github.com/danidre14)
 - [Ayman](https://github.com/Ayman161803)
 - [Kodaloid](https://github.com/kodaloid)
+- [FelisDiligens](https://github.com/FelisDiligens)
+- [Ernest Rudnicki](https://github.com/ernest-rudnicki)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
