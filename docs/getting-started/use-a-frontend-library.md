@@ -177,7 +177,7 @@ cd ..
 neu run -- --window-enable-inspector
 ```
 
-The current directory should be logged to the console. To open developer tools right click anywhere in the neutralinojs application and press `inspect element`.
+The current directory should be logged to the console. To open developer tools right click anywhere in the Neutralinojs application and press `inspect element`.
 
 ## Enabling hot-reload
 
