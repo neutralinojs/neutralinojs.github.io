@@ -33,7 +33,7 @@ You need to create this project inside the `myapp` directory.
 
 ```bash
 cd myapp
-npx create-react-app myapp-react
+npx create-react-app react-src
 ```
 ### Configuring Neutralinojs project
 
@@ -49,7 +49,7 @@ document root with your frontend framework's build directory. React typically ge
 `build` directory, so we can update `documentRoot` as follows.
 
 ```json
-"documentRoot": "/myapp-react/build/"
+"documentRoot": "/react-src/build/"
 ```
 
 Now, our Neutralinojs app knows the application resource location, but it's missing an icon, so set an
@@ -60,7 +60,7 @@ demonstration purposes, let's use the React icon from the `public` directory.
   "modes": {
     "window": {
       // --- other options
-      "icon": "/myapp-react/public/logo192.png"
+      "icon": "/react-src/public/logo192.png"
     }
   }
 ```
@@ -74,7 +74,7 @@ We can configure CLI for React by using the following options.
 ```json
   "cli": {
     // --- other options
-    "resourcesPath": "/myapp-react/build/",
+    "resourcesPath": "/react-src/build/",
     // ---
     "clientLibrary": "/www/neutralino.js", // <--- Remove this option
     // ---
@@ -87,7 +87,7 @@ following steps.
 First, build the React application with the following command.
 
 ```bash
-cd myapp-react
+cd react-src
 npm run build
 ```
 
@@ -103,7 +103,7 @@ neu run
 You could run the application with the `neu run` command, but you cannot use the native API yet because it has not been initialized. To do that you need to install the Neutralinojs client with following command:
 
 ```bash
-cd myapp-react
+cd react-src
 npm install @neutralinojs/lib
 ```
 
@@ -182,7 +182,7 @@ export default App;
 The last step is to run your Neutralinojs app with `--window-enable-inspector` argument which will allow you to open developer tools.
 
 ```bash
-cd myapp-react
+cd react-src
 npm run build
 
 cd ..
@@ -206,7 +206,7 @@ You can add the following section to your configuration file for activating hot-
   "cli": {
     // --- other options
     "frontendLibrary": {
-        "patchFile": "/myapp-react/public/index.html",
+        "patchFile": "/react-src/public/index.html",
         "devUrl": "http://localhost:3000"
     }
   }
