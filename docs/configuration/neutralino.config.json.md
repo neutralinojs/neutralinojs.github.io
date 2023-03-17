@@ -288,4 +288,4 @@ Use `|` character to set multiple regular expressions, as shown below.
 ### `cli.frontendLibrary: object`
 
 Enables frontend development tools (HMR, etc) for the `neu run --frontend-lib-dev` command. Learn more about frontend
-framework integration from [here](../how-to/use-a-frontend-library.md)
+framework integration from [here](../getting-started/using-frontend-libraries.md)

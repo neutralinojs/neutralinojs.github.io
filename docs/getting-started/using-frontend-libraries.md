@@ -65,7 +65,7 @@ We can configure CLI for React by using the following options.
     "resourcesPath": "/myapp-react/build/",
     // ---
     "clientLibrary": "/www/neutralino.js", // <--- Remove this option
-    // --- 
+    // ---
   }
 ```
 
@@ -95,7 +95,7 @@ cd myapp-react
 npm install @neutralinojs/lib
 ```
 
-The next step is to load Neutralinojs [global variables](api/global-variables). You can achieve that by including JavaScript script in the root HTML file of a framework of your choice. 
+The next step is to load Neutralinojs [global variables](../api/global-variables.md). You can achieve that by including JavaScript script in the root HTML file of a framework of your choice.
 
 React typically holds the main HTML file content in the `./public/index.html` file, so we can put the following
 HTML snippet there to load the client library.
@@ -167,7 +167,7 @@ function App() {
 export default App;
 ```
 
-The last step is to run your Neutralinojs app with `--window-enable-inspector` argument which will allow you to open developer tools. 
+The last step is to run your Neutralinojs app with `--window-enable-inspector` argument which will allow you to open developer tools.
 
 ```bash
 cd myapp-react

@@ -27,7 +27,7 @@ You can choose a name for `<resourceDir>`. But, by default neu CLI will use `res
 ## Developing apps with frontend frameworks
 Any frontend framework can be used to make Neutralinojs applications. You can use any pattern as you wish
 to include both Neutralinojs app and frontend app in one repository. You can check our recommended approach
-from [this](../how-to/use-a-frontend-library) guide.
+from [this](../getting-started/using-frontend-libraries.md) guide.
 
 ### Examples
 

@@ -6,7 +6,7 @@ module.exports = {
       items: [
         'getting-started/introduction',
         'getting-started/your-first-neutralinojs-app',
-        'getting-started/use-a-frontend-library',
+        'getting-started/using-frontend-libraries',
       ],
     },
     {

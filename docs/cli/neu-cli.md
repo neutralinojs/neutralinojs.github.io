@@ -60,7 +60,7 @@ on a 64-bit computer.
 - `--frontend-lib-dev`: Enables both frontend library's development environment and Neutralinojs's
 development evironment at the same time. This option patches the main HTML file with the Neutralinojs
 client library path to expose the native API to the frontend library's development server.
-Learn how to setup this feature from [this](../how-to/use-a-frontend-library) guide.
+Learn how to setup this feature from [this](../getting-started/using-frontend-libraries.md) guide.
 - `-- <process-args>`: Sets additional CLI arguments for the Neutralinojs application process. For example you can enable the `browser` mode by entering `neu run -- --mode=browser`. See all accepted arguments from [here](./internal-cli-arguments.md).
 
 ### `neu update`

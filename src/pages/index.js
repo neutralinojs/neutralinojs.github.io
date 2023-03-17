@@ -175,7 +175,7 @@ export default function Home() {
 
                 <ul>
                   <li>
-                    <Link to={useBaseUrl('docs/how-to/use-a-frontend-library')}>Learn how to use your favorite frontend library.</Link>
+                    <Link to={useBaseUrl('docs/getting-started/using-frontend-libraries')}>Learn how to use your favorite frontend library.</Link>
                   </li>
                   <li>
                     <Link to={useBaseUrl('docs/how-to/extensions-overview')}>Learn how to use your favorite backend language.</Link>
