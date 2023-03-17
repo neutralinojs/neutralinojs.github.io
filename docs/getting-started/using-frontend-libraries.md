@@ -2,10 +2,22 @@
 title: Using Frontend Libraries
 ---
 
-You can build Neutralinojs apps with vanilla JavaScript or with any modern frontend library. This tutorial guides you on how
-to set up your favourite frontend library for Neutralinojs application development.
+You can build Neutralinojs apps with vanilla JavaScript or with any modern frontend library. If you would like
+to build Neutralinojs apps with a frontend library, first try to use an existing app template via neu CLI:
 
-## Initializing projects
+## React
+
+```bash
+neu create testapp --template codezri/neutralinojs-react
+```
+- Repository: [codezri/neutralinojs-react](https://github.com/codezri/neutralinojs-react)
+
+## Using any frontend library
+
+The following tutorial guides you to set up any frontend library with Neutralinojs by explaining how we built
+the Neutralinojs React template:
+
+### Initializing projects
 
 First, you need to create a new empty Neutralinojs project. Use the
 [`neutralinojs/neutralinojs-zero`](https://github.com/neutralinojs/neutralinojs-zero) template to create an
@@ -23,7 +35,7 @@ You need to create this project inside the `myapp` directory.
 cd myapp
 npx create-react-app myapp-react
 ```
-## Configuring Neutralinojs project
+### Configuring Neutralinojs project
 
 The `neutralinojs-zero` template has a pre-included HTML file and icon, so delete the `www` directory since we
 don't need those files now.
@@ -53,7 +65,7 @@ demonstration purposes, let's use the React icon from the `public` directory.
   }
 ```
 
-## Configuring neu CLI
+### Configuring neu CLI
 
 By default, the zero template configuration asks the Neutralinojs CLI to download the Neutralinojs client (aka `neutralino.js`) from GitHub releases. Then, the CLI creates your app package by copying the `neutralino.js` file. However, you can download the client library from the NPM registry and bundle with your app frontend. Remove the `clientLibrary` property from the Neutralinojs configuration to avoid fetching the client from GitHub releases:
 
@@ -86,7 +98,7 @@ cd ..
 neu run
 ```
 
-## Initializing native API with `@neutralinojs/lib`
+### Initializing native API with `@neutralinojs/lib`
 
 You could run the application with the `neu run` command, but you cannot use the native API yet because it has not been initialized. To do that you need to install the Neutralinojs client with following command:
 
@@ -179,7 +191,7 @@ neu run -- --window-enable-inspector
 
 The current directory should be logged to the console. To open developer tools right click anywhere in the Neutralinojs application and press `inspect element`.
 
-## Enabling hot-reload
+### Enabling hot-reload
 
 Building every code change and testing your application is undoubtedly time-consuming. Therefore, you can use
 your frontend framework's HMR (Hot Module Replacement) features to speed up your development activities.
