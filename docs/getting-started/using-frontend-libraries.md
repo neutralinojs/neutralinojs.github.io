@@ -234,6 +234,17 @@ Make sure to build your frontend app once before entering the above command sinc
 library globals from the Neutralinojs application resources directory (not from your frontend framework's directory).
 :::
 
+### Packaging
+
+To produce the binaries we first need to run build in frontend app then only we should build the Neutralinojs.
+
+```bash
+cd react-src
+npm run build
+
+cd ..
+neu build --release
+```
 
 See the full source code of this tutorial [here](https://github.com/codezri/neutralinojs-react).
 
