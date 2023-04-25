@@ -236,7 +236,7 @@ library globals from the Neutralinojs application resources directory (not from 
 
 ### Packaging
 
-To produce the binaries we first need to run build in frontend app then only we should build the Neutralinojs.
+To produce the app binaries, first we need to generate static resources via the frontend development tooling. Then, we can generate the Neutralinojs app bundle, as shown in the following command snippet:
 
 ```bash
 cd react-src
