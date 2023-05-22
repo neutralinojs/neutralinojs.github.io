@@ -19,6 +19,7 @@ title: Committers
 - [Kodaloid](https://github.com/kodaloid)
 - [FelisDiligens](https://github.com/FelisDiligens)
 - [Ernest Rudnicki](https://github.com/ernest-rudnicki)
+- [Claudio Nicora](https://github.com/nicorac)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
