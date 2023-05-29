@@ -204,6 +204,15 @@ Maximum width of the native window.
 ### `modes.window.maxHeight: number`
 Maximum height of the native window.
 
+### `modes.window.x: number`
+Left position (`x`) of the native window.
+
+### `modes.window.y: number`
+Right position (`y`) of the native window.
+
+### `modes.window.center: boolean`
+Centers the native app window initially.
+
 ### `modes.window.fullScreen: boolean`
 Activates the full-screen mode.
 

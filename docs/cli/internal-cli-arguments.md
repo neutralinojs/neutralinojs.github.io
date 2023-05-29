@@ -75,7 +75,7 @@ Overrides extensions feature's availability.
 
 ### `--enable-server=<true|false>`
 
-Enables or disables the background server (Disables static file servering feature and native API messaging).  
+Enables or disables the background server (Disables static file servering feature and native API messaging).
 If you load a remote URL to the webview, you can set this option to `true`.
 
 ## Window mode
@@ -137,6 +137,18 @@ Overrides the window's maximum width.
 ### `--window-max-height=<number>`
 
 Overrides the window's maximum height.
+
+### `--window-x=<number>`
+
+Overrides the window left (`x`) position.
+
+### `--window-y=<number>`
+
+Overrides the window top (`y`) position.
+
+### `--window-center=<true|false>`
+
+Overrides the window's initial center positioning setup.
 
 ### `--window-resizable=<true|false>`
 

@@ -137,6 +137,13 @@ In other words, `x=0,y=0` point refers to the top-left corner of the device's ma
 await Neutralino.window.move(200, 400);
 ```
 
+## window.center()
+Centers the native app window within the current display.
+
+```js
+await Neutralino.window.center();
+```
+
 ## window.setIcon(icon)
 Sets an icon for the native window or Dock. 
 
