@@ -52,6 +52,11 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'docs/release-notes/framework',
+          label: 'Release Notes',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/neutralinojs',
           label: 'GitHub',
           position: 'right',

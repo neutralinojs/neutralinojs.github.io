@@ -77,5 +77,14 @@ module.exports = {
         'contributing/about-neutralinojs'
       ],
     },
+    {
+      type: 'category',
+      label: 'Release Notes',
+      items: [
+        'release-notes/framework',
+        'release-notes/cli',
+        'release-notes/client-library'
+      ],
+    },
   ],
 };
