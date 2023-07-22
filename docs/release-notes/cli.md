@@ -4,6 +4,11 @@ title: CLI
 
 ## Unreleased
 
+## v9.6.1
+
+### Bugfixes/Improvements
+- Fix the hot-reloading issue that occurs with newer Node runtime versions. 
+
 ## v9.6.0
 
 ### Core: Bundler

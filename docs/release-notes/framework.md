@@ -4,6 +4,18 @@ title: Framework
 
 ## Unreleased
 
+## v4.13.0
+
+### Core: persistent window state
+
+Now the framework stores the primary window state in a temporary file (JSON formatted) and loads during the startup process.
+This feature stores and sets the window position (x, y coordinates), size (width and height), and maximized status. This feature is enabled by default in all platforms, but app developers can turn it off by using `false` for the `window.useSavedState` configuration attribute or `--window-use-saved-state` internal CLI argument.
+
+Also, the window state loading status is available via the `NL_WSAVSTLOADED` global variable. The framework sets `true` for this boolean variable if the window state was loaded from the saved configuration.
+
+### Improvements/bugfixes
+- Fix several issues in the webview Windows code (i.e., Wait for the window close event, window style fixes, etc.).
+
 ## v4.12.0
 
 ### API: window
@@ -50,12 +62,12 @@ Whenever a filesystem change occurs, file watcher instances dispatch the `watchF
 
 ### Improvements/bugfixes
 
-- Add a [JSON schema](https://json-schema.org/) definition for the `neutralino.config.json` file. 
+- Add a [JSON schema](https://json-schema.org/) definition for the `neutralino.config.json` file.
 - Fix source code compilation issues on macOS `arm64` systems.
 
 ### ESM/NPM support
 
-Neutralinojs typically stores the client library implementation in a separate file (`neutralino.js`). This approach makes Neutralinojs app development 
+Neutralinojs typically stores the client library implementation in a separate file (`neutralino.js`). This approach makes Neutralinojs app development
 process easier with a globally exposed JavaScript object, `Neutralino`. But, modern web developers use ES modules and they usually like to fetch dependencies from NPM. So, now, developers can load the `__neutralino_globals.js` internal script (i.e., `<script src="__neutralino_globals.js"></script>`) to load only globals. Then, they can use the client library implementation via `neutralino.mjs` with the neu CLI or from [`@neutralinojs/lib`](https://www.npmjs.com/package/@neutralinojs/lib) with a Node package manager.
 
 ## v4.9.0
@@ -122,7 +134,7 @@ Returns the current mouse cursor position via a JavaScript object that has `x` a
 
 ### Bugfixes/improvements
 - Replaced string error codes with enums in the C++ source code.
-- Some refactorings done in C++ struct definitions and return values. 
+- Some refactorings done in C++ struct definitions and return values.
 
 ## v4.7.0
 
