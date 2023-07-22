@@ -265,7 +265,16 @@ However, you can build communication streams between windows with the [storage A
 - `hidden` Boolean: Hides the window.
 - `maximizable` Boolean: Makes the window maximizable or not.
 - `exitProcessOnClose` Boolean: Exits the application process when the user clicks the window's close button.
-- `processArgs` String: Additional command-line arguments for the new window process.
+- `width` Number: Window width.
+- `height` Number: Window height.
+- `x` Number: Window `x` position.
+- `y` Number: Window `y` position.
+- `minWidth` Number: Minimum width of the window.
+- `minHeight` Number: Minimum height of the window.
+- `maxWidth` Number: Maximum width of the window.
+- `maxHeight` Number: Maximum height of the window.
+- `processArgs` String: Additional command-line arguments for the new window process. Check all supported
+internal command-line arguments from [here](../cli/internal-cli-arguments.md).
 
 ### Return Object (awaited):
 - `pid` Number: Process identifier.

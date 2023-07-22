@@ -24,6 +24,7 @@ These JavaScript variables can be used anywhere because these variables are defi
 | `NL_COMMIT` | Framework binary's release commit hash     |
 | `NL_CCOMMIT` | Client librar's release commit hash     |
 | `NL_CMETHODS` | Custom method identifiers (Returns the same output that [`custom.getMethods`](custom.md#customgetmethods) returns). |
+| `NL_WSAVSTLOADED` | Returns `true` if the initial window state was loaded from the saved configuration |
 
 :::tip
 You can use `NL_COMMIT` and `NL_CCOMMIT` values to identify the codebase snapshot if you use nightly releases.

@@ -242,6 +242,11 @@ Make the window invisible. This setting can be used to develop background servic
 If this setting is `true`, the app process will exit when the user clicks on the close button. Otherwise,
 the framework will dispatch the `windowClose` event.
 
+### `modes.window.useSavedState: boolean`
+Save and load the primary window state (width, height, x, y, values and maximized status) automatically.
+The default value is `true`.
+
+
 ## Chrome mode
 The following configuration values are used when the application starts with the chrome mode.
 

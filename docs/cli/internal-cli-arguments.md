@@ -162,6 +162,10 @@ Overrides the close button's behavior.
 
 Automatically opens the developer tools window.
 
+### `--window-use-saved-state=<true|false>`
+
+Overrides the saved window state feature setting.
+
 
 ## Chrome mode
 
