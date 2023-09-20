@@ -4,6 +4,11 @@ title: CLI
 
 ## Unreleased
 
+## v9.7.0
+
+### Core: Downloader/bundler
+- Download the TypeScript definition file for standalone client library mode. This won't include the TypeScript definition file to the final application bundle.
+
 ## v9.6.1
 
 ### Bugfixes/Improvements

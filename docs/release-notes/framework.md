@@ -4,6 +4,25 @@ title: Framework
 
 ## Unreleased
 
+## v4.14.0
+
+### Filesystem API
+- Introduce the `filesystem.getWatchers` function to get all created watchers.
+- Add binary file reading support for the `filesystem.updateOpenedFile(id, action, data)` function. This function implements `readBinary` and `readAllBinary` actions and `dataBinary` output action in the `openedFile` global event.
+- Return the existing watcher identifier from `filesystem.createWatcher` if there is an existing active watcher for the given path.
+
+### OS API
+- Add a way to set current working directory for process creation functions: `os.execCommand(command, options)` now supports `cwd` via the options object and `os.spawnProcess(command, cwd)` accepts currently working directory via the second string parameter.
+
+### Improvements/bugfixes
+- Fix Unicode charactor issues in the tray menu on Windows.
+- Avoid including null bytes to file reader events initiated by the `filesystem.openFile` function.
+- Discard `window` method executions on non-window modes.
+
+### DevOps
+- Update external GitHub Action packages to their latest versions.
+- Fix issues of the failing test cases
+
 ## v4.13.0
 
 ### Core: persistent window state
