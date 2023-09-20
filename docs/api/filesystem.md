@@ -153,12 +153,14 @@ to read and seek an opened file (aka a readable stream).
 - `id` Number: File stream identifier.
 - `action` String: An action to take. Accepts only the following values:
     - `read`: Reads a bytes segment from the file stream.
+    - `readBinary`: Behaves the same as `read` but uses the binary read mode.
     - `readAll`: Triggers the `read` action until file stream cursor position reaches
     [EOF](https://en.wikipedia.org/wiki/End-of-file).
+    - `readAllBinary`: Behaves the same as `readAll` but uses the binary read mode.
     - `seek`: Sets the file cursor position.
     - `close`: Closes and frees file handler resources.
 - `data` Object (optional): Additional data for the `action`. Send the buffer size in bytes (default: 256 bytes)
- if the `action` is `read` or `readAll`. Send the file stream cursor position if the action is `seek`.
+ if the `action` is `read`, `readBinary`, `readAll`, or `readAllBinary`. Send the file stream cursor position if the action is `seek`.
 
 ```js
 let fileId = await Neutralino.filesystem.openFile('./myFile.txt');
@@ -204,7 +206,8 @@ console.log(info);
 ```
 
 ## filesystem.createWatcher(path)
-Creates a filesystem watcher. Throws `NE_FS_UNLCWAT` for watcher creation failures.
+Creates a filesystem watcher. Throws `NE_FS_UNLCWAT` for watcher creation failures. If there is an existing
+active watcher for the given path, this function returns the existing watcher identifier.
 
 ### Parameters
 
@@ -239,6 +242,24 @@ console.log(`ID: ${watcherId}`);
 await Neutralino.filesystem.removeWatcher(watcherId);
 ```
 
+## filesystem.getWatchers()
+Returns information about created file watchers.
+
+### Return Object (awaited):
+An array of `FileWatcher` objects.
+
+### FileWatcher
+- `id` Number: Watcher identifier.
+- `path` String: File watcher path.
+
+
+```js
+let watchers = await Neutralino.filesystem.getWatchers();
+for(let watcher of watchers) {
+    console.log(watcher);
+}
+```
+
 ## filesystem.removeFile(filename)
 Removes given file. Throws `NE_FS_FILRMER` for file removal errors.
 
@@ -258,6 +279,10 @@ Reads directory contents. Throws `NE_FS_NOPATHE` if the path doesn't exist.
 - `path` String: File/directory path.
 
 ### Return Object (awaited):
+An array of `DirectoryEntry` objects.
+
+### DirectoryEntry
+
   - `entry` String: file name.
   - `type` String: The type of the entry (`FILE` or `DIRECTORY`).
 

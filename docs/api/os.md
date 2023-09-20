@@ -15,6 +15,7 @@ Executes a command and returns the output.
 if this is set to `true`. This option makes the process detached from the API function call, so if you need to
 connect with the newly created process later, consider using `os.spawnProcess`.
 - `stdIn` String: Standard input as a string.
+- `cwd` String: Current working directory.
 
 ### Return Object (awaited):
 - `pid` Number: Process identifier.
@@ -29,11 +30,12 @@ console.log(`Your Python version: ${info.stdOut}`);
 await Neutralino.os.execCommand('npm start', { background: true });
 ```
 
-## os.spawnProcess(command)
+## os.spawnProcess(command, cwd)
 Spawns a process based on a command in background and let developers control it.
 
 ### Parameters
 - `command` String: The command that is to be executed in a new process.
+- `cwd` String (optional): Current working directory.
 
 ### Return Object (awaited):
 - `id` Number: A Neutralino-scoped process identifier. This value is used for controlling the
