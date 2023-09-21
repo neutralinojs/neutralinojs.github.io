@@ -20,6 +20,7 @@ title: Committers
 - [FelisDiligens](https://github.com/FelisDiligens)
 - [Ernest Rudnicki](https://github.com/ernest-rudnicki)
 - [Claudio Nicora](https://github.com/nicorac)
+- [Erik Hegen](https://github.com/ratatoeskr666)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
@@ -32,4 +33,3 @@ You can actively submit patches, bug-reports, and ideas to become a Neutralinojs
 PMC (Project Management Committee) members usually take decisions about project's future.
 Active committers will be added to the PMC list frequently by the existing PMC members
 according to their commitment.
-
