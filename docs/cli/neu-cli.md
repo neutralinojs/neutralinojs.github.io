@@ -53,19 +53,25 @@ the Neutralinojs application will be reloaded automatically.
 
 You can see Neutralinojs process and extensions output streams while the application is running.
 
+If you use the [`cli.frontendLibrary`](../configuration/neutralino.config.json.md#clifrontendlibrary-object)
+key in app configuration, the CLI enables both frontend library's development environment and Neutralinojs's
+development evironment at the same time. This option patches the main HTML file with the Neutralinojs
+client library global variables to expose the native API to the frontend library's development server.
+Learn how to setup this feature from [this](../getting-started/using-frontend-libraries.md) guide.
+
 #### Options
 - `--disable-auto-reload`: Disables the auto-reloading feature.
 - `--arch=<arch>`: Explicitly set the CPU architecture. This option is helpful if you use a 32-bit Node.js process
 on a 64-bit computer.
-- `--frontend-lib-dev`: Enables both frontend library's development environment and Neutralinojs's
-development evironment at the same time. This option patches the main HTML file with the Neutralinojs
-client library path to expose the native API to the frontend library's development server.
-Learn how to setup this feature from [this](../getting-started/using-frontend-libraries.md) guide.
 - `-- <process-args>`: Sets additional CLI arguments for the Neutralinojs application process. For example you can enable the `browser` mode by entering `neu run -- --mode=browser`. See all accepted arguments from [here](./internal-cli-arguments.md).
 
 ### `neu update`
 This command will update the existing Neutralinojs binaries and client library from the internet. You can
 use the `nightly` tag for the `cli.binaryVersion` and `cli.clientVersion` in the `neutralino.config.json` file to use experimental daily pre-releases.
+
+#### Options
+- `--latest`: Fetches the latest framework version details via the GitHub API, downloads from official releases
+, and update the app configuration with fetched version details.
 
 :::warning
 Nightly builds refers to automatically generated daily builds, so these builds can contain experimental or

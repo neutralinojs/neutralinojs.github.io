@@ -9,6 +9,13 @@ to build Neutralinojs apps with a frontend library, first try to use an existing
 
 ```bash
 neu create myapp --template codezri/neutralinojs-react
+cd myapp
+
+# Start the React development server with Neutralinojs
+neu run
+
+# Build the React and Neutralinojs app
+neu build
 ```
 - Repository: [codezri/neutralinojs-react](https://github.com/codezri/neutralinojs-react)
 
@@ -191,7 +198,7 @@ neu run -- --window-enable-inspector
 
 The current directory should be logged to the console. To open developer tools right click anywhere in the Neutralinojs application and press `inspect element`.
 
-### Enabling hot-reload
+### Enabling hot-reload and configuration
 
 Building every code change and testing your application is undoubtedly time-consuming. Therefore, you can use
 your frontend framework's HMR (Hot Module Replacement) features to speed up your development activities.
@@ -215,36 +222,44 @@ You can add the following section to your configuration file for activating hot-
 
 The above options tell neu CLI about the main HTML file and development server URL.
 
-Now, start your frontend development server. In React, we can do it with the following command.
+Next, configure your project by adding frontend-library-specific development commands as follows:
 
-```bash
-npm start
+```json
+  "cli": {
+    // --- other options
+    "frontendLibrary": {
+        "patchFile": "/react-src/public/index.html",
+        "devUrl": "http://localhost:3000",
+        "projectPath": "/react-src/",
+        "initCommand": "npm install",
+        "devCommand": "BROWSER=none npm start",
+        "buildCommand": "npm run build"
+    }
+  }
+}
 ```
 
 Finally, run the Neutralinojs application with the following command.
 
 ```
-neu run --frontend-lib-dev
+neu run
 ```
+
+The above command executes the `devCommand`, starts the React development server, and run the Neutralinojs app
+in development mode.
 
 ![](../media/hmr-preview.gif)
 
-:::tip
-Make sure to build your frontend app once before entering the above command since it loads the client
-library globals from the Neutralinojs application resources directory (not from your frontend framework's directory).
-:::
-
 ### Packaging
 
-To produce the app binaries, first we need to generate static resources via the frontend development tooling. Then, we can generate the Neutralinojs app bundle, as shown in the following command snippet:
+To produce the app binaries, you can use the following command, as usual:
 
 ```bash
-cd react-src
-npm run build
-
-cd ..
 neu build --release
 ```
+
+The above command executes the `buildCommand` first, so the application bundle will use the currect React project
+source.
 
 See the full source code of this tutorial [here](https://github.com/codezri/neutralinojs-react).
 
