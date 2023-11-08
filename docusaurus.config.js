@@ -42,6 +42,12 @@ module.exports = {
           position: 'left',
         },
         {
+          "to": "template/",
+          "activeBasePath": "templates",
+          "label": "Tools & Templates",
+          "position": "left"
+        },
+        {
           href: 'https://www.youtube.com/c/CodeZri',
           label: 'Videos',
           position: 'left',

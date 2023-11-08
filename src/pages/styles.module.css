@@ -46,3 +46,12 @@
   padding: 2rem 0;
   width: 100%;
 }
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.centerRow {
+  text-align: center;
+}
