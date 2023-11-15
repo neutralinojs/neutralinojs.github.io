@@ -5,6 +5,10 @@
  * and scoped locally.
  */
 
+ * {
+  margin: 0;
+  padding: 0;
+ }
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
@@ -45,4 +49,40 @@
   align-items: center;
   padding: 2rem 0;
   width: 100%;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.centerRow {
+  text-align: center;
+}
+
+.list-item {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid rgb(231, 228, 228);
+  width: auto;
+  height: auto;
+  padding: 2rem 2rem;
+  flex-wrap: wrap;
+  border-radius: 14px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+}
+
+ul li {
+  list-style-type: none;
 }
