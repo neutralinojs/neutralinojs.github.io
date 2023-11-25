@@ -21,6 +21,7 @@ title: Committers
 - [Ernest Rudnicki](https://github.com/ernest-rudnicki)
 - [Claudio Nicora](https://github.com/nicorac)
 - [Erik Hegen](https://github.com/ratatoeskr666)
+- [Matthias Simon](https://github.com/simomat)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
