@@ -9,14 +9,16 @@ small setup files. You can select an option according to your application distri
 
 The `neu build` command generates the following files on any supported operating system into the `dist` directory.
 
-| Filename            |  OS     | CPU architecture  | Type                    |
-| ------------------- | ------- | --------- | ------------------------------- |
-| `myapp-linux_x64`   | Linux   | `x64`     | Application binary              |
-| `myapp-linux_armhf`   | Linux   | `armhf`     | Application binary              |
-| `myapp-linux_arm64`   | Linux   | `arm64`     | Application binary              |
-| `myapp-macos_x64`   | macOS   | `x64`     | Application binary              |
-| `myapp-win_x64`     | Windows | `x64`     | Application binary              |
-| `resources.neu`     | all     | `N/A`     | Application resource file       |
+| Filename                |   OS    | CPU architecture     | Type                             |
+|-------------------------|---------|----------------------|----------------------------------|
+| `myapp-linux_x64`       | Linux   | `x86_64`             | Application binary               |
+| `myapp-linux_armhf`     | Linux   | `armhf`              | Application binary               |
+| `myapp-linux_arm64`     | Linux   | `arm64`              | Application binary               |
+| `myapp-mac_x64`         | macOS   | `x86_64`             | Application binary (Intel)       |
+| `myapp-mac_universal`   | macOS   | `x86_64` and `arm64` | Application binary               |
+| `myapp-mac_arm64`       | macOS   | `arm64`              | Application binary (M1/M2/M3)    |
+| `myapp-win_x64`         | Windows | `x86_64`             | Application binary               |
+| `resources.neu`         | all     | `N/A`                | Application resource file        |
 
 Neutralinojs officially offers only pre-built `x64` and `armhf/arm64` Linux-only binaries.
 If you need binaries for other CPU architectures, consider building binaries from the source
