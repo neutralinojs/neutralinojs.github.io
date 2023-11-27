@@ -25,6 +25,18 @@ this flag is automatically enabled internally to find resources from the app dir
 Therefore, you can double click on the binary instead of `neu run` while developing apps.
 :::
 
+### `--config-file=<filename>`
+
+Uses a custom configuration file instead of the default `neutralino.config.json` file for loading the app
+configuration JSON. This CLI option is helpful for setting a development-only configuration file
+(i.e., `--config-file=neutralino-dev.config.json`).
+
+:::info
+The `neu build` command won't typically
+include custom configuration files for the final application bundle &mdash; it only embeds the default
+`neutralino.config.json` file allowing you to store production app configuration.
+:::
+
 ### `--path=<path>`
 
 Overrides the resources path with a relative path or absolute path. This will change the `NL_PATH` global variable.
@@ -165,6 +177,11 @@ Automatically opens the developer tools window.
 ### `--window-use-saved-state=<true|false>`
 
 Overrides the saved window state feature setting.
+
+### `--window-extend-user-agent-with=<suffix>`
+
+Overrides the custom user agent setting.
+
 
 
 ## Chrome mode

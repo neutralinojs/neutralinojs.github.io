@@ -246,6 +246,9 @@ the framework will dispatch the `windowClose` event.
 Save and load the primary window state (width, height, x, y, values and maximized status) automatically.
 The default value is `true`.
 
+### `modes.window.extendUserAgentWith: string`
+Extends the default webview-specific user agent string with a custom suffix. If this value is not set,
+the webview sets the default user agent from the platform-specific rendering engine (i.e., WebKit on GNU/Linux).
 
 ## Chrome mode
 The following configuration values are used when the application starts with the chrome mode.
