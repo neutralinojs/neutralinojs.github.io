@@ -4,6 +4,11 @@ title: Client Library
 
 ## Unreleased
 
+## v3.13.0
+
+### API: window
+- Add `extendUserAgentWith` and `exitProcessOnClose` options to `window.create` TypeScript definition.
+
 ## v3.12.0
 
 ### Improvements/bugfixes
