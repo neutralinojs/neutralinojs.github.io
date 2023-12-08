@@ -22,6 +22,7 @@ title: Committers
 - [Claudio Nicora](https://github.com/nicorac)
 - [Erik Hegen](https://github.com/ratatoeskr666)
 - [Matthias Simon](https://github.com/simomat)
+- [Harald Schneider](https://github.com/hschneider)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
