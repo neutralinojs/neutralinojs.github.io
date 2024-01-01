@@ -47,7 +47,7 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://github.com/neutralinojs/roadmap',
+          href: 'https://codezri.org/blog/neutralinojs-2024-roadmap',
           label: 'Roadmap',
           position: 'left',
         },
