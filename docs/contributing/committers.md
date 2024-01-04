@@ -23,6 +23,7 @@ title: Committers
 - [Erik Hegen](https://github.com/ratatoeskr666)
 - [Matthias Simon](https://github.com/simomat)
 - [Harald Schneider](https://github.com/hschneider)
+- [Sadaf Ahmed](https://github.com/Sadaf-A)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
