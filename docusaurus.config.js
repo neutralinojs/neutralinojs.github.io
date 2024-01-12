@@ -43,7 +43,7 @@ module.exports = {
         },
         {
           to: 'template/',
-          activeBasePath: 'temlate',
+          activeBasePath: 'template',
           label: 'Tools & Templates',
           position: 'left',
         },

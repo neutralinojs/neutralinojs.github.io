@@ -46,14 +46,14 @@ export default function NeutralinoTools() {
                         <h1>Templates</h1>
                         <ul className='row'>
                             {templates.map((template, index) => (
-                                <li key={index} className={clsx(window.innerWidth <= 768 ? 'col' : 'col col--6')} style={{ marginTop: '1rem', marginBottom: '2rem' }}>
-                                    <div className={styles.feature}>
-                                        <h3 class={styles.align}>{template.title}</h3>
-                                        <p class={styles.align}>{template.description}</p>
+                                <li key={index} className={clsx(window.innerWidth <= 768 ? 'col card-demo' : 'card-demo col col--5')} style={{ marginTop: '1rem', marginBottom: '2rem', listStyle: 'none'}}>
+                                    <div className='card padding-md' style={{padding: '2rem'}}>
+                                        <h3 className={styles.align}>{template.title}</h3>
+                                        <p className={styles.align}>{template.description}</p>
                                         <div>
                                             <Link
                                                 className={clsx(
-                                                    'button button--outline button--secondary button--lg',
+                                                    'button button--warning button--lg',
                                                 )}
                                                 to={template.githubLink}>
                                                 View Repository
