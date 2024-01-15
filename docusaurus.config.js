@@ -42,9 +42,9 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'template/',
-          activeBasePath: 'template',
-          label: 'Tools & Templates',
+          to: 'resources/',
+          activeBasePath: 'resources',
+          label: 'Resources',
           position: 'left',
         },
         {
