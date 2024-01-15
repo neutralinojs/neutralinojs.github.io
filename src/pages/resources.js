@@ -33,11 +33,11 @@ export default function NeutralinoTools() {
     const { siteConfig = {} } = context;
     return (
         <Layout
-            title="Neutralinojs Tools and Templates"
-            description="Sample cross-platform applications built with the Neutralinojs framework. Learn how to build Neutralino templates by exploring sample templates.">
+            title="Neutralinojs App Developer Resources"
+            description="Check these Neutralinojs development tools, templates, and learning resources for building high-quality cross-platform apps productively">
             <header className={clsx('hero hero--primary', styles.heroBanner)}>
                 <div className="container">
-                    <h1 className="hero__title">{siteConfig.title} Tools & Templates</h1>
+                    <h1 className="hero__title">{siteConfig.title} app developer resources</h1>
                 </div>
             </header>
             <main>
