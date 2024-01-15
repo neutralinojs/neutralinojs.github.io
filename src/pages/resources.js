@@ -7,16 +7,7 @@ import styles from './styles.module.css';
 
 const templates = [
     {
-        title: 'Neutralinojs-React',
-        description: (
-            <>
-                A simple React.js template for building Neutralinojs apps
-            </>
-        ),
-        githubLink: 'https://github.com/codezri/neutralinojs-react'
-    },
-    {
-        title: 'Neutralinojs-Minimal',
+        title: 'neutralinojs-minimal',
         description: (
             <>
                 The default template for a Neutralinojs app.
@@ -24,8 +15,15 @@ const templates = [
         ),
         githubLink: 'https://github.com/neutralinojs/neutralinojs-minimal'
     },
-
-
+    {
+        title: 'neutralinojs-react',
+        description: (
+            <>
+                A simple React.js template for building Neutralinojs apps
+            </>
+        ),
+        githubLink: 'https://github.com/codezri/neutralinojs-react'
+    },
 ];
 
 export default function NeutralinoTools() {
@@ -41,30 +39,30 @@ export default function NeutralinoTools() {
                 </div>
             </header>
             <main>
-                <div className='container' style={{ marginTop: '2rem' }}>
+                <section className={styles.features}>
                     <div className='container'>
                         <h1>Templates</h1>
-                        <ul className='row'>
+                        <div className='row'>
                             {templates.map((template, index) => (
-                                <li key={index} className={clsx(window.innerWidth <= 768 ? 'col card-demo' : 'card-demo col col--5')} style={{ marginTop: '1rem', marginBottom: '2rem', listStyle: 'none'}}>
+                                <div key={index} className={clsx('col col--6', styles.feature)}>
                                     <div className='card padding-md' style={{padding: '2rem'}}>
                                         <h3 className={styles.align}>{template.title}</h3>
                                         <p className={styles.align}>{template.description}</p>
                                         <div>
                                             <Link
                                                 className={clsx(
-                                                    'button button--warning button--lg',
+                                                    'button button--outline button--secondary button--lg',
                                                 )}
                                                 to={template.githubLink}>
                                                 View Repository
                                             </Link>
                                         </div>
                                     </div>
-                                </li>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
-                </div>
+                </section>
             </main>
         </Layout>
     );
