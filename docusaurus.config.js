@@ -42,6 +42,12 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'resources/',
+          activeBasePath: 'resources',
+          label: 'Resources',
+          position: 'left',
+        },
+        {
           href: 'https://www.youtube.com/c/CodeZri',
           label: 'Videos',
           position: 'left',
