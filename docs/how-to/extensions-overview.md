@@ -157,7 +157,7 @@ client.onmessage = (e) => {
       JSON.stringify({
         id: uuidv4(),
         method: "app.broadcast",
-        accessToken: nl_token,
+        accessToken: NL_TOKEN,
         data: { event: "eventFromExtension", data: "Hello app!" },
       })
     );
@@ -165,7 +165,7 @@ client.onmessage = (e) => {
 };
 
 function log(message, type = "INFO") {
-  const logLine = `[${nl_extension_id}]: ${chalk[
+  const logLine = `[${NL_EXTID}]: ${chalk[
     type === "INFO" ? "green" : "red"
   ](type)} ${message}`;
   console[type === "INFO" ? "log" : "error"](logLine);
