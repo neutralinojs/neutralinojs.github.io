@@ -4,6 +4,19 @@ title: CLI
 
 ## Unreleased
 
+## v11.0.0
+
+### Core: Runner
+- Change the WebSocket connection based on the v5 framework APIs.
+
+### Bugfixes/improvements
+- Fixed issues with the frontend library command execution.
+
+## v10.1.1
+
+### Bugfixes/improvements
+- Fixed app development issues with the Vite server.
+
 ## v10.1.0
 
 ### Bugfixes/improvements

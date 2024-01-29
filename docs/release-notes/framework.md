@@ -4,6 +4,33 @@ title: Framework
 
 ## Unreleased
 
+## v5.0.0
+
+### API: Reading, writing with standard streams
+- Implement `app.readProcessInput(readAll=false)` for reading string data from the standard input stream. This function can read a single line or multiple lines at once.
+- Implement `app.writeProcessOutput` and `app.writeProcessError` for sending string data to standard output and error streams accordingly.
+
+### API: filesystem
+- Enable default recursive behavior in the `filesystem.createDirectory` function.
+- Add `filesystem.copy`, `filesystem.move`, and `filesystem.remove` functions.
+- Add `{recursive}` options object to `filesystem.readDirectory(path, options)` activate recursive directory listing.
+
+### API: os
+- Accept stdin with the background mode of the `os.execCommand` function.
+
+### Core: security
+- Now, all app clients and extensions require a valid connect token (A part of the `NL_TOKEN`) to connect to the Neutralinojs framework WebSocket server to receive app events.
+- The framework now sends the access token, connect token, port, and extension identifier to extension processes via the standard input, so other processes can't read them by scanning the process list.
+- The WebSocket client connection origin is checked during the HTTP/WS handshake to make sure that only local clients connect with a specific Neutralinojs app that runs on window, browser, or Chrome mode. Any URL origin is allowed for the cloud mode.
+- The above security enhancements fix two security advisories on GitHub. 
+
+### Global variables
+- Now the `NL_ARCH` global variable returns the same value that `computer.getArch` returns.
+
+### Deprecations
+- Removed `filesystem.removeFile`, `filesystem.removeDirectory`, `filesystem.copyFile`, and `filesystem.moveFile` functions.
+- Extensions won't receive `--nl-port`, `--nl-token`, and `--nl-extension-id` as command-line arguments. Now the framework sends these via stdin as a JSON string. 
+
 ## v4.15.0
 
 ### Configuration: custom user agent string
