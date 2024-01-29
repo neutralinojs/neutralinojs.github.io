@@ -43,17 +43,30 @@ The extensions API is disabled by default. Enable extensions by adding the follo
 ## Connecting an extension with Neutralinojs
 
 As you already noticed, an extension is just a separate process. Neutralinojs starts spawning extension instances
-during the framework bootstrap process and initiates each extension process with the following process arguments.
+during the framework bootstrap process and initiates each extension process by sending the following JSON object via
+standard input streams:
 
-- `--nl-port=<port>`: port of the Neutralinojs server.
-- `--nl-token=<token>`: Access token to use the native API.
-- `--nl-extension-id=<id>`: Extension identifier.
+```json
+{
+  "nlPort": "",
+  "nlToken": "",
+  "nlConnectToken": "",
+  "nlExtensionId": ""
+}
+```
 
-Now, you can connect with the Neutralinojs server with the above process arguments. Use the following WebSocket
+The above JSON properties contains connectivity information as follows:
+
+- `nlPort`: port of the Neutralinojs server.
+- `nlToken`: Access token to use the native API.
+- `nlConnectToken`: A token that extension should send during WebSocket connection initialization.
+- `nlExtensionId`: Extension identifier.
+
+Now, you can connect with the Neutralinojs server with the above details. Use the following WebSocket
 URL to initiate a new WebSocket connection.
 
 ```
-ws://localhost:{port}?extensionId={extensionId}
+ws://localhost:{port}?extensionId={extensionId}&connectToken={connectToken}
 ```
 
 ## Sending a message from app to an extension
@@ -113,16 +126,21 @@ with the `events.on` in the application code to receive the message send by the 
 When Neutralino exits, it does not send kill signals to all extension instances. Therefore, it is necessary to stop the extension process when the WebSocket-based IPC (Inter-Process Communication) closes. The following Node.js extension code shows how to do this:
 
 ```js
-const WS = require("websocket").w3cwebsocket;
-const { v4: uuidv4 } = require("uuid");
-const chalk = require("chalk");
+const fs = require('fs');
+const process = require('process');
+const WS = require('websocket').w3cwebsocket;
+const { v4: uuidv4 } = require('uuid');
+const chalk = require('chalk');
 
-const { nl_port, nl_token, nl_extension_id } = require("minimist")(
-  process.argv.slice(2)
-);
+// Obtain required params to start a WS connection from stdIn.
+const processInput = JSON.parse(fs.readFileSync(process.stdin.fd, 'utf-8'));
+const NL_PORT = processInput.nlPort;
+const NL_TOKEN = processInput.nlToken;
+const NL_CTOKEN = processInput.nlConnectToken;
+const NL_EXTID = processInput.nlExtensionId;
 
 const client = new WS(
-  `ws://localhost:${nl_port}?extensionId=${nl_extension_id}`
+  `ws://localhost:${NL_PORT}?extensionId=${NL_EXTID}&connectToken=${NL_CTOKEN}`
 );
 
 client.onerror = () => log("Connection error!", "ERROR");
@@ -154,9 +172,12 @@ function log(message, type = "INFO") {
 }
 ```
 
-This code is a sample Node.js extension for Neutralinojs, which establishes a WebSocket connection to the Neutralinojs server and handles incoming messages from the server. It also sends a message to the server using the client.send method when it receives a specific event from the server.
+This code implements a simple Node.js extension for Neutralinojs, which establishes a
+WebSocket connection to the Neutralinojs server and handles incoming messages from the server.
+It also sends a message to the server using the client.send method when it receives a specific event
+from the server.
 
-For more information on how to terminate an existing instance, you can refer to the sample-extension.
+For more information on how to terminate an extension instance, you can refer to the sample extension source.
 https://github.com/neutralinojs/neutralinojs/tree/main/bin/extensions/sampleextension
 
 ## Using Neutralinojs from your source files
@@ -176,9 +197,11 @@ The above setting exports authentication details to `${NL_PATH}/.tmp/auth_info.j
 
 ```json
 {
-  "port": "<port>",
-  "accessToken": "<token>"
+  "nlPort": "<port>",
+  "nlToken": "<token>",
+  "nlConnectToken": "<connect_token>"
 }
 ```
 
-Connect with the Neutralinojs process by using the extension API as usual.
+Connect with the Neutralinojs process by using the extension API as usual with the extension identifier
+you used in the application configuratiol file.

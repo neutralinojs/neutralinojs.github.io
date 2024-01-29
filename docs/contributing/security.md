@@ -21,20 +21,23 @@ uses the One-Time-Token (OTT) strategy to prevent possible port scanning attacks
 
 Here is how the Neutralinojs local port is secured:
 
-- The Neutralinojs framework's authentication module generates the OTT during the initialization process.
+- The Neutralinojs framework's authentication module generates the OTT during the initialization process and a
+part of the OTT is saved as Connection Token (CT) for WebSocket clients.
 - When the user loads the client-library script, the framework sends the OTT only once.
 - The client library stores the OTT in the local storage for future usage&mdash;the framework never sends the OTT again to the frontend. Depending on the current application mode, the client library stores the OTT in either webview or web browser.
-- The OTT is used to verify every native API function call before execution.
+- The client library uses CT to establish a WebSocket connection with the framework.
+- The OTT is used to verify every native API function call that comes from WebSocket clients (including the client-library).
+- The framework blocks WebSocket connections from remote URLs within window, browser, and Chrome modes.
 
 The following criteria need to be satisfied for executing an arbitrary API function via a malicious
-webpage (local or remote) or program:
+webpage (local) or program:
 
 - The specific malicious component needs to capture the OTT before the original application obtains the
 OTT from the framework core. This attacking strategy is not practical because of the fast application
 startup and lack of faster ways to access operating system-level process status. Even though someone
 manages to detect the application startup, the original application requests OTT before the malicious
 program (The framework sends OTT only once). On the other hand, malicious programs don't need Neutralinojs
-to damage your computer system, so use programs you only trust.
+to damage your computer system, so use programs you trust.
 
 - Even the OTT request process is not possible with modern web browsers via remote pages due to CORS-like
 security strategies. Also, we don't even enable the native API for remote pages due to strict application
@@ -58,6 +61,9 @@ requests with the pre-defined permission matrices.
 Look at the following authentication/authorization diagram for more details:
 
 ![](../media/neutralinojs-security.png)
+
+Moreover, Neutralinojs extensions also securely receive WebSocket authentication details (OTT, CT, and port) via
+standard input streams, so malicious programs can't obtain connectivity secrets by scanning your process list.
 
 Read our [security policy](https://github.com/neutralinojs/neutralinojs/security/policy)
 to learn how to handle security-related framework issues.

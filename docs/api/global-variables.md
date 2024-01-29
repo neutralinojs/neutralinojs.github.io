@@ -9,6 +9,7 @@ These JavaScript variables can be used anywhere because these variables are defi
 | Variable      | Description                                                   |
 | --- | --- |
 | `NL_OS`       | Operating system name: `Linux`, `Windows`, or `Darwin`        |
+| `NL_ARCH`     | CPU architecture: `x64`, `arm`, `itanium`, `ia32`, or `unknown`        |
 | `NL_APPID`    | Application identifier                                        |
 | `NL_APPVERSION` | Application version                                         |
 | `NL_PORT`     | Application port                                              |

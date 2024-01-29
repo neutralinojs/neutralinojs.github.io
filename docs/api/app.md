@@ -66,3 +66,43 @@ await Neutralino.app.broadcast('myTestEvent', {myData: 'Test data'});
 
 await Neutralino.app.broadcast('myTestEvent');
 ```
+
+## app.readProcessInput(readAll)
+Reads string data from the standard input stream of the application process.
+
+### Parameters
+
+- `readAll` Boolean (optional): If this is set to `true`, the framework will read the entire standard stream. Otherwise,
+only one line will be returned. The default value for this option is `false`.
+
+```js
+let name = await Neutralino.app.readProcessInput();
+console.log(`Hello ${name}`);
+```
+
+### Return String (awaited):
+Standard input stream data.
+
+## app.writeProcessOutput(data)
+Writes string data to the standard output stream of the application process.
+
+### Parameters
+
+- `data` String: Data to be written.
+
+```js
+await Neutralino.app.writeProcessOutput('Enter your name: ');
+let name = await Neutralino.app.readProcessInput();
+await Neutralino.app.writeProcessOutput(`Hello ${name}\n`);
+```
+
+## app.writeProcessError(data)
+Writes string data to the standard error stream of the application process.
+
+### Parameters
+
+- `data` String: Data to be written.
+
+```js
+await Neutralino.app.writeProcessError('This message goes to stderr');
+```

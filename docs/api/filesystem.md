@@ -5,7 +5,8 @@ title: Neutralino.filesystem
 `Neutralino.filesystem` namespace contains methods for handling files.
 
 ## filesystem.createDirectory(path)
-Creates a new directory. Throws `NE_FS_DIRCRER` if directory creation is not possible.
+Creates a directory or multiple directories recursively. Throws `NE_FS_DIRCRER` if directory creation is
+not possible.
 
 ### Parameters
 - `path` String: New directory path.
@@ -13,18 +14,20 @@ Creates a new directory. Throws `NE_FS_DIRCRER` if directory creation is not pos
 ```js
 await Neutralino.filesystem.createDirectory('./newDirectory');
 
-await Neutralino.filesystem.createDirectory(NL_PATH + '/myFolder');
+await Neutralino.filesystem.createDirectory(NL_PATH + '/myFolder/api/fs');
 ```
 
-## filesystem.removeDirectory(path)
-Removes a given directory. Throws `NE_FS_RMDIRER` if the removal is not possible.
+## filesystem.remove(path)
+Removes a directory or file. If the given path is a directory, this function recursively removes all contents
+of the specific directory. Throws `NE_FS_REMVERR` if the removal is not possible.
 
 ### Parameters
 
-- `path` String: Directory path.
+- `path` String: Directory or file path.
 
 ```js
-await Neutralino.filesystem.removeDirectory('./tmpDirectory');
+await Neutralino.filesystem.remove('./tmpDirectory');
+await Neutralino.filesystem.remove('./tmpFile.txt');
 ```
 
 ## filesystem.writeFile(filename, data)
@@ -260,23 +263,15 @@ for(let watcher of watchers) {
 }
 ```
 
-## filesystem.removeFile(filename)
-Removes given file. Throws `NE_FS_FILRMER` for file removal errors.
-
-### Parameters
-- `filename` String: Filename.
-
-
-```js
-await Neutralino.filesystem.removeFile('./myFile.txt');
-```
-
-## filesystem.readDirectory(path)
+## filesystem.readDirectory(path, options)
 Reads directory contents. Throws `NE_FS_NOPATHE` if the path doesn't exist.
 
 ### Parameters
 
 - `path` String: File/directory path.
+
+### options
+- `recursive` Boolean: Read sub-directories recursively. The default value is `false`.
 
 ### Return Object (awaited):
 An array of `DirectoryEntry` objects.
@@ -291,8 +286,8 @@ let entries = await Neutralino.filesystem.readDirectory(NL_PATH);
 console.log('Content: ', entries);
 ```
 
-## filesystem.copyFile(source, destination)
-Copies a file to a new destination. Throws `NE_FS_COPYFER` if the system cannot copy the file.
+## filesystem.copy(source, destination)
+Copies a file or directory to a new destination. Throws `NE_FS_COPYERR` if the system cannot copy the path.
 
 ### Parameters
 
@@ -300,11 +295,12 @@ Copies a file to a new destination. Throws `NE_FS_COPYFER` if the system cannot 
 - `destination` String: Destination path.
 
 ```js
-await Neutralino.filesystem.copyFile('./source.txt', './destination.txt');
+await Neutralino.filesystem.copy('./source.txt', './destination.txt');
+await Neutralino.filesystem.copy('./myDir', './myDirCopy');
 ```
 
-## filesystem.moveFile(source, destination)
-Moves a file to a new destination. Throws `NE_FS_MOVEFER` if the system cannot move the file.
+## filesystem.move(source, destination)
+Moves a file or directory to a new destination. Throws `NE_FS_MOVEERR` if the system cannot rename the path.
 
 ### Parameters
 
@@ -312,7 +308,8 @@ Moves a file to a new destination. Throws `NE_FS_MOVEFER` if the system cannot m
 - `destination` String: Destination path.
 
 ```js
-await Neutralino.filesystem.moveFile('./source.txt', './destination.txt');
+await Neutralino.filesystem.move('./source.txt', './destination.txt');
+await Neutralino.filesystem.move('./myDir', './myFolder');
 ```
 
 ## filesystem.getStats(path)
