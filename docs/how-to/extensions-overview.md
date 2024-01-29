@@ -204,4 +204,4 @@ The above setting exports authentication details to `${NL_PATH}/.tmp/auth_info.j
 ```
 
 Connect with the Neutralinojs process by using the extension API as usual with the extension identifier
-you used in the application configuratiol file.
+you used in the application configuration file.
