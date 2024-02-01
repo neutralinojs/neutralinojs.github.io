@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 import {Adsense} from '@ctrl/react-adsense';
 import logo from '../../static/logo.gif';
 
-const youtubePlaylist = "https://www.youtube.com/playlist?list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj";
+const youtubeLink = "https://www.youtube.com/c/CodeZri";
 const features = [
   {
     title: 'Native API',
@@ -214,7 +214,7 @@ export default function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={youtubePlaylist}>
+              to={youtubeLink}>
               Tutorial
             </Link>
           </div>
