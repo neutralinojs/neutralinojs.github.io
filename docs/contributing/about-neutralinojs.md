@@ -53,7 +53,7 @@ Shalitha Suranga often donates his time to Neutralinojs by writing code, reviewi
 planning future of Neutralinojs. He integrated [EthicalAds](https://www.ethicalads.io) and
 [Google Adsense](https://www.google.com/adsense/start) with the Neutralinojs website
 to generate revenue for his work. Also, he accepts donations from the developer community via his personal
-[Patreon](https://www.patreon.com/shalithasuranga) account.
+[Patreon](https://www.patreon.com/shalithasuranga) and [GitHub Sponsors](https://github.com/sponsors/shalithasuranga) accounts.
 
 Moreover, you can donate Neutralinojs via [OpenCollective](https://opencollective.com/neutralinojs).
 

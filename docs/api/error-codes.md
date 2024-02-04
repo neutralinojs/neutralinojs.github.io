@@ -21,17 +21,16 @@ The error object has the following structure:
 | Error code                    | Message                                             | Thrown by
 | --------------------------- | ------------------------------------------------------- | --------
 | `NE_FS_DIRCRER`| Unable to create directory.        | `os.createDirectory`
-| `NE_FS_RMDIRER`| Unable to remove directory.        | `os.removeDirectory`
+| `NE_FS_REMVERR`| Unable to remove path.        | `os.remove`
 | `NE_OS_TRAYIER`| Unable to initialize the tray menu. This error is typically thrown when GNU/Linux systems don't contain an app indicator library.        | `os.setTray`
 | `NE_FS_FILRDER`| File read error.        | `filesystem.readFile`, `filesystem.readBinaryFile`
 | `NE_FS_FILWRER`| File write error.        | `filesystem.writeFile`, `filesystem.writeBinaryFile`
 | `NE_FS_FILOPER`| File open error.        | `filesystem.openFile`
 | `NE_FS_UNLTOUP`| Unable to update opened file id.        | `filesystem.updateOpenedFile`
 | `NE_FS_UNLTFOP`| Unable to find opened file id.        | `filesystem.getOpenedFileInfo`
-| `NE_FS_FILRMER`| File remove error.        | `filesystem.removeFile`
 | `NE_FS_NOPATHE`| No file or directory.        | `filesystem.getStats`, `filesystem.readDirectory`
-| `NE_FS_COPYFER`| File copy error.        | `filesystem.copyFile`
-| `NE_FS_MOVEFER`| File move error.        | `filesystem.moveFile`
+| `NE_FS_COPYERR`| Copy error.        | `filesystem.copy`
+| `NE_FS_MOVEERR`| Move error.        | `filesystem.move`
 | `NE_FS_UNLCWAT`| Unable to create watcher.        | `filesystem.createWatcher`
 | `NE_FS_NOWATID`| Unable to find watcher.        | `filesystem.removeWatcher`
 | `NE_OS_UNLTOUP`| Unable to update the spawned process due to an invalid process identifier or action. | `os.updateSpawnedProcess`

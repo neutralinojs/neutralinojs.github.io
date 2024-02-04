@@ -4,6 +4,14 @@ title: Client Library
 
 ## Unreleased
 
+## v5.0.0
+
+### API: app
+- Expose `app.readProcessInput(readAll=false)`, `app.writeProcessOutput()`, and `app.writeProcessError()` functions.
+
+### API: filesystem
+- Export/deprecate functions based on framework's v5 release. See framework changelog for more details.
+
 ## v3.13.0
 
 ### API: window
