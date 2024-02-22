@@ -24,6 +24,51 @@ const templates = [
         ),
         githubLink: 'https://github.com/codezri/neutralinojs-react'
     },
+    {
+        title: 'awesome-neutralino',
+        description: (
+            <>
+                Collection of awesome resources for Neutralino
+            </>
+        ),
+        githubLink: 'https://github.com/neutralinojs-community/awesome-neutralino'
+    },
+    {
+        title: 'awesome-neutralino',
+        description: (
+            <>
+                Collection of awesome resources for Neutralino
+            </>
+        ),
+        githubLink: 'https://github.com/achou11/awesome-neutralino'
+    },
+    {
+        title: 'neutralinojs.github.io',
+        description: (
+            <>
+                The official website and documentation of Neutralinojs
+            </>
+        ),
+        githubLink: 'https://github.com/neutralinojs/neutralinojs.github.io'
+    },
+    {
+        title: 'neutralinojs-cli',
+        description: (
+            <>
+                neu cli for Neutralinojs
+            </>
+        ),
+        githubLink: 'https://github.com/neutralinojs/neutralinojs-cli'
+    },
+    {
+        title: 'neutralino.js',
+        description: (
+            <>
+                JavaScript API for Neutralinojs
+            </>
+        ),
+        githubLink: 'https://github.com/neutralinojs/neutralino.js'
+    },
 ];
 
 export default function NeutralinoTools() {
