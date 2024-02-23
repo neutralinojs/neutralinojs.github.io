@@ -14,7 +14,6 @@ const templates = [
             </>
         ),
         githubLink: 'https://github.com/neutralinojs/neutralinojs-minimal',
-        credits: 'neutralinojs'
     },
     {
         title: 'neutralinojs-react',
@@ -24,7 +23,6 @@ const templates = [
             </>
         ),
         githubLink: 'https://github.com/codezri/neutralinojs-react',
-        credits: 'codezri'
     },
     {
         title: 'awesome-neutralino',
@@ -34,7 +32,6 @@ const templates = [
             </>
         ),
         githubLink: 'https://github.com/neutralinojs-community/awesome-neutralino',
-        credits: 'neutralinojs-community'
     },
     {
         title: 'awesome-neutralino',
@@ -44,37 +41,6 @@ const templates = [
             </>
         ),
         githubLink: 'https://github.com/achou11/awesome-neutralino',
-        credits: 'achou11'
-    },
-    {
-        title: 'neutralinojs.github.io',
-        description: (
-            <>
-                The official website and documentation of Neutralinojs
-            </>
-        ),
-        githubLink: 'https://github.com/neutralinojs/neutralinojs.github.io',
-        credits: 'neutralino.js'
-    },
-    {
-        title: 'neutralinojs-cli',
-        description: (
-            <>
-                neu cli for Neutralinojs
-            </>
-        ),
-        githubLink: 'https://github.com/neutralinojs/neutralinojs-cli',
-        credits: 'neutralino.js'
-    },
-    {
-        title: 'neutralino.js',
-        description: (
-            <>
-                JavaScript API for Neutralinojs
-            </>
-        ),
-        githubLink: 'https://github.com/neutralinojs/neutralino.js',
-        credits: 'neutralino.js'
     },
 ];
 
@@ -100,7 +66,6 @@ export default function NeutralinoTools() {
                                     <div className='card padding-md' style={{padding: '2rem'}}>
                                         <h3 className={styles.align}>{template.title}</h3>
                                         <p className={styles.align}>{template.description}</p>
-                                        <p className={styles.align}><strong>Credits:</strong> {template.credits}</p>
                                         <div>
                                             <Link
                                                 className={clsx(
