@@ -24,7 +24,7 @@ title: Committers
 - [Matthias Simon](https://github.com/simomat)
 - [Harald Schneider](https://github.com/hschneider)
 - [Sadaf Ahmed](https://github.com/Sadaf-A)
-- [Monster Kodi](https://github.com/monsterkodi)
+- [monsterkodi](https://github.com/monsterkodi)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
