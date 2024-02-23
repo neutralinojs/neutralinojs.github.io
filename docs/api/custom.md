@@ -13,55 +13,6 @@ but extensions come with the following drawbacks that affect apps in several sce
 Alternatively, a developer can download the framework C++ code, modify it, and re-compile it. But,
 the developer may face issues while synching upstream code modifications. So, Neutralinojs offers a separate namespace, a generic JavaScript function template, pre-developed helper functions for handling JavaScript-to-C++ parameter mapping (i.e., helpers::hasField(json, '<fieldname>')), and a developer guide to add custom APIs to the Neutralinojs framework without updating the framework core.
 
-## Inbuilt Helper Functions
-  Sample custom method.
-  The client library will automatically add this method to the Neutralino global object.
-
-  Usage examples:
-
-  ```js
-  let sum;
-  sum = await Neutralino.custom.add(10, 10); // 20
-  sum = await Neutralino.custom.add(1, 1, { addExtraFive: true, addExtraTen: true }); // 17
-
-
- json add(const json &input) {
-     json output
-     // Validate
-     if(!helpers::hasRequiredFields(input, {"arg0", "arg1"})) {
-         output["error"] = errors::makeMissingArgErrorPayload();
-         return output;
-     
-     // Extract input parameters
-     int a, b, sum = 0;
-     a = input["arg0"].get<int>();
-     b = input["arg1"].get<int>();
-     // Process
-     sum = a + b
-     // Handle options
-     if(helpers::hasField(input, "addExtraFive")) {
-         if(input["addExtraFive"].get<bool>()) {
-             sum += 5;
-         }
-     }
-     if(helpers::hasField(input, "addExtraTen")) {
-         if(input["addExtraTen"].get<bool>()) {
-             sum += 10;
-         }
-     }
-
-    // Return the result
-    output["returnValue"] = sum;
-
-    // Mark the method call as a successful one
-    output["success"] = true;
-
-    return output;
-}
-
-} namespace controllers
-} namespace custom
-```
 
 ## custom.getMethods()
 Returns all custom methods added by the app developer.
