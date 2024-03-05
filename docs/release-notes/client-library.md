@@ -4,6 +4,11 @@ title: Client Library
 
 ## Unreleased
 
+## v5.0.1
+
+### TypeScript
+- Fix type declaration issues with the `window` global object. Now, `window.NL_VERSION`, etc. won't display errors on code editors or with the TypeScript compiler.
+
 ## v5.0.0
 
 ### API: app
