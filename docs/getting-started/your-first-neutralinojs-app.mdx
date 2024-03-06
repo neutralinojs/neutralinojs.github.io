@@ -131,6 +131,9 @@ Insert the following content into your application resource files.
   }
 
   Neutralino.init();
+  Neutralino.events.on("windowClose", () => {
+    Neutralino.app.exit();
+  });
   getUsername();
   ```
 
