@@ -113,6 +113,16 @@ However, you can use a sub-directory in URL, as shown below.
     "url": "/resources/"
 }
 ```
+### `distributionPath: string`
+
+Sets the build path for the neutralinojs-cli. For example, if you need to get the built binaries in `build` folder instead of `dist`, you can set the distributionPath as follows:
+
+```json
+{
+    "distributionPath": "build/",
+}
+```
+The default value for distributionPath is `dist`.
 
 ### `exportAuthInfo: boolean`
 Exports authentication details to the `${NL_PATH}/.tmp/auth_info.json` file with the following JSON structure.
