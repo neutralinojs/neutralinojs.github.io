@@ -39,7 +39,7 @@ the resource file is not corrupted.
 
 ## Creating a portable application package (Build Scripts)
 :::info
-This section of documentation uses a [community project]("https://github.com/hschneider/neutralino-build-scripts/") built by [@hschneider66]("https://twitter.com/hschneider66") and is not related to Neutralinojs Official Distribution.
+This section of documentation uses a [community project](https://github.com/hschneider/neutralino-build-scripts/) built by [@hschneider66](https://twitter.com/hschneider66) and is not related to Neutralinojs Official Distribution.
 :::
 
 This set of scripts replace the `neu build` command for macOS, Linux and Windows-builds. Instead of plain binaries, it outputs ready-to-use app-bundles.
@@ -123,7 +123,7 @@ The `buildScript/mac` JSON segment in the config-file contains the following fie
 You can add custom code to `preproc-mac.sh` and `postproc-mac.sh` if you need run it before or after the build process.
 :::
 
-for more details visit the [docs]("https://github.com/hschneider/neutralino-build-scripts/#build-for-macos")
+for more details visit the [docs](https://github.com/hschneider/neutralino-build-scripts/#build-for-macos)
 
 ### Build for Windows
 
@@ -162,6 +162,7 @@ The icon installer in action:
 You can add custom code to `preproc-win.sh` and `postproc-win.sh` if you need run it before or after the build process.
 :::
 
+for more details visit the [docs](https://github.com/hschneider/neutralino-build-scripts/#build-for-windows)
 
 ### Build for Linux
 
@@ -196,6 +197,8 @@ The `buildScript/linux` JSON segment in the config-file contains the following f
 :::note
 You can add custom code to `preproc-linux.sh` and `postproc-linux.sh` if you need run it before or after the build process.
 :::
+
+for more details visit the [docs](https://github.com/hschneider/neutralino-build-scripts/#build-for-linux)
 
 ## Creating a portable application package (Manually)
 
