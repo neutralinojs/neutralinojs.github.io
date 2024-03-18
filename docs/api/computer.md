@@ -58,7 +58,7 @@ Returns operating system information.
 
 ```js
 let osInfo = await Neutralino.computer.getOSInfo();
-console.log(`OS: ${kernelInfo.name}`);
+console.log(`OS: ${osInfo.name}`);
 ```
 
 ## computer.getCPUInfo()
