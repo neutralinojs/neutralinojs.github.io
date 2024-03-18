@@ -37,16 +37,13 @@ the resource file. For example, if you need to make an application package for `
 and the `resources.neu` file. The `resources.neu` contains all application resources, so, double click on the binary and check whether
 the resource file is not corrupted.
 
-## Creating a portable application package (Build Scripts)
-:::info
-This section of documentation uses a [community project](https://github.com/hschneider/neutralino-build-scripts/) built by [@hschneider66](https://twitter.com/hschneider66) and is not related to Neutralinojs Official Distribution.
-:::
+## Creating portable application packages using build scripts 
 
-This set of scripts replace the `neu build` command for macOS, Linux and Windows-builds. Instead of plain binaries, it outputs ready-to-use app-bundles.
+The [`hschneider/neutralino-build-scripts`](https://github.com/hschneider/neutralino-build-scripts/) community project offers pre-developed build scripts for generating platform-specific application bundles. For example, it generates a standard app structure on GNU/Linux by generating `.desktop` file with app icon by also providing a shell script to install the app. 
 
-### Setup
 
-Clone the scripts to your root directory of your app folder.
+Clone the scripts to your root directory of your app folder to get started with Neutralinojs build scripts:
+
 ```bash
 git clone https://github.com/hschneider/neutralino-build-scripts.git build-scripts
 ```
@@ -59,8 +56,8 @@ brew install jq
 # On Linux or Windows/WSL:
 sudo apt-get install jq
 ```
-Add this to your `neutralino.config.json` file. This specifies the configuration for the build scripts.
 
+Update `neutralino.config.json` file with build scripts configuration as follows:
 
 ```json
   "buildScript": {
@@ -87,24 +84,14 @@ Add this to your `neutralino.config.json` file. This specifies the configuration
     }
   }
 ```
-You can now copy required files from `build-scripts` folder to root directory, example: when building for windows, you can copy **_app_scaffolds/**, **build-win.sh**, **preproc-win.sh** and **postproc-win.sh**.
 
-### Build for macOS
+### Generating an application bundle for macOS
 
-Neutralino-cli only produces plain macOS binaries and not macOS AppBundles. These files cannot be signed and notarized. Using these scripts we can generate valid AppBundles which pass Apple's notarization process successfully.
+You can generate a new application bundle for macOS by running the following command:
 
 ```bash
 ./build-mac.sh
 ```
-
-This starts the following procedure:
-
-- Erase the target folder ./dist/{APPNAME}
-- Run `neu build`
-- Execute `preproc-mac.sh`
-- Copy all resources and extensions to the app-bundle.
-- Execute `postproc-mac.sh`
-- Create the `install-icon.cmd` helper script from its template in `_app_scaffolds/mac/`, if an app icon file exists.
 
 The build is created in the `./dist` folder.
 
@@ -119,30 +106,18 @@ The `buildScript/mac` JSON segment in the config-file contains the following fie
 | appIdentifier | The macOS app-identifier.                                    |
 | appIcon       | Path to the app-icon in **.icns** format. If only the filename is submitted, the file is expected in the project's root. |
 
-:::note
-You can add custom code to `preproc-mac.sh` and `postproc-mac.sh` if you need run it before or after the build process.
-:::
 
-for more details visit the [docs](https://github.com/hschneider/neutralino-build-scripts/#build-for-macos)
+Visit the [build scripts official documentation](https://github.com/hschneider/neutralino-build-scripts/#build-for-macos) for more details.
 
-### Build for Windows
+###  Generating an application bundle for Windows
+
+You can generate a new application bundle for Windows by running the following command:
 
 ```bash
 ./build-win.sh
 ```
 
-This starts the following procedure:
-
-- Erase the target folder ./dist/{APPNAME}  
-- Run `neu build`
-- Execute `preproc-win.sh`
-- Copy all resources and extensions to the app-bundle.
-- Execute `postproc-win.sh`
-- Create the `install-icon.cmd` helper script from its template in `_app_scaffolds/win/`, if an app icon file exists.
-
 The build is created in the `./dist` folder.
-
-The app-bundle is just a plain folder with the binary, resources.neu, the extensions-folder and WebView2Loader.dll. The DLL file can be deleted, if you deploy on WIndows 11 or newer.
 
 > You can now run install `install-icon.cmd` to set the app icon as specifed in config file. This script required you to have [Resource Hacker](https://www.angusj.com/resourcehacker/) installed on your machine.
 
@@ -154,30 +129,20 @@ The `buildScript/win` JSON segment in the config-file contains the following fie
 | appName      | The app-name as displayed in the File Explorer, with or without .exe-suffix. |
 | appIcon      | Path to the app-icon in **.ico** format. If only the filename is submitted, the file is expected in the project's root. The icon is copied from this path into the app-bundle. To apply the icon to the executable file, you'll have to run **[Resource Hacker](https://www.angusj.com/resourcehacker/)** from a Windows machine. To do so, just double-click **install-icon.cmd** in the app-bundle. |
 
-The icon installer in action:
-
-![](https://marketmix.com//git-assets/neutralino-build-scripts/neutralino-icon-installer.gif)
 
 :::note
 You can add custom code to `preproc-win.sh` and `postproc-win.sh` if you need run it before or after the build process.
 :::
 
-for more details visit the [docs](https://github.com/hschneider/neutralino-build-scripts/#build-for-windows)
+Visit the [build scripts official documentation](https://github.com/hschneider/neutralino-build-scripts/#build-for-windows) for more details.
 
-### Build for Linux
+### Generating an application bundle for Linux
+
+You can generate a new application bundle for GNU/Linux by running the following command:
 
 ```bash
 ./build-linux.sh
 ```
-
-This starts the following procedure:
-
-- Erase the target folder ./dist/{APPNAME}  
-- Run `neu build`
-- Execute `preproc-linux.sh`
-- Copy all resources and extensions to the app-bundle.
-- Clones  the  .desktop-file from `_app_scaffolds/linux/` to the app-bundle and adapts its content.
-- Execute `postproc-linux.sh`
 
 All build targets are created in the `./dist` folder.
 
@@ -194,36 +159,7 @@ The `buildScript/linux` JSON segment in the config-file contains the following f
 | appIconPath  | This is path to application icon **after** the application has been installed in the Linux system. This path is written to the .desktop-file. Example: `/usr/share/myapp/icon.png` |
 | appIconLocation  | Same as appIconPath. |
 
-:::note
-You can add custom code to `preproc-linux.sh` and `postproc-linux.sh` if you need run it before or after the build process.
-:::
-
-for more details visit the [docs](https://github.com/hschneider/neutralino-build-scripts/#build-for-linux)
-
-## Creating a portable application package (Manually)
-
-The following guides are not documented yet.
-
-- [Creating a portable application package for Linux](#)
-- [Creating a portable application package for Windows](#)
-
-### Build for macOS
-
-The `neu build` process creates a binary file for macOS, but that file can not be executed by a double-click action on macOS as a normal application.
-The following steps shows how to create a simple double-clickable executable on macOS.
-
-1. Open Terminal.
-2. Navigate to the `/dist/myapp` directory:
-3. Change the binary file type to `.app` file type:
-```
-mv <mac_binary> <mac_binary>.app
-```
-4. Give the app file the required execution permissions:
-```
-chmod +x <mac_binary>.app
-```
-
-Now you can execute the app by double-click.
+Visit the [build scripts official documentation](https://github.com/hschneider/neutralino-build-scripts/#build-for-linux) for more details.
 
 ## Creating application installers
 
