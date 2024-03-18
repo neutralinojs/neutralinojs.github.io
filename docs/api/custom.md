@@ -11,7 +11,7 @@ but extensions come with the following drawbacks that affect apps in several sce
 - A C++-based extension is not fast as native C++-based code due to the WebSockets-based IPC.
 
 Alternatively, a developer can download the framework C++ code, modify it, and re-compile it. But,
-the developer may face issues while synching upstream code modifications. So, Neutralinojs offers a separate namespace, a generic JavaScript function template, pre-developed helper functions for handling JavaScript-to-C++ parameter mapping (i.e., helpers::hasField(json, '<fieldname>')), and a developer guide to add custom APIs to the Neutralinojs framework without updating the framework core.
+the developer may face issues while synching upstream code modifications. So, Neutralinojs offers a separate namespace, a generic JavaScript function template, pre-developed helper functions for handling JavaScript-to-C++ parameter mapping (i.e., `helpers::hasField(json, '<fieldname>'))`, and a developer guide to add custom APIs to the Neutralinojs framework without updating the framework core.
 
 
 ## custom.getMethods()
