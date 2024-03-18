@@ -129,11 +129,6 @@ The `buildScript/win` JSON segment in the config-file contains the following fie
 | appName      | The app-name as displayed in the File Explorer, with or without .exe-suffix. |
 | appIcon      | Path to the app-icon in **.ico** format. If only the filename is submitted, the file is expected in the project's root. The icon is copied from this path into the app-bundle. To apply the icon to the executable file, you'll have to run **[Resource Hacker](https://www.angusj.com/resourcehacker/)** from a Windows machine. To do so, just double-click **install-icon.cmd** in the app-bundle. |
 
-
-:::note
-You can add custom code to `preproc-win.sh` and `postproc-win.sh` if you need run it before or after the build process.
-:::
-
 Visit the [build scripts official documentation](https://github.com/hschneider/neutralino-build-scripts/#build-for-windows) for more details.
 
 ### Generating an application bundle for Linux
