@@ -13,7 +13,7 @@ const templates = [
                 The default template for a Neutralinojs app.
             </>
         ),
-        githubLink: 'https://github.com/neutralinojs/neutralinojs-minimal'
+        githubLink: 'https://github.com/neutralinojs/neutralinojs-minimal',
     },
     {
         title: 'neutralinojs-react',
@@ -22,7 +22,25 @@ const templates = [
                 A simple React.js template for building Neutralinojs apps
             </>
         ),
-        githubLink: 'https://github.com/codezri/neutralinojs-react'
+        githubLink: 'https://github.com/codezri/neutralinojs-react',
+    },
+    {
+        title: 'awesome-neutralino',
+        description: (
+            <>
+                Collection of awesome resources for Neutralino
+            </>
+        ),
+        githubLink: 'https://github.com/neutralinojs-community/awesome-neutralino',
+    },
+    {
+        title: 'awesome-neutralino',
+        description: (
+            <>
+                Collection of awesome resources for Neutralino
+            </>
+        ),
+        githubLink: 'https://github.com/achou11/awesome-neutralino',
     },
 ];
 
