@@ -25,6 +25,7 @@ title: Committers
 - [Harald Schneider](https://github.com/hschneider)
 - [Sadaf Ahmed](https://github.com/Sadaf-A)
 - [monsterkodi](https://github.com/monsterkodi)
+- [Viral Gupta](https://github.com/viralgupta)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
