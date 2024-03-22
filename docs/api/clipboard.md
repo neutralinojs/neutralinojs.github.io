@@ -42,7 +42,7 @@ Writes image into the system clipboard. 
 - `redShift`: Number: Red shift.
 - `greeShift`: Number: Green shift.
 - `blueShift`: Number: Blue shift.
-- `data`: ArrayBuffer: Raw RGBA binary data data of the image in an array buffer.
+- `data`: ArrayBuffer: Raw RGBA binary data of the image in an array buffer.
 
 ```js
 let image = prepareClipboardImage();
