@@ -4,6 +4,11 @@ title: CLI
 
 ## Unreleased
 
+## v11.1.0
+
+### Core: Bundler
+- Add `cli.distributionPath` into the `neutralino.config.json` file to customize the default `dist` distribution directory.
+
 ## v11.0.1
 
 ### Bugfixes/improvements

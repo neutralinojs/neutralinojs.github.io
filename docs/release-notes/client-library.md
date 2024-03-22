@@ -4,6 +4,15 @@ title: Client Library
 
 ## Unreleased
 
+## v5.1.0
+
+### API: clipboard
+- Export new framework functions: `clipboard.getFormat()`, `clipboard.readImage()`, and `clipboard.writeImage(image)`.
+
+### TypeScript
+- Separate type definitions into a new directory to improve project structure.
+- Add missing type definitions.
+
 ## v5.0.1
 
 ### TypeScript
@@ -49,7 +58,7 @@ title: Client Library
 ## v3.8.2
 
 ### NPM/ESM support
-- Add ESM support for the client library via `neutralino.mjs`. 
+- Add ESM support for the client library via `neutralino.mjs`.
 - Publish (and automate) the client library as an NPM package,`@neutralinojs/lib`.
 
 ## v3.8.0
@@ -102,7 +111,7 @@ title: Client Library
 
 ### API: init
 - Store `NL_TOKEN` in sessionStorage and handle native API calls after page reload.
-- Show a message to the user via HTML if `NL_TOKEN` is not valid (Eg: when the user tries to open the app from another client with `one-time` token). 
+- Show a message to the user via HTML if `NL_TOKEN` is not valid (Eg: when the user tries to open the app from another client with `one-time` token).
 
 ### API: window
 - Add `window.setAlwaysOnTop(bool)`.

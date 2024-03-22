@@ -4,6 +4,18 @@ title: Neutralino.clipboard
 
 `Neutralino.clipboard` namespace offers functions to access system clipboard.
 
+## clipboard.getFormat()
+Returns the current data format of the system clipboard. 
+
+### Return String (awaited):
+Clipboard format: `text`, `image`, or `unknown`.
+
+
+```js
+let format = await Neutralino.clipboard.getFormat();
+console.log(`Format: ${format}`);
+```
+
 ## clipboard.writeText(text)
 Writes text into the system clipboard. 
 
@@ -13,6 +25,28 @@ Writes text into the system clipboard. 
 
 ```js
 await Neutralino.clipboard.writeText('Test value');
+```
+
+## clipboard.writeImage(image)
+Writes image into the system clipboard. 
+
+### Input Object: `ClipboardImage`
+
+- `width`: Number: Image width.
+- `height`: Number: Image height.
+- `bpp`: Number: Bits per pixel (BPP).
+- `bpr`: Number: Bytes Per Row (BPR).
+- `redMask`: Number: Red mask.
+- `greenMask`: Number: Green mask.
+- `blueMask`: Number: Blue mask.
+- `redShift`: Number: Red shift.
+- `greeShift`: Number: Green shift.
+- `blueShif`: Number: Blue shift.
+- `data`: ArrayBuffer: Raw RGBA binary data data of the image in an array buffer.
+
+```js
+let image = prepareClipboardImage();
+await Neutralino.clipboard.writeImage(image);
 ```
 
 ## clipboard.readText()
@@ -25,4 +59,17 @@ Stored text from the system clipboard.
 ```js
 let clipboardText = await Neutralino.clipboard.readText();
 console.log(`Text: ${clipboardText}`);
+```
+
+## clipboard.readImage()
+Reads and returns an image from system clipboard. 
+
+### Return Object (awaited):
+Returns [`ClipboardImage`](#input-object-clipboardimage) object that has the same
+properties as in the [`writeImage()`](#clipboardwriteimageimage) function.
+
+
+```js
+let clipboardImage = await Neutralino.clipboard.readImage();
+console.log(`Image: ${clipboardImage}`);
 ```

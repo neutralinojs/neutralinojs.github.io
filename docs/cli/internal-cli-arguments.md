@@ -162,6 +162,10 @@ Overrides the window top (`y`) position.
 
 Overrides the window's initial center positioning setup.
 
+### `--window-transparent=<true|false>`
+
+Overrides the window transparency mode.
+
 ### `--window-resizable=<true|false>`
 
 Overrides the window's initial resizability status.
