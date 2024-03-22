@@ -41,7 +41,7 @@ Writes image into the system clipboard. 
 - `blueMask`: Number: Blue mask.
 - `redShift`: Number: Red shift.
 - `greeShift`: Number: Green shift.
-- `blueShif`: Number: Blue shift.
+- `blueShift`: Number: Blue shift.
 - `data`: ArrayBuffer: Raw RGBA binary data data of the image in an array buffer.
 
 ```js
