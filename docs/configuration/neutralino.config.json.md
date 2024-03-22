@@ -306,3 +306,14 @@ Use `|` character to set multiple regular expressions, as shown below.
 
 Enables frontend development tools (HMR, etc) for the `neu run --frontend-lib-dev` command. Learn more about frontend
 framework integration from [here](../getting-started/using-frontend-libraries.md)
+
+### `cli.distributionPath: string`
+
+Sets the build path for neu CLI. For example, if you need to get the built binaries in `build` folder instead of `dist`, you can set the `distributionPath` as follows:
+
+```json
+{
+    "distributionPath": "/build",
+}
+```
+The default value for `distributionPath` is `/dist`.
