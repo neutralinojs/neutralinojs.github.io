@@ -183,6 +183,19 @@ If you need to run tests for the `extensions` module, make sure to enter `npm in
 
 The above command will run test only for the given module.
 
+### Adding a test case
+To add a test case simply add it to the `spec/<module>.spec.js` file.
+For Instance, If the API is debug, add the test case to `spec/debug.spec.js`. 
+
+After that, Run the test suite for that API in this case the `debug` API
+
+```bash
+cd spec
+npm i 
+npm run test debug
+```
+
+
 ## Project directory structure
 
 ### Framework
