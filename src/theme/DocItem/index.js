@@ -4,20 +4,25 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import DocPaginator from '@theme/DocPaginator';
-import DocVersionSuggestions from '@theme/DocVersionSuggestions';
-import Seo from '@theme/Seo';
 import LastUpdated from '@theme/LastUpdated';
-import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 import EditThisPage from '@theme/EditThisPage';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+
+import {
+  PageMetadata,
+} from "@docusaurus/theme-common"
+
+import { useTOCHighlight } from "@docusaurus/theme-common/internal"
+
 import {
   useActivePlugin,
   useVersions,
   useActiveVersion,
-} from '@theme/hooks/useDocs';
+  useDocVersionSuggestions
+} from "@docusaurus/plugin-content-docs/client"
 
 const LINK_CLASS_NAME = 'table-of-contents__link';
 const ACTIVE_LINK_CLASS_NAME = 'table-of-contents__link--active';
@@ -28,7 +33,7 @@ function Headings({
   toc,
   isChild,
 }) {
-  if (!toc.length) {
+  if (!toc) {
     return null;
   }
   return (
@@ -43,7 +48,7 @@ function Headings({
             className={LINK_CLASS_NAME}
             // Developer provided the HTML, so assume it's safe.
             // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{__html: heading.value}}
+            dangerouslySetInnerHTML={{ __html: heading.value }}
           />
           <Headings isChild toc={heading.children} />
         </li>
@@ -52,8 +57,13 @@ function Headings({
   );
 }
 
-function CustomTOC({toc}) {
-  useTOCHighlight(LINK_CLASS_NAME, ACTIVE_LINK_CLASS_NAME, TOP_OFFSET);
+function CustomTOC({ toc }) {
+  useTOCHighlight({
+    linkClassName: LINK_CLASS_NAME,
+    linkActiveClassName: ACTIVE_LINK_CLASS_NAME,
+    maxHeadingLevel: TOP_OFFSET,
+    minHeadingLevel: 1
+  });
   const [isInitialized, setIsInitialized] = useState(false);
   const [isEthABlocked, setIsEthABlocked] = useState(false)
   useEffect(() => {
@@ -71,12 +81,12 @@ function CustomTOC({toc}) {
   return (
     <div className={clsx(styles.tableOfContents, 'thin-scrollbar')}>
       <div>
-          <div
-            data-ea-publisher="neutralino"
-            data-ea-type="image"
-            id="neutralino-docs"
-            >
-          </div>
+        <div
+          data-ea-publisher="neutralino"
+          data-ea-type="image"
+          id="neutralino-docs"
+        >
+        </div>
       </div>
       <Headings toc={toc} />
     </div>
@@ -84,7 +94,7 @@ function CustomTOC({toc}) {
 }
 
 function DocItem(props) {
-  const {content: DocContent} = props;
+  const { content: DocContent } = props;
   const {
     metadata,
     frontMatter: {
@@ -102,7 +112,7 @@ function DocItem(props) {
     formattedLastUpdatedAt,
     lastUpdatedBy,
   } = metadata;
-  const {pluginId} = useActivePlugin({
+  const { pluginId } = useActivePlugin({
     failfast: true,
   });
   const versions = useVersions(pluginId);
@@ -111,9 +121,14 @@ function DocItem(props) {
   // See https://github.com/facebook/docusaurus/issues/3362
 
   const showVersionBadge = versions.length > 1;
+
+  const {
+    latestVersionSuggestion
+  } = useDocVersionSuggestions(pluginId)
+
   return (
     <>
-      <Seo
+      <PageMetadata
         {...{
           title,
           description,
@@ -121,13 +136,12 @@ function DocItem(props) {
           image,
         }}
       />
-
       <div className="row">
         <div
           className={clsx('col', {
             [styles.docItemCol]: !hideTableOfContents,
           })}>
-          <DocVersionSuggestions />
+
           <div className={styles.docItemContainer}>
             <article>
               {showVersionBadge && (
@@ -169,7 +183,7 @@ function DocItem(props) {
         </div>
         {!hideTableOfContents && DocContent.toc && (
           <div className="col col--3">
-            <CustomTOC toc={DocContent.toc} />
+            {DocContent.toc && <CustomTOC toc={DocContent.toc} />}
           </div>
         )}
       </div>
