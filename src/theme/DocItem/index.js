@@ -8,6 +8,7 @@ import React, { useEffect, useState } from 'react';
 import DocPaginator from '@theme/DocPaginator';
 import LastUpdated from '@theme/LastUpdated';
 import EditThisPage from '@theme/EditThisPage';
+import DocVersionBanner from '@theme/DocVersionBanner';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
@@ -21,7 +22,6 @@ import {
   useActivePlugin,
   useVersions,
   useActiveVersion,
-  useDocVersionSuggestions
 } from "@docusaurus/plugin-content-docs/client"
 
 const LINK_CLASS_NAME = 'table-of-contents__link';
@@ -58,12 +58,7 @@ function Headings({
 }
 
 function CustomTOC({ toc }) {
-  useTOCHighlight({
-    linkClassName: LINK_CLASS_NAME,
-    linkActiveClassName: ACTIVE_LINK_CLASS_NAME,
-    maxHeadingLevel: TOP_OFFSET,
-    minHeadingLevel: 1
-  });
+  useTOCHighlight({linkClassName: LINK_CLASS_NAME, linkActiveClassName: ACTIVE_LINK_CLASS_NAME, maxHeadingLevel: TOP_OFFSET, minHeadingLevel: 0});
   const [isInitialized, setIsInitialized] = useState(false);
   const [isEthABlocked, setIsEthABlocked] = useState(false)
   useEffect(() => {
@@ -122,10 +117,6 @@ function DocItem(props) {
 
   const showVersionBadge = versions.length > 1;
 
-  const {
-    latestVersionSuggestion
-  } = useDocVersionSuggestions(pluginId)
-
   return (
     <>
       <PageMetadata
@@ -141,7 +132,7 @@ function DocItem(props) {
           className={clsx('col', {
             [styles.docItemCol]: !hideTableOfContents,
           })}>
-
+          <DocVersionBanner />
           <div className={styles.docItemContainer}>
             <article>
               {showVersionBadge && (
