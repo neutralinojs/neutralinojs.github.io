@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-.docTitle {
+ .docTitle {
   font-size: 3rem;
   margin-bottom: calc(var(--ifm-leading-desktop) * var(--ifm-leading));
 }
