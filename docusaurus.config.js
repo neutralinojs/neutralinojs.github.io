@@ -191,6 +191,7 @@ module.exports = {
     
   ],
   plugins: [
-    path.resolve('./plugins/load-external-assets')
+    path.resolve('./plugins/load-external-assets'),
+    require.resolve('docusaurus-lunr-search')
   ]
 };
