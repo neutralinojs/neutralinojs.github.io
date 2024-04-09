@@ -42,6 +42,17 @@ const apps = [
     ),
     tags: ['Preact', 'TypeScript', 'Redux'],
     githubLink: 'https://github.com/ernest-rudnicki/fonline-name-colorizing'
+  },
+  {
+    title: 'Vale at Red Hat app',
+    image: 'varh-app-demo.gif',
+    description: (
+      <>
+        A desktop app for linting AsciiDoc files, built with Neutralinojs.
+      </>
+    ),
+    tags: ['JS', 'Material'],
+    githubLink: 'https://github.com/gaurav-nelson/varh-app'
   }
 ];
 
