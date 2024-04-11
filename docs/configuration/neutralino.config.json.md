@@ -285,24 +285,24 @@ Binary file name of your application. If it is `myapp`, all binaries will use
 ### `cli.resourcesPath: string`
 Path of your application resources.
 
-### `cli.resourcesIgnore: string | string[]`
-Glob patters to exclude files from final binary build. For example, the following configuration will exlude all the typescript files from the final build (.ts, .tsx)
+### `cli.resourcesExclude: string | string[]`
+Regex patters to exclude files from final binary build. For example, the following configuration will exlude all the typescript files from the final build (.ts, .tsx)
 
 ```json
 {
-    "resourcesIgnore" : ["*.ts", "*.tsx"]
+    "resourcesExclude" : [".*\\.ts$", ".*\\.tsx$"]
 }
 ```
 
 ### `cli.extensionsPath: string`
 Path of your application extensions.
 
-### `cli.extensionsIgnore: string | string[]`
-Glob patters to exclude files from final binary build. For example, the following configuration will exlude all the typescript files from the final build (.ts, .tsx)
+### `cli.extensionsExclude: string | string[]`
+Regex patters to exclude files from final binary build. For example, the following configuration will exlude all the typescript files from the final build (.ts)
 
 ```json
 {
-    "extensionsIgnore" : ["*.ts", "*.tsx"]
+    "extensionsExclude" : ".*\\.ts$"
 }
 ```
 
