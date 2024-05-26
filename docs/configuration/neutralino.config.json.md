@@ -285,8 +285,26 @@ Binary file name of your application. If it is `myapp`, all binaries will use
 ### `cli.resourcesPath: string`
 Path of your application resources.
 
+### `cli.resourcesExclude: string`
+Regex pattern to exclude files from final app bundle. For example, the following configuration will exclude all the TypeScript source files from the final build:
+
+```json
+{
+    "resourcesExclude" : ".*\\.ts$|.*\\.tsx$"
+}
+```
+
 ### `cli.extensionsPath: string`
 Path of your application extensions.
+
+### `cli.extensionsExclude: string`
+Regex pattern to exclude files from the extensions directory of the final app package. For example, the following configuration will exclude `.log` and `.info` files:
+
+```json
+{
+    "extensionsExclude" : ".*\\.log$|.*\\.info$"
+}
+```
 
 ### `cli.clientLibrary: string`
 Filename of the Neutralinojs JavaScript library.
@@ -298,8 +316,7 @@ Neutralinojs server version. Get nightly builds by using the `nightly` tag.
 Neutralinojs client version.  Get nightly builds by using the `nightly` tag.
 
 ### `cli.autoReloadExclude: string`
-A JavaScript regular expression to exclude files from the auto-reload file watcher. For example, the
-following configuration will disable auto-reloading for SASS stylesheets (`.scss`).
+A JavaScript regular expression to exclude files from the auto-reload file watcher. For example, the following configuration will disable auto-reloading for SASS stylesheets (`.scss`).
 
 ```json
 {
