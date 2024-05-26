@@ -18,10 +18,6 @@ module.exports = {
     }
   ],
   themeConfig: {
-    gtag: {
-      trackingID: 'UA-120983955-1',
-      anonymizeIP: true,
-    },
     navbar: {
       title: 'Neutralinojs',
       logo: {
@@ -186,8 +182,13 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        gtag: {
+          trackingID: 'UA-120983955-1',
+          anonymizeIP: true,
+        },
       },
     ],
+    
   ],
   plugins: [
     path.resolve('./plugins/load-external-assets')
