@@ -15,8 +15,8 @@ const features = [
     imageUrl: 'img/undraw_in_progress_ql66.svg',
     description: (
       <>
-        Neutralinojs Javascript API exposes access to the operating system level functions such as file manipulation,
-        executing commands, and showing native dialog boxes.
+        Neutralinojs Javascript API allows access to operating system level functions such as file manipulation,
+        executing commands and showing native dialog boxes.
       </>
     ),
   },
