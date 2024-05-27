@@ -112,7 +112,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.tagline}`}
-      description="Neutralinojs is a framework for building lightweight cross-platform desktop apps with JavaScript, HTML, and CSS.">
+      description="Neutralinojs is a framework for building lightweight cross-platform desktop apps with JavaScript, HTML and CSS.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <img src={logo + '?v=' + Math.floor(Math.random() * 10000) } alt="Neutralinojs logo animation" />
@@ -168,8 +168,8 @@ export default function Home() {
                 to serve the web content. Also, it offers a built-in <Link href="https://github.com/neutralinojs/neutralino.js">JavaScript client library</Link> for developers.
                 <br/><br/>
                 If you can build a website, you can build cross-platform desktop apps too because Neutralinojs is a framework for
-                creating native desktop applications with web technologies like JavaScript, HTML, and CSS. You can indeed use your
-                favorite frontend framework (Angular, React, Svelte, Vue, etc.) for building your next Neutralinojs app.
+                creating native desktop applications with web technologies like JavaScript, HTML and CSS. You can indeed use your
+                favorite frontend framework (such as Angular, React, Svelte, Vue, etc.) for building your next Neutralinojs app.
 
                 <br/><br/>
 
