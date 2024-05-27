@@ -15,7 +15,7 @@ const features = [
     imageUrl: 'img/undraw_in_progress_ql66.svg',
     description: (
       <>
-        Neutralinojs Javascript API allows access to operating system level functions such as file manipulation,
+        Neutralinojs Javascript API exposes access to operating system level functions such as file manipulation,
         executing commands and showing native dialog boxes.
       </>
     ),
@@ -25,8 +25,8 @@ const features = [
     imageUrl: 'img/undraw_takeout_boxes_ap54.svg',
     description: (
       <>
-        No extra dependencies are required to run Neutralinojs apps. The great advantage is that you can make
-        applications for all platforms on one platform. No compilers are required!
+        No extra dependencies are required to run Neutralinojs apps. The great advantage is that you can develop
+        applications for all platforms using just one platform. No compilers are required!
       </>
     ),
   },
@@ -35,8 +35,8 @@ const features = [
     imageUrl: 'img/undraw_social_friends_nsbv.svg',
     description: (
       <>
-        Neutralinojs apps will work on Linux, Windows, macOS, Web, and Chrome. A single portable application
-        can be released for all popular operating systems and web browsers.
+        Neutralinojs apps function on Linux, Windows, macOS, Web and Chrome. A single portable application
+        is compatible with all popular operating systems and web browsers.
       </>
     ),
   },
