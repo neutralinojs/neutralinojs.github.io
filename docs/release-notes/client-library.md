@@ -4,6 +4,11 @@ title: Client Library
 
 ## Unreleased
 
+## v5.1.1
+
+### NPM
+- Fix the NPM package import issue.
+
 ## v5.1.0
 
 ### API: clipboard
