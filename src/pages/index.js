@@ -15,8 +15,8 @@ const features = [
     imageUrl: 'img/undraw_in_progress_ql66.svg',
     description: (
       <>
-        Neutralinojs Javascript API exposes access to the operating system level functions such as file manipulation,
-        executing commands, and showing native dialog boxes.
+        Neutralinojs Javascript API exposes access to operating system level functions such as file manipulation,
+        executing commands and showing native dialog boxes.
       </>
     ),
   },
@@ -25,8 +25,8 @@ const features = [
     imageUrl: 'img/undraw_takeout_boxes_ap54.svg',
     description: (
       <>
-        No extra dependencies are required to run Neutralinojs apps. The great advantage is that you can make
-        applications for all platforms on one platform. No compilers are required!
+        No extra dependencies are required to run Neutralinojs apps. The great advantage is that you can develop
+        applications for all platforms using just one platform. No compilers are required!
       </>
     ),
   },
@@ -35,8 +35,8 @@ const features = [
     imageUrl: 'img/undraw_social_friends_nsbv.svg',
     description: (
       <>
-        Neutralinojs apps will work on Linux, Windows, macOS, Web, and Chrome. A single portable application
-        can be released for all popular operating systems and web browsers.
+        Neutralinojs apps function on Linux, Windows, macOS, Web and Chrome. A single portable application
+        is compatible with all popular operating systems and web browsers.
       </>
     ),
   },
@@ -112,7 +112,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.tagline}`}
-      description="Neutralinojs is a framework for building lightweight cross-platform desktop apps with JavaScript, HTML, and CSS.">
+      description="Neutralinojs is a framework for building lightweight cross-platform desktop apps with JavaScript, HTML and CSS.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <img src={logo + '?v=' + Math.floor(Math.random() * 10000) } alt="Neutralinojs logo animation" />
@@ -168,8 +168,8 @@ export default function Home() {
                 to serve the web content. Also, it offers a built-in <Link href="https://github.com/neutralinojs/neutralino.js">JavaScript client library</Link> for developers.
                 <br/><br/>
                 If you can build a website, you can build cross-platform desktop apps too because Neutralinojs is a framework for
-                creating native desktop applications with web technologies like JavaScript, HTML, and CSS. You can indeed use your
-                favorite frontend framework (Angular, React, Svelte, Vue, etc.) for building your next Neutralinojs app.
+                creating native desktop applications with web technologies like JavaScript, HTML and CSS. You can indeed use your
+                favorite frontend framework (such as Angular, React, Svelte, Vue, etc.) for building your next Neutralinojs app.
 
                 <br/><br/>
 
