@@ -4,6 +4,14 @@ title: Client Library
 
 ## Unreleased
 
+## v5.2.0
+
+### API: filesystem
+- Accept `overwrite`, `skip`, and `recursive` options for the `filesystem.copy()` function.
+
+### Bugfixes/improvements
+- Improve the `window.create()` function's option-to-CLI argument mapping logic.
+
 ## v5.1.1
 
 ### NPM

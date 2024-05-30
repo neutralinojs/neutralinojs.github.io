@@ -2,14 +2,26 @@
 title: neutralino.config.json
 ---
 
-`neutralino.config.json` file contains the application configuration details. Every Neutralinojs app requires
-the following mandatory keys from the config file.
+`neutralino.config.json` file contains the application configuration details. Every Neutralinojs app typically
+loads the following keys from the config file.
 
 - `applicationId`
 - `url`
 - `defaultMode`
 
-Other configuration properties are optional and may have default values.
+However, having a config file is not mandatory to start a Neutralinojs app since the Neutralinojs framework
+often loads reasonable defaults for all configuration options.
+
+You can develop Neutralinojs apps with a well-structured configuration file. Or, you can start the framework
+without a configuration file using CLI arugments, as shown in the following code snippet:
+
+```bash
+# Loading a remote URL
+./framework-bin --url=https://neutralino.js.org/docs
+
+# Launches a local static web app
+./framework-bin --url="/" --document-root="/resources/" --window-title="My web app" --enable-server --enable-native-api
+```
 
 ## Primary
 The following configuraion values cannot be overridden in different Neutralinojs modes.
@@ -47,6 +59,11 @@ If you load a remote URL to the webview, you can set this option to `false`. Mak
 
 ### `enableNativeAPI: boolean`
 Enables or disables the native API. If you want to use any native API functions, you can set this option to `true`. The default value is `false`.
+
+### `singlePageServe: boolean`
+Activates SPA (Single Page App) serving. When this option is enabled, the static server module serves the primary
+`index.html` file for sub-directory requests only if another `index.html` doesn't exist in a specific sub-directory.
+The default value for this option is `false`.
 
 ### `tokenSecurity: string`
 Neutralinojs uses a client-server communication pattern with a local WebSocket to handle native calls. This
