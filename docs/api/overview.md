@@ -8,10 +8,17 @@ The JavaScript client's implementation resides inside the neutralino.js JavaScri
 It is therefore required to have the client library in your Neutralinojs projects. 
 
 The client library exposes its JavaScript APIs to the browser's window scope, and you can access them
-via `Neutralino` or `window.Neutralino` from vanilla JavaScript or any frontend framework.
+via `Neutralino` or `window.Neutralino` from vanilla JavaScript. If you use a frontend library to build your app frontend,
+you can import Neutralinojs namespaces from the [`@neutralinojs/lib`](https://www.npmjs.com/package/@neutralinojs/lib) NPM module:
 
-Assume that you need to get an environment variable value from the operating system. You can call the
-[`Neutralino.os.getEnv`](os.md#osgetenvkey)
+```js
+import { app } from '@neutralinojs/lib';
+
+const conf = await app.getConfig();  // Vanilla Js: await Neutralino.app.getConfig()
+```
+
+Let's learn how native API calls internally work. Assume that you need to get an environment variable value from the operating system. 
+You can call the [`Neutralino.os.getEnv`](os.md#osgetenvkey)
 JavaScript method. The client library will call the Neutralinojs server with a WebSocket message once you invoke
 the `getEnv` method. After that, the Neutralinojs server will execute the native operation to fetch the given
 environment variable.
@@ -27,6 +34,7 @@ Neutralinojs offers many native operations for you by using this communication m
 - [Neutralino.app](../api/app.md)
 - [Neutralino.clipboard](../api/clipboard.md)
 - [Neutralino.computer](../api/computer.md)
+- [Neutralino.custom](../api/custom.md)
 - [Neutralino.debug](../api/debug.md)
 - [Neutralino.events](../api/events.md)
 - [Neutralino.extensions](../api/extensions.md)
