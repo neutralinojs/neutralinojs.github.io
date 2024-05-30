@@ -294,6 +294,11 @@ Copies a file or directory to a new destination. Throws `NE_FS_COPYERR` if the s
 - `source` String: Source path.
 - `destination` String: Destination path.
 
+### options
+- `recursive` Boolean: Copy sub-directories recursively. The default value is `true`.
+- `overwrite` Boolean: Overwrite an existing file with the same name. The default value is `true`.
+- `skip` Boolean: Skip an existing file with the same name. The default value is `false`.
+
 ```js
 await Neutralino.filesystem.copy('./source.txt', './destination.txt');
 await Neutralino.filesystem.copy('./myDir', './myDirCopy');
