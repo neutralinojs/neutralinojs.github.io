@@ -1,5 +1,6 @@
 ---
 title: Neutralino.updater
+toc_max_heading_level: 2
 ---
 
 `Neutralino.updater` namespace contains methods related to built-in automatic updater. Neutralinojs offers

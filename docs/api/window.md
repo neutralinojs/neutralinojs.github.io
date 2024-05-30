@@ -1,5 +1,6 @@
 ---
 title: Neutralino.window
+toc_max_heading_level: 2
 ---
 
 The `Neutralino.window` namespace contains methods related to the current native window instance.

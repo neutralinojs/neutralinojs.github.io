@@ -1,5 +1,6 @@
 ---
 title: Neutralino.computer
+toc_max_heading_level: 2
 ---
 
 `Neutralino.computer` namespace contains methods related to the user's hardware.
