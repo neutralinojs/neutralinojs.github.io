@@ -237,7 +237,7 @@ export default function Home() {
         <div className="container">
           <h1 className="hero__title">Start building lightweight apps!</h1>
           <p className="hero__subtitle">
-            <code>
+            <code className={styles.code}>
               npm install -g @neutralinojs/neu
             </code>
           </p>
