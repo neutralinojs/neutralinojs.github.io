@@ -1,5 +1,6 @@
 ---
 title: Neutralino.clipboard
+toc_max_heading_level: 2
 ---
 
 `Neutralino.clipboard` namespace offers functions to access system clipboard.

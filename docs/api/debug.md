@@ -1,5 +1,6 @@
 ---
 title: Neutralino.debug
+toc_max_heading_level: 2
 ---
 
 `Neutralino.debug` namespace contains application debugging utilities.

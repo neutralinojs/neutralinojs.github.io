@@ -1,5 +1,6 @@
 ---
 title: Neutralino.filesystem
+toc_max_heading_level: 2
 ---
 
 `Neutralino.filesystem` namespace contains methods for handling files.
