@@ -12,6 +12,10 @@
   overflow: hidden;
 }
 
+.heroBanner code {
+  color: black;
+}
+
 .feature {
   margin-top: 2rem;
 }
