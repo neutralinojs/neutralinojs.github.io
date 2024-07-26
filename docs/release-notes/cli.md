@@ -4,6 +4,11 @@ title: CLI
 
 ## Unreleased
 
+## v11.2.2
+
+### Bugfixes/improvements
+- Fix initial loading issues with frontend library development file patching.
+
 ## v11.2.0
 
 ## Core: Bundler

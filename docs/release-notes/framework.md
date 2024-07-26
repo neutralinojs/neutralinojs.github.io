@@ -4,6 +4,23 @@ title: Framework
 
 ## Unreleased
 
+## v5.3.0
+
+### Configuration: window transparency on Windows
+Window transparency support was added on the Windows version of the Neutralinojs framework. This can be activated with `modes.window.transparent` configuration property or `--window-transparent` command-line option. Unlike in other platforms, Windows native window becomes borderless (window controls will be hidden) with the activation of the transparent mode. 
+
+### API: os
+- Add the `temp` key for the supported directory list of the `os.getPath(pathKey)` function.
+
+### API: filesystem
+- Add the `filesystem.getAbsolutePath(path)` function to let developers get a full path string from a relative path string.
+- Add the `filesystem.getRelativePath(path, ?base)` function to get a relative path from a path and a base path.
+- Add the `filesystem.getPathParts(path)` to parse and get path segments like filename, extension, root path, etc. 
+
+### Improvements/bugfixes
+- Fix Unicode issues in the Windows version with filesystem, storage, and general modules.
+- Fix standard output/error data display issues on Windows
+
 ## v5.2.0
 
 ### Configuration: Configless framework initialization

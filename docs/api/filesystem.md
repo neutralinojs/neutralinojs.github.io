@@ -335,3 +335,63 @@ Therefore, you can use this method to check for the existance of a file or direc
 ```js
 let stats = await Neutralino.filesystem.getStats('./sampleVideo.mp4');
 console.log('Stats:', stats);
+```
+
+## filesystem.getAbsolutePath(path)
+Returns the absolute path for a given path. This function works with paths that don't exist on the system.
+
+### Parameters
+
+- `path` String: Path.
+
+### Return String (awaited):
+Absolute path.
+
+```js
+let path = await Neutralino.filesystem.getAbsolutePath('./myFolder');
+console.log(path);
+```
+
+## filesystem.getRelativePath(path, base)
+Returns the relative path for a given path and base. This function works with paths that 
+don't exist on the system.
+
+### Parameters
+
+- `path` String: Path.
+- `base` String (optional): Base path that is used for calculating the relative path 
+  with the `path` parameter. [`NL_CWD`](./global-variables.md#predefined-global-variables) is used 
+  by default if this parameter is not provided.
+
+### Return String (awaited):
+Relative path.
+
+```js
+let path = await Neutralino.filesystem.getRelativePath('./myFolder');
+console.log(path);
+
+path = await Neutralino.filesystem.getRelativePath('./myFolder', '/home/user');
+console.log(path);
+```
+
+## filesystem.getPathParts(path)
+Parses a given path and returns its parts.
+
+### Parameters
+
+- `path` String: Path.
+
+### Return Object (awaited):
+- `rootName` String: Root path name.
+- `rootDirectory` String: Root path directory.
+- `rootPath` String: Root path.
+- `relativePath` String: Path relative to the root path.
+- `parentPath` String: Parent path or the directory path without filename.
+- `filename` String: Filename.
+- `extension` String: File extension.
+- `stem` String: Filename segment without extension.
+
+```js
+let pathParts = await Neutralino.filesystem.getPathParts('./myFolder/myFile.txt');
+console.log('Parts:', pathParts);
+```

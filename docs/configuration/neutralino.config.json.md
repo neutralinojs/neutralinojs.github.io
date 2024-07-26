@@ -239,7 +239,7 @@ windows, windows with custom shadows, and custom-shaped window frames.
 The default value is `false` for this option.
 
 :::info
-This feature is only available on GNU/Linux and Mac systems and will be implemented soon on Windows.
+Unlike in other platforms, Windows native window becomes borderless (window controls will be hidden) with the activation of the transparent mode.
 :::
 
 ### `modes.window.fullScreen: boolean`

@@ -4,6 +4,11 @@ title: Client Library
 
 ## Unreleased
 
+## v5.3.0
+
+### API: filesystem
+- Expose `filesystem.getAbsolutePath(path)`, `filesystem.getRelativePath(path, ?base)`, and `filesystem.getPathParts(path)` functions.
+
 ## v5.2.0
 
 ### API: filesystem
