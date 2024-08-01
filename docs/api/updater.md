@@ -9,6 +9,11 @@ third-party update services, operating system level services, or other binaries/
 Learn more about extensions with [this guide](../how-to/auto-updater).
 
 
+:::note
+For this API to work, you will need to add `"filesystem.*"` and `"updater.*"` to the [`nativeAllowList` field](https://neutralino.js.org/docs/configuration/neutralino.config.json#nativeallowlist-string) of your `neutralino.config.json`.
+:::
+
+
 ## updater.checkForUpdates(url)
 Checks latest updates from the given URL. The URL should return a valid Neutralinojs update manifest with
 `Content-Type: application/json` header. Throws `NE_UP_CUPDMER` for invalid manifests and `NE_UP_CUPDERR`
