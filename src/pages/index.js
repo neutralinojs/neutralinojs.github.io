@@ -1,12 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
-import {Adsense} from '@ctrl/react-adsense';
+import { Adsense } from '@ctrl/react-adsense';
 import logo from '../../static/logo.gif';
+import { MdContentCopy } from "react-icons/md";
 
 const youtubeLink = "https://www.youtube.com/c/CodeZri";
 const features = [
@@ -76,7 +77,7 @@ const features = [
   },
 ];
 
-function Feature({imageUrl, title, description}) {
+function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={clsx('col col--4', styles.feature)}>
@@ -91,40 +92,63 @@ function Feature({imageUrl, title, description}) {
   );
 }
 
+function CopyToClipboard({ text }) {
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        alert('Copied to clipboard!');
+      })
+      .catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
+  };
+
+  return (
+      <MdContentCopy
+        onClick={handleCopy}
+        className={clsx(
+          "copyicon",
+          styles.copyicon
+        )}
+      />
+  );
+}
+
 export default function Home() {
   const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  const { siteConfig = {} } = context;
   const [isInitialized, setIsInitialized] = useState(false);
   const [isEthABlocked, setIsEthABlocked] = useState(false);
+
   useEffect(() => {
-    if(isInitialized) {
+    if (isInitialized) {
       return;
     }
     setIsInitialized(true);
     try {
       setIsEthABlocked(typeof ethicalads === 'undefined');
       ethicalads.load_placements();
-    }
-    catch (error) {
+    } catch (error) {
       setIsEthABlocked(false);
     }
-  });
+  }, [isInitialized]);
+
   return (
     <Layout
       title={`${siteConfig.tagline}`}
       description="Neutralinojs is a framework for building lightweight cross-platform desktop apps with JavaScript, HTML and CSS.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <img src={logo + '?v=' + Math.floor(Math.random() * 10000) } alt="Neutralinojs logo animation" />
+          <img src={logo + '?v=' + Math.floor(Math.random() * 10000)} alt="Neutralinojs logo animation" />
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div>
-              <div
-                data-ea-publisher="neutralino"
-                data-ea-type="image"
-                id="neutralino-front"
-                >
-              </div>
+            <div
+              data-ea-publisher="neutralino"
+              data-ea-type="image"
+              id="neutralino-front"
+            >
+            </div>
           </div>
           <div className={styles.buttons}>
             <Link
@@ -209,7 +233,7 @@ export default function Home() {
               Docs
             </Link>
             <Link
-              style={{marginLeft: '12px'}}
+              style={{ marginLeft: '12px' }}
               className={clsx(
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
@@ -240,6 +264,7 @@ export default function Home() {
             <code className={styles.code}>
               npm install -g @neutralinojs/neu
             </code>
+            <CopyToClipboard text="npm install -g @neutralinojs/neu" />
           </p>
         </div>
       </div>
