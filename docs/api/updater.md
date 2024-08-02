@@ -10,7 +10,7 @@ Learn more about extensions with [this guide](../how-to/auto-updater).
 
 
 :::note
-For this API to work, you will need to add `"filesystem.*"` and `"updater.*"` to the [`nativeAllowList` field](https://neutralino.js.org/docs/configuration/neutralino.config.json#nativeallowlist-string) of your `neutralino.config.json`.
+For this API to work, you should add `"filesystem.writeBinaryFile"` to the [`nativeAllowList` field](../configuration/neutralino.config.json#nativeallowlist-string) of your `neutralino.config.json` file.
 :::
 
 
