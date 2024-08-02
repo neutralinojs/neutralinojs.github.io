@@ -6,7 +6,7 @@ title: Neutralino.updater
 a built-in client-based updating mechanism. Therefore, you can update Neutralinojs apps without even calling
 third-party update services, operating system level services, or other binaries/scripts.
 
-Learn more about extensions with [this guide](../how-to/auto-updater).
+Learn more about extensions with [this guide](../how-to/auto-updater.md).
 
 
 :::note
