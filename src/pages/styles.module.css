@@ -12,6 +12,15 @@
   overflow: hidden;
 }
 
+.copyicon {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  background-color: transparent;
+  border: none;
+}
+
+
 .feature {
   margin-top: 2rem;
 }

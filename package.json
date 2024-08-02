@@ -23,7 +23,8 @@
     "clsx": "^1.1.1",
     "docusaurus-lunr-search": "^3.3.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.2.1"
   },
   "browserslist": {
     "production": [
