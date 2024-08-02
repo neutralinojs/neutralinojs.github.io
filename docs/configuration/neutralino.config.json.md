@@ -230,7 +230,7 @@ Right position (`y`) of the native window.
 ### `modes.window.center: boolean`
 Centers the native app window initially.
 
-### `modes.window.trasparent: boolean`
+### `modes.window.transparent: boolean`
 Enables the transparent native window mode for the application instance. If the transparency mode is activated,
 users can see through the webview if the webpage background uses transparent background colors. Partial transparency
 can be activated using the `rgba()` CSS color function. You can use this feature to create semi-transparent
