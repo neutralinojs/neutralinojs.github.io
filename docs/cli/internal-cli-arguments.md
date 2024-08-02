@@ -215,7 +215,7 @@ Chrome window's height.
 ### `--chrome-args=<arg_list>`
 
 Additional arguments for the Chrome process. Read more about chrome mode
-from [here](../configuration/modes#chrome)
+from [here](../configuration/modes.md#chrome)
 
 :::tip
 The right hand value is optional for the for boolean type CLI arguments. Therefore, you can use `--window-full-screen`
