@@ -1,5 +1,6 @@
 ---
 title: Error Codes
+toc_max_heading_level: 2
 ---
 
 If a particular native API call fails, Neutralinojs client library rejects the pending Promise with an error object.

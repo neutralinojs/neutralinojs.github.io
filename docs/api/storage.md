@@ -1,5 +1,6 @@
 ---
 title: Neutralino.storage
+toc_max_heading_level: 2
 ---
 
 Neutralinojs has a built-in shared key-value storage. It's like a

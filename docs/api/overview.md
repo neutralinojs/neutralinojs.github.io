@@ -1,5 +1,6 @@
 ---
 title: Native API Overview
+toc_max_heading_level: 2
 ---
 
 Neutralinojs offers a JavaScript client library (also known as Neutralino.js) for developers to interact

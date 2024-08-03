@@ -1,5 +1,6 @@
 ---
 title: Neutralino.extensions
+toc_max_heading_level: 2
 ---
 
 `Neutralino.extensions` namespace contains methods related to Neutralino extensions. Extensions let

@@ -1,5 +1,6 @@
 ---
 title: Neutralino.os
+toc_max_heading_level: 2
 ---
 
 `Neutralino.os` namespace contains methods related to the user's operating system.

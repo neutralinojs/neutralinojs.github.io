@@ -1,5 +1,6 @@
 ---
 title: Neutralino.events
+toc_max_heading_level: 2
 ---
 
 `Neutralino.events` namespace contains methods related to the native events handling. These events are often initiated
