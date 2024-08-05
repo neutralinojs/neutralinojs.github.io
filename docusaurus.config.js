@@ -111,8 +111,8 @@ module.exports = {
               href: 'https://github.com/neutralinojs',
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/neutralinojs',
+              label: 'X',
+              href: 'https://x.com/neutralinojs',
             },
             {
               label: 'Stack Overflow',
