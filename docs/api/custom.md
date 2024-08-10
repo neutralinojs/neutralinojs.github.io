@@ -1,5 +1,6 @@
 ---
 title: Neutralino.custom
+toc_max_heading_level: 2
 ---
 
 Neutralinojs offers the extensions API to write custom backend code with any programming language,

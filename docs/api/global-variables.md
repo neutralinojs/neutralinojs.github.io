@@ -1,5 +1,6 @@
 ---
 title: Global Variables
+toc_max_heading_level: 2
 ---
 
 These JavaScript variables can be used anywhere because these variables are defined in the window scope.
