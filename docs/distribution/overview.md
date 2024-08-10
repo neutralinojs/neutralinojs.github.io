@@ -22,7 +22,7 @@ The `neu build` command generates the following files on any supported operating
 
 Neutralinojs officially offers only pre-built `x64` and `armhf/arm64` Linux-only binaries.
 If you need binaries for other CPU architectures, consider building binaries from the source
-with [this guide](../contributing/framework-developer-guide). We are trying to officially support all CPU
+with [this guide](../contributing/framework-developer-guide.mdx). We are trying to officially support all CPU
 architectures soon!
 
 ## Selecting files for packaging
