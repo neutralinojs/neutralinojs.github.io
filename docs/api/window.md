@@ -4,7 +4,7 @@ toc_max_heading_level: 2
 ---
 
 The `Neutralino.window` namespace contains methods related to the current native window instance.
-This namespace's methods will work only for the [`window`](/docs/configuration/modes#window) mode.
+This namespace's methods will work only for the [`window`](/docs/configuration/modes.md#window) mode.
 
 ## window.setTitle(title)
 Sets the title of the native window.
