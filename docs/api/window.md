@@ -157,12 +157,18 @@ const icon = '/resources/icons/appIcon.png';
 await Neutralino.window.setIcon(icon);
 ```
 
-## window.setDraggableRegion(domId)
+## window.setDraggableRegion(domId, options)
 Converts a given DOM element to a draggable region. The user will be able to drag the native window by dragging the given DOM element. This feature is suitable to make custom window bars along with the [borderless mode](../configuration/neutralino.config.json#modeswindowborderless-boolean).
 
 ### Parameters
 
 - `domId` String | HTMLElement: A DOM element identifier.
+- `options` DraggableRegionOptions (optional): Customize the behavior of the draggable region.
+
+### DraggableRegionOptions
+
+- `alwaysCapture` Boolean (optional): If set to `true`, the region will always capture the pointer, ensuring that dragging is not interrupted when moving the pointer quickly. Note that it prevents child elements from receiving any pointer events. Defaults to `false`.
+- `dragMinDistance` Number (optional): The minimum distance between cursor's starting and current position after which dragging is started. This helps prevent accidental dragging while interacting with child elements. Defaults to `10` and is measured in CSS pixels.
 
 ```js
 await Neutralino.window.setDraggableRegion('myCustomTitleBar');
