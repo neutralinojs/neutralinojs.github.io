@@ -26,6 +26,7 @@ title: Committers
 - [Sadaf Ahmed](https://github.com/Sadaf-A)
 - [monsterkodi](https://github.com/monsterkodi)
 - [Viral Gupta](https://github.com/viralgupta)
+- [Cosmo Myzrail Gorynych](https://github.com/CosmoMyzrailGorynych)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
