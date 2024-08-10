@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import CodeBlock from '@theme/CodeBlock';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
@@ -237,9 +238,9 @@ export default function Home() {
         <div className="container">
           <h1 className="hero__title">Start building lightweight apps!</h1>
           <p className="hero__subtitle">
-            <code className={styles.code}>
+            <CodeBlock className={styles.code} language="bash">
               npm install -g @neutralinojs/neu
-            </code>
+            </CodeBlock>
           </p>
         </div>
       </div>

@@ -52,5 +52,6 @@
 }
 
 .code {
-  color: rgb(40, 40, 40);
+  margin-top: 1.5rem;
+  display: inline-block;
 }
