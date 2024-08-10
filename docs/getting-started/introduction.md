@@ -50,6 +50,6 @@ officially support all popular CPU architectures with the CLI soon! However, you
 binaries from the source on almost all desktop operating systems and CPU architectures out there.
 
 If you need Neutralinojs binaries for non-x64 CPU, learn how to build Neutralinojs from source
-with [this guide](contributing/framework-developer-guide#setup-and-build-the-framework).
+with [this guide](../contributing/framework-developer-guide.mdx#setup-and-build-the-framework).
 
 
