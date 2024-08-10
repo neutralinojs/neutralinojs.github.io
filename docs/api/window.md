@@ -172,6 +172,11 @@ Converts a given DOM element to a draggable region. The user will be able to dra
 
 ```js
 await Neutralino.window.setDraggableRegion('myCustomTitleBar');
+
+await Neutralino.window.setDraggableRegion('myCustomTitleBar', {
+    alwaysCapture: true,
+    dragMinDistance: 15
+});
 ```
 
 ## window.unsetDraggableRegion(domId)
