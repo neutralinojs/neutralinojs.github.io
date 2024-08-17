@@ -353,6 +353,26 @@ Use `|` character to set multiple regular expressions, as shown below.
 Enables frontend development tools (HMR, etc) for the `neu run --frontend-lib-dev` command. Learn more about frontend
 framework integration from [here](../getting-started/using-frontend-libraries.md)
 
+### `cli.projectRunner.projectPath: string`
+
+Sets the project path of the Project Runner apps. This path will be used as the current directory while executing the projectRunner related commands ([initCommand](#cliprojectrunnerinitcommand-string), [devCommand](#cliprojectrunnerdevcommand-string), [buildCommand](#cliprojectrunnerbuildcommand-string)).
+
+### `cli.projectRunner.initCommand: string`
+
+A command that gets executed after downloading an app template with the `neu create` command.
+
+### `cli.projectRunner.devCommand: string`
+
+This command will run with the `neu run` command to start the Project Runner file.
+
+### `cli.projectRunner.buildCommand: string`
+
+The `neu build` command will execute this command before generating the app bundle, so you can generate bundled version of project Runner code. Note: Developers are responsible for creating the bundled code in [Project Runner buildPath](#cliprojectrunnerbuildpath) after executing this command.
+
+### `cli.projectRunner.buildPath: string`
+
+Location where built backend/projecRunner file(s) will be located after [buildCommand](#cliprojectrunnerbuildcommand-string). Files in these folders are copied into distributionPath after `neu build` command.
+
 ### `cli.distributionPath: string`
 
 Sets the build path for neu CLI. For example, if you need to get the built binaries in `build` folder instead of `dist`, you can set the `distributionPath` as follows:
