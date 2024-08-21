@@ -353,25 +353,25 @@ Use `|` character to set multiple regular expressions, as shown below.
 Enables frontend development tools (HMR, etc) for the `neu run --frontend-lib-dev` command. Learn more about frontend
 framework integration from [here](../getting-started/using-frontend-libraries.md)
 
-### `cli.projectRunner.projectPath: string`
+### `cli.hostProject.projectPath: string`
 
-Sets the project path of the Project Runner apps. This path will be used as the current directory while executing the projectRunner related commands ([initCommand](#cliprojectrunnerinitcommand-string), [devCommand](#cliprojectrunnerdevcommand-string), [buildCommand](#cliprojectrunnerbuildcommand-string)).
+Sets the project path of the Project Runner apps. This path will be used as the current directory while executing the hostProject related commands ([initCommand](#clihostprojectinitcommand-string), [devCommand](#clihostprojectdevcommand-string), [buildCommand](#clihostprojectbuildcommand-string)).
 
-### `cli.projectRunner.initCommand: string`
+### `cli.hostProject.initCommand: string`
 
 A command that gets executed after downloading an app template with the `neu create` command.
 
-### `cli.projectRunner.devCommand: string`
+### `cli.hostProject.devCommand: string`
 
 This command will run with the `neu run` command to start the Project Runner file.
 
-### `cli.projectRunner.buildCommand: string`
+### `cli.hostProject.buildCommand: string`
 
-The `neu build` command will execute this command before generating the app bundle, so you can generate bundled version of project Runner code. Note: Developers are responsible for creating the bundled code in [Project Runner buildPath](#cliprojectrunnerbuildpath) after executing this command.
+The `neu build` command will execute this command before generating the app bundle, so you can generate bundled version of Host Project code. Note: Developers are responsible for creating the bundled code in [Host Project buildPath](#clihostprojectbuildpath) after executing this command.
 
-### `cli.projectRunner.buildPath: string`
+### `cli.hostProject.buildPath: string`
 
-Location where built backend/projecRunner file(s) will be located after [buildCommand](#cliprojectrunnerbuildcommand-string). Files in these folders are copied into distributionPath after `neu build` command.
+Location where built hostProject/projectRunner file(s) will be located after [buildCommand](#clihostprojectbuildcommand-string). Files in these folders are copied into distributionPath after `neu build` command.
 
 ### `cli.distributionPath: string`
 
