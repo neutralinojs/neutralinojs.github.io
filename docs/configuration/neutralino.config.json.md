@@ -33,7 +33,7 @@ Unique string to identify your application. Eg: `js.neutralino.sample`
 Application version. Eg: `2.4.22`
 
 ### `defaultMode: string`
-Mode of the application. Accepted values are `window`, `browser`, and `cloud`.
+Mode of the application. Accepted values are `window`, `browser`, `cloud`, and `chrome`.
 
 ## General
 You can override the following configuration values from different modes. For example, you can use a specific
