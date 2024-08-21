@@ -363,3 +363,38 @@ Sets the build path for neu CLI. For example, if you need to get the built binar
 }
 ```
 The default value for `distributionPath` is `/dist`.
+
+## Windows-specific options
+There are additional configuration options that currently apply only for executables for Windows platform and define metadata and appearance of executables for Windows platform. These fields must be placed in the root of `neutralino.config.json`. Every field is optional.
+
+### `applicationName: string`
+The human-readable application name. Fills in the `ProductName` field of the executable.
+
+### `applicationIcon: string`
+The location of the executable's icon relative to `neutralino.config.json`. The icon must be in PNG format. If it is not set, an icon from `modes.window.icon` will be chosen instead. If `modes.window.icon` does not point to a PNG file, too, a default Neutralino.js icon will be used.
+
+### `author: string`
+The developer of the application. Fills in the `CompanyName` field of the executable.
+
+### `description: string`
+A description of the executable file. This usually describes the purpose of your application. Fills in the `FileDescription` field of the executable.
+
+### `copyright: string`
+Copyright information. Fills in the `LegalCopyright` field of the executable.
+
+Example configuration:
+
+```json
+{
+    "applicationId": "cook.pancake.bakery",
+    "version": "1.2.0",
+    "applicationName": "Pancake Bakery",
+    "author": "Sweet Pancakes LLC",
+    "description": "Digital recipe book for pancakes from all over the world",
+    "copyright": "Copyright © Sweet Pancakes LLC 2042. All rights reserved.",
+    "applicationIcon": "buildAssets/appIcon.png",
+    "cli": {
+        "binaryName": "pancakebakery"
+    },
+}
+```
