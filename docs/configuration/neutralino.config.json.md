@@ -365,7 +365,7 @@ Sets the build path for neu CLI. For example, if you need to get the built binar
 The default value for `distributionPath` is `/dist`.
 
 ## Windows-specific options
-There are additional configuration options that currently apply only for executables for Windows platform and define metadata and appearance of executables for Windows platform. These fields must be placed in the root of `neutralino.config.json`. Every field is optional.
+There are additional configuration options that define metadata and appearance of executables for Windows platform. These fields must be placed in the root of `neutralino.config.json`. Every field is optional.
 
 ### `applicationName: string`
 The human-readable application name. Fills in the `ProductName` field of the executable.
@@ -395,6 +395,6 @@ Example configuration:
     "applicationIcon": "buildAssets/appIcon.png",
     "cli": {
         "binaryName": "pancakebakery"
-    },
+    }
 }
 ```
