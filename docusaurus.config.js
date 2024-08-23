@@ -115,6 +115,10 @@ module.exports = {
               href: 'https://x.com/neutralinojs',
             },
             {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/showcase/neutralinojs/',
+            },
+            {
               label: 'Stack Overflow',
               href: 'https://stackoverflow.com/questions/tagged/neutralinojs',
             },
