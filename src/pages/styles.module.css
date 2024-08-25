@@ -24,6 +24,14 @@
   .heroBanner {
     padding: 2rem;
   }
+  .code {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    font-size: 14px;
+    padding: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 .buttons {
