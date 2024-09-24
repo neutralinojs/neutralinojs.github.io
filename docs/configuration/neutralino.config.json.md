@@ -350,8 +350,28 @@ Use `|` character to set multiple regular expressions, as shown below.
 
 ### `cli.frontendLibrary: object`
 
-Enables frontend development tools (HMR, etc) for the `neu run --frontend-lib-dev` command. Learn more about frontend
+Enables frontend development tools (HMR, etc) for the `neu run` command. Learn more about frontend
 framework integration from [here](../getting-started/using-frontend-libraries.md)
+
+### `cli.hostProject.projectPath: string`
+
+Sets the project path of the host project. This path will be used as the current directory while executing the host-project-related commands.
+
+### `cli.hostProject.initCommand: string`
+
+A command that gets executed after downloading an host app template with the `neu create` command.
+
+### `cli.hostProject.devCommand: string`
+
+This command will run with the `neu run` command to start the host project.
+
+### `cli.hostProject.buildCommand: string`
+
+The `neu build` command will execute this command before generating the app bundle, so you can generate bundled version of host project code.
+
+### `cli.hostProject.buildPath: string`
+
+Location where the final read-to-distribute host project files will be stored after the execution of `buildCommand`. Files in this folder are copied into the app bundle path after the execution of `neu build` command.
 
 ### `cli.distributionPath: string`
 
