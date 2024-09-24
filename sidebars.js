@@ -27,6 +27,7 @@ module.exports = {
         'api/storage',
         'api/updater',
         'api/window',
+        'api/resources',
         'api/error-codes',
         'api/global-variables',
       ],

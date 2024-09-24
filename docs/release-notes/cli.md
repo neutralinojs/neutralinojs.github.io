@@ -4,6 +4,49 @@ title: CLI
 
 ## Unreleased
 
+## v11.3.0
+
+### Host projects support
+Developers can launch Neutralinojs from any programming language using child process APIs (i.e., `subprocess` in Python) and communicate with the framework process using the extension API. The new `hostProject` configuration object extends the official CLI to help developers easily create, run, and build these host projects. For example, the following host project configuration instructs the CLI to run a Node.js host project:
+
+```json
+"hostProject": {
+  "projectPath": "/node-src",
+  "buildPath": "/node-src/dist/",
+  "initCommand": "npm install",  
+  "devCommand": "npm start",     
+  "buildCommand": "npm run build"
+}
+```
+
+Community projects implement bindings and templates to create host projects using Node.js, Python, Go, etc. For example, the [`node-neutralino`](https://www.npmjs.com/package/node-neutralino) NPM package lets you launch Neutralinojs via Node.js environments and execute native APIs via the `NeutralinoApp` class:
+
+```js
+import NeutralinoApp from 'node-neutralino';
+
+const app = new NeutralinoApp({
+  url: '/',
+  windowOptions: {
+    enableInspector: false,
+  }
+});
+
+app.init();
+app.window.setTitle('Node.js');
+```
+
+### Executable icon and metadata on Windows
+Now, the `neu build` command automatically updates the executable file icon and metadata based on the following configuration options:
+
+- `author`: gets written into executable's metadata.
+- `description`: gets written into executable's metadata.
+- `copyright`: gets written into executable's metadata. Defaults to current date + generic "all rights reserved".
+- `applicationName`: gets written into executable's metadata. Defaults to `cli.binaryName`.
+- `applicationIcon`: a relative path to an icon in `.png` format. Defaults to `modes.window.icon`. If it is not set, uses Neutralinojs logo.
+
+### Bugfixes/improvements
+Use the `zip-lib` package to handle ZIP files for better performance and simplicity in the source code.
+
 ## v11.2.2
 
 ### Bugfixes/improvements

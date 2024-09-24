@@ -4,6 +4,21 @@ title: Framework
 
 ## Unreleased
 
+## v5.4.0
+
+### API: resources
+- Implement `getFiles()`, `extractFile(path, dest)`, `readFile(path)`, and `readBinaryFile(path)` functions via the `resources` module for reading the files embedded in the `resources.neu` resources bundle. These functions works only if the framework loaded resources from the resource bundle -- they will throw `NE_RS_APIRQRF` if the framework loaded resources from the resources directory.
+
+### API: window
+- Implement `minimize()`, `unminimize()`, and `isMinimized()` functions to minimize and restore the native app window. 
+
+### Improvements/bugfixes
+
+- Fix issues with the `clipboard.writeImage()` function on Windows.
+- Fix the unwanted delay with the `window.exitProcessOnClose` configuration option on Windows.
+- Fix a bug with the `window.isFullScreen()` function on GNU/Linux-based platforms.
+- Fix duplicate virtual PID issues with the `os.spawnProcess()` function.
+
 ## v5.3.0
 
 ### Configuration: window transparency on Windows

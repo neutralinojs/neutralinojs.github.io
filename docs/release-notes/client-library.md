@@ -4,6 +4,18 @@ title: Client Library
 
 ## Unreleased
 
+## v5.4.0
+
+### API: resources
+- Export `getFiles()`, `extractFile(path, dest)`, `readFile(path)`, and `readBinaryFile(path)` functions.
+
+### API: window
+- Export `minimize()`, `unminimize()`, and `isMinimized()` functions.
+- Add `alwaysCapture` and `dragMinDistance` options to the `window.setDraggableRegion()` function and improve the performance of the overall draggable window implementation.
+
+### Bugfixes/improvements
+- Fix several issues with TypeScript exports and definitions.
+
 ## v5.3.0
 
 ### API: filesystem

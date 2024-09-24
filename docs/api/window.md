@@ -34,6 +34,23 @@ Minimizes the native window.
 await Neutralino.window.minimize();
 ```
 
+## window.unminimize()
+Restores the native window from the minimized state.
+
+```js
+await Neutralino.window.unminimize();
+```
+
+## window.isMinimized()
+Returns `true` if the native window is minimized.
+
+### Return Boolean (awaited):
+- `true` or `false` based on current minimized status.
+
+```js
+let status = await Neutralino.window.isMinimized();
+```
+
 ## window.maximize()
 Maximizes the native window.
 

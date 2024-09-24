@@ -45,3 +45,4 @@ Neutralinojs offers many native operations for you by using this communication m
 - [Neutralino.storage](../api/storage.md)
 - [Neutralino.updater](../api/updater.md)
 - [Neutralino.window](../api/window.md)
+- [Neutralino.resources](../api/resources.md)

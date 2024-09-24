@@ -112,12 +112,15 @@ let data = await Neutralino.filesystem.readFile('./myFile.txt', {
 console.log(`Content: ${data}`);
 ```
 
-## filesystem.readBinaryFile(filename)
+## filesystem.readBinaryFile(filename, options)
 Reads binary files. Throws `NE_FS_FILRDER` for file read errors.
 
 ### Parameters
 
 - `filename` String: Filename.
+
+### Options
+
 - `pos` Number (optional): File cursor position in bytes.
 - `size` Number (optional): File reader buffer size in bytes.
 
@@ -126,9 +129,7 @@ Content of the binary file as an
 [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
 
 ```js
-let data = await Neutralino.filesystem.readBinaryFile({
-  fileName: './myFile.bin'
-});
+let data = await Neutralino.filesystem.readBinaryFile('./myFile.bin');
 let view = new Uint8Array(data);
 
 console.log('Binary content: ', view);
