@@ -8,41 +8,103 @@ import styles from './styles.module.css';
 const templates = [
     {
         title: 'neutralinojs-minimal',
-        description: (
-            <>
-                The default template for a Neutralinojs app.
-            </>
-        ),
+        description: 'The default template for a Neutralinojs app',
         githubLink: 'https://github.com/neutralinojs/neutralinojs-minimal',
     },
     {
+        title: 'neutralinojs-zero',
+        description: 'An empty Neutralinojs app, extend as you wish',
+        githubLink: 'https://github.com/neutralinojs/neutralinojs-zero',
+    },
+    {
         title: 'neutralinojs-react',
-        description: (
-            <>
-                A simple React.js template for building Neutralinojs apps
-            </>
-        ),
+        description: 'A simple React.js template for building Neutralinojs apps',
         githubLink: 'https://github.com/codezri/neutralinojs-react',
     },
+];
+
+const extensions = [
     {
-        title: 'awesome-neutralino',
-        description: (
-            <>
-                An awesome list of Neutralinojs resources (1)
-            </>
-        ),
-        githubLink: 'https://github.com/neutralinojs-community/awesome-neutralino',
+        title: 'neutralino-ext-rust',
+        description: 'A low-code Rust extension for Neutralinojs',
+        githubLink: 'https://github.com/hschneider/neutralino-ext-rust',
     },
     {
-        title: 'awesome-neutralino',
-        description: (
-            <>
-                An awesome list of Neutralinojs resources (2)
-            </>
-        ),
-        githubLink: 'https://github.com/achou11/awesome-neutralino',
+        title: 'neutralino-ext-node',
+        description: 'A low-code Node.js extension for Neutralinojs',
+        githubLink: 'https://github.com/hschneider/neutralino-ext-node',
+    },
+    {
+        title: 'neutralino-ext-go',
+        description: 'A low-code Golang extension for Neutralinojs',
+        githubLink: 'https://github.com/hschneider/neutralino-ext-go',
+    },
+    {
+        title: 'neutralino-ext-bun',
+        description: 'A low-code Bun extension for Neutralinojs',
+        githubLink: 'https://github.com/hschneider/neutralino-ext-bun',
+    },
+    {
+        title: 'neutralino-ext-python',
+        description: 'A low-code Python extension for Neutralinojs',
+        githubLink: 'https://github.com/hschneider/neutralino-ext-python',
     },
 ];
+
+const libraries = [
+    {
+        title: 'neutralino-autoupdate',
+        description: 'An enhanced auto-updater for Neutralinojs',
+        githubLink: 'https://github.com/hschneider/neutralino-autoupdate',
+    },
+    {
+        title: 'neutralino-curl',
+        description: 'A cURL wrapper for Neutralinojs',
+        githubLink: 'https://github.com/hschneider/neutralino-curl',
+    },
+];
+
+const buildTools = [
+    {
+        title: 'neutralino-build-scripts',
+        description: 'Neutralinojs build automation scripts for macOS, Windows and Linux',
+        githubLink: 'https://github.com/hschneider/neutralino-build-scripts',
+    },
+];
+
+function ResourceSection({title, resources}) {
+    return (
+        <section className={styles.features}>
+            <div className='container'>
+                <h1>{title}</h1>
+                <div className='row'>
+                    {resources.map((props, index) => <Resource key={index} {...props}/>)}
+                </div>
+            </div>
+        </section>
+    );
+}
+
+
+function Resource({title, description, githubLink}) {
+    return(
+    <div className={clsx('col col--6', styles.feature)}>
+        <div className='card padding-md' style={{padding: '2rem'}}>
+            <h3 className={styles.align}>{title}</h3>
+            <p className={styles.align}>{description}</p>
+            <div>
+                <Link
+                    className={clsx(
+                        'button button--outline button--secondary button--lg',
+                    )}
+                    to={githubLink}>
+                    View Repository
+                </Link>
+            </div>
+        </div>
+    </div>
+    );
+}
 
 export default function NeutralinoTools() {
     const context = useDocusaurusContext();
@@ -57,30 +119,10 @@ export default function NeutralinoTools() {
                 </div>
             </header>
             <main>
-                <section className={styles.features}>
-                    <div className='container'>
-                        <h1>Templates</h1>
-                        <div className='row'>
-                            {templates.map((template, index) => (
-                                <div key={index} className={clsx('col col--6', styles.feature)}>
-                                    <div className='card padding-md' style={{padding: '2rem'}}>
-                                        <h3 className={styles.align}>{template.title}</h3>
-                                        <p className={styles.align}>{template.description}</p>
-                                        <div>
-                                            <Link
-                                                className={clsx(
-                                                    'button button--outline button--secondary button--lg',
-                                                )}
-                                                to={template.githubLink}>
-                                                View Repository
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                <ResourceSection title="Templates" resources={templates}/>
+                <ResourceSection title="Extensions" resources={extensions}/>
+                <ResourceSection title="Libraries" resources={libraries}/>
+                <ResourceSection title="Build tools" resources={buildTools}/>
             </main>
         </Layout>
     );
