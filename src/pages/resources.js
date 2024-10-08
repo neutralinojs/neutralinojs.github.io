@@ -28,7 +28,7 @@ const templates = [
         title: 'awesome-neutralino',
         description: (
             <>
-                Collection of awesome resources for Neutralino
+                An awesome list of Neutralinojs resources (1)
             </>
         ),
         githubLink: 'https://github.com/neutralinojs-community/awesome-neutralino',
@@ -37,7 +37,7 @@ const templates = [
         title: 'awesome-neutralino',
         description: (
             <>
-                Collection of awesome resources for Neutralino
+                An awesome list of Neutralinojs resources (2)
             </>
         ),
         githubLink: 'https://github.com/achou11/awesome-neutralino',
