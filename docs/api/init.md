@@ -1,5 +1,6 @@
 ---
 title: Neutralino.init
+toc_max_heading_level: 2
 ---
 
 `init` is not a namespace, it's a function that initializes a Neutralinojs application.

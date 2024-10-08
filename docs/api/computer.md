@@ -1,5 +1,6 @@
 ---
 title: Neutralino.computer
+toc_max_heading_level: 2
 ---
 
 `Neutralino.computer` namespace contains methods related to the user's hardware.
@@ -58,7 +59,7 @@ Returns operating system information.
 
 ```js
 let osInfo = await Neutralino.computer.getOSInfo();
-console.log(`OS: ${kernelInfo.name}`);
+console.log(`OS: ${osInfo.name}`);
 ```
 
 ## computer.getCPUInfo()

@@ -1,5 +1,6 @@
 ---
 title: Neutralino.os
+toc_max_heading_level: 2
 ---
 
 `Neutralino.os` namespace contains methods related to the user's operating system.
@@ -294,7 +295,7 @@ Returns known platform-specific folders such as Downloads, Music, Videos, etc.
 
 ### Parameters
 - `title` String: Name of the folder. Accepted values are: `config`, `data`, `cache`, `documents`, `pictures`, `music`, `video`,
-            `downloads`, `savedGames1`, and `savedGames2`. Throws `NE_OS_INVKNPT` for invalid folder names.
+            `downloads`, `saveGames1`, `saveGames2`, and `temp`. Throws `NE_OS_INVKNPT` for invalid folder names.
 
 ### Return String (awaited):
 Path.

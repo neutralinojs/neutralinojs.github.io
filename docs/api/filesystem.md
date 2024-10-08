@@ -1,5 +1,6 @@
 ---
 title: Neutralino.filesystem
+toc_max_heading_level: 2
 ---
 
 `Neutralino.filesystem` namespace contains methods for handling files.
@@ -111,12 +112,15 @@ let data = await Neutralino.filesystem.readFile('./myFile.txt', {
 console.log(`Content: ${data}`);
 ```
 
-## filesystem.readBinaryFile(filename)
+## filesystem.readBinaryFile(filename, options)
 Reads binary files. Throws `NE_FS_FILRDER` for file read errors.
 
 ### Parameters
 
 - `filename` String: Filename.
+
+### Options
+
 - `pos` Number (optional): File cursor position in bytes.
 - `size` Number (optional): File reader buffer size in bytes.
 
@@ -125,9 +129,7 @@ Content of the binary file as an
 [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
 
 ```js
-let data = await Neutralino.filesystem.readBinaryFile({
-  fileName: './myFile.bin'
-});
+let data = await Neutralino.filesystem.readBinaryFile('./myFile.bin');
 let view = new Uint8Array(data);
 
 console.log('Binary content: ', view);
@@ -294,6 +296,11 @@ Copies a file or directory to a new destination. Throws `NE_FS_COPYERR` if the s
 - `source` String: Source path.
 - `destination` String: Destination path.
 
+### options
+- `recursive` Boolean: Copy sub-directories recursively. The default value is `true`.
+- `overwrite` Boolean: Overwrite an existing file with the same name. The default value is `true`.
+- `skip` Boolean: Skip an existing file with the same name. The default value is `false`.
+
 ```js
 await Neutralino.filesystem.copy('./source.txt', './destination.txt');
 await Neutralino.filesystem.copy('./myDir', './myDirCopy');
@@ -330,3 +337,63 @@ Therefore, you can use this method to check for the existance of a file or direc
 ```js
 let stats = await Neutralino.filesystem.getStats('./sampleVideo.mp4');
 console.log('Stats:', stats);
+```
+
+## filesystem.getAbsolutePath(path)
+Returns the absolute path for a given path. This function works with paths that don't exist on the system.
+
+### Parameters
+
+- `path` String: Path.
+
+### Return String (awaited):
+Absolute path.
+
+```js
+let path = await Neutralino.filesystem.getAbsolutePath('./myFolder');
+console.log(path);
+```
+
+## filesystem.getRelativePath(path, base)
+Returns the relative path for a given path and base. This function works with paths that 
+don't exist on the system.
+
+### Parameters
+
+- `path` String: Path.
+- `base` String (optional): Base path that is used for calculating the relative path 
+  with the `path` parameter. [`NL_CWD`](./global-variables.md#predefined-global-variables) is used 
+  by default if this parameter is not provided.
+
+### Return String (awaited):
+Relative path.
+
+```js
+let path = await Neutralino.filesystem.getRelativePath('./myFolder');
+console.log(path);
+
+path = await Neutralino.filesystem.getRelativePath('./myFolder', '/home/user');
+console.log(path);
+```
+
+## filesystem.getPathParts(path)
+Parses a given path and returns its parts.
+
+### Parameters
+
+- `path` String: Path.
+
+### Return Object (awaited):
+- `rootName` String: Root path name.
+- `rootDirectory` String: Root path directory.
+- `rootPath` String: Root path.
+- `relativePath` String: Path relative to the root path.
+- `parentPath` String: Parent path or the directory path without filename.
+- `filename` String: Filename.
+- `extension` String: File extension.
+- `stem` String: Filename segment without extension.
+
+```js
+let pathParts = await Neutralino.filesystem.getPathParts('./myFolder/myFile.txt');
+console.log('Parts:', pathParts);
+```

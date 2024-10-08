@@ -1,9 +1,10 @@
 ---
 title: Neutralino.window
+toc_max_heading_level: 2
 ---
 
 The `Neutralino.window` namespace contains methods related to the current native window instance.
-This namespace's methods will work only for the [`window`](/docs/configuration/modes#window) mode.
+This namespace's methods will work only for the [`window`](/docs/configuration/modes.md#window) mode.
 
 ## window.setTitle(title)
 Sets the title of the native window.
@@ -31,6 +32,23 @@ Minimizes the native window.
 
 ```js
 await Neutralino.window.minimize();
+```
+
+## window.unminimize()
+Restores the native window from the minimized state.
+
+```js
+await Neutralino.window.unminimize();
+```
+
+## window.isMinimized()
+Returns `true` if the native window is minimized.
+
+### Return Boolean (awaited):
+- `true` or `false` based on current minimized status.
+
+```js
+let status = await Neutralino.window.isMinimized();
 ```
 
 ## window.maximize()
@@ -156,15 +174,26 @@ const icon = '/resources/icons/appIcon.png';
 await Neutralino.window.setIcon(icon);
 ```
 
-## window.setDraggableRegion(domId)
+## window.setDraggableRegion(domId, options)
 Converts a given DOM element to a draggable region. The user will be able to drag the native window by dragging the given DOM element. This feature is suitable to make custom window bars along with the [borderless mode](../configuration/neutralino.config.json#modeswindowborderless-boolean).
 
 ### Parameters
 
 - `domId` String | HTMLElement: A DOM element identifier.
+- `options` DraggableRegionOptions (optional): Customize the behavior of the draggable region.
+
+### DraggableRegionOptions
+
+- `alwaysCapture` Boolean (optional): If set to `true`, the region will always capture the pointer, ensuring that dragging is not interrupted when moving the pointer quickly. Note that it prevents child elements from receiving any pointer events. Defaults to `false`.
+- `dragMinDistance` Number (optional): The minimum distance between cursor's starting and current position after which dragging is started. This helps prevent accidental dragging while interacting with child elements. Defaults to `10` and is measured in CSS pixels.
 
 ```js
 await Neutralino.window.setDraggableRegion('myCustomTitleBar');
+
+await Neutralino.window.setDraggableRegion('myCustomTitleBar', {
+    alwaysCapture: true,
+    dragMinDistance: 15
+});
 ```
 
 ## window.unsetDraggableRegion(domId)

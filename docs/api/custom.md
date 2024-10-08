@@ -1,5 +1,6 @@
 ---
 title: Neutralino.custom
+toc_max_heading_level: 2
 ---
 
 Neutralinojs offers the extensions API to write custom backend code with any programming language,
@@ -11,10 +12,8 @@ but extensions come with the following drawbacks that affect apps in several sce
 - A C++-based extension is not fast as native C++-based code due to the WebSockets-based IPC.
 
 Alternatively, a developer can download the framework C++ code, modify it, and re-compile it. But,
-the developer may face issues while synching upstream code modifications. So, Neutralinojs offers a
-separate namespace, a function template, inbuilt helper functions (i.e., to get the window handler,
-validation, etc.), and a developer guide to add custom APIs to the Neutralinojs framework without
-updating the framework core.
+the developer may face issues while synching upstream code modifications. So, Neutralinojs offers a separate namespace, a generic JavaScript function template, pre-developed helper functions for handling JavaScript-to-C++ parameter mapping (i.e., `helpers::hasField(json, '<fieldname>'))`, and a developer guide to add custom APIs to the Neutralinojs framework without updating the framework core.
+
 
 ## custom.getMethods()
 Returns all custom methods added by the app developer.

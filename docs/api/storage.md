@@ -1,10 +1,11 @@
 ---
 title: Neutralino.storage
+toc_max_heading_level: 2
 ---
 
 Neutralinojs has a built-in shared key-value storage. It's like a
 global [`LocalStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) for all Neutralinojs modes.
-`Neutralinos.storage` exposes methods for interacting with this storage feature.
+`Neutralino.storage` exposes methods for interacting with this storage feature.
 
 :::tip
 The storage API persists all data records into `.storage` directory in the

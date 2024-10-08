@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import CodeBlock from '@theme/CodeBlock';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
@@ -15,8 +16,8 @@ const features = [
     imageUrl: 'img/undraw_in_progress_ql66.svg',
     description: (
       <>
-        Neutralinojs Javascript API exposes access to the operating system level functions such as file manipulation,
-        executing commands, showing native dialog boxes, etc.
+        Neutralinojs Javascript API exposes access to operating system level functions such as file manipulation,
+        executing commands and showing native dialog boxes.
       </>
     ),
   },
@@ -25,8 +26,8 @@ const features = [
     imageUrl: 'img/undraw_takeout_boxes_ap54.svg',
     description: (
       <>
-        No extra dependencies are required to run Neutralinojs apps. The great advantage is that you can make
-        applications for all platforms on one platform. No compilers are required!
+        No extra dependencies are required to run Neutralinojs apps. The great advantage is that you can develop
+        applications for all platforms using just one platform. No compilers are required!
       </>
     ),
   },
@@ -35,8 +36,8 @@ const features = [
     imageUrl: 'img/undraw_social_friends_nsbv.svg',
     description: (
       <>
-        Neutralinojs apps will work on Linux, Windows, macOS, Web, and Chrome. Single portable application
-        can be released for all popular operating systems and web browsers.
+        Neutralinojs apps function on Linux, Windows, macOS, Web and Chrome. A single portable application
+        is compatible with all popular operating systems and web browsers.
       </>
     ),
   },
@@ -55,8 +56,8 @@ const features = [
     imageUrl: 'img/undraw_happy_announcement_re_tsm0.svg',
     description: (
       <>
-        Neutralinojs team always tend to offer simple and flexible development interfaces for programmers.
-        The framework has simple portable auto-updater and CLI. We don't use OOP-based classes everywhere and
+        The Neutralinojs team always offers simple and flexible development interfaces for programmers.
+        The framework has a simple portable auto-updater and CLI. We don't use OOP-based classes everywhere and
         time-consuming setups to complicate your work.
       </>
     ),
@@ -112,7 +113,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.tagline}`}
-      description="Neutralinojs is a framework for building lightweight cross-platform desktop apps with JavaScript, HTML, and CSS.">
+      description="Neutralinojs is a framework for building lightweight cross-platform desktop apps with JavaScript, HTML and CSS.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <img src={logo + '?v=' + Math.floor(Math.random() * 10000) } alt="Neutralinojs logo animation" />
@@ -161,15 +162,15 @@ export default function Home() {
                 use Neutralinojs as a part of any source file (via child processes IPC).
                 <br/><br/>
                 In Electron and NWjs, you have to install Node.js and hundreds of dependency libraries.
-                Embedded Chromium and Node.js make simple apps bloaty &mdash; in most scenarios, framework weights more than your app source. Neutralinojs offers a lightweight and
+                Embedded Chromium and Node.js make simple apps bloaty &mdash; in most scenarios, the framework weighs more than your app source. Neutralinojs offers a lightweight and
                 portable SDK which is an alternative for Electron and NW.js. Neutralinojs doesn't bundle Chromium and uses the existing
-                web browser library in the operating system (Eg: gtk-webkit2 on Linux).
+                web browser library in the operating system (e.g., gtk-webkit2 on Linux).
                 Neutralinojs implements a <Link to={useBaseUrl('docs/contributing/security')}>secure</Link> WebSocket connection for native operations and embeds a static web server
                 to serve the web content. Also, it offers a built-in <Link href="https://github.com/neutralinojs/neutralino.js">JavaScript client library</Link> for developers.
                 <br/><br/>
                 If you can build a website, you can build cross-platform desktop apps too because Neutralinojs is a framework for
-                creating native desktop applications with web technologies like JavaScript, HTML, and CSS. You can indeed use your
-                favorite frontend framework (Angular, React, Svelte, Vue, etc.) for building your next Neutralinojs app.
+                creating native desktop applications with web technologies like JavaScript, HTML and CSS. You can indeed use your
+                favorite frontend framework (such as Angular, React, Svelte, Vue, etc.) for building your next Neutralinojs app.
 
                 <br/><br/>
 
@@ -237,9 +238,9 @@ export default function Home() {
         <div className="container">
           <h1 className="hero__title">Start building lightweight apps!</h1>
           <p className="hero__subtitle">
-            <code>
+            <CodeBlock className={styles.code} language="bash">
               npm install -g @neutralinojs/neu
-            </code>
+            </CodeBlock>
           </p>
         </div>
       </div>

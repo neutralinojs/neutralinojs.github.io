@@ -1,8 +1,86 @@
 ---
 title: CLI
+toc_max_heading_level: 2
 ---
 
 ## Unreleased
+
+## v11.3.0
+
+### Host projects support
+Developers can launch Neutralinojs from any programming language using child process APIs (i.e., `subprocess` in Python) and communicate with the framework process using the extension API. The new `hostProject` configuration object extends the official CLI to help developers easily create, run, and build these host projects. For example, the following host project configuration instructs the CLI to run a Node.js host project:
+
+```json
+"hostProject": {
+  "projectPath": "/node-src",
+  "buildPath": "/node-src/dist/",
+  "initCommand": "npm install",  
+  "devCommand": "npm start",     
+  "buildCommand": "npm run build"
+}
+```
+
+Community projects implement bindings and templates to create host projects using Node.js, Python, Go, etc. For example, the [`node-neutralino`](https://www.npmjs.com/package/node-neutralino) NPM package lets you launch Neutralinojs via Node.js environments and execute native APIs via the `NeutralinoApp` class:
+
+```js
+import NeutralinoApp from 'node-neutralino';
+
+const app = new NeutralinoApp({
+  url: '/',
+  windowOptions: {
+    enableInspector: false,
+  }
+});
+
+app.init();
+app.window.setTitle('Node.js');
+```
+
+### Executable icon and metadata on Windows
+Now, the `neu build` command automatically updates the executable file icon and metadata based on the following configuration options:
+
+- `author`: gets written into executable's metadata.
+- `description`: gets written into executable's metadata.
+- `copyright`: gets written into executable's metadata. Defaults to current date + generic "all rights reserved".
+- `applicationName`: gets written into executable's metadata. Defaults to `cli.binaryName`.
+- `applicationIcon`: a relative path to an icon in `.png` format. Defaults to `modes.window.icon`. If it is not set, uses Neutralinojs logo.
+
+### Bugfixes/improvements
+Use the `zip-lib` package to handle ZIP files for better performance and simplicity in the source code.
+
+## v11.2.2
+
+### Bugfixes/improvements
+- Fix initial loading issues with frontend library development file patching.
+
+## v11.2.0
+
+## Core: Bundler
+- Introduce the `--clean` flag to the `neu build` command to clean previous build files.
+- Add file excluding feature for the app bundle and extensions directory via `cli.resourcesExclude` and `cli.extensionsExclude` configuration properties. For example, now developers can use the `"resourcesExclude": ".*\\.scss$|.*\\.d.ts$"` configuration to exclude `*.scss` and `*.d.ts` files from the final app bundle.
+- Let app developers customize the frontend library development server wait time using the `cli.frontendLibrary.waitTimeout` configuration property.
+
+## Core: Version
+- The `neu version` command now compares the installed CLI version and the framework version with the latest released versions and displays a warning messages if the users use an older versions.
+- The `neu version` command now displays the `(latest)` tag with CLI, binary, client library version details.
+
+### Bugfixes/improvements
+- Check and validate `neutralino.config.json` file before executing app-specific commands.
+- Check app template validity before downloading content from a specific GitHub repository using the official GitHub API.
+- Add the app icon to the final app bundle only the specific project uses an app icon.
+- Fix the port waiting timeout issue with frontend library-based development workflow. 
+
+## v11.1.0
+
+### Core: Bundler
+- Add `cli.distributionPath` into the `neutralino.config.json` file to customize the default `dist` distribution directory.
+
+## v11.0.1
+
+### Bugfixes/improvements
+- Clean existing app build files before creating another build using the `neu build` command.
+- Support older Node versions by removing the optional chaining feature usage.
+- Fix the endless port waiting issue with the `--frontend-lib-dev` option.
 
 ## v11.0.0
 

@@ -1,12 +1,18 @@
 ---
 title: Neutralino.updater
+toc_max_heading_level: 2
 ---
 
 `Neutralino.updater` namespace contains methods related to built-in automatic updater. Neutralinojs offers
 a built-in client-based updating mechanism. Therefore, you can update Neutralinojs apps without even calling
 third-party update services, operating system level services, or other binaries/scripts.
 
-Learn more about extensions with [this guide](../how-to/auto-updater).
+Learn more about extensions with [this guide](../how-to/auto-updater.md).
+
+
+:::note
+For this API to work, you should add `"filesystem.writeBinaryFile"` to the [`nativeAllowList` field](../configuration/neutralino.config.json.md#nativeallowlist-string) of your `neutralino.config.json` file.
+:::
 
 
 ## updater.checkForUpdates(url)

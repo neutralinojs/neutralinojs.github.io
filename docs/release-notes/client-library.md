@@ -1,8 +1,53 @@
 ---
 title: Client Library
+toc_max_heading_level: 2
 ---
 
 ## Unreleased
+
+## v5.4.0
+
+### API: resources
+- Export `getFiles()`, `extractFile(path, dest)`, `readFile(path)`, and `readBinaryFile(path)` functions.
+
+### API: window
+- Export `minimize()`, `unminimize()`, and `isMinimized()` functions.
+- Add `alwaysCapture` and `dragMinDistance` options to the `window.setDraggableRegion()` function and improve the performance of the overall draggable window implementation.
+
+### Bugfixes/improvements
+- Fix several issues with TypeScript exports and definitions.
+
+## v5.3.0
+
+### API: filesystem
+- Expose `filesystem.getAbsolutePath(path)`, `filesystem.getRelativePath(path, ?base)`, and `filesystem.getPathParts(path)` functions.
+
+## v5.2.0
+
+### API: filesystem
+- Accept `overwrite`, `skip`, and `recursive` options for the `filesystem.copy()` function.
+
+### Bugfixes/improvements
+- Improve the `window.create()` function's option-to-CLI argument mapping logic.
+
+## v5.1.1
+
+### NPM
+- Fix the NPM package import issue.
+
+## v5.1.0
+
+### API: clipboard
+- Export new framework functions: `clipboard.getFormat()`, `clipboard.readImage()`, and `clipboard.writeImage(image)`.
+
+### TypeScript
+- Separate type definitions into a new directory to improve project structure.
+- Add missing type definitions.
+
+## v5.0.1
+
+### TypeScript
+- Fix type declaration issues with the `window` global object. Now, `window.NL_VERSION`, etc. won't display errors on code editors or with the TypeScript compiler.
 
 ## v5.0.0
 
@@ -44,7 +89,7 @@ title: Client Library
 ## v3.8.2
 
 ### NPM/ESM support
-- Add ESM support for the client library via `neutralino.mjs`. 
+- Add ESM support for the client library via `neutralino.mjs`.
 - Publish (and automate) the client library as an NPM package,`@neutralinojs/lib`.
 
 ## v3.8.0
@@ -97,7 +142,7 @@ title: Client Library
 
 ### API: init
 - Store `NL_TOKEN` in sessionStorage and handle native API calls after page reload.
-- Show a message to the user via HTML if `NL_TOKEN` is not valid (Eg: when the user tries to open the app from another client with `one-time` token). 
+- Show a message to the user via HTML if `NL_TOKEN` is not valid (Eg: when the user tries to open the app from another client with `one-time` token).
 
 ### API: window
 - Add `window.setAlwaysOnTop(bool)`.

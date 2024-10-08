@@ -18,10 +18,6 @@ module.exports = {
     }
   ],
   themeConfig: {
-    gtag: {
-      trackingID: 'UA-120983955-1',
-      anonymizeIP: true,
-    },
     navbar: {
       title: 'Neutralinojs',
       logo: {
@@ -60,11 +56,6 @@ module.exports = {
         {
           to: 'docs/release-notes/framework',
           label: 'Release Notes',
-          position: 'left',
-        },
-        {
-          to: 'https://github.com/neutralinojs/gsoc2024',
-          label: 'GSoC 2024',
           position: 'left',
         },
         {
@@ -115,8 +106,12 @@ module.exports = {
               href: 'https://github.com/neutralinojs',
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/neutralinojs',
+              label: 'X',
+              href: 'https://x.com/neutralinojs',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/showcase/neutralinojs/',
             },
             {
               label: 'Stack Overflow',
@@ -186,10 +181,16 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        gtag: {
+          trackingID: 'UA-120983955-1',
+          anonymizeIP: true,
+        },
       },
     ],
+    
   ],
   plugins: [
-    path.resolve('./plugins/load-external-assets')
+    path.resolve('./plugins/load-external-assets'),
+    require.resolve('docusaurus-lunr-search')
   ]
 };

@@ -2,14 +2,26 @@
 title: neutralino.config.json
 ---
 
-`neutralino.config.json` file contains the application configuration details. Every Neutralinojs app requires
-the following mandatory keys from the config file.
+`neutralino.config.json` file contains the application configuration details. Every Neutralinojs app typically
+loads the following keys from the config file.
 
 - `applicationId`
 - `url`
 - `defaultMode`
 
-Other configuration properties are optional and may have default values.
+However, having a config file is not mandatory to start a Neutralinojs app since the Neutralinojs framework
+often loads reasonable defaults for all configuration options.
+
+You can develop Neutralinojs apps with a well-structured configuration file. Or, you can start the framework
+without a configuration file using CLI arugments, as shown in the following code snippet:
+
+```bash
+# Loading a remote URL
+./framework-bin --url=https://neutralino.js.org/docs
+
+# Launches a local static web app
+./framework-bin --url="/" --document-root="/resources/" --window-title="My web app" --enable-server --enable-native-api
+```
 
 ## Primary
 The following configuraion values cannot be overridden in different Neutralinojs modes.
@@ -21,7 +33,7 @@ Unique string to identify your application. Eg: `js.neutralino.sample`
 Application version. Eg: `2.4.22`
 
 ### `defaultMode: string`
-Mode of the application. Accepted values are `window`, `browser`, and `cloud`.
+Mode of the application. Accepted values are `window`, `browser`, `cloud`, and `chrome`.
 
 ## General
 You can override the following configuration values from different modes. For example, you can use a specific
@@ -47,6 +59,11 @@ If you load a remote URL to the webview, you can set this option to `false`. Mak
 
 ### `enableNativeAPI: boolean`
 Enables or disables the native API. If you want to use any native API functions, you can set this option to `true`. The default value is `false`.
+
+### `singlePageServe: boolean`
+Activates SPA (Single Page App) serving. When this option is enabled, the static server module serves the primary
+`index.html` file for sub-directory requests only if another `index.html` doesn't exist in a specific sub-directory.
+The default value for this option is `false`.
 
 ### `tokenSecurity: string`
 Neutralinojs uses a client-server communication pattern with a local WebSocket to handle native calls. This
@@ -213,6 +230,18 @@ Right position (`y`) of the native window.
 ### `modes.window.center: boolean`
 Centers the native app window initially.
 
+### `modes.window.transparent: boolean`
+Enables the transparent native window mode for the application instance. If the transparency mode is activated,
+users can see through the webview if the webpage background uses transparent background colors. Partial transparency
+can be activated using the `rgba()` CSS color function. You can use this feature to create semi-transparent
+windows, windows with custom shadows, and custom-shaped window frames.
+
+The default value is `false` for this option.
+
+:::info
+Unlike in other platforms, Windows native window becomes borderless (window controls will be hidden) with the activation of the transparent mode.
+:::
+
 ### `modes.window.fullScreen: boolean`
 Activates the full-screen mode.
 
@@ -273,8 +302,26 @@ Binary file name of your application. If it is `myapp`, all binaries will use
 ### `cli.resourcesPath: string`
 Path of your application resources.
 
+### `cli.resourcesExclude: string`
+Regex pattern to exclude files from final app bundle. For example, the following configuration will exclude all the TypeScript source files from the final build:
+
+```json
+{
+    "resourcesExclude" : ".*\\.ts$|.*\\.tsx$"
+}
+```
+
 ### `cli.extensionsPath: string`
 Path of your application extensions.
+
+### `cli.extensionsExclude: string`
+Regex pattern to exclude files from the extensions directory of the final app package. For example, the following configuration will exclude `.log` and `.info` files:
+
+```json
+{
+    "extensionsExclude" : ".*\\.log$|.*\\.info$"
+}
+```
 
 ### `cli.clientLibrary: string`
 Filename of the Neutralinojs JavaScript library.
@@ -286,8 +333,7 @@ Neutralinojs server version. Get nightly builds by using the `nightly` tag.
 Neutralinojs client version.  Get nightly builds by using the `nightly` tag.
 
 ### `cli.autoReloadExclude: string`
-A JavaScript regular expression to exclude files from the auto-reload file watcher. For example, the
-following configuration will disable auto-reloading for SASS stylesheets (`.scss`).
+A JavaScript regular expression to exclude files from the auto-reload file watcher. For example, the following configuration will disable auto-reloading for SASS stylesheets (`.scss`).
 
 ```json
 {
@@ -304,5 +350,71 @@ Use `|` character to set multiple regular expressions, as shown below.
 
 ### `cli.frontendLibrary: object`
 
-Enables frontend development tools (HMR, etc) for the `neu run --frontend-lib-dev` command. Learn more about frontend
+Enables frontend development tools (HMR, etc) for the `neu run` command. Learn more about frontend
 framework integration from [here](../getting-started/using-frontend-libraries.md)
+
+### `cli.hostProject.projectPath: string`
+
+Sets the project path of the host project. This path will be used as the current directory while executing the host-project-related commands.
+
+### `cli.hostProject.initCommand: string`
+
+A command that gets executed after downloading an host app template with the `neu create` command.
+
+### `cli.hostProject.devCommand: string`
+
+This command will run with the `neu run` command to start the host project.
+
+### `cli.hostProject.buildCommand: string`
+
+The `neu build` command will execute this command before generating the app bundle, so you can generate bundled version of host project code.
+
+### `cli.hostProject.buildPath: string`
+
+Location where the final read-to-distribute host project files will be stored after the execution of `buildCommand`. Files in this folder are copied into the app bundle path after the execution of `neu build` command.
+
+### `cli.distributionPath: string`
+
+Sets the build path for neu CLI. For example, if you need to get the built binaries in `build` folder instead of `dist`, you can set the `distributionPath` as follows:
+
+```json
+{
+    "distributionPath": "/build",
+}
+```
+The default value for `distributionPath` is `/dist`.
+
+## Windows-specific options
+There are additional configuration options that define metadata and appearance of executables for Windows platform. These fields must be placed in the root of `neutralino.config.json`. Every field is optional.
+
+### `applicationName: string`
+The human-readable application name. Fills in the `ProductName` field of the executable.
+
+### `applicationIcon: string`
+The location of the executable's icon relative to `neutralino.config.json`. The icon must be in PNG format. If it is not set, an icon from `modes.window.icon` will be chosen instead. If `modes.window.icon` does not point to a PNG file, too, a default Neutralino.js icon will be used.
+
+### `author: string`
+The developer of the application. Fills in the `CompanyName` field of the executable.
+
+### `description: string`
+A description of the executable file. This usually describes the purpose of your application. Fills in the `FileDescription` field of the executable.
+
+### `copyright: string`
+Copyright information. Fills in the `LegalCopyright` field of the executable.
+
+Example configuration:
+
+```json
+{
+    "applicationId": "cook.pancake.bakery",
+    "version": "1.2.0",
+    "applicationName": "Pancake Bakery",
+    "author": "Sweet Pancakes LLC",
+    "description": "Digital recipe book for pancakes from all over the world",
+    "copyright": "Copyright © Sweet Pancakes LLC 2042. All rights reserved.",
+    "applicationIcon": "buildAssets/appIcon.png",
+    "cli": {
+        "binaryName": "pancakebakery"
+    }
+}
+```
