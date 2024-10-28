@@ -62,6 +62,11 @@ const libraries = [
         description: 'A cURL wrapper for Neutralinojs',
         githubLink: 'https://github.com/hschneider/neutralino-curl',
     },
+    {
+        title: 'neutralinojs-menubar',
+        description: 'A native-looking menubar for Neutralinojs',
+        githubLink: 'https://github.com/scanline/neutralinojs-menubar',
+    },  
 ];
 
 const buildTools = [
