@@ -49,6 +49,11 @@ const extensions = [
         description: 'A low-code Python extension for Neutralinojs',
         githubLink: 'https://github.com/hschneider/neutralino-ext-python',
     },
+    {
+        title: 'neutralinojs-ext-vibrancy',
+        description: 'A C++ vibrancy effect extension for Neutralinojs',
+        githubLink: 'https://github.com/scanline/neutralinojs-ext-vibrancy',
+    },    
 ];
 
 const libraries = [
@@ -62,6 +67,11 @@ const libraries = [
         description: 'A cURL wrapper for Neutralinojs',
         githubLink: 'https://github.com/hschneider/neutralino-curl',
     },
+    {
+        title: 'neutralinojs-menubar',
+        description: 'A native-looking menubar for Neutralinojs',
+        githubLink: 'https://github.com/scanline/neutralinojs-menubar',
+    },  
 ];
 
 const buildTools = [
