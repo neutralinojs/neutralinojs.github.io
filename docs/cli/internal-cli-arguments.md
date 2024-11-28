@@ -198,6 +198,17 @@ Overrides the saved window state feature setting.
 
 Overrides the custom user agent setting.
 
+### `--window-inject-globals=<true|false>`
+
+Overrides the global variable injection setting.
+
+### `--window-inject-client-library=<true|false>`
+
+Overrides the client library source injection setting.
+
+### `--window-inject-script=<script_path>`
+
+Overrides the preload script injection setting.
 
 
 ## Chrome mode

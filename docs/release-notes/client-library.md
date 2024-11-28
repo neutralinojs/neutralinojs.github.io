@@ -1,9 +1,16 @@
 ---
 title: Client Library
-toc_max_heading_level: 2
 ---
 
 ## Unreleased
+
+## v5.5.0
+
+### Core: initialization
+- Support client library source injection
+
+### TypeScript
+- Fix some missing type details.
 
 ## v5.4.0
 

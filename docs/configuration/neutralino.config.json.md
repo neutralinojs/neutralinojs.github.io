@@ -197,6 +197,31 @@ sends a custom header with every outgoing HTTP response.
 }
 ```
 
+### `dataLocation: string`
+
+Configures the internal framework data files storage directory.
+
+Accepts the following values:
+
+- `app` (default): Stores framework data files within the app directory.
+
+- `system` : Stores framework data files within the system application data directory 
+(i.e., `/home/username/.local/share/<applicationId>` on GNU/Linux systems). App developers can obtain the current data directory string 
+from the [`NL_DATAPATH`](../api/global-variables.md) global variable.
+
+
+### `storageLocation: string`
+
+Configures the Neutralinojs storage location.
+
+Accepts the following values:
+
+- `app` (default): Stores `.neustorage` files within `.storage` directory of the app directory.
+
+- `system` : Stores `.neustorage` files within the system application data directory 
+(i.e., `/home/username/.local/share/<applicationId>/.storage` on GNU/Linux systems).
+
+
 ## Window mode
 The following configuration values are used when the application runs with the window mode.
 
@@ -278,6 +303,18 @@ The default value is `true`.
 ### `modes.window.extendUserAgentWith: string`
 Extends the default webview-specific user agent string with a custom suffix. If this value is not set,
 the webview sets the default user agent from the platform-specific rendering engine (i.e., WebKit on GNU/Linux).
+
+### `modes.window.injectGlobals: boolean`
+Injects global variables directly to the webview instance. If you use this feature, you don't need to include `__neutralino_globals.js` or `neutralino.js` file to
+receive Neutralinojs global variables to your web app.
+
+### `modes.window.injectClientLibrary: boolean`
+Injects global variables and the client library implementation directly to the webview instance. If you use this feature, you don't need to include 
+the client library manually via the `neutralino.js` file or from the `@neutralinojs/lib` NPM module.
+
+### `modes.window.injectScript: string`
+Injects a preload JavaScript file to the webview instance from the app bundle. This script file will be executed before webapp resources and after `window.injectGlobals`
+and `window.injectClientLibrary` scripts, so you can write initialization scripts using Neutralinojs API within this source file.
 
 ## Chrome mode
 The following configuration values are used when the application starts with the chrome mode.

@@ -19,6 +19,7 @@ These JavaScript variables can be used anywhere because these variables are defi
 | `NL_CVERSION`  | Neutralinojs client version                                  |
 | `NL_CWD`      | Current working directory                                     |
 | `NL_PATH`     | Application path                                              |
+| `NL_DATAPATH` | Application data path                                         |
 | `NL_ARGS`     | Command-line arguments                                        |
 | `NL_PID`      | Identifier of the current process                             |
 | `NL_RESMODE`  | Source of application resources: `bundle` or `directory`      |
@@ -27,6 +28,8 @@ These JavaScript variables can be used anywhere because these variables are defi
 | `NL_CCOMMIT` | Client librar's release commit hash     |
 | `NL_CMETHODS` | Custom method identifiers (Returns the same output that [`custom.getMethods`](custom.md#customgetmethods) returns). |
 | `NL_WSAVSTLOADED` | Returns `true` if the initial window state was loaded from the saved configuration |
+| `NL_GINJECTED` | Returns `true` if global variables are injected |
+| `NL_CINJECTED` | Returns `true` if the client library source is injected |
 
 :::tip
 You can use `NL_COMMIT` and `NL_CCOMMIT` values to identify the codebase snapshot if you use nightly releases.

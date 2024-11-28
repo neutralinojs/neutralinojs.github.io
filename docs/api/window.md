@@ -302,6 +302,10 @@ However, you can build communication streams between windows with the [storage A
 - `minHeight` Number: Minimum height of the window.
 - `maxWidth` Number: Maximum width of the window.
 - `maxHeight` Number: Maximum height of the window.
+- `extendUserAgentWith` String: Extends the user agent string of the webview instance.
+- `injectGlobals` Boolean: Injects global variables directly to the webview instance.
+- `injectClientLibrary` Boolean: Injects the client library source directly to the webview instance.
+- `injectScript` Boolean: A preload JavaScript source file that executes before web app resources.
 - `processArgs` String: Additional command-line arguments for the new window process. Check all supported
 internal command-line arguments from [here](../cli/internal-cli-arguments.md).
 

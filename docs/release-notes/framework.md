@@ -1,9 +1,38 @@
 ---
 title: Framework
-toc_max_heading_level: 2
 ---
 
 ## Unreleased
+
+## v5.5.0
+
+### Client library and globals injection
+Neutralinojs apps usually load globals and the client library using HTTP requests via the static server. This mechanism implements a generic way to enable the native API on all supported Neutralinojs app modes. However, this strategy prevents
+enabling the Neutralinojs native API if the primary web app is loaded through another server (local or remote). Now, app developers can inject globals and
+the client library script into external web services using `window.injectGlobals` and `window.injectClientLibrary` configuration options on the window mode.
+
+These options are available as CLI options as well (`--window-inject-globals` and `--window-inject-client-library`), so developers can use these options via the `window.create(url, options)` function. This code injection feature currently works with HTTP URLs only (can be used with local and remote HTTP web servers).
+
+### Preload script support
+The framework already lets developers set pre-defined global variables for each web page by using custom globals from the app configuration and activating the `window.injectGlobals` option. However, custom globals are static values, so app developers can't define dynamic values or run a custom JavaScript source using globals and `window.injectGlobals` features. This framework version implements the `window.injectScript` configuration option to inject and run custom JavaScript source file before running the primary webapp's JavaScript sources.
+
+For example, the following setup loads an initialization script from the `preload.js` file:
+
+```json
+"window": {
+  "injectScript": "/resources/js/preload.js"
+}
+```
+
+Developers can use native API calls within initialization scripts if `window.injectClientLibrary` is set to `true`. This option also can be set via `--window-inject-script` and `window.create(url, options)`.
+
+### Configuration
+- Implement the `dataLocation` config option to let users set data directory for framework data storage purposes, such as saving window state, storing extracted resources, etc. If `app` (default) is used, the framework will store app data within the app directory and if `system` is used, the framework will use a platform-specific data directory path (i.e., `/home/username/.local/share/<appId>` on GNU/Linux systems) to store app data. App developers can obtain the current data directory string from the `NL_DATAPATH` global variable.
+- Implement the `storageLocation` config option to let developers use system data directory for the Neutralinojs storage. If this option is 'app' (default), the framework store storage files within the app directory. If `system` is used, the framework will use the platform-specific standard data directory. In both `app` and `system` modes, the framework will use the `.storage` sub-directory for storage files.
+
+### Improvements/bugfixes
+- Search and load WebKitGtk functions dynamically from the available webkit2gtk library: `libwebkit2gtk-4.0-37` or `libwebkit2gtk-4.1-0`.
+- Fix the auto-reload issue during app development.
 
 ## v5.4.0
 
