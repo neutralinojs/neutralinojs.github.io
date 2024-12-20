@@ -24,7 +24,7 @@ without a configuration file using CLI arugments, as shown in the following code
 ```
 
 ## Primary
-The following configuraion values cannot be overridden in different Neutralinojs modes.
+The following configuration values cannot be overridden in different Neutralinojs modes.
 
 ### `applicationId: string`
 Unique string to identify your application. Eg: `js.neutralino.sample`
