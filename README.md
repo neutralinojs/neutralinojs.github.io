@@ -7,7 +7,7 @@ This repository contains the source code of the Neutralinojs website including t
 ### Prerequisites
 
 **Node.js**: Use older version of Node.js (around v16.19.0). Use [Node Version Manager (NVM)](https://github.com/nvm-sh/nvm) for easy switching between Node.js versions.
-  
+
 To install and use the correct Node.js version, execute:
 
 ```bash
