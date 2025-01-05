@@ -29,7 +29,8 @@ The error object has the following structure:
 | `NE_FS_FILOPER`| File open error.        | `filesystem.openFile`
 | `NE_FS_UNLTOUP`| Unable to update opened file id.        | `filesystem.updateOpenedFile`
 | `NE_FS_UNLTFOP`| Unable to find opened file id.        | `filesystem.getOpenedFileInfo`
-| `NE_FS_NOPATHE`| No file or directory.        | `filesystem.getStats`, `filesystem.readDirectory`
+| `NE_FS_NOPATHE`| No file or directory.        | `filesystem.getStats`, `filesystem.readDirectory`, `app.mount`
+| `NE_FS_NOTADIR`| Path is not a directory. | `app.mount`
 | `NE_FS_COPYERR`| Copy error.        | `filesystem.copy`
 | `NE_FS_MOVEERR`| Move error.        | `filesystem.move`
 | `NE_FS_UNLCWAT`| Unable to create watcher.        | `filesystem.createWatcher`
@@ -39,6 +40,8 @@ The error object has the following structure:
 | `NE_OS_INVKNPT`| Invalid platform path name.        | `os.getPath`
 | `NE_ST_INVSTKY`| Invalid storage key.        | `storage.getData`, `storage.setData`
 | `NE_ST_STKEYWE`| Storage write error.        | `storage.setData`
+| `NE_AP_MPINUSE`| Mount path is already in use. | `app.mount`
+| `NE_AP_NOMTPTH`| Cannot unmount a path that was not mounted. | `app.unmount`
 | `NE_RT_INVTOKN`| Invalid access token.        | `*`
 | `NE_RT_NATPRME`| No permission to execute the provided native method.        | `*`
 | `NE_RT_APIPRME`| No permission to use the native API.        | `*`
@@ -51,4 +54,4 @@ The error object has the following structure:
 | `NE_UP_UPDNOUF`| No update manifest loaded | `updater.install`
 | `NE_UP_UPDINER`| Update installation error | `updater.install`
 | `NE_RS_APIRQRF`| The resources API works only if the resource file is loaded | `resources.*`
-| `NE_RS_FILNOTF`| Unable to find the requested path in the resources bundle | `resources.readFile`, `resources.readBinaryFile`, `resources.extractFile` 
+| `NE_RS_FILNOTF`| Unable to find the requested path in the resources bundle | `resources.readFile`, `resources.readBinaryFile`, `resources.extractFile`
