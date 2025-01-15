@@ -40,8 +40,8 @@ The error object has the following structure:
 | `NE_OS_INVKNPT`| Invalid platform path name.        | `os.getPath`
 | `NE_ST_INVSTKY`| Invalid storage key.        | `storage.getData`, `storage.setData`
 | `NE_ST_STKEYWE`| Storage write error.        | `storage.setData`
-| `NE_AP_MPINUSE`| Mount path is already in use. | `app.mount`
-| `NE_AP_NOMTPTH`| Cannot unmount a path that was not mounted. | `app.unmount`
+| `NE_SR_MPINUSE`| Mount path is already in use. | `server.mount`
+| `NE_SR_NOMTPTH`| Cannot unmount a path that was not mounted. | `server.unmount`
 | `NE_RT_INVTOKN`| Invalid access token.        | `*`
 | `NE_RT_NATPRME`| No permission to execute the provided native method.        | `*`
 | `NE_RT_APIPRME`| No permission to use the native API.        | `*`

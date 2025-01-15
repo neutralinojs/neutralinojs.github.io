@@ -68,45 +68,6 @@ await Neutralino.app.broadcast('myTestEvent', {myData: 'Test data'});
 await Neutralino.app.broadcast('myTestEvent');
 ```
 
-## app.mount(mountPath, targetPath)
-
-Mounts a directory to a specific URL in Neutralino.js' router. This allows you to access files in the mounted directory using the Fetch API and by directly linking to them in your webpage. Throws `NE_FS_NOPATHE` when trying to mount a folder that does not exist,  `NE_FS_NOTADIR` when attempting to mount a path that is not a directory, `NE_AP_MPINUSE` if `mountPath` is already mounted.
-
-### Parameters
-- `mountPath` String: the desired mount point in the Neutralino server (e.g., '/user').
-- `targetPath` String: the absolute path to the directory to be mounted (e.g., 'C:\\Users\\You\\Desktop'). Use [`NL_CWD`](./global-variables.md) to mount your application's current working directory.
-
-```javascript
-await Neutralino.app.mount('/user', 'C:\\Users\\You\\Desktop');
-// Now you can fetch files from the mounted path
-const response = await fetch('/user/hello.txt'); // Will load C:\Users\You\Desktop\hello.txt
-
-if (response.ok) {
-    console.log(await response.text());
-}
-
-// Create an image element and set its source to an image from the filesystem
-const img = document.createElement('img');
-img.src = '/user/example.png'; // Will load Will load C:\Users\You\Desktop\example.png
-
-// Add the image to the current page
-document.body.appendChild(img);
-```
-
-## app.unmount(mountPath)
-
-Unmounts a previously mounted directory from the specified mount point. Throws `NE_AP_NOMTPTH` if `mountPath` was not mounted.
-
-### Parameters
-
-- `mountPath` String: The mount point to be unmounted (e.g., '/user').
-
-
-```javascript
-await Neutralino.app.unmount('/user');
-// The directory is now unmounted and files are no longer accessible via '/user'.
-```
-
 ## app.readProcessInput(readAll)
 Reads string data from the standard input stream of the application process.
 
