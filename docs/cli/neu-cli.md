@@ -79,6 +79,13 @@ incomplete features. Therefore, avoid using `nightly` versions in your productio
 to try out latest features, but use a stable version for production apps.
 :::
 
+:::info
+If you are on Windows, you might get a blank white screen when running Neutralinojs applications. This issue occurs because accessing localhost from a UWP context is disabled by default. To fix this, run the following command with administrative privileges in the command prompt:
+
+```powershell
+CheckNetIsolation.exe LoopbackExempt -a -n="Microsoft.Win32WebViewHost_cw5n1h2txyewy"
+:::
+
 ### `neu version`
 Prints all version information. If this command is executed from a Neutralinojs application directory,
 you will see project-specific version details. Otherwise, you will see global version details.
