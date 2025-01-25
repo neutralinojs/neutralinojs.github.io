@@ -156,6 +156,19 @@ with the following `nativeAllowList` permission setup:
 We don't need to update anything in the permission setup since it already allows `os.getEnv` native function
 calls.
 
+:::info
+**Note for Windows Users:**  
+If you encounter the following error when running `neu` commands: 
+
+File C:\Users\KRISH\AppData\Roaming\npm\neu.ps1 cannot be loaded because running scripts is disabled on this system.
+For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
+
+
+This issue occurs due to PowerShell's script execution policy. To resolve it, open PowerShell as an administrator and run:
+
+`Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned`
+:::
+
 ## Step 3: Running your application
 
 As mentioned above, you can use the `run` command to start your application.
