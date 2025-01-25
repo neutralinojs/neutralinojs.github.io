@@ -156,6 +156,14 @@ with the following `nativeAllowList` permission setup:
 We don't need to update anything in the permission setup since it already allows `os.getEnv` native function
 calls.
 
+:::info
+**Note for Windows Users:**  
+If you encounter the following error when running `neu` commands:  
+This issue occurs due to PowerShell's script execution policy. To resolve it, open PowerShell as an administrator and run:
+
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+:::
+
 ## Step 3: Running your application
 
 As mentioned above, you can use the `run` command to start your application.
