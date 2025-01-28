@@ -36,6 +36,21 @@ Enter the following command to scaffold a new app.
 neu create myapp
 ```
 
+:::info
+You might encounter the following error while running CLI commands on PowerShell: 
+
+```
+File C:\Users\<username>\AppData\Roaming\npm\neu.ps1 cannot be loaded because running scripts is disabled on this system.
+For more information, see....
+```
+
+This issue occurs due to PowerShell's script execution policy. To resolve it, open PowerShell as an administrator and run:
+
+```ps1
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
+:::
+
 The above command will create a new app inside myapp directory. To make sure whether everything is fine,
 run your application.
 ```
@@ -156,26 +171,13 @@ with the following `nativeAllowList` permission setup:
 We don't need to update anything in the permission setup since it already allows `os.getEnv` native function
 calls.
 
-:::info
-**Note for Windows Users:**  
-If you encounter the following error when running `neu` commands: 
-
-File C:\Users\KRISH\AppData\Roaming\npm\neu.ps1 cannot be loaded because running scripts is disabled on this system.
-For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
-
-
-This issue occurs due to PowerShell's script execution policy. To resolve it, open PowerShell as an administrator and run:
-
-`Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned`
-:::
-
 ## Step 3: Running your application
 
 As mentioned above, you can use the `run` command to start your application.
 ```
 neu run
 ```
-Congrats! your application works.
+Congrats! Your application works.
 
 ![mypp is running on Linux](../media/myapp-running-linux.png)
 
