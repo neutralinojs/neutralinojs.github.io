@@ -17,6 +17,11 @@ const templates = [
         githubLink: 'https://github.com/neutralinojs/neutralinojs-zero',
     },
     {
+        title: 'neutralino-svelte-typescript-template',
+        description: 'A Svelte and TypeScript template based on Vite bundler',
+        githubLink: 'https://github.com/CosmoMyzrailGorynych/neutralino-svelte-typescript-template',
+    },
+    {
         title: 'neutralinojs-react',
         description: 'A simple React.js template for building Neutralinojs apps',
         githubLink: 'https://github.com/codezri/neutralinojs-react',
