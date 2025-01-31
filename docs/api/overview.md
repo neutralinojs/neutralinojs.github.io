@@ -30,6 +30,33 @@ The client library maintains a task pool to map the server messages to the match
 
 Neutralinojs offers many native operations for you by using this communication mechanism for all [modes](../configuration/modes).
 
+## Security: Configuring Allow/Block Lists  
+
+Neutralino.js restricts access to native APIs by default for security reasons. Developers must explicitly allow APIs using the `nativeAllowList` property in `neutralino.config.json`. This ensures that only required APIs are accessible, reducing security risks.  
+
+### **How to Configure `nativeAllowList`**  
+Modify your `neutralino.config.json` file to specify which APIs your app can use:  
+
+```json
+{
+  "modes": {
+    "window": {
+      "enable": true
+    }
+  },
+  "nativeAllowList": [
+    "os.*",
+    "filesystem.readFile",
+    "filesystem.writeFile"
+  ]
+}
+
+Explanation of Allowed APIs
+"os.*" → Grants access to all OS-related APIs.
+"filesystem.readFile" → Allows reading files.
+"filesystem.writeFile" → Allows writing files.
+APIs not listed in the allow list will be blocked by default.
+
 ## Native API namespaces
 
 - [Neutralino.app](../api/app.md)
