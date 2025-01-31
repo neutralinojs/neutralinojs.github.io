@@ -72,8 +72,8 @@ In addition to allowing APIs, you can explicitly block specific APIs using nativ
 ```
 Explanation of Blocked APIs
 
-"os.execCommand" → Prevents executing system commands.
-"filesystem.deleteFile" → Blocks file deletion operations.
+`os.execCommand` → Prevents executing system commands.
+`filesystem.deleteFile` → Blocks file deletion operations.
 
 Priority: APIs in nativeBlockList take precedence over nativeAllowList. If an API is in both lists, it will be blocked.
 
