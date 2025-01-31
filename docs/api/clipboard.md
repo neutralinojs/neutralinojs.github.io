@@ -62,8 +62,12 @@ let clipboardText = await Neutralino.clipboard.readText();
 console.log(`Text: ${clipboardText}`);
 ```
 
-## clipboard.readImage()
+## clipboard.readImage(format)
 Reads and returns an image from system clipboard. 
+
+### Parameters
+- `format` String (optional): Pixel data format. Accepted values are `rgb`, `rgba`, `argb`, and `bgra`. By default, the function uses the default platform-specific
+pixel data format.
 
 ### Return Object (awaited):
 Returns [`ClipboardImage`](#input-object-clipboardimage) object that has the same

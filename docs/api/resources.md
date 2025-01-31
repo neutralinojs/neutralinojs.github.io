@@ -4,7 +4,7 @@ toc_max_heading_level: 2
 ---
 
 `Neutralino.resources` namespace implements several methods to parse, read, and extract the loaded resource bundle (`resources.neu`). If the app doesn't load resources
-from the resource bundle and uses the resources directory, all these methods will throw the `NE_RS_APIRQRF` error.
+from the resource bundle and uses the resources directory, all these methods will use native filesystem API as a fallback.
 
 ## resources.getFiles()
 Returns all files and directories embedded in the resource bundle.
@@ -17,8 +17,26 @@ let files = await Neutralino.resources.getFiles();
 console.log('Files: ', files);
 ```
 
+## resources.getStats(path)
+Returns resource file statistics for the given path. If the given path doesn't exist or is inaccessible,`NE_RS_NOPATHE` is thrown.
+So, you can use this method to check for the existance of a file or directory.
+
+### Parameters
+
+- `path` String: Resource path.
+
+### Return Object (awaited):
+- `size` Number: Size in bytes.
+- `isFile` Boolean: `true` if the path represents a normal file.
+- `isDirectory` Boolean: `true` if the path represents a directory.
+
+```js
+let stats = await Neutralino.resources.getStats('/resources/icons/myIcon.png');
+console.log('Stats:', stats);
+```
+
 ## resources.extractFile(path, destination)
-Extracts a file from the resources bundle to a preferred path.
+Extracts a file from the resources bundle to a preferred path. Throws `NE_RS_FILEXTF` for file extraction failures.
 
 
 ### Parameters
@@ -27,6 +45,18 @@ Extracts a file from the resources bundle to a preferred path.
 
 ```js
 await Neutralino.resources.extractFile('/resources/scripts/run.sh', './scripts/run.sh');
+```
+
+## resources.extractDirectory(path, destination)
+Extracts a directory from the resources bundle to a preferred path. Throws `NE_RS_DIREXTF` for directory extraction failures.
+
+
+### Parameters
+- `path` String: Resource directory path, i.e., `/resources/icons`, starts with `/` similar to all Neutralinojs app resources.
+- `destination` String: Path where all extracted files should be stored.
+
+```js
+await Neutralino.resources.extractDirectory('/resources/scripts', NL_PATH + '/extracted/scripts');
 ```
 
 ## resources.readFile(path)

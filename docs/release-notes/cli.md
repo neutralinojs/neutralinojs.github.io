@@ -4,6 +4,12 @@ title: CLI
 
 ## Unreleased
 
+## v11.3.1
+
+### Bugfixes/improvements
+
+- Add execution permissions for binaries after downloading them in Unix-based and Unix-like platforms. 
+
 ## v11.3.0
 
 ### Host projects support
