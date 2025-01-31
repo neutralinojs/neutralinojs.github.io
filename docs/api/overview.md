@@ -54,7 +54,9 @@ Modify your `neutralino.config.json` file to specify which APIs your app can use
 Explanation of Allowed APIs
 
 `os.*` → Grants access to all OS-related APIs.
+
 `filesystem.readFile` → Allows reading files.
+
 `filesystem.writeFile` → Allows writing files.
 
 APIs not listed in the allow list will be blocked by default.
@@ -73,6 +75,7 @@ In addition to allowing APIs, you can explicitly block specific APIs using nativ
 Explanation of Blocked APIs
 
 `os.execCommand` → Prevents executing system commands.
+
 `filesystem.deleteFile` → Blocks file deletion operations.
 
 Priority: APIs in nativeBlockList take precedence over nativeAllowList. If an API is in both lists, it will be blocked.
