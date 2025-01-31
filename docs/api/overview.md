@@ -53,9 +53,9 @@ Modify your `neutralino.config.json` file to specify which APIs your app can use
 ```
 Explanation of Allowed APIs
 
-"os.*" → Grants access to all OS-related APIs.
-"filesystem.readFile" → Allows reading files.
-"filesystem.writeFile" → Allows writing files.
+`os.*` → Grants access to all OS-related APIs.
+`filesystem.readFile` → Allows reading files.
+`filesystem.writeFile` → Allows writing files.
 
 APIs not listed in the allow list will be blocked by default.
 
