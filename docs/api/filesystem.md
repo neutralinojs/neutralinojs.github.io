@@ -31,6 +31,47 @@ await Neutralino.filesystem.remove('./tmpDirectory');
 await Neutralino.filesystem.remove('./tmpFile.txt');
 ```
 
+## filesystem.access(path, mode)
+Checks if a file or directory has the specified permissions. Throws `NE_FS_NOPATHE` if the path does not exist, `NE_FS_ACCESSDENIED` if access is denied, and `NE_FS_INVALIDMODE` if the mode is invalid. **Note:** This function is only supported on Linux and macOS.
+
+### Parameters
+
+- `path` String: Path to the file or directory.
+- `mode` String: Permission mode to check. Can be `R` (read), `W` (write), or `X` (execute). Multiple modes can be combined (e.g., `RW`).
+
+```js
+await Neutralino.filesystem.access('/path/to/file.txt', 'R'); // Check read access
+await Neutralino.filesystem.access('/path/to/file.txt', 'RW'); // Check read and write access
+```
+
+## filesystem.chmod(path, mode)
+Changes the permissions of a file or directory. Throws `NE_FS_NOPATHE` if the path does not exist, `NE_FS_ACCESSDENIED` if permission is denied, and `NE_FS_INVALIDMODE` if the mode is invalid. **Note:** This function is only supported on Linux and macOS.
+
+### Parameters
+
+- `path` String: Path to the file or directory.
+- `mode` Number: Permission mode in octal format (e.g., `0o755`).
+
+```js
+await Neutralino.filesystem.chmod('/path/to/file.txt', 0o644); // Set read/write for owner, read-only for others
+await Neutralino.filesystem.chmod('/path/to/script.sh', 0o755); // Set executable for all
+```
+
+## filesystem.chown(path, uid, gid)
+Changes the ownership of a file or directory. Throws `NE_FS_NOPATHE` if the path does not exist, `NE_FS_ACCESSDENIED` if permission is denied, and `NE_FS_INVALIDUIDGID` if the UID or GID is invalid. **Note:** This function is only supported on Linux and macOS.
+
+### Parameters
+
+- `path` String: Path to the file or directory.
+- `uid` Number: User ID. Use `-1` to preserve the current UID.
+- `gid` Number: Group ID. Use `-1` to preserve the current GID.
+
+```js
+await Neutralino.filesystem.chown('/path/to/file.txt', 1000, 1000); // Change ownership to UID 1000 and GID 1000
+await Neutralino.filesystem.chown('/path/to/file.txt', -1, 1000); // Preserve UID, change GID to 1000
+```
+
+
 ## filesystem.writeFile(filename, data)
 Writes a text file. Throws `NE_FS_FILWRER` for file write errors.
 
