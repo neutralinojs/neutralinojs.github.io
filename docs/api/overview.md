@@ -28,9 +28,9 @@ Finally, the client library resolves a promise with the results received from th
 
 The client library maintains a task pool to map the server messages to the matching request via a UUID string.
 
-Neutralinojs offers many native operations for you by using this communication mechanism for all [modes](../configuration/modes).
+Neutralinojs offers many native operations for you by using this communication mechanism for all [modes](../configuration/modes.md).
 
-Developers can configure native API calling permissions using [`nativeAllowList`](../configuration/neutralino.config.json.md/#nativeallowlist-string) and [`nativeBlockList`](../configuration/neutralino.config.json.md/#nativeblocklist-string) properties in the application configuration file:
+Developers can configure native API calling permissions using [`nativeAllowList`](../configuration/neutralino.config.json.md#nativeallowlist-string) and [`nativeBlockList`](../configuration/neutralino.config.json.md#nativeblocklist-string) properties in the application configuration file:
 
 ```json
 {
