@@ -26,9 +26,25 @@ environment variable.
 Once the Neutralinojs server finishes the task, it sends a WebSocket message with the value of the environment variable.
 Finally, the client library resolves a promise with the results received from the server.
 
-The client library maintains a task pool to map the server messages to the matching request via an UUID string.
+The client library maintains a task pool to map the server messages to the matching request via a UUID string.
 
 Neutralinojs offers many native operations for you by using this communication mechanism for all [modes](../configuration/modes).
+
+Developers can configure native API calling permissions using [`nativeAllowList`](../configuration/neutralino.config.json.md/#nativeallowlist-string) and [`nativeBlockList`](../configuration/neutralino.config.json.md/#nativeblocklist-string) properties in the application configuration file:
+
+```json
+{
+  "nativeAllowList": [
+    "app.*",
+    "window.*",
+    "os.execCommand"
+  ],
+  "nativeBlockList": [
+    "filesystem.remove",
+    "extensions.*"
+  ]
+}
+```
 
 ## Native API namespaces
 
@@ -46,3 +62,4 @@ Neutralinojs offers many native operations for you by using this communication m
 - [Neutralino.updater](../api/updater.md)
 - [Neutralino.window](../api/window.md)
 - [Neutralino.resources](../api/resources.md)
+- [Neutralino.server](../api/server.md)
