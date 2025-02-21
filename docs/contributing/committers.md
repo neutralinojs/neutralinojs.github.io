@@ -28,6 +28,7 @@ title: Committers
 - [monsterkodi](https://github.com/monsterkodi)
 - [Viral Gupta](https://github.com/viralgupta)
 - [Rushil Choudhary](https://github.com/rushil-118)
+- [Alok](https://github.com/Oshlok)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
