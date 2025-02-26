@@ -102,28 +102,12 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/neutralinojs',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/neutralinojs',
-            },
-            {
-              label: 'LinkedIn',
-              href: 'https://www.linkedin.com/showcase/neutralinojs/',
-            },
-            {
               label: 'Stack Overflow',
               href: 'https://stackoverflow.com/questions/tagged/neutralinojs',
             },
             {
               label: 'Medium',
               href: 'https://medium.com/neutralinojs'
-            },
-            {
-              label: 'YouTube',
-              href: 'https://www.youtube.com/watch?v=txDlNNsgSh8&list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj&ab_channel=CodeZri'
             },
             {
               label: 'Slack',
@@ -140,6 +124,23 @@ module.exports = {
           ],
         },
         {
+          title: 'Socials',
+          items: [
+            {
+              label: 'X (Twitter)',
+              href: 'https://x.com/neutralinojs',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/showcase/neutralinojs/',
+            },
+            {
+              label: 'YouTube',
+              href: 'https://www.youtube.com/watch?v=txDlNNsgSh8&list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj&ab_channel=CodeZri'
+            },
+          ],
+        },
+        {
           title: 'More',
           items: [
             {
@@ -151,7 +152,7 @@ module.exports = {
               href: 'https://www.patreon.com/shalithasuranga'
             },
             {
-              label: 'Privacy policy',
+              label: 'Privacy Policy',
               to: 'privacy-policy'
             },
             {
@@ -161,7 +162,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Neutralinojs | innovation by <a href="https://codezri.org/">CodeZri.org</a>`,
+      copyright: `Copyright © ${new Date().getFullYear()} Neutralinojs | Innovation by <a href="https://codezri.org/">CodeZri.org</a>`,
     },
   },
   presets: [
