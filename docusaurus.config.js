@@ -136,7 +136,7 @@ module.exports = {
             },
             {
               label: 'YouTube',
-              href: 'https://www.youtube.com/watch?v=txDlNNsgSh8&list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj&ab_channel=CodeZri'
+              href: 'https://www.youtube.com/@CodeZri'
             },
           ],
         },
