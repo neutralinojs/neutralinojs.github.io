@@ -87,6 +87,19 @@ const buildTools = [
     },
 ];
 
+const plugins = [
+    {
+        title: 'Neutralinojs CLI - Plugin-Explorer',
+        description: 'This plugin allows users to search for available plugins, get detailed information about specific plugins, and list all available plugins',
+        githubLink: 'https://github.com/rahulptl165/Plugin-Explorer',
+    },
+    {
+        title: 'Neutralinojs CLI - Templates Plugin',
+        description: 'Adds functionality to manage and reuse locally saved templates in Neutralinojs CLI, eliminating the need to repeatedly download or clone remote templates.',
+        githubLink: 'https://github.com/rahulptl165/neutralinojs-templates',
+    }
+];
+
 function ResourceSection({title, resources}) {
     return (
         <section className={styles.features}>
@@ -138,6 +151,7 @@ export default function NeutralinoTools() {
                 <ResourceSection title="Extensions" resources={extensions}/>
                 <ResourceSection title="Libraries" resources={libraries}/>
                 <ResourceSection title="Build tools" resources={buildTools}/>
+                <ResourceSection title="Plugins" resources={plugins}/>
             </main>
         </Layout>
     );
