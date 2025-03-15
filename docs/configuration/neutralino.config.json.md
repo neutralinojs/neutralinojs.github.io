@@ -13,7 +13,7 @@ However, having a config file is not mandatory to start a Neutralinojs app since
 often loads reasonable defaults for all configuration options.
 
 You can develop Neutralinojs apps with a well-structured configuration file. Or, you can start the framework
-without a configuration file using CLI arugments, as shown in the following code snippet:
+without a configuration file using CLI arguments, as shown in the following code snippet:
 
 ```bash
 # Loading a remote URL
