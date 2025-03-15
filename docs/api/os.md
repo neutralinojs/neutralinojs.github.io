@@ -31,23 +31,28 @@ console.log(`Your Python version: ${info.stdOut}`);
 await Neutralino.os.execCommand('npm start', { background: true });
 ```
 
-## os.spawnProcess(command, cwd)
-Spawns a process based on a command in background and let developers control it.
+## os.spawnProcess(command, options)
+Spawns a process in the background and allows developers to control it. Supports custom environment variables and working directories.
 
 ### Parameters
-- `command` String: The command that is to be executed in a new process.
-- `cwd` String (optional): Current working directory.
+- `command` String: The command to execute in a new process.
+- `options` Object (optional): Process configuration.
+  - `cwd` String: Working directory for the process.
+  - `envs` Object: Environment variables (merges with parent process environment).
 
 ### Return Object (awaited):
 - `id` Number: A Neutralino-scoped process identifier. This value is used for controlling the
 process via the native API.
 - `pid` Number: Process identifier from the operating system.
 
-```js
-let pingProc = await Neutralino.os.spawnProcess('ping neutralino.js.org');
+### Examples
+
+#### Basic Usage
+```javascript
+const proc = await Neutralino.os.spawnProcess('ping neutralino.js.org');
 
 Neutralino.events.on('spawnedProcess', (evt) => {
-    if(pingProc.id == evt.detail.id) {
+    if(proc.id == evt.detail.id) {
         switch(evt.detail.action) {
             case 'stdOut':
                 console.log(evt.detail.data);
@@ -56,9 +61,19 @@ Neutralino.events.on('spawnedProcess', (evt) => {
                 console.error(evt.detail.data);
                 break;
             case 'exit':
-                console.log(`Ping process terminated with exit code: ${evt.detail.data}`);
+                console.log(`Process exited with code: ${evt.detail.data}`);
                 break;
         }
+    }
+});
+```
+
+#### Inherit and Extend Parent Environment
+```javascript
+const proc = await Neutralino.os.spawnProcess('node -e "console.log(process.env.CUSTOM_VAR)"', {
+    envs: {
+        ...await Neutralino.os.getEnvs(),
+        CUSTOM_VAR: 'value' 
     }
 });
 ```
