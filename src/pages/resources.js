@@ -87,6 +87,19 @@ const buildTools = [
     },
 ];
 
+const cliPlugins = [
+    {
+        title: 'rahulptl165/plugin-explorer',
+        description: 'Search for available neu CLI plugins, get detailed information about specific plugins, and list all available plugins',
+        githubLink: 'https://github.com/rahulptl165/Plugin-Explorer',
+    },
+    {
+        title: 'neutralinojs-templates',
+        description: 'Adds functionality to manage and reuse locally saved neu CLI templates',
+        githubLink: 'https://github.com/rahulptl165/neutralinojs-templates',
+    }
+];
+
 function ResourceSection({title, resources}) {
     return (
         <section className={styles.features}>
@@ -138,6 +151,7 @@ export default function NeutralinoTools() {
                 <ResourceSection title="Extensions" resources={extensions}/>
                 <ResourceSection title="Libraries" resources={libraries}/>
                 <ResourceSection title="Build tools" resources={buildTools}/>
+                <ResourceSection title="CLI plugins" resources={cliPlugins}/>
             </main>
         </Layout>
     );
