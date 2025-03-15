@@ -89,7 +89,7 @@ const buildTools = [
 
 const cliPlugins = [
     {
-        title: 'rahulptl165/plugin-explorer',
+        title: 'neutralinojs-plugin-explorer',
         description: 'Search for available neu CLI plugins, get detailed information about specific plugins, and list all available plugins',
         githubLink: 'https://github.com/rahulptl165/Plugin-Explorer',
     },
