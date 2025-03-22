@@ -7,6 +7,7 @@ module.exports = {
         'getting-started/introduction',
         'getting-started/your-first-neutralinojs-app',
         'getting-started/using-frontend-libraries',
+        'try-it',
       ],
     },
     {
