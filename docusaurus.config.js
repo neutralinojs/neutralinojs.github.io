@@ -25,6 +25,9 @@ module.exports = {
         src: 'img/logo.png',
       },
       items: [
+      { to: '/docs/try-it', label: 'Try It', position: 'left' },
+    ],
+      items: [
         {
           to: 'docs/',
           activeBasePath: 'docs',
