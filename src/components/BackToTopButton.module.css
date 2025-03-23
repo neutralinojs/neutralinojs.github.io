@@ -1,0 +1,28 @@
+.backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f5a623; /* Orange color matching the "Join Discord" button */
+    color: white; /* White arrow */
+    border: 2px solid white; /* White border */
+    border-radius: 5px; /* Slightly rounded corners to match the button style */
+    width: 50px;
+    height: 50px;
+    font-size: 24px; /* Larger arrow for visibility */
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .backToTop:hover {
+    background-color: #d68f1e; /* Slightly darker orange on hover */
+  }
+  
+  .visible {
+    opacity: 1;
+  }
