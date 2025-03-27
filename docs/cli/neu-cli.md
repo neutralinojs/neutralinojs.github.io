@@ -43,6 +43,8 @@ platforms and `resources.neu` resource file from your application resources.
 #### Options
 - `--release`: Creates a portable ZIP file of the application bundle.
 - `--copy-storage`: Copies the current snapshot of the Neutralinojs storage to the application bundle.
+- `--macos-bundle`: Creates a minimal MacOS app bundle by adding the `.app` extension.
+- `--config-file=<path>`: Uses a custom app configuration file only for the packaging process.
 
 ### `neu run`
 Executes the current application (This will execute specific binary depending on your operating system).

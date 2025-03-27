@@ -17,6 +17,7 @@ if this is set to `true`. This option makes the process detached from the API fu
 connect with the newly created process later, consider using `os.spawnProcess`.
 - `stdIn` String: Standard input as a string.
 - `cwd` String: Current working directory.
+- `envs` Object: Key-value pairs of an environment variables set.
 
 ### Return Object (awaited):
 - `pid` Number: Process identifier.
@@ -29,14 +30,22 @@ let info = await Neutralino.os.execCommand('python --version');
 console.log(`Your Python version: ${info.stdOut}`);
 
 await Neutralino.os.execCommand('npm start', { background: true });
+
+await Neutralino.os.execCommand('node index.js', { envs: {
+  VAR1: 'Value1',
+  VAR2: 'Value2'
+}});
 ```
 
-## os.spawnProcess(command, cwd)
+## os.spawnProcess(command, options)
 Spawns a process based on a command in background and let developers control it.
 
 ### Parameters
 - `command` String: The command that is to be executed in a new process.
+
+### Options
 - `cwd` String (optional): Current working directory.
+- `envs` Object: Key-value pairs of an environment variables set.
 
 ### Return Object (awaited):
 - `id` Number: A Neutralino-scoped process identifier. This value is used for controlling the

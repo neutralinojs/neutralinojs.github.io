@@ -421,6 +421,16 @@ Sets the build path for neu CLI. For example, if you need to get the built binar
 ```
 The default value for `distributionPath` is `/dist`.
 
+### `cli.copyItems: string[]`
+
+Copies non-resource items (configurations, scripts, etc.) to the final application bundle. Supports files and directories:
+
+```json
+{
+    "copyItems": ["/scripts", "/myConf.json"]
+}
+```
+
 ## Windows-specific options
 There are additional configuration options that define metadata and appearance of executables for Windows platform. These fields must be placed in the root of `neutralino.config.json`. Every field is optional.
 

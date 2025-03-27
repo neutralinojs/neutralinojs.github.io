@@ -5,6 +5,48 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v6.0.0
+
+### API: clipboard
+- Implement `clipboard.writeHTML(html)` and `clipboard.readHTML()` functions to write/read HTML strings
+
+### API: os
+- Adding `envs` key-value pair parameter to the `options` of the `os.execCommand(command, options)` function to set specific environment variables for the child process.
+- Change the `os.spawnProcess(command, cwd)` to `os.spawnProcess(command, options)` to set environment variables and the current working directory via the `options` object for the spawned child process:
+```js
+// e.g.:
+await Neutralino.os.spawnCommand('env', {
+  cwd: NL_PATH,
+  envs: {
+    VAR1: 'var1',
+    VAR2: 'var2'
+  }
+});
+```
+
+### API: filesystem
+- Add the `timestamp` (ISO 8601) property to the `watchFile` event's data payload to identify when a specific file watcher event occurred.
+- Implement `filesystem.setPermissions(path, permissions, mode)` and `filesystem.getPermissions(path)` functions to set/get file permissions in a cross-platform way:
+```js
+// e.g.:
+await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-1', {ownerRead: true, groupRead: true});
+await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-2', {all: true});
+await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-3', {otherAll: true}, 'REMOVE');
+
+const permissions = await Neutralino.filesystem.getPermissions(NL_PATH);
+// permissions -> {all:.., ownerRead, ownerWrite...}
+```
+### Core: extensions
+- Extensions are now loaded internally using the `os.spawnProcess()` function without triggering process events. This modification displays extension logs within the Windows terminal and lets app developers control extensions using the existing spawn process API.
+
+### Security
+- Improve the `NL_TOKEN` generation algorithm to strengthen security using the C++ `std::mt19937` random number generator.
+
+### Improvements/bugfixes
+- Fix framework crashing when creating the `.tmp` directory under restricted file manipulation permissions.
+- Fix several issues in the Windows-specific GUI notification implementation of the `os.showNotification()` function.
+- Fix invalid utf8 character handling issues in several native APIs (i.e., `os.spawnProcess('./bin')` crashed if `bin` output `"ä\xA9ü"`)
+
 ## v5.6.0
 
 ### API: server

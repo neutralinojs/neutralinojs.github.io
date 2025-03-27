@@ -5,6 +5,21 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v6.0.0
+
+### API: filesystem
+- Export `filesystem.getPermissions(path)` and `filesystem.setPermissions(path, permissions, mode)` functions.
+
+### API: os
+- Support sending environment variables via `os.execCommand()` and `os.spawnProcess()` functions.
+
+### API: clipboard
+- Export `clipboard.readHTML()` and `clipboard.writeHTML(html)` functions.
+
+### Bugfixes/improvements
+- Fixing a circular dependency issue in the codebase.
+- Several TypeScript-related development fixes.
+
 ## v5.6.0
 
 ### API: server

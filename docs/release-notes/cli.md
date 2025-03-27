@@ -5,10 +5,22 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v11.4.0
+
+### Core: Bundler
+- Let developers copy additional non-resource files like configuration files to the final app bundle using `cli.copyItems` array.
+- Add the `--macos-bundle` flag to the `build` command to rename MacOS binary to a `*.app` file.
+- Add the `--config-file <path>` to use a custom Neutralinojs config file for creating the bundle. i.e., `neu build --config-file prod.config.json`
+
+### Bugfixes/improvements
+- Support spaces in internal CLI arguments, i.e., `neu run -- --window-title="Window title"`
+
+### Dependencies
+- Update several dependency packages
+
 ## v11.3.1
 
 ### Bugfixes/improvements
-
 - Add execution permissions for binaries after downloading them in Unix-based and Unix-like platforms. 
 
 ## v11.3.0

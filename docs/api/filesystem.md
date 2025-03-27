@@ -397,3 +397,45 @@ Parses a given path and returns its parts.
 let pathParts = await Neutralino.filesystem.getPathParts('./myFolder/myFile.txt');
 console.log('Parts:', pathParts);
 ```
+
+## filesystem.setPermissions(path, permissions, mode)
+This method sets the size of the window. Throws `NE_FS_UNLSTPR` if the framework can't update file permissions for the given path.
+
+### Parameters
+- `path` String: Path.
+- `permissions` Permissions: File permissions using the `Permissions` object format.
+- `mode` String(optional): Permission replacement mode. Accepted values are `ADD`, `REPLACE`(default), and `REMOVE`.
+
+#### Permissions
+- `all`: All permissions for all entities.
+- `ownerAll`: All file permissions for the owner.
+- `groupAll`: All file permissions for the user's group.
+- `othersAll`: All file permissions for other users.
+- `ownerRead`: Read permission for the owner.
+- `ownerWrite`: Write permission for the owner.
+- `ownerExec`: Execution permission for the owner.
+- `groupRead`: Read permission for the user's group.
+- `groupWrite`: Write permission for the user's group.
+- `groupExec`: Execution permission for the user's group.
+- `othersRead`: Read permission for other users.
+- `othersWrite`: Write permission for other users.
+- `othersExec`: Execution permission for other users.
+
+```js
+await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-1', {ownerRead: true, groupRead: true});
+await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-2', {all: true});
+await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-3', {otherAll: true}, 'REMOVE');
+```
+
+## filesystem.getPermissions(path)
+This method sets the size of the window. Throws `NE_FS_NOPATHE` if the given path doesn't exist or is inaccessible. 
+
+### Parameters
+- `path` String: Path.
+
+### Return Object (awaited):
+An instance of the [`Permissions`](#permissions) object.
+
+```js
+const permissions = await Neutralino.filesystem.getPermissions(NL_PATH + '/my-directory-1');
+```

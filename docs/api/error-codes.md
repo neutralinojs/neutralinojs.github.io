@@ -55,3 +55,4 @@ The error object has the following structure:
 | `NE_RS_DIREXTF`| Unable to extract the requested directory | `resources.extractDirectory` 
 | `NE_SR_MPINUSE`| Mount path is already in use | `server.mount`
 | `NE_SR_NOMTPTH`| Cannot unmount the provided path, the path that was not mounted | `server.unmount`
+| `NE_FS_UNLSTPR`| Unable to set file permissions | `filesystem.setPermissions`
