@@ -28,6 +28,17 @@ Writes text into the system clipboard. 
 await Neutralino.clipboard.writeText('Test value');
 ```
 
+## clipboard.writeHTML(html)
+Writes HTML into the system clipboard.
+
+### Parameters
+
+- `html` String: HTML to store into the system clipboard.
+
+```js
+await Neutralino.clipboard.writeHTML('<p style="color:red;">Formatted Text</p>');
+```
+
 ## clipboard.writeImage(image)
 Writes image into the system clipboard. 
 
@@ -62,7 +73,19 @@ let clipboardText = await Neutralino.clipboard.readText();
 console.log(`Text: ${clipboardText}`);
 ```
 
+## clipboard.readHTML()
+Reads and returns HTML from system clipboard. 
+
+### Return String (awaited):
+Stored HTML from the system clipboard.
+
+```js
+let clipboardHTML = await Neutralino.clipboard.readHTML();
+console.log(`HTML: ${clipboardHTML}`);
+```
+
 ## clipboard.readImage(format)
+
 Reads and returns an image from system clipboard. 
 
 ### Parameters
