@@ -1,21 +1,17 @@
 # Neutralinojs website
 
-This repository contains the source code of the Neutralinojs website including the Markdown-based documentation. This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+This repository contains the source code of the Neutralinojs website, including the Markdown-based documentation. This website is built using [Docusaurus](https://docusaurus.io), a modern static website generator.
 
 ## Developer guide
 
 ### Prerequisites
-
-**Node.js**: Use older version of Node.js (around v16.19.0). Use [Node Version Manager (NVM)](https://github.com/nvm-sh/nvm) for easy switching between Node.js versions.
   
-To install and use the correct Node.js version, execute:
+To install and use the latest Node.js LTS version:
 
 ```bash
 nvm install
 nvm use
 ```
-
-We'll soon fix this issue and let contributors run this project on latest Node versions.
 
 ### Installation
 
@@ -29,7 +25,7 @@ yarn install
 yarn start
 ```
 
-This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
 ### Build
 
