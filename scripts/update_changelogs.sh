@@ -17,7 +17,7 @@ function download_changelog() {
 
     # --- Add a title ---
     echo "Adding a title..."
-    content="---\ntitle: $title\n---\n"
+    content="---\ntitle: $title\ntoc_max_heading_level: 2\n---\n"
     echo -e $content > $md_file
     cat "${file}_mod" >> $md_file
 

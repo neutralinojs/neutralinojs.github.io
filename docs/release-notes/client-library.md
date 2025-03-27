@@ -1,8 +1,26 @@
 ---
 title: Client Library
+toc_max_heading_level: 2
 ---
 
 ## Unreleased
+
+## v5.6.0
+
+### API: server
+- Export `server.mount()`, `server.unmount()`, and `server.getMounts()` functions.
+
+### API: resources
+- Export `resources.getStats()` and `resources.extractDirectory()` functions.
+
+### API: window
+- Export `window.snapshot()` function.
+
+### API: clipboard
+- Add the `format` parameter to the `clipboard.readImage()` function format pixel data. Accepted formats: `rgb`, `rgba`, `argb`, and `bgra`.
+
+### Bugfixes/improvements
+- Fix the slow loading issue on Windows by using `127.0.0.1` instead of `localhost`.
 
 ## v5.5.0
 

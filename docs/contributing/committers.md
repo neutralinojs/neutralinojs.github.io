@@ -7,6 +7,7 @@ title: Committers
 - [Chathumaduri Hettiarachchi](https://github.com/Chathumaduri456) - PMC
 - [Kasun Vithanage](https://github.com/kasvith) - PMC
 - [Sainath Rao P](https://github.com/pathange-s) - PMC
+- [Cosmo Myzrail Gorynych](https://github.com/CosmoMyzrailGorynych) - PMC
 - [Momozor](https://github.com/momozor)
 - [Ali Furkan YILDIZ](https://github.com/uAliFurkanY)
 - [Adriaan](https://github.com/hypherionmc)
@@ -26,8 +27,9 @@ title: Committers
 - [Sadaf Ahmed](https://github.com/Sadaf-A)
 - [monsterkodi](https://github.com/monsterkodi)
 - [Viral Gupta](https://github.com/viralgupta)
-- [Cosmo Myzrail Gorynych](https://github.com/CosmoMyzrailGorynych)
 - [Rushil Choudhary](https://github.com/rushil-118)
+- [Alok](https://github.com/Oshlok)
+- [Rahul Kumar](https://github.com/rahulptl165)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 

@@ -271,6 +271,17 @@ let position = await Neutralino.window.getPosition();
 console.log(position);
 ```
 
+## window.snapshot(path)
+Takes a snapshop of the current window client area (without the window frame) and stores as a PNG image file. 
+
+### Parameters
+
+- `path` String: Path where the snapshot PNG file should be stored.
+
+```js
+await Neutralino.window.snapshot(NL_PATH + '/images/window.png');
+```
+
 ## window.create(url, WindowOptions)
 Creates a native window. You can use this method to create new window for your multi-window Neutralinojs app.
 Neutralinojs spawns a new process for each native window. Therefore, the new window works as an isolated app once the window is created.

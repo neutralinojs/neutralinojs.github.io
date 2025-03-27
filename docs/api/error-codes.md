@@ -19,7 +19,7 @@ The error object has the following structure:
 
 ## Native API error codes
 
-| Error code                    | Message                                             | Thrown by
+| Error code                    | Message                                             | Thrown from
 | --------------------------- | ------------------------------------------------------- | --------
 | `NE_FS_DIRCRER`| Unable to create directory.        | `os.createDirectory`
 | `NE_FS_REMVERR`| Unable to remove path.        | `os.remove`
@@ -50,5 +50,8 @@ The error object has the following structure:
 | `NE_UP_CUPDERR`| Unable to fetch update manifest | `updater.checkForUpdates`
 | `NE_UP_UPDNOUF`| No update manifest loaded | `updater.install`
 | `NE_UP_UPDINER`| Update installation error | `updater.install`
-| `NE_RS_APIRQRF`| The resources API works only if the resource file is loaded | `resources.*`
-| `NE_RS_FILNOTF`| Unable to find the requested path in the resources bundle | `resources.readFile`, `resources.readBinaryFile`, `resources.extractFile` 
+| `NE_RS_NOPATHE`| Provided path doesn't exist in resources | `resources.readFile`, `resources.readBinaryFile`, `resources.getStats`
+| `NE_RS_FILEXTF`| Unable to extract the requested file | `resources.extractFile` 
+| `NE_RS_DIREXTF`| Unable to extract the requested directory | `resources.extractDirectory` 
+| `NE_SR_MPINUSE`| Mount path is already in use | `server.mount`
+| `NE_SR_NOMTPTH`| Cannot unmount the provided path, the path that was not mounted | `server.unmount`

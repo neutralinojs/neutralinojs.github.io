@@ -43,19 +43,20 @@ the same formatting with new source files.
 We are still composing a complete C++ code style guide. Make sure to follow the following points for
 C++ code submissions for now. 
 
-- We don't use C++ exceptions. Use booleans to identify failures. For example, we use the following struct for the file read operation:
+- We don't use C++ exceptions. Use booleans or status codes to identify failures. For example, we use the following struct for the file read operation:
 
 ```cpp
+bool removeWatcher(long watcherId);
+
 struct FileReaderResult {
-    bool hasError = false;
-    string error;
+    errors::StatusCode status = errors::NE_ST_OK;
     string data;
 };
 ```
 
 - We prefer single-line comments (i.e., `// comment`) over multi-line comments.
 
-- Use pass-by-reference for complex data types, but use pass-by-value for atomics. Also, make sure to use the
+- Use pass-by-reference for complex data types, but use pass-by-value for atomics. Also, use the
 `const` keyword properly if the parameter doesn't change within the procedure. For example, look at the
 following function definition:
 
@@ -72,6 +73,7 @@ void __registerAllowList() {
 }
 ```
 - Use getter and setter functions instead of shared global variables (defined with `extern`).
+- Avoid implementing long, complex data validations that are too specific and narrow. Always write minimal, concise code by not writing complex validations. For example, you don't need to do any JSON data type checks in API implementations since native method execution failures send `errors::NE_RT_NATRTER` to the Neutralinojs client library.
 
 ## JavaScript code style guide
 

@@ -17,6 +17,11 @@ const templates = [
         githubLink: 'https://github.com/neutralinojs/neutralinojs-zero',
     },
     {
+        title: 'neutralino-svelte-typescript-template',
+        description: 'A Svelte and TypeScript template based on Vite bundler',
+        githubLink: 'https://github.com/CosmoMyzrailGorynych/neutralino-svelte-typescript-template',
+    },
+    {
         title: 'neutralinojs-react',
         description: 'A simple React.js template for building Neutralinojs apps',
         githubLink: 'https://github.com/codezri/neutralinojs-react',
@@ -82,6 +87,19 @@ const buildTools = [
     },
 ];
 
+const cliPlugins = [
+    {
+        title: 'neutralinojs-plugin-explorer',
+        description: 'Search for available neu CLI plugins, get detailed information about specific plugins, and list all available plugins',
+        githubLink: 'https://github.com/rahulptl165/Plugin-Explorer',
+    },
+    {
+        title: 'neutralinojs-templates',
+        description: 'Adds functionality to manage and reuse locally saved neu CLI templates',
+        githubLink: 'https://github.com/rahulptl165/neutralinojs-templates',
+    }
+];
+
 function ResourceSection({title, resources}) {
     return (
         <section className={styles.features}>
@@ -133,6 +151,7 @@ export default function NeutralinoTools() {
                 <ResourceSection title="Extensions" resources={extensions}/>
                 <ResourceSection title="Libraries" resources={libraries}/>
                 <ResourceSection title="Build tools" resources={buildTools}/>
+                <ResourceSection title="CLI plugins" resources={cliPlugins}/>
             </main>
         </Layout>
     );

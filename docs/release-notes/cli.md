@@ -1,8 +1,15 @@
 ---
 title: CLI
+toc_max_heading_level: 2
 ---
 
 ## Unreleased
+
+## v11.3.1
+
+### Bugfixes/improvements
+
+- Add execution permissions for binaries after downloading them in Unix-based and Unix-like platforms. 
 
 ## v11.3.0
 
