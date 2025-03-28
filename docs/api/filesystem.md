@@ -428,7 +428,7 @@ await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-3', {otherAl
 ```
 
 ## filesystem.getPermissions(path)
-This method sets the size of the window. Throws `NE_FS_NOPATHE` if the given path doesn't exist or is inaccessible. 
+Returns file permissions for a given path. Throws `NE_FS_NOPATHE` if the path doesn't exist or is inaccessible. 
 
 ### Parameters
 - `path` String: Path.
