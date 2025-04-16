@@ -1,6 +1,6 @@
 # Neutralinojs website
 
-This repository contains the source code of the Neutralinojs website, including the Markdown-based documentation. This website is built using [Docusaurus](https://docusaurus.io), a modern static website generator.
+This repository contains the source code of the [Neutralinojs website](https://neutralino.js.org), including the Markdown-based documentation. This website is built using [Docusaurus](https://docusaurus.io), a modern static website generator.
 
 ## Developer guide
 
