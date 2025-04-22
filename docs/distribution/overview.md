@@ -37,6 +37,32 @@ the resource file. For example, if you need to make an application package for `
 and the `resources.neu` file. The `resources.neu` contains all application resources, so, double click on the binary and check whether
 the resource file is not corrupted.
 
+
+## Launch application on macOS
+
+1. Open the **Terminal** and type the following command:
+```bash
+sudo xattr -d -r com.apple.quarantine /path_to_app_filename
+```
+2. Type the following command to make the file executable:
+```bash
+chmod +x /path_to_app_filename
+```
+
+## Launch application on Linux
+
+1. Launch the Linux shell and execute the following commands to install the necessary `webkit2gtk`:
+```bash
+sudo apt-get update
+```
+```bash
+sudo apt install libwebkit2gtk-4.1-0
+```
+2. Type the following command to make the file executable:
+```bash
+chmod +x ./path_to_app_filename
+```
+
 ## Creating portable application packages using build scripts 
 
 The [`hschneider/neutralino-build-scripts`](https://github.com/hschneider/neutralino-build-scripts/) community project offers pre-developed build scripts for generating platform-specific application bundles. For example, it generates a standard app structure on GNU/Linux by generating `.desktop` file with app icon by also providing a shell script to install the app. 
