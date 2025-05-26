@@ -5,6 +5,60 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v6.1.0
+
+### API: Native window main menu
+The new `window.setMainMenu(menu)` function lets developers create a native window menu on GNU/Linux and Windows and an application menu on macOS. This function can be called multiple times with different menu objects to update menu items dynamically:
+
+```js
+const menu = [
+  {id: 'file', text: 'File',
+    menuItems: [
+    {id: 'open', text: 'Open'},
+    {text: '-'},
+    {id: 'quit', text: 'Quit'},
+  ]},
+  {id: 'edit', text: 'Edit',
+    menuItems: [
+    {id: 'cut', text: 'Cut'},
+    {id: 'copy', text: 'Copy'},
+    {id: 'paste', text: 'Paste'},
+  ]}
+];
+
+await Neutralino.window.setMainMenu(menu);
+```
+The framework will trigger the `mainMenuItemClicked` event with menu item data when the user clicks on a specific menu item.
+
+On macOS, app developers can register key accelerators and pre-defined actions as follows:
+
+```js
+{id: 'edit', text: 'Edit',
+  menuItems: [
+  {id: 'cut', text: 'Cut', action: 'cut:', shortcut: 'x'},
+  {id: 'copy', text: 'Copy', action: 'copy:', shortcut: 'c'},
+  {id: 'paste', text: 'Paste', action: 'paste:', shortcut: 'v'},
+]}
+```
+
+On GNU/Linux and Windows, the framework only displays the keyboard shortcut within the particular menu item and doesn't register a key accelerator yet:
+
+```js
+{id: 'copy', text: 'Copy', shortcut: 'Ctrl + C'}
+```
+
+*Note: We are planning to add key accelerator support for GNU/Linux and Windows native window menus with a global key accelerator feature in an upcoming framework version.* 
+
+### Core: global variables
+- Add `NL_LOCALE` to get the user locale name, e.g., `en_US.UTF-8`
+- Add `NL_COMPDATA` to display custom data strings embedded in the binary via the BuildZri configuration. Developers can use this global variable to set the build number or other static data when they compile their own framework binary with the BuildZri script:
+
+```json
+"definitions": {
+    "*": [
+        "NEU_COMPILATION_DATA=\\\"build_number=${BZ_BUILDNUMBER};compiler_name=${BZ_CONPILERNAME}\\\"",
+```
+
 ## v6.0.0
 
 ### API: clipboard

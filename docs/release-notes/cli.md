@@ -5,6 +5,9 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+### Core: Creator
+- Support using a specific directory with the `neu create` command, e.g., `neu create .`, `neu create myapps/myapp`, `neu create ../myapp`, etc. 
+
 ## v11.4.0
 
 ### Core: Bundler

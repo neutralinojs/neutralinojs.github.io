@@ -337,3 +337,41 @@ await Neutralino.window.create('/resources/aboutWindow.html', {
     processArgs: '--window-id=W_ABOUT'
 });
 ```
+
+## window.setMainMenu(menu)
+Creates/updates the main window menu on GNU/Linux and Windows and application menu on macOS.
+
+### Parameters
+- `menu` WindowMenuItem[]: An array of `WindowMenuItem` objects.
+
+#### WindowMenuItem
+
+- `id` String (optional): A unique identifier for each menu item.
+- `text` String: Label of the menu item. This field is a mandatory field. Use `-` (hyphen) character for a menu separator.
+- `isDisabled` Boolean (optional): A boolean flag to disable/enable a specific menu item.
+- `isChecked` Boolean (optional): A boolean flag to mark a specific menu item as selected.
+- `menuItems` WindowMenuItem[]: Submenu for the current menu item.
+- `shortcut` String (optional): Sets a key accelerator on macOS (e.g., `c` for `Command + C`) and only displays the shortcut on GNU/Linux and Windows, e.g., `Ctrl + C`.
+- `action` String (optional): Pre-defined window action for macOS, i.e., `cut:`, `copy:`, `paste:`, etc.  
+
+```js
+const menu = [
+  {id: 'file', text: 'File',
+    menuItems: [
+    {id: 'open', text: 'Open'},
+    {text: '-'},
+    {id: 'quit', text: 'Quit'},
+  ]},
+  {id: 'edit', text: 'Edit',
+    menuItems: [
+    {id: 'cut', text: 'Cut'},
+    {id: 'copy', text: 'Copy'},
+    {id: 'paste', text: 'Paste'},
+  ]}
+];
+
+await Neutralino.window.setMainMenu(menu);
+await Neutralino.on('mainMenuItemClicked', (evt) => {
+    console.log('Menu item:', evt.detail);
+}); 
+```

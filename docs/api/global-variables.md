@@ -30,6 +30,8 @@ These JavaScript variables can be used anywhere because these variables are defi
 | `NL_WSAVSTLOADED` | Returns `true` if the initial window state was loaded from the saved configuration |
 | `NL_GINJECTED` | Returns `true` if global variables are injected |
 | `NL_CINJECTED` | Returns `true` if the client library source is injected |
+| `NL_LOCALE` | User locale name from the system, e.g., `en_US.UTF8` |
+| `NL_COMPDATA` | Data passed during the framework binary compilation via the `NEU_COMPILATION_DATA` definition in the BuildZri configuration file |
 
 :::tip
 You can use `NL_COMMIT` and `NL_CCOMMIT` values to identify the codebase snapshot if you use nightly releases.

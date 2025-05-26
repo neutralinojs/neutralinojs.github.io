@@ -5,6 +5,11 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v6.1.0
+
+### API: window
+- Export the `window.setMainMenu` function.
+
 ## v6.0.0
 
 ### API: filesystem
