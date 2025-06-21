@@ -8,6 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 import {Adsense} from '@ctrl/react-adsense';
 import logo from '../../static/logo.gif';
+import EthicalAds from '../extra/EthicalAds';
 
 const youtubeLink = "https://www.youtube.com/c/CodeZri";
 const features = [
@@ -95,21 +96,7 @@ function Feature({imageUrl, title, description}) {
 export default function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const [isInitialized, setIsInitialized] = useState(false);
-  const [isEthABlocked, setIsEthABlocked] = useState(false);
-  useEffect(() => {
-    if(isInitialized) {
-      return;
-    }
-    setIsInitialized(true);
-    try {
-      setIsEthABlocked(typeof ethicalads === 'undefined');
-      ethicalads.load_placements();
-    }
-    catch (error) {
-      setIsEthABlocked(false);
-    }
-  });
+
   return (
     <Layout
       title={`${siteConfig.tagline}`}
@@ -119,14 +106,7 @@ export default function Home() {
           <img src={logo + '?v=' + Math.floor(Math.random() * 10000) } alt="Neutralinojs logo animation" />
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div>
-              <div
-                data-ea-publisher="neutralino"
-                data-ea-type="image"
-                id="neutralino-front"
-                >
-              </div>
-          </div>
+          <EthicalAds id="front" type="image"/>
           <div className={styles.buttons}>
             <Link
               className={clsx(

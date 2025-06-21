@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {useDoc} from '@docusaurus/theme-common/internal';
 import clsx from 'clsx';
 import styles from './styles.module.css';
-import { useTOCHighlight } from "@docusaurus/theme-common/internal"
+import { useTOCHighlight } from "@docusaurus/theme-common/internal";
+import EthicalAds from '../../../../extra/EthicalAds';
 
 const LINK_CLASS_NAME = 'table-of-contents__link';
 const ACTIVE_LINK_CLASS_NAME = 'table-of-contents__link--active';
@@ -45,30 +46,9 @@ function Headings({
 
 function CustomTOC({ toc, frontMatter }) {
   useTOCHighlight({linkClassName: LINK_CLASS_NAME, linkActiveClassName: ACTIVE_LINK_CLASS_NAME, maxHeadingLevel: TOP_OFFSET, minHeadingLevel: 0});
-  const [isInitialized, setIsInitialized] = useState(false);
-  const [isEthABlocked, setIsEthABlocked] = useState(false)
-  useEffect(() => {
-    if (isInitialized) {
-      return;
-    }
-    setIsInitialized(true);
-    try {
-      setIsEthABlocked(typeof ethicalads === 'undefined')
-      ethicalads.load_placements()
-    } catch (error) {
-      setIsEthABlocked(false)
-    }
-  });
   return (
     <div className={clsx(styles.tableOfContents, 'thin-scrollbar')}>
-      <div>
-        <div
-          data-ea-publisher="neutralino"
-          data-ea-type="image"
-          id="neutralino-docs"
-        >
-        </div>
-      </div>
+      <EthicalAds id="docs" type="image"/>
       <Headings toc={toc} frontMatter={frontMatter}/>
     </div>
   );
