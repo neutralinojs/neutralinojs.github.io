@@ -316,6 +316,10 @@ the client library manually via the `neutralino.js` file or from the `@neutralin
 Injects a preload JavaScript file to the webview instance from the app bundle. This script file will be executed before webapp resources and after `window.injectGlobals`
 and `window.injectClientLibrary` scripts, so you can write initialization scripts using Neutralinojs API within this source file.
 
+### `modes.window.webviewArgs: string`
+Additional browser arguments (i.e., `--user-agent=<string>`) for the WebView2 instance on Windows. See all supported arguments from the official 
+[WebView2 developer documentation](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/webview-features-flags?tabs=dotnetcsharp#available-webview2-browser-flags).
+
 ## Chrome mode
 The following configuration values are used when the application starts with the chrome mode.
 

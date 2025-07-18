@@ -184,16 +184,31 @@ Converts a given DOM element to a draggable region. The user will be able to dra
 
 ### DraggableRegionOptions
 
-- `alwaysCapture` Boolean (optional): If set to `true`, the region will always capture the pointer, ensuring that dragging is not interrupted when moving the pointer quickly. Note that it prevents child elements from receiving any pointer events. Defaults to `false`.
-- `dragMinDistance` Number (optional): The minimum distance between cursor's starting and current position after which dragging is started. This helps prevent accidental dragging while interacting with child elements. Defaults to `10` and is measured in CSS pixels.
+- `exclusions` String[] | HTMLElement[] (optional): DOM element identifiers that should be excluded from the draggable region surface, i.e., window control buttons 
+
+
+### Return Object (awaited):
+- `exclusions` DraggableRegionExclusions: Add or remove draggable region exclusions.
+
+### DraggableRegionExclusions
+
+- `add(...domIds: String | HTMLElement)`: Add new elements to exclusions. 
+- `remove(...domIds: String | HTMLElement)`: Remove elements from exclusions. 
+- `removeAll()`: Clear exclusions. 
 
 ```js
 await Neutralino.window.setDraggableRegion('myCustomTitleBar');
 
 await Neutralino.window.setDraggableRegion('myCustomTitleBar', {
-    alwaysCapture: true,
-    dragMinDistance: 15
+    exclusions: ['closeButton', 'helpButton']
 });
+
+const d = await Neutralino.window.setDraggableRegion('myCustomTitleBar', {
+    exclusions: ['windowControls', 'tags']
+});
+
+d.exclusions.add('notifications');
+d.exclusions.remove('tags');
 ```
 
 ## window.unsetDraggableRegion(domId)
@@ -374,4 +389,20 @@ await Neutralino.window.setMainMenu(menu);
 await Neutralino.on('mainMenuItemClicked', (evt) => {
     console.log('Menu item:', evt.detail);
 }); 
+```
+
+## window.print()
+Displays the native print dialog for the current page. Developers can use this function instead of the built-in web `window.print()` function as a cross-platform solution
+since macOS webview doesn't pre-implement `window.print()`.
+
+```js
+await Neutralino.window.print();
+```
+
+## window.beginDrag()
+Starts dragging the native window if the left mouse button is pressed. The draggable region API in the Neutralinojs client library uses this function internally to move
+the window with the pointer events web API. 
+
+```js
+await Neutralino.window.beginDrag();
 ```

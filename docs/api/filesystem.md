@@ -439,3 +439,50 @@ An instance of the [`Permissions`](#permissions) object.
 ```js
 const permissions = await Neutralino.filesystem.getPermissions(NL_PATH + '/my-directory-1');
 ```
+
+## filesystem.getJoinedPath(...paths)
+Returns a single joined path from multiple input path segments.
+
+### Parameters
+
+- `...paths` String: A sequence of paths.
+
+### Return String (awaited):
+Joined path.
+
+```js
+let path = await Neutralino.filesystem.getJoinedPath('./myFolder', 'audio', 'myFile.mp3');
+console.log(path);             // './myFolder/audio/myFile.mp3'
+```
+
+## filesystem.getNormalizedPAth(path)
+Constructs a Unix-like path from a Windows path for cross-platform usage by replacing `\\` with `/`. This function only works on Windows and returns the same input 
+string on non-Windows platforms.
+
+### Parameters
+
+- `path` String: Windows-specific path.
+
+### Return String (awaited):
+Unix-like path.
+
+```js
+let path = await Neutralino.filesystem.getNormalizedPath('.\\myFolder\\main.js');
+console.log(path);            //  `./myFolder/main.js`
+```
+
+## filesystem.getUnnormalizedPAth(path)
+Reverts a Unix-like path created with `filesystem.getNormalizedPath(path)` to a Windows-specific path by replacing `/` with `\\`. This function only works on Windows 
+and returns the same input string on non-Windows platforms.
+
+### Parameters
+
+- `path` String: Unix-like path.
+
+### Return String (awaited):
+Windows-specific path.
+
+```js
+let path = await Neutralino.filesystem.getUnnormalizedPath('./myFolder/main.js');
+console.log(path);            //  `.\myFolder\main.js`
+```

@@ -23,9 +23,14 @@ npx @neutralinojs/neu <command>
 
 ## Commands
 
-### `neu create <binaryName>`
+### `neu create <path>`
 
-Creates a new Neutralinojs app based on a template.
+Creates a new Neutralinojs app based on a template. Basename of `<path>` will be used as the app binary name.
+
+```bash
+neu create myapp    # Creates in ./myapp
+neu create .        # Creates in the current directory
+```
 
 #### Parameters
 

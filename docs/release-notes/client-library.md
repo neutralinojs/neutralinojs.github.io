@@ -5,6 +5,39 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v6.2.0
+
+### API: draggable region API
+The new draggable region API implementation uses native, platform-specific window dragging event via the `window.beginDrag()` function, so now draggable regions behave the same as native window dragging with features such as window snapping, unlike the previous draggable region implementation.
+
+The new draggable region API lets developers exclude specific elements (i.e., window control buttons) from the registered draggable region DOM element:
+
+```js
+const d = await setDraggableRegion('title-bar', { 
+  exclude: ['close-btn'],
+})
+
+// Exclude elements using DOM references or IDs
+d.exclusions.add('help-btn') 
+d.exclusions.add(document.getElementById('info-btn')) 
+d.exclusions.add('tag1', 'tag2') 
+
+// Remove excluded elements
+d.exclusions.remove('help-btn') 
+d.exclusions.remove(document.getElementById('info-btn')) 
+d.exclusions.remove('tag1', 'tag2')
+
+// Remove all exclusions
+d.exclusions.removeAll() 
+```
+
+### API: window
+- Export the `Neutralino.window.print()` function.
+- Export the `window.beginDrag()` function.
+
+### API: filesystem
+- Export `filesystem.getJoinedPath(...paths)`, `filesystem.getNormalizedPath(path)`, and `filesystem.getUnnormalizedPath(path)` functions.
+
 ## v6.1.0
 
 ### API: window
