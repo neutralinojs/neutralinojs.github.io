@@ -455,7 +455,7 @@ let path = await Neutralino.filesystem.getJoinedPath('./myFolder', 'audio', 'myF
 console.log(path);             // './myFolder/audio/myFile.mp3'
 ```
 
-## filesystem.getNormalizedPAth(path)
+## filesystem.getNormalizedPath(path)
 Constructs a Unix-like path from a Windows path for cross-platform usage by replacing `\\` with `/`. This function only works on Windows and returns the same input 
 string on non-Windows platforms.
 
@@ -471,7 +471,7 @@ let path = await Neutralino.filesystem.getNormalizedPath('.\\myFolder\\main.js')
 console.log(path);            //  `./myFolder/main.js`
 ```
 
-## filesystem.getUnnormalizedPAth(path)
+## filesystem.getUnnormalizedPath(path)
 Reverts a Unix-like path created with `filesystem.getNormalizedPath(path)` to a Windows-specific path by replacing `/` with `\\`. This function only works on Windows 
 and returns the same input string on non-Windows platforms.
 
