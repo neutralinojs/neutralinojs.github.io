@@ -25,8 +25,9 @@ const templates = [
         title: 'neutralinojs-react',
         description: 'A simple React.js template for building Neutralinojs apps',
         githubLink: 'https://github.com/codezri/neutralinojs-react',
-    },    {
-        title: 'neutralinojs-build-automation-template,
+    },
+    {
+        title: 'neutralinojs-build-automation-template',
         description: 'A template for bundling binaries into installers using GitHub actions',
         githubLink: 'https://github.com/TolinSimpson/neutralinojs-build-automation-template',
     },
