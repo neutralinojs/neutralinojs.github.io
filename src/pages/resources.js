@@ -31,6 +31,11 @@ const templates = [
         description: 'A template for bundling binaries into installers using GitHub actions',
         githubLink: 'https://github.com/TolinSimpson/neutralinojs-build-automation-template',
     },
+    {
+        title: 'neutralinojs-vite-react-ts',
+        description: 'A Vite + React + TypeScript Template for building Neutralinojs apps',
+        githubLink: 'https://github.com/Cloudwerk/neutralinojs-vite-react-ts',
+    },
 ];
 
 const extensions = [
