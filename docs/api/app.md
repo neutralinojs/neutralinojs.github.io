@@ -52,12 +52,12 @@ let config = await Neutralino.app.getConfig();
 console.log('URL = ', config.url);
 ```
 
-## app.broadcast(eventName, data)
+## app.broadcast(event, data)
 Dispatches a new event to all app instances.
 
 ### Parameters
 
-- `eventName` String: Name of the event.
+- `event` String: Name of the event.
 - `data` Object (optional): Additional data for the event.
 
 ```js
