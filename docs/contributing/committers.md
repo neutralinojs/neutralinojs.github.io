@@ -30,6 +30,7 @@ title: Committers
 - [Rushil Choudhary](https://github.com/rushil-118)
 - [Alok](https://github.com/Oshlok)
 - [Rahul Kumar](https://github.com/rahulptl165)
+- [Ismael Cortés](https://github.com/IsmaCortGtz)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
