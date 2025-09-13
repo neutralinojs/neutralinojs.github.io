@@ -45,8 +45,13 @@ The default value is [`neutralinojs/neutralinojs-minimal`](https://github.com/ne
 This command will create the `dist` folder. Thereafter, it will produce the binaries for all supported
 platforms and `resources.neu` resource file from your application resources.
 
+:::info
+Building with the `--embed-resources` options will not generate the `resources.neu` or a common build. With this flag, every executable inside the `dist` folder will be a `Single-File` version.
+:::
+
 #### Options
 - `--release`: Creates a portable ZIP file of the application bundle.
+- `--embed-resources`: Creates a real `Single-File` executable for each platform without a `resources.neu` file.
 - `--copy-storage`: Copies the current snapshot of the Neutralinojs storage to the application bundle.
 - `--macos-bundle`: Creates a minimal MacOS app bundle by adding the `.app` extension.
 - `--config-file=<path>`: Uses a custom app configuration file only for the packaging process.
