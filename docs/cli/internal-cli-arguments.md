@@ -24,7 +24,7 @@ Sets the default resource loading mode. The following values are accepted:
 
 The framework tries to load app configuration and resources from the above order and loads a default app configuration if all the above modes fail.
 
-### `--load-dir-res` <span class='badge badge--warning'>Deprecated</span>
+### `--load-dir-res` <span class="badge badge--warning">Deprecated</span>
 
 Notifies Neutralinojs server to fetch files from the resources directory. If this flag is not provided,
 Neutralinojs server will load resources from the `resources.neu` file.
