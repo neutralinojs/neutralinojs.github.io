@@ -47,6 +47,7 @@ platforms and `resources.neu` resource file from your application resources.
 
 #### Options
 - `--release`: Creates a portable ZIP file of the application bundle.
+- `--embed-resources`: Creates a single-file executable for each platform without a `resources.neu` file by injecting resources into all platform-specific binaries. This feature requires a version 6.3 or newer of the Neutralinojs framework binaries.
 - `--copy-storage`: Copies the current snapshot of the Neutralinojs storage to the application bundle.
 - `--macos-bundle`: Creates a minimal MacOS app bundle by adding the `.app` extension.
 - `--config-file=<path>`: Uses a custom app configuration file only for the packaging process.
