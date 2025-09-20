@@ -14,7 +14,17 @@ source files via child process API, you can use the following arguments to confi
 
 ## General
 
-### `--load-dir-res`
+### `--res-mode=<mode>`
+
+Sets the default resource loading mode. The following values are accepted:
+
+- `embedded` (default): Loads resources from the binary itself if resources are injected to binaries via the `neu build --embed-resources` command.
+- `bundle`: Loads resources from the `resources.neu` file stored near the binary.
+- `directory`: Loads resources from the application resources directory. 
+
+The framework tries to load app configuration and resources from the above order and loads a default app configuration if all the above modes fail.
+
+### `--load-dir-res` <span class='badge badge--warning'>Deprecated</span>
 
 Notifies Neutralinojs server to fetch files from the resources directory. If this flag is not provided,
 Neutralinojs server will load resources from the `resources.neu` file.
@@ -24,6 +34,11 @@ If Neutralinojs fails to load resources `resources.neu`,
 this flag is automatically enabled internally to find resources from the app directory.
 Therefore, you can double click on the binary instead of `neu run` while developing apps.
 :::
+
+:::warning
+The `--load-dir-res` option is deprecated and will be removed in upcoming versions. You should use `--res-mode=directory` instead.
+:::
+
 
 ### `--config-file=<filename>`
 
@@ -182,13 +197,21 @@ Overrides the window transparency mode.
 
 Overrides the window's initial resizability status.
 
+### `--window-skip-taskbar=<true|false>`
+
+Overrides the skip taskbar setting.
+
 ### `--window-exit-process-on-close=<true|false>`
 
 Overrides the close button's behavior.
 
 ### `--window-enable-inspector=<true|false>`
 
-Automatically opens the developer tools window.
+Enables web developer tools (inspector).
+
+### `--window-open-inspector-on-startup=<true|false>`
+
+Automatically opens the developer tools window on startup.
 
 ### `--window-use-saved-state=<true|false>`
 

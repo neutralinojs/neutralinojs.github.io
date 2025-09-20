@@ -278,7 +278,10 @@ resources directory. We recommend you to choose a transparent PNG file.
 Activates the top-most mode.
 
 ### `modes.window.enableInspector: boolean`
-Automatically opens the developer tools window.
+Enables web developer tools (inspector).
+
+### `modes.window.openInspectorOnStartup: boolean`
+Automatically opens the developer tools window on app startup.
 
 ### `modes.window.borderless: boolean`
 Activates the borderless mode.
@@ -291,6 +294,9 @@ Make the window resizable or not. The default value is `true`.
 
 ### `modes.window.hidden: boolean`
 Make the window invisible. This setting can be used to develop background services.
+
+### `modes.window.skipTaskbar: boolean`
+Prevents displaying the taskbar entry for the app if the setting is `true`.
 
 ### `modes.window.exitProcessOnClose: boolean`
 If this setting is `true`, the app process will exit when the user clicks on the close button. Otherwise,

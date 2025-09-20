@@ -5,6 +5,11 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v6.3.0
+
+### TypeScript
+- Fix several type definition issues by updating the Rollup build script and Rollup TypeScript plugin.
+
 ## v6.2.0
 
 ### API: draggable region API

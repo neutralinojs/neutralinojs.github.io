@@ -5,6 +5,11 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v11.6.0
+
+### Core: Bundler
+- Implement embedding resources to make a single-file-app via the `--embed-resources` option in the `neu build` command.
+
 ## v11.5.0
 
 ### Core: Creator
