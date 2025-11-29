@@ -5,6 +5,14 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v6.4.0
+
+### API: storage
+- Export `storage.clear()` and `storage.removeData(key)` functions.
+
+### TypeScript
+- Add missing properties to the `WindowMenu` interface.
+
 ## v6.3.0
 
 ### TypeScript

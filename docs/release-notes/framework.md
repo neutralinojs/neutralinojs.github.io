@@ -5,6 +5,19 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v6.4.0
+
+### API: storage
+- Implement `storage.clear()` and `storage.removeData(key)` functions to remove saved storage data.
+
+### Improvements/bugfixes
+- Fix the draggable region not working issue on Windows.
+- Replace deprecated macOS API with suitable modern APIs in the codebase.
+- Static file server enhancements.
+- Improve `window.getPositon()` in macOS.
+- Save the correct window size and position when a maximized/minimized window is being closed on Windows.
+- Fix the window disappearing issue while restoring the window on Windows
+
 ## v6.3.0
 
 ### Single-executable mode

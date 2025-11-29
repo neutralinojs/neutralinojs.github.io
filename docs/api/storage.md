@@ -42,6 +42,26 @@ let data = await Neutralino.storage.getData('userDetails');
 console.log(`Data: ${data}`);
 ```
 
+## storage.removeData(key)
+Removes a saved storage record. 
+
+### Parameters
+
+- `key` String: Storage data record identifier.
+
+```js
+await Neutralino.storage.removeData('userDetails');
+);
+```
+
+## storage.clear()
+Clears the whole storage by removing the `.storage` directory.
+
+```js
+await Neutralino.storage.clear();
+);
+```
+
 ## storage.getKeys()
 Returns all storage keys.
 
