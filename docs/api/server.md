@@ -27,7 +27,8 @@ Deactivates a mount configuration. Throws `NE_SR_NOMTPTH` if the provided path i
 - `path` String: Resource path.
 
 ```js
-await Neutralino.server.mount('/app-res', NL_PATH + '/app-res');
+await Neutralino.server.unmount('/app-res');
+
 ```
 
 ## server.getMounts()
