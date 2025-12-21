@@ -29,12 +29,12 @@ cd neutralinojs
 
 No need for separate compilers because Linux distributions usually have GNU C/C++ compilers installed already.
 
-Install GTK, WebKit, other libraries with the following command.
+Install GTK, WebKit, CMake, Ninja, other libraries with the following command.
 
 ##### Debian
 
 ```bash
-sudo apt install libgtk-3-dev
+sudo apt install libgtk-3-dev cmake ninja-build
 ```
 
 ```bash
@@ -54,7 +54,9 @@ sudo dnf install \
     libgtk-3-dev \
     libwebkit2gtk-4.1-0 \ # or libwebkit2gtk-4.0-37
     libglib2.0-dev \
-    libxrandr-dev
+    libxrandr-dev \
+    cmake \
+    ninja-build
 ```
 
 ##### Arch
@@ -62,12 +64,14 @@ sudo dnf install \
 ```bash
 sudo pacman -S \
     gtk3 \
-    webkit2gtk
+    webkit2gtk \
+    cmake \
+    ninja
 ```
 
 #### Windows
 
-Install the latest Visual Studio IDE with Windows SDK. The Neutralinojs compilation process will use the MSVC C++ compiler (aka `cl.exe`).
+Install Visual Studio Build Tools or the Visual Studio IDE with the Windows SDK. The compilation process uses the MSVC C++ compiler (aka `cl.exe`) and requires [CMake](https://cmake.org/download/) (as the build system generator) and [Ninja](https://ninja-build.org/) (as the build executor).
 
 :::info
 How to activate Windows 10 SDK: While installing it in the Visual Studio Installer, go to tab Workloads, section "Desktop & Mobile" and select "Desktop development with C++". On the right in "Installation details" > "Desktop development with C++" > "Optional", make sure "Windows 10 SDK" is checked.
@@ -77,28 +81,93 @@ How to activate Windows 10 SDK: While installing it in the Visual Studio Install
 
 Install Xcode Command Line Tools.
 
+CMake and Ninja are also required and can be installed via Homebrew:
+
+```bash
+brew install cmake ninja
+```
+
 ### Compile the Neutralinojs framework.
 
 Run the following script in order to build the framework binaries.
 
-#### Linux or macOS
+1. Create a `build/` directory in the main repository.
+
+<Tabs
+  defaultValue="Linux"
+  values={[
+    {label: 'Linux', value: 'Linux'},
+    {label: 'macOS', value: 'macOS'},
+    {label: 'Windows', value: 'Windows'},
+  ]}>
+  <TabItem value="Linux">
 
 ```bash
-python3 scripts/bz.py
+mkdir build
 ```
 
-#### Windows
+  </TabItem>
+  <TabItem value="macOS">
 
 ```bash
-python scripts/bz.py
+mkdir -p build
 ```
 
-:::info
-You need to have the [Python](https://www.python.org/downloads/) interpreter (version 3.x) installed to run this script.
-:::
+  </TabItem>
+  <TabItem value="Windows">
 
-Neutralinojs uses BuildZri C++ build automation tool to generate binaries on local development computers and
-CI/CD servers. Read the [BuildZri documentation](https://codezri.org/docs/buildzri/intro) to learn more about CLI options and configuration.
+```bash
+mkdir build
+```
+
+  </TabItem>
+</Tabs>
+
+2. Generate Ninja build files.
+
+<Tabs
+  defaultValue="Linux"
+  values={[
+    {label: 'Linux', value: 'Linux'},
+    {label: 'macOS', value: 'macOS'},
+    {label: 'Windows', value: 'Windows'},
+  ]}>
+  <TabItem value="Linux">
+
+```bash
+cmake . -G Ninja -B build
+
+# --- Cross compile for ARM64 (optional) ---
+cmake . -G Ninja -B build -DCMAKE_TOOLCHAIN_FILE=cmake/toolchains/linux-aarch64.cmake
+
+# --- Cross compile for ARM32 (optional) ---
+cmake . -G Ninja -B build -DCMAKE_TOOLCHAIN_FILE=cmake/toolchains/linux-armhf.cmake
+```
+
+  </TabItem>
+  <TabItem value="macOS">
+
+```bash
+cmake . -G Ninja -B build
+```
+
+  </TabItem>
+  <TabItem value="Windows">
+
+```bash
+cmake . -G Ninja -B build
+```
+
+  </TabItem>
+</Tabs>
+
+3. Compile the project.
+
+```bash
+ninja -C build
+```
+
+This project uses CMake and Ninja to configure and build native binaries for local development and CI/CD environments. Developers can provide custom toolchains or platform-specific configurations to target additional platforms.
 
 ## Setup and build the client
 
