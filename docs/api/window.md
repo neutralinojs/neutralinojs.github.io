@@ -274,7 +274,7 @@ console.log(sizeInfo);
 ## window.getPosition()
 Returns window position coordinates.
 
-### Return Boolean (awaited):
+### Return Object (awaited):
 
 - `x` Number: Horizontal coordinate of the left edge of the window.
 - `y` Number: Vertical coordinate of the top edge of the window.
