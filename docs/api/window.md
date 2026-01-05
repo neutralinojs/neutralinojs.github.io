@@ -386,7 +386,7 @@ const menu = [
 ];
 
 await Neutralino.window.setMainMenu(menu);
-await Neutralino.on('mainMenuItemClicked', (evt) => {
+await Neutralino.events.on('mainMenuItemClicked', (evt) => {
     console.log('Menu item:', evt.detail);
 }); 
 ```
