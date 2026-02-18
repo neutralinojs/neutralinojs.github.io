@@ -31,6 +31,7 @@ title: Committers
 - [Alok](https://github.com/Oshlok)
 - [Rahul Kumar](https://github.com/rahulptl165)
 - [Ismael Cortés](https://github.com/IsmaCortGtz)
+- [Prasun Baranwal](https://github.com/prasu-baran)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
