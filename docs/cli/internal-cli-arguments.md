@@ -106,7 +106,7 @@ Overrides extensions feature's availability.
 
 ### `--enable-server=<true|false>`
 
-Enables or disables the background server (Disables static file servering feature and native API messaging).
+Enables or disables the background server (Disables static file serving feature and native API messaging).
 If you load a remote URL to the webview, you can set this option to `true`.
 
 ### `--enable-native-api=<true|false>`

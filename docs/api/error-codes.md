@@ -42,7 +42,7 @@ The error object has the following structure:
 | `NE_RT_INVTOKN`| Invalid access token.        | `*`
 | `NE_RT_NATPRME`| No permission to execute the provided native method.        | `*`
 | `NE_RT_APIPRME`| No permission to use the native API.        | `*`
-| `NE_RT_NATRTER`| Native method runtime error. Mostly occured due to missing parameters.    | `*`
+| `NE_RT_NATRTER`| Native method runtime error. Mostly occurred due to missing parameters.    | `*`
 | `NE_RT_NATNTIM`| Native method is not implemented.        | `internal`
 | `NE_CL_NSEROFF`| Neutralino server is not reachable. | `*`
 | `NE_EX_EXTNOTC`| Extension is not connected yet | `extensions.dispatch`

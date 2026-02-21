@@ -54,7 +54,7 @@ URL in root-level and another URL in window-mode-level, as shown below.
 The port of your application. If the value is `0`, Neutralinojs will use a random available port.
 
 ### `enableServer: boolean`
-Enables or disables the background server (Disables static file servering feature and native API messaging).
+Enables or disables the background server (Disables static file serving feature and native API messaging).
 If you load a remote URL to the webview, you can set this option to `false`. Make sure to set this option to `true` if you load resources from local sources. The default value is `false`.
 
 ### `enableNativeAPI: boolean`
@@ -427,7 +427,7 @@ Sets the project path of the host project. This path will be used as the current
 
 ### `cli.hostProject.initCommand: string`
 
-A command that gets executed after downloading an host app template with the `neu create` command.
+A command that gets executed after downloading a host app template with the `neu create` command.
 
 ### `cli.hostProject.devCommand: string`
 
