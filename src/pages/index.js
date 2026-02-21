@@ -135,25 +135,26 @@ export default function Home() {
               <p>Run on Linux, Windows, macOS, Web, and Chrome Browser.</p>
             </div>
             <div className="col col--12">
-              <p>
-                Neutralinojs is a lightweight and portable desktop application development framework.
-                It lets you develop lightweight cross-platform desktop applications using JavaScript,
-                HTML and CSS. You can extend Neutralinojs with any programming language (via extensions IPC) and
-                use Neutralinojs as a part of any source file (via child processes IPC).
-                <br/><br/>
-                In Electron and NWjs, you have to install Node.js and hundreds of dependency libraries.
-                Embedded Chromium and Node.js make simple apps bloaty &mdash; in most scenarios, the framework weighs more than your app source. Neutralinojs offers a lightweight and
-                portable SDK which is an alternative for Electron and NW.js. Neutralinojs doesn't bundle Chromium and uses the existing
-                web browser library in the operating system (e.g., gtk-webkit2 on Linux).
-                Neutralinojs implements a <Link to={useBaseUrl('docs/contributing/security')}>secure</Link> WebSocket connection for native operations and embeds a static web server
-                to serve the web content. Also, it offers a built-in <Link href="https://github.com/neutralinojs/neutralino.js">JavaScript client library</Link> for developers.
-                <br/><br/>
-                If you can build a website, you can build cross-platform desktop apps too because Neutralinojs is a framework for
-                creating native desktop applications with web technologies like JavaScript, HTML and CSS. You can indeed use your
-                favorite frontend framework (such as Angular, React, Svelte, Vue, etc.) for building your next Neutralinojs app.
-
-                <br/><br/>
-
+              <div>
+                <p>
+                  Neutralinojs is a lightweight and portable desktop application development framework.
+                  It lets you develop lightweight cross-platform desktop applications using JavaScript,
+                  HTML and CSS. You can extend Neutralinojs with any programming language (via extensions IPC) and
+                  use Neutralinojs as a part of any source file (via child processes IPC).
+                </p>
+                <p>
+                  In Electron and NWjs, you have to install Node.js and hundreds of dependency libraries.
+                  Embedded Chromium and Node.js make simple apps bloaty &mdash; in most scenarios, the framework weighs more than your app source. Neutralinojs offers a lightweight and
+                  portable SDK which is an alternative for Electron and NW.js. Neutralinojs doesn't bundle Chromium and uses the existing
+                  web browser library in the operating system (e.g., gtk-webkit2 on Linux).
+                  Neutralinojs implements a <Link to={useBaseUrl('docs/contributing/security')}>secure</Link> WebSocket connection for native operations and embeds a static web server
+                  to serve the web content. Also, it offers a built-in <Link href="https://github.com/neutralinojs/neutralino.js">JavaScript client library</Link> for developers.
+                </p>
+                <p>
+                  If you can build a website, you can build cross-platform desktop apps too because Neutralinojs is a framework for
+                  creating native desktop applications with web technologies like JavaScript, HTML and CSS. You can indeed use your
+                  favorite frontend framework (such as Angular, React, Svelte, Vue, etc.) for building your next Neutralinojs app.
+                </p>
                 <ul>
                   <li>
                     <Link to={useBaseUrl('docs/getting-started/using-frontend-libraries')}>Learn how to use your favorite frontend library.</Link>
@@ -162,7 +163,7 @@ export default function Home() {
                     <Link to={useBaseUrl('docs/how-to/extensions-overview')}>Learn how to use your favorite backend language.</Link>
                   </li>
                 </ul>
-              </p>
+              </div>
             </div>
             <div className="col col--12">
               <Adsense
@@ -217,11 +218,11 @@ export default function Home() {
       <div className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">Start building lightweight apps!</h1>
-          <p className="hero__subtitle">
+          <div className="hero__subtitle">
             <CodeBlock className={styles.code} language="bash">
               npm install -g @neutralinojs/neu
             </CodeBlock>
-          </p>
+          </div>
         </div>
       </div>
     </Layout>
