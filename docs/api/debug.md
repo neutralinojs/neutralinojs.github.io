@@ -20,7 +20,7 @@ messages on your terminal.
 ```js
 await Neutralino.debug.log('Hello Neutralinojs');
 
-await Neutralino.debug.log('An error occured', 'ERROR');
+await Neutralino.debug.log('An error occurred', 'ERROR');
 
 await Neutralino.debug.log('A warning message', 'WARNING');
 ```

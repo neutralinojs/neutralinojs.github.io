@@ -374,7 +374,7 @@ console.log(navigator.userAgent)    // <Default UA> MyAppClient
 ```
 
 ### Configuration: custom configuration files
-The Neutralinojs framework typically loads the application configuration content from the `neutralino.config.json` file, but sometimes app developers need to use a custom configuration filename during development (i.e., For separating production and development environments). Now, you can use the `--config-file=<filename>` internal command-line parameter to use a custom app configuration, as shown in the following example:
+The Neutralinojs framework typically loads the application configuration content from the `neutralino.config.json` file, but sometimes app developers need to use a custom configuration filename during development (i.e., for separating production and development environments). Now, you can use the `--config-file=<filename>` internal command-line parameter to use a custom app configuration, as shown in the following example:
 
 ```bash
 ./myapp-linux_x64 --load-dir-res --config-file=neutralino-dev.config.json
@@ -540,9 +540,9 @@ Returns the current mouse cursor position via a JavaScript object that has `x` a
 ## v4.7.0
 
 ### API: System information API
-Ealier, we had the `getMemoryInfo` function in the `computer` namespace to retrieve system memory statistics. Now, we have added more functions to get details about the CPU, operating system, kernel, and connected displays:
+Earlier, we had the `getMemoryInfo` function in the `computer` namespace to retrieve system memory statistics. Now, we have added more functions to get details about the CPU, operating system, kernel, and connected displays:
 
-- `computer.getArch`: Returns the CPU architecture. i.e, `x64`, `arm`, etc.
+- `computer.getArch`: Returns the CPU architecture. i.e., `x64`, `arm`, etc.
 - `computer.getKernelInfo`: Returns the operating system's kernel details.
 - `computer.getOSInfo`: Returns the operating system details.
 - `computer.getCPUInfo`: Returns the CPU details.

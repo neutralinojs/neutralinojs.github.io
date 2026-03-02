@@ -17,7 +17,7 @@ if this is set to `true`. This option makes the process detached from the API fu
 connect with the newly created process later, consider using `os.spawnProcess`.
 - `stdIn` String: Standard input as a string.
 - `cwd` String: Current working directory.
-- `envs` Object: Key-value pairs of an environment variables set.
+- `envs` Object: Key-value pairs of environment variables.
 
 ### Return Object (awaited):
 - `pid` Number: Process identifier.
@@ -45,7 +45,7 @@ Spawns a process based on a command in background and let developers control it.
 
 ### Options
 - `cwd` String (optional): Current working directory.
-- `envs` Object: Key-value pairs of an environment variables set.
+- `envs` Object: Key-value pairs of environment variables.
 
 ### Return Object (awaited):
 - `id` Number: A Neutralino-scoped process identifier. This value is used for controlling the
