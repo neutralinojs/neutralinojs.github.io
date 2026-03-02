@@ -30,7 +30,8 @@ architectures soon!
 The `resources.neu` file generated during the build process is a standard [ASAR](https://github.com/electron/asar) archive. If you ever need to unpack it to inspect the compiled contents for debugging or recovery, you can easily extract it using the `asar` utility from npm:
 
 ```bash
-npx asar extract path/to/resources.neu ./unpacked-resources
+npx @electron/asar extract path/to/resources.neu ./unpacked-resources
+```
 
 ## Selecting files for packaging
 
