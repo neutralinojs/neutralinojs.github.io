@@ -82,7 +82,7 @@ use the `nightly` tag for the `cli.binaryVersion` and `cli.clientVersion` in the
 , and update the app configuration with fetched version details.
 
 :::warning
-Nightly builds refers to automatically generated daily builds, so these builds can contain experimental or
+Nightly builds refer to automatically generated daily builds, so these builds can contain experimental or
 incomplete features. Therefore, avoid using `nightly` versions in your production apps. Use `nightly` versions
 to try out latest features, but use a stable version for production apps.
 :::
@@ -105,7 +105,7 @@ directory and loads during the bootstrap process. Plugins can introduce new comm
 ## Plugins
 
 Neutralinojs app developers are able to write plugins to add their own commands to the neu CLI.
-You can develop CLI plugins with the folllowing steps.
+You can develop CLI plugins with the following steps.
 
 ### Developing a plugin
 
