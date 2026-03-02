@@ -125,7 +125,7 @@ The `buildScript/win` JSON segment in the config-file contains the following fie
 
 | Key          | Description                                                  |
 | ------------ | ------------------------------------------------------------ |
-| architecture | This is an array of the architectures, you want to build. Because Neutralino currently only support 'x64', you should leave this untouched. |
+| architecture | This is an array of the architectures, you want to build. Because Neutralino currently only supports 'x64', you should leave this untouched. |
 | appName      | The app-name as displayed in the File Explorer, with or without .exe-suffix. |
 | appIcon      | Path to the app-icon in **.ico** format. If only the filename is submitted, the file is expected in the project's root. The icon is copied from this path into the app-bundle. To apply the icon to the executable file, you'll have to run **[Resource Hacker](https://www.angusj.com/resourcehacker/)** from a Windows machine. To do so, just double-click **install-icon.cmd** in the app-bundle. |
 
