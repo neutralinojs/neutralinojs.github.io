@@ -67,6 +67,10 @@ development evironment at the same time. This option patches the main HTML file 
 client library global variables to expose the native API to the frontend library's development server.
 Learn how to setup this feature from [this](../getting-started/using-frontend-libraries.md) guide.
 
+### A note for WSL (Windows Subsystem for Linux) users
+
+If you are developing on Windows using WSL and encounter `error code 1` when executing `neu run`, ensure that your WSL environment has GUI support enabled (WSLg) and properly configured system dependencies. Neutralinojs requires a display server to launch the application window.
+
 #### Options
 - `--disable-auto-reload`: Disables the auto-reloading feature.
 - `--arch=<arch>`: Explicitly set the CPU architecture. This option is helpful if you use a 32-bit Node.js process
