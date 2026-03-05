@@ -19,7 +19,7 @@ Writes data into Neutralinojs shared storage. 
 ### Parameters
 
 - `key` String: A unique identifier.
-- `data` Object (optional): Data as a string. If this value is `null` or `undefined`, the specific data record will be erased from the disk.
+- `data` string (optional): Data as a string. If this value is `null` or `undefined`, the specific data record will be erased from the disk.
 
 ```js
 await Neutralino.storage.setData('userDetails',
@@ -51,7 +51,6 @@ Removes a saved storage record. 
 
 ```js
 await Neutralino.storage.removeData('userDetails');
-);
 ```
 
 ## storage.clear()
@@ -59,7 +58,6 @@ Clears the whole storage by removing the `.storage` directory.
 
 ```js
 await Neutralino.storage.clear();
-);
 ```
 
 ## storage.getKeys()
