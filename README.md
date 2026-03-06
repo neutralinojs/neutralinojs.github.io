@@ -1,5 +1,3 @@
-**Important security notice ⚠️:** This repository (`babel.config.js`) received a malicious JavaScript snippet, apparently via a supply chain attack through commit [`6c19a31`](https://github.com/neutralinojs/neutralinojs.github.io/commit/6c19a3106b6f6f2725c530e37bfac7f99c2cc82b). If you cloned/forked this repository and executed it after this specific commit was pushed, we recommend you scan your computer with a virus scanner. Note that now the repository has been cleaned, and Neutralinojs binaries aren't affected by this attack. Neutralinojs maintainers apologize for this incident. We'll publish a report for this incident after security investigations. Thanks, OpenSourceMalware team, for security advice and collaboration. 
-
 # Neutralinojs website
 
 This repository contains the source code of the [Neutralinojs website](https://neutralino.js.org), including the Markdown-based documentation. This website is built using [Docusaurus](https://docusaurus.io), a modern static website generator.
