@@ -271,7 +271,7 @@ Returns window size information.
 
 - `width` Number: Window width in pixels.
 - `height` Number: Window height in pixels.
-- `minWidth` Number Minimum width of the window in pixels.
+- `minWidth` Number: Minimum width of the window in pixels.
 - `minHeight` Number: Minimum height of the window in pixels.
 - `maxWidth` Number: Maximum width of the window in pixels.
 - `maxHeight` Number: Maximum height of the window in pixels.
@@ -300,7 +300,7 @@ console.log(position);
 ```
 
 ## window.snapshot(path)
-Takes a snapshop of the current window client area (without the window frame) and stores as a PNG image file. 
+Takes a snapshot of the current window client area (without the window frame) and stores as a PNG image file. 
 
 ### Parameters
 
