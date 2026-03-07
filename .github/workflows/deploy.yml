@@ -10,6 +10,8 @@ jobs:
       contents: read
       pages: write
       id-token: write
+    environment:
+      name: github-pages
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
