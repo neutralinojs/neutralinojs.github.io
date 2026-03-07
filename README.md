@@ -37,7 +37,7 @@ This command generates static content into the `build` directory and can be serv
 
 ### Deployment
 
-Our GitHub Actions [deployment workflow](https://github.com/neutralinojs/neutralinojs.github.io/blob/main/.github/workflows/deploy.yml) automatically deploys the last commit in the `main` branch to the GitHub Pages service.
+Our GitHub Actions [deployment workflow](.github/workflows/deploy.yml) automatically deploys the last commit in the `main` branch to the GitHub Pages service.
 
 
 ### License
