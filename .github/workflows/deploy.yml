@@ -6,11 +6,15 @@ on:
 
 jobs:
   deploy:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      
+  
       - uses: actions/setup-node@v4
         with:
           node-version: 24.x
@@ -20,6 +24,14 @@ jobs:
         run: |
           yarn install --frozen-lockfile
           yarn build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        
+      - name: Upload Pages artifacts
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: './build'
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
