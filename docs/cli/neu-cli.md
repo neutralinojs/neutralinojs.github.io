@@ -67,6 +67,9 @@ development evironment at the same time. This option patches the main HTML file 
 client library global variables to expose the native API to the frontend library's development server.
 Learn how to setup this feature from [this](../getting-started/using-frontend-libraries.md) guide.
 
+:::info WSL Users
+If you are using Windows Subsystem for Linux (WSL), ensure you have GUI support (WSLg) enabled. Running `neu run` without a display server configured will result in an application crash or `error code 1`.
+:::
 #### Options
 - `--disable-auto-reload`: Disables the auto-reloading feature.
 - `--arch=<arch>`: Explicitly set the CPU architecture. This option is helpful if you use a 32-bit Node.js process
