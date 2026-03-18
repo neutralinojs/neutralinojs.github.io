@@ -12,11 +12,11 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title} Privacy Policy`}
-      description="Privacy policy of the the Neutralinojs website and documentation">
+      description="Privacy policy of the Neutralinojs website and documentation">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">Privacy Policy</h1>
-          <p className="hero__subtitle">Privacy policy of the the Neutralinojs website and documentation</p>
+          <p className="hero__subtitle">Privacy policy of the Neutralinojs website and documentation</p>
         </div>
       </header>
       <div className={styles.intro}>
