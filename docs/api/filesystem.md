@@ -424,7 +424,7 @@ Sets file permissions for a given path. Throws `NE_FS_UNLSTPR` if the framework 
 ```js
 await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-1', {ownerRead: true, groupRead: true});
 await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-2', {all: true});
-await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-3', {otherAll: true}, 'REMOVE');
+await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-3', {othersAll: true}, 'REMOVE');
 ```
 
 ## filesystem.getPermissions(path)
