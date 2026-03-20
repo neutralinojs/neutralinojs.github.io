@@ -321,7 +321,7 @@ await Neutralino.filesystem.move('./myDir', './myFolder');
 
 ## filesystem.getStats(path)
 Returns file statistics for the given path. If the given path doesn't exist or is inaccessible,`NE_FS_NOPATHE` is thrown.
-Therefore, you can use this method to check for the existance of a file or directory.
+Therefore, you can use this method to check for the existence of a file or directory.
 
 ### Parameters
 
