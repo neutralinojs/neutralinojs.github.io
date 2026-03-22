@@ -212,3 +212,19 @@ We've built the above example application with vanilla JavaScript. However, you 
 framework to build Neutralinojs apps.
 
 Check more details about frontend framework support [here](../configuration/project-structure.md#developing-apps-with-frontend-frameworks).
+
+### App crashes on Linux with `SyntaxError: Unexpected token '{'`
+
+If you are using a modern frontend framework (like Angular) with libraries such as `ngx-bootstrap` or `c3js`, your application might crash on load when running on Linux. 
+
+This typically happens because modern frameworks compile output to ES2022 by default, which utilizes Class Static Initialization Blocks (`static { ... }`). The native webview engine on some Linux distributions (WebKitGTK) may be an older version that does not yet recognize this modern syntax.
+
+**Solution:**
+Downlevel your framework's build target to an older ECMAScript version. For example, in an Angular project, open your `tsconfig.json` (or `tsconfig.app.json`) and change the `target` property:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020" 
+  }
+}
