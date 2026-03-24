@@ -82,7 +82,7 @@ updated.
     - `stdIn`: Sends data to the process via the standard input stream.
     - `stdInEnd`: Closes the standard input stream file descriptor.
     - `exit`: Terminates the process.
-- `data` Object (optional): Additional data for the `action`. Send stardard input string if the `action`
+- `data` Object (optional): Additional data for the `action`. Send standard input string if the `action`
     is `stdIn`.
 
 
@@ -237,7 +237,7 @@ Displays a notification message.
 ### Parameters
 - `title` String: Notification title.
 - `content` String: Content of the notification.
-- `icon` String (optional): Icon name. Accpeted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is
+- `icon` String (optional): Icon name. Accepted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is
         `INFO`
 
 ```js
@@ -252,9 +252,9 @@ Displays a message box.
 ### Parameters
 - `title` String: Title of the message box.
 - `content` String: Content of the message box.
-- `choice` String (optional): Message box buttons. Accpeted values are: `OK`, `OK_CANCEL`, `YES_NO`, `YES_NO_CANCEL`, `RETRY_CANCEL`,
+- `choice` String (optional): Message box buttons. Accepted values are: `OK`, `OK_CANCEL`, `YES_NO`, `YES_NO_CANCEL`, `RETRY_CANCEL`,
       and `ABORT_RETRY_IGNORE`. The default value is `OK`.
-- `icon` String (optional): Icon name. Accpeted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is `INFO`.
+- `icon` String (optional): Icon name. Accepted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is `INFO`.
 
 ### Return String (awaited):
 User's `choice`.
