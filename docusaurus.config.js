@@ -38,6 +38,10 @@ module.exports = {
           position: 'left',
         },
         {
+          type: 'search',
+          position: 'right',
+        },
+        {
           to: 'resources/',
           activeBasePath: 'resources',
           label: 'Resources',
@@ -197,6 +201,6 @@ module.exports = {
   ],
   plugins: [
     path.resolve('./plugins/load-external-assets'),
-    require.resolve('docusaurus-lunr-search')
+    require.resolve('@easyops-cn/docusaurus-search-local'),
   ]
 };
