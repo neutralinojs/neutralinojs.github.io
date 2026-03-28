@@ -45,6 +45,25 @@ the resource file. For example, if you need to make an application package for `
 and the `resources.neu` file. The `resources.neu` contains all application resources, so, double click on the binary and check whether
 the resource file is not corrupted.
 
+### Embedding resources into the binary
+
+By default, `neu build` produces two separate files per platform: the application binary and `resources.neu`. Alternatively, you can embed `resources.neu` directly into the binary using the `--embed-resources` flag, producing a **single self-contained executable** with no external resource file dependency.
+
+```bash
+neu build --embed-resources
+```
+
+The following table summarizes the difference:
+
+| Command | Distribution output |
+|---|---|
+| `neu build` | `myapp-linux_x64` + `resources.neu` |
+| `neu build --embed-resources` | `myapp-linux_x64` (resources embedded) |
+
+:::note
+Embedding resources makes it impossible to update application resources without rebuilding the binary. The standard two-file approach is recommended if you plan to patch resources independently between releases.
+:::
+
 ## Creating portable application packages using build scripts 
 
 The [`hschneider/neutralino-build-scripts`](https://github.com/hschneider/neutralino-build-scripts/) community project offers pre-developed build scripts for generating platform-specific application bundles. For example, it generates a standard app structure on GNU/Linux by generating `.desktop` file with app icon by also providing a shell script to install the app. 
