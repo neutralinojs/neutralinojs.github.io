@@ -16,7 +16,7 @@ The `neu build` command generates the following files on any supported operating
 | `myapp-linux_arm64`     | Linux   | `arm64`              | Application binary               |
 | `myapp-mac_x64`         | macOS   | `x86_64`             | Application binary (Intel)       |
 | `myapp-mac_universal`   | macOS   | `x86_64` and `arm64` | Application binary               |
-| `myapp-mac_arm64`       | macOS   | `arm64`              | Application binary (M1/M2/M3)    |
+| `myapp-mac_arm64`       | macOS   | `arm64`              | Application binary (M1/M2/M3/M4/M5)    |
 | `myapp-win_x64`         | Windows | `x86_64`             | Application binary               |
 | `resources.neu`         | all     | `N/A`                | Application resource file        |
 
