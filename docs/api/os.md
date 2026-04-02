@@ -304,7 +304,7 @@ await Neutralino.os.setTray(tray);
 Returns known platform-specific folders such as Downloads, Music, Videos, etc.
 
 ### Parameters
-- `title` String: Name of the folder. Accepted values are: `config`, `data`, `cache`, `documents`, `pictures`, `music`, `video`,
+- `name` String: Name of the folder. Accepted values are: `config`, `data`, `cache`, `documents`, `pictures`, `music`, `video`,
             `downloads`, `saveGames1`, `saveGames2`, and `temp`. Throws `NE_OS_INVKNPT` for invalid folder names.
 
 ### Return String (awaited):
