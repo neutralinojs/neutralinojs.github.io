@@ -116,7 +116,7 @@ Returns all spawned processes.
 An array of `SpawnedProcess` objects.
 
 #### SpawnedProcess
-- `id` Number: A Neutralino-scoped process identifier..
+- `id` Number: A Neutralino-scoped process identifier.
 - `pid` Number: Process identifier from the operating system.
 
 ```js
@@ -161,7 +161,7 @@ Shows the file open dialog. You can use this function to obtain paths of existin
 
 ### Options
 - `filters` Filter[] (optional): An array of Filter objects to filter the files list.
-- `multiSelections` (optional): Enables multi selections.
+- `multiSelections` Boolean (optional): Enables multi selections.
 - `defaultPath` String (optional): Initial path/filename displayed by the dialog.
 
 #### Filter
@@ -304,7 +304,7 @@ await Neutralino.os.setTray(tray);
 Returns known platform-specific folders such as Downloads, Music, Videos, etc.
 
 ### Parameters
-- `title` String: Name of the folder. Accepted values are: `config`, `data`, `cache`, `documents`, `pictures`, `music`, `video`,
+- `name` String: Name of the folder. Accepted values are: `config`, `data`, `cache`, `documents`, `pictures`, `music`, `video`,
             `downloads`, `saveGames1`, `saveGames2`, and `temp`. Throws `NE_OS_INVKNPT` for invalid folder names.
 
 ### Return String (awaited):
