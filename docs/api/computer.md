@@ -115,3 +115,42 @@ Returns the current mouse cursor position.
 let pos = await Neutralino.computer.getMousePosition();
 console.log(`Pos: ${pos.x}, ${pos.y}`);
 ```
+
+## computer.setMousePosition(x, y)
+Updates the current mouse cursor position. Throws `NE_CO_UNLTOSC` if cursor position update is not implemented (e.g., on Wayland) or fails.
+
+### Parameters
+- `x` Number: Distance from the left edge of the screen in pixels.
+- `y` Number: Distance from the top edge of the screen in pixels.
+
+```js
+await Neutralino.computer.setMousePosition(50, 60);
+```
+
+## computer.setMouseGrabbing(grabbing)
+Activates or deactivates confining mouse cursor within the app window region. Throws `NE_CO_UNLTOMG` if mouse grabbing is not implemented (e.g., on Wayland) or fails. 
+
+### Parameters
+- `grabbing` Boolean: Mouse grabbing state. Activates if `true` and deactivates if `false`.
+
+```js
+await Neutralino.computer.setMouseGrabbing(true);
+```
+
+## computer.sendKey(key, state)
+Simulates a key press, down, or up event. Throws `NE_CO_UNLTOSK` if keyboard simulation is not implemented (e.g., on Wayland) or fails. 
+
+### Parameters
+- `key` Number: Platform-specific key code. e.g., 38 refers to the letter 'a' on Linux (X11)
+- `state` String (optional): Keyboard button state. Accepted values: `press`, `down`, and `up`. The default value is `press`. 
+
+```js
+// Simulate letter 'a' press on GNU/Linux (X11):
+await Neutralino.computer.sendKey(38)
+
+// Simulate Ctrl + V keyboard shortcut on GNU/Linux (X11):
+await Neutralino.computer.sendKey(105, 'down')    // Hold right control
+await Neutralino.computer.sendKey(55, 'down')     // Hold letter 'v' 
+await Neutralino.computer.sendKey(55, 'up')       // Release letter 'v'
+await Neutralino.computer.sendKey(105, 'up')      // Release right control
+```
