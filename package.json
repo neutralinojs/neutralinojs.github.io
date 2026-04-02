@@ -19,6 +19,7 @@
     "@docusaurus/core": "^3.3.2",
     "@docusaurus/plugin-google-gtag": "^3.3.2",
     "@docusaurus/preset-classic": "^3.3.2",
+    "@easyops-cn/docusaurus-search-local": "^0.55.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^1.1.1",
     "docusaurus-lunr-search": "^3.3.2",
