@@ -278,6 +278,7 @@ Creates/updates the tray icon and menu.
 - `icon` String: Tray icon path. Eg: `/resources/icons/trayIcon.png`. A
           `20x20`-sized PNG image file works fine on all supported operating systems.
 - `menuItems` TrayMenuItem[]: An array of `TrayMenuItem` objects.
+- `useTemplateIcon` Boolean (optional): If this is set to `true`, activates adaptive tray icon (aka, template icons) with color-scheme updates on macOS.
 
 #### TrayMenuItem
 

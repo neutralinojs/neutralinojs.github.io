@@ -56,3 +56,6 @@ The error object has the following structure:
 | `NE_SR_MPINUSE`| Mount path is already in use | `server.mount`
 | `NE_SR_NOMTPTH`| Cannot unmount the provided path, the path that was not mounted | `server.unmount`
 | `NE_FS_UNLSTPR`| Unable to set file permissions | `filesystem.setPermissions`
+| `NE_CO_UNLTOSC`| Unable to set mouse cursor position | `computer.setMousePosition`
+| `NE_CO_UNLTOMG`| Unable to set mouse grabbing | `computer.setMouseGrabbing`
+| `NE_CO_UNLTOSK`| Unable to simulate the key event | `computer.sendKey`

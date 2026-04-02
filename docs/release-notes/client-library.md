@@ -5,6 +5,14 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v6.7.0
+
+### API: os
+- Add `useTemplateIcon: boolean` option to `os.setTray(options)`.
+
+### API: computer
+- Export `computer.setMousePosition(x,y)`, `computer.sendKey(keycode, keyState)`, and `computer.setMouseGrabbling(grabbing: boolean)` functions.
+
 ## v6.5.0
 
 ### API: window
