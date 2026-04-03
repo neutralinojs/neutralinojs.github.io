@@ -155,7 +155,7 @@ Added new configuration options to the `cli.frontendLibrary` key of the `neutral
 
 ### Core: Downloader
 - Download the latest Neutralinojs framework resources with the `--latest` option in the `neu update` command.
-- If framework versions are not present in the app/template configuration, download the latest framework resources automatically. The CLI will download nightly releases if it can't fetch the latest release tag because of an GitHub API-related issue (i.e., Exceeded rate limits).
+- If framework versions are not present in the app/template configuration, download the latest framework resources automatically. The CLI will download nightly releases if it can't fetch the latest release tag because of a GitHub API-related issue (i.e., Exceeded rate limits).
 
 ## v9.7.0
 
@@ -190,7 +190,7 @@ Added new configuration options to the `cli.frontendLibrary` key of the `neutral
 - Initiate a new Node.js-based test suite.
 
 ### Bugfixes/Improvements
-- Clean project files if the `neu create` command wan't successful.
+- Clean project files if the `neu create` command wasn't successful.
 - Display an error message if the `neu build --copy-storage` fails due to missing `.storage` directory.
 - Support Darwin `arm64` binaries natively without binary translation (`x64` -> `arm64`).
 - Make the client library downloading process optional and support importing the client library via `@neutralinojs/lib`.
