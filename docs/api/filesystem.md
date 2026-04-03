@@ -89,12 +89,15 @@ await Neutralino.filesystem.appendBinaryFile('./myFile.bin', rawBin);
 await Neutralino.filesystem.appendBinaryFile('./myFile.bin', rawBin);
 ```
 
-## filesystem.readFile(filename)
+## filesystem.readFile(filename, options)
 Reads a text file. Throws `NE_FS_FILRDER` for file read errors.
 
 ### Parameters
 
 - `filename` String: Filename.
+
+### Options
+
 - `pos` Number (optional): File cursor position in bytes.
 - `size` Number (optional): File reader buffer size in bytes.
 
