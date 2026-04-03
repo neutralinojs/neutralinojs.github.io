@@ -6,14 +6,14 @@ slug: /
 ## What is Neutralinojs?
 
 Neutralinojs is a lightweight and portable desktop application development framework.
+In simple words, Neutralinojs lets you turn a website (built with HTML, CSS, and JavaScript) into a lightweight desktop application that runs on your computer.
 It lets you develop lightweight cross-platform desktop applications using JavaScript, HTML and CSS.
 You can extend Neutralinojs with any programming language (via extensions IPC) and use Neutralinojs as a
 part of any source file (via child processes IPC).
 
 ## Why Neutralinojs?
 
-In Electron and NWjs, you have to install Node.js and hundreds of dependency libraries. Embedded Chromium and Node
-make simple apps bloaty. Neutralinojs offers a lightweight and portable SDK which is an alternative for Electron and
+In Electron and NWjs, you have to install Node.js and hundreds of dependency libraries.Embedded Chromium and Node make simple applications bloated. Neutralinojs offers a lightweight and portable SDK which is an alternative for Electron and
 NW.js. Neutralinojs doesn't bundle Chromium and uses the existing web browser library in the operating
 system (Eg: gtk-webkit2 on Linux). Neutralinojs implements a WebSocket connection for native operations and embeds a
 static web server to serve the web content. Also, it offers a built-in
