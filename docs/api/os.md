@@ -166,7 +166,7 @@ Shows the file open dialog. You can use this function to obtain paths of existin
 
 #### Filter
 - `name` String: Filter name.
-- `extensions` String: Array of file extensions. Eg: `['jpg', 'png']`
+- `extensions` String[]: Array of file extensions. Eg: `['jpg', 'png']`
 
 ### Return Object (awaited):
 An array of selected entries.
