@@ -212,7 +212,7 @@ console.log(info);
 
 ## filesystem.createWatcher(path)
 Creates a filesystem watcher. Throws `NE_FS_UNLCWAT` for watcher creation failures. If there is an existing
-active watcher for the given path, this function returns the existing watcher identifier.
+active watcher for the given path, this function returns the existing watcher identifier. Only directory paths can be watched — file paths will error.
 
 ### Parameters
 
