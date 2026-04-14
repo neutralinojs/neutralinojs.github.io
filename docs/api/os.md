@@ -12,7 +12,7 @@ Executes a command and returns the output.
 - `command` String: The command that is to be executed.
 
 ### Options
-- `background` Boolean: Executes the command in background and resolve the Promise immediately
+- `background` Boolean: Executes the command in background and resolves the Promise immediately
 if this is set to `true`. This option makes the process detached from the API function call, so if you need to
 connect with the newly created process later, consider using `os.spawnProcess`.
 - `stdIn` String: Standard input as a string.
@@ -38,7 +38,7 @@ await Neutralino.os.execCommand('node index.js', { envs: {
 ```
 
 ## os.spawnProcess(command, options)
-Spawns a process based on a command in background and let developers control it.
+Spawns a process based on a command in background and lets developers control it.
 
 ### Parameters
 - `command` String: The command that is to be executed in a new process.
@@ -82,7 +82,7 @@ updated.
     - `stdIn`: Sends data to the process via the standard input stream.
     - `stdInEnd`: Closes the standard input stream file descriptor.
     - `exit`: Terminates the process.
-- `data` Object (optional): Additional data for the `action`. Send stardard input string if the `action`
+- `data` Object (optional): Additional data for the `action`. Send standard input string if the `action`
     is `stdIn`.
 
 
@@ -116,7 +116,7 @@ Returns all spawned processes.
 An array of `SpawnedProcess` objects.
 
 #### SpawnedProcess
-- `id` Number: A Neutralino-scoped process identifier..
+- `id` Number: A Neutralino-scoped process identifier.
 - `pid` Number: Process identifier from the operating system.
 
 ```js
@@ -166,7 +166,7 @@ Shows the file open dialog. You can use this function to obtain paths of existin
 
 #### Filter
 - `name` String: Filter name.
-- `extensions` String: Array of file extensions. Eg: `['jpg', 'png']`
+- `extensions` String[]: Array of file extensions. Eg: `['jpg', 'png']`
 
 ### Return Object (awaited):
 An array of selected entries.
@@ -237,8 +237,7 @@ Displays a notification message.
 ### Parameters
 - `title` String: Notification title.
 - `content` String: Content of the notification.
-- `icon` String (optional): Icon name. Accpeted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is
-        `INFO`
+- `icon` String (optional): Icon name. Accepted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is `INFO`.
 
 ```js
 await Neutralino.os.showNotification('Hello world', 'It works! Have a nice day');
@@ -252,9 +251,9 @@ Displays a message box.
 ### Parameters
 - `title` String: Title of the message box.
 - `content` String: Content of the message box.
-- `choice` String (optional): Message box buttons. Accpeted values are: `OK`, `OK_CANCEL`, `YES_NO`, `YES_NO_CANCEL`, `RETRY_CANCEL`,
+- `choice` String (optional): Message box buttons. Accepted values are: `OK`, `OK_CANCEL`, `YES_NO`, `YES_NO_CANCEL`, `RETRY_CANCEL`,
       and `ABORT_RETRY_IGNORE`. The default value is `OK`.
-- `icon` String (optional): Icon name. Accpeted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is `INFO`.
+- `icon` String (optional): Icon name. Accepted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is `INFO`.
 
 ### Return String (awaited):
 User's `choice`.
@@ -278,7 +277,7 @@ Creates/updates the tray icon and menu.
 - `icon` String: Tray icon path. Eg: `/resources/icons/trayIcon.png`. A
           `20x20`-sized PNG image file works fine on all supported operating systems.
 - `menuItems` TrayMenuItem[]: An array of `TrayMenuItem` objects.
-- `useTemplateIcon` Boolean (optional): If this is set to `true`, activates adaptive tray icon (aka, template icons) with color-scheme updates on macOS.
+- `useTemplateIcon` Boolean (optional): If this is set to `true`, activates adaptive tray icon (also known as template icons) with color-scheme updates on macOS.
 
 #### TrayMenuItem
 
@@ -304,7 +303,7 @@ await Neutralino.os.setTray(tray);
 Returns known platform-specific folders such as Downloads, Music, Videos, etc.
 
 ### Parameters
-- `title` String: Name of the folder. Accepted values are: `config`, `data`, `cache`, `documents`, `pictures`, `music`, `video`,
+- `name` String: Name of the folder. Accepted values are: `config`, `data`, `cache`, `documents`, `pictures`, `music`, `video`,
             `downloads`, `saveGames1`, `saveGames2`, and `temp`. Throws `NE_OS_INVKNPT` for invalid folder names.
 
 ### Return String (awaited):
