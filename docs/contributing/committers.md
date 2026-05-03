@@ -33,6 +33,7 @@ title: Committers
 - [Ismael Cortés](https://github.com/IsmaCortGtz)
 - [Prasun Baranwal](https://github.com/prasu-baran)
 - [Anirudh Lakhanpal](https://github.com/SharonIV0x86/)
+- [Sagar](https://github.com/itssagarK)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
