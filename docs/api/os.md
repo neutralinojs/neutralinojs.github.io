@@ -82,7 +82,7 @@ updated.
     - `stdIn`: Sends data to the process via the standard input stream.
     - `stdInEnd`: Closes the standard input stream file descriptor.
     - `exit`: Terminates the process.
-- `data` Object (optional): Additional data for the `action`. Send stardard input string if the `action`
+- `data` Object (optional): Additional data for the `action`. Send standard input string if the `action`
     is `stdIn`.
 
 
@@ -237,7 +237,7 @@ Displays a notification message.
 ### Parameters
 - `title` String: Notification title.
 - `content` String: Content of the notification.
-- `icon` String (optional): Icon name. Accpeted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is
+- `icon` String (optional): Icon name. Accepted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is
         `INFO`
 
 ```js
