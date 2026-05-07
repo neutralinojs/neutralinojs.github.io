@@ -16,7 +16,7 @@ The `neu build` command generates the following files on any supported operating
 | `myapp-linux_arm64`     | Linux   | `arm64`              | Application binary               |
 | `myapp-mac_x64`         | macOS   | `x86_64`             | Application binary (Intel)       |
 | `myapp-mac_universal`   | macOS   | `x86_64` and `arm64` | Application binary               |
-| `myapp-mac_arm64`       | macOS   | `arm64`              | Application binary (M1/M2/M3)    |
+| `myapp-mac_arm64`       | macOS   | `arm64`              | Application binary (M1 onward)    |
 | `myapp-win_x64`         | Windows | `x86_64`             | Application binary               |
 | `resources.neu`         | all     | `N/A`                | Application resource file        |
 
@@ -44,6 +44,25 @@ As the first step for packaging, you can pick two files for each targeted operat
 the resource file. For example, if you need to make an application package for `x64` Linux computers, pick `myapp-linux_x64`
 and the `resources.neu` file. The `resources.neu` contains all application resources, so, double click on the binary and check whether
 the resource file is not corrupted.
+
+### Embedding resources into the binary
+
+By default, `neu build` produces two separate files per platform: the application binary and `resources.neu`. Alternatively, you can embed `resources.neu` directly into the binary using the `--embed-resources` flag, producing a **single self-contained executable** with no external resource file dependency.
+
+```bash
+neu build --embed-resources
+```
+
+The following table summarizes the difference:
+
+| Command | Distribution output |
+|---|---|
+| `neu build` | `myapp-linux_x64` + `resources.neu` |
+| `neu build --embed-resources` | `myapp-linux_x64` (resources embedded) |
+
+:::note
+Embedding resources makes it impossible to update application resources without rebuilding the binary. The standard two-file approach is recommended if you plan to patch resources independently between releases.
+:::
 
 ## Creating portable application packages using build scripts 
 

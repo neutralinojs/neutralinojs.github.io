@@ -237,7 +237,8 @@ Displays a notification message.
 ### Parameters
 - `title` String: Notification title.
 - `content` String: Content of the notification.
-- `icon` String (optional): Icon name. Accepted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is `INFO`.
+- `icon` String (optional): Icon name. Accepted values are: `INFO`, `WARNING`, `ERROR`, and `QUESTION`. The default value is
+        `INFO`
 
 ```js
 await Neutralino.os.showNotification('Hello world', 'It works! Have a nice day');

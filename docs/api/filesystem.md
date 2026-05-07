@@ -89,12 +89,15 @@ await Neutralino.filesystem.appendBinaryFile('./myFile.bin', rawBin);
 await Neutralino.filesystem.appendBinaryFile('./myFile.bin', rawBin);
 ```
 
-## filesystem.readFile(filename)
+## filesystem.readFile(filename, options)
 Reads a text file. Throws `NE_FS_FILRDER` for file read errors.
 
 ### Parameters
 
 - `filename` String: Filename.
+
+### Options
+
 - `pos` Number (optional): File cursor position in bytes.
 - `size` Number (optional): File reader buffer size in bytes.
 
@@ -211,7 +214,7 @@ console.log(info);
 ```
 
 ## filesystem.createWatcher(path)
-Creates a filesystem watcher. Throws `NE_FS_UNLCWAT` for watcher creation failures. If there is an existing
+Creates a filesystem watcher for a specific directory path. Throws `NE_FS_UNLCWAT` for watcher creation failures. If there is an existing
 active watcher for the given path, this function returns the existing watcher identifier.
 
 ### Parameters
@@ -321,7 +324,7 @@ await Neutralino.filesystem.move('./myDir', './myFolder');
 
 ## filesystem.getStats(path)
 Returns file statistics for the given path. If the given path doesn't exist or is inaccessible,`NE_FS_NOPATHE` is thrown.
-Therefore, you can use this method to check for the existance of a file or directory.
+Therefore, you can use this method to check for the existence of a file or directory.
 
 ### Parameters
 
@@ -424,7 +427,7 @@ Sets file permissions for a given path. Throws `NE_FS_UNLSTPR` if the framework 
 ```js
 await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-1', {ownerRead: true, groupRead: true});
 await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-2', {all: true});
-await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-3', {otherAll: true}, 'REMOVE');
+await Neutralino.filesystem.setPermissions(NL_PATH + '/my-directory-3', {othersAll: true}, 'REMOVE');
 ```
 
 ## filesystem.getPermissions(path)
