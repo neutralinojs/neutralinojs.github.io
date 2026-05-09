@@ -161,7 +161,7 @@ Shows the file open dialog. You can use this function to obtain paths of existin
 
 ### Options
 - `filters` Filter[] (optional): An array of Filter objects to filter the files list.
-- `multiSelections` (optional): Enables multi selections.
+- `multiSelections` Boolean (optional): Enables multi selections.
 - `defaultPath` String (optional): Initial path/filename displayed by the dialog.
 
 #### Filter
