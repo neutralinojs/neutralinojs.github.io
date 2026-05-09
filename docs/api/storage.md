@@ -51,7 +51,7 @@ Removes a saved storage record. 
 
 ```js
 await Neutralino.storage.removeData('userDetails');
-);
+
 ```
 
 ## storage.clear()
@@ -59,7 +59,7 @@ Clears the whole storage by removing the `.storage` directory.
 
 ```js
 await Neutralino.storage.clear();
-);
+
 ```
 
 ## storage.getKeys()
