@@ -109,13 +109,13 @@ const cliPlugins = [
         githubLink: 'https://github.com/rahulptl165/neutralinojs-templates',
     }
 ];
-const awesomeResources = [
+const collections = [
     {
-        title: 'NeutralinoJS Awesome Resources',
-        description: ' Collection of awesome resources for Neutralino ',
-        githubLink: 'https://github.com/neutralinojs-community/awesome-neutralino/'
+        title: 'awesome-neutralino',
+        description: 'Collection of awesome resources for Neutralino',
+        githubLink: 'https://github.com/neutralinojs-community/awesome-neutralino/',
     }
-]
+];
 function ResourceSection({title, resources}) {
     return (
         <section className={styles.features}>
@@ -168,7 +168,7 @@ export default function NeutralinoTools() {
                 <ResourceSection title="Libraries" resources={libraries}/>
                 <ResourceSection title="Build tools" resources={buildTools}/>
                 <ResourceSection title="CLI plugins" resources={cliPlugins}/>
-                <ResourceSection title="Awesome Neutralino" resources={awesomeResources} />
+                <ResourceSection title="Collections" resources={collections}/>
             </main>
         </Layout>
     );
