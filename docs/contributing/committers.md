@@ -34,6 +34,7 @@ title: Committers
 - [Prasun Baranwal](https://github.com/prasu-baran)
 - [Anirudh Lakhanpal](https://github.com/SharonIV0x86/)
 - [Sagar](https://github.com/itssagarK)
+- [Kona Naga Devi](https://github.com/nagadevikona20-max)
 
 See all contributors [here](https://github.com/neutralinojs/neutralinojs/graphs/contributors)
 
