@@ -34,9 +34,13 @@ The error object has the following structure:
 | `NE_FS_MOVEERR`| Move error.        | `filesystem.move`
 | `NE_FS_UNLCWAT`| Unable to create watcher.        | `filesystem.createWatcher`
 | `NE_FS_NOWATID`| Unable to find watcher.        | `filesystem.removeWatcher`
+| `NE_FS_ACSFAIL`| File access check failed       | `filesystem.access`
+| `NE_FS_CHMDERR`| File permission update failed       | `filesystem.chmod`
+| `NE_FS_CHWNERR`| File ownership change failed       | `filesystem.chown`
 | `NE_OS_UNLTOUP`| Unable to update the spawned process due to an invalid process identifier or action. | `os.updateSpawnedProcess`
 | `NE_OS_INVMSGA`| Invalid message box arguments.        | `os.showMessageBox`
 | `NE_OS_INVKNPT`| Invalid platform path name.        | `os.getPath`
+| `NE_OS_UNLTRAS`| Unable to move item to trash   | `os.trashItem`
 | `NE_ST_INVSTKY`| Invalid storage key.        | `storage.getData`, `storage.setData`
 | `NE_ST_STKEYWE`| Storage write error.        | `storage.setData`
 | `NE_RT_INVTOKN`| Invalid access token.        | `*`
@@ -59,3 +63,4 @@ The error object has the following structure:
 | `NE_CO_UNLTOSC`| Unable to set mouse cursor position | `computer.setMousePosition`
 | `NE_CO_UNLTOMG`| Unable to set mouse grabbing | `computer.setMouseGrabbing`
 | `NE_CO_UNLTOSK`| Unable to simulate the key event | `computer.sendKey`
+| `NE_CO_UNLTONI`| Unable to retrieve network interface details | `computer.getNetworkInterfaces`

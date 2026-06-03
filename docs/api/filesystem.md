@@ -489,3 +489,40 @@ Windows-specific path.
 let path = await Neutralino.filesystem.getUnnormalizedPath('./myFolder/main.js');
 console.log(path);            //  `.\myFolder\main.js`
 ```
+
+## filesystem.access(path, mode)
+Executes POSIX `access` operation to test existing file permissions. Throws `NE_FS_ACSFAIL` on failures.
+
+### Parameters
+
+- `path` String: Directory or file path.
+- `mode` Number: POSIX file access mode. Accepted values are `0` (exist), `1` (execute), `2` (write), and `4` (read).  
+
+```js
+await Neutralino.filesystem.access('./bin/exec', 2);
+```
+
+## filesystem.chmod(path, mode)
+Executes POSIX `chmod` operation for file access permission changes. Throws `NE_FS_CHMDERR` on failures.
+
+### Parameters
+
+- `path` String: Directory or file path.
+- `mode` Number: POSIX file permission.
+
+```js
+await Neutralino.filesystem.chmod('./tmpDirectory', 0o755);
+```
+
+## filesystem.chown(path, mode)
+Executes POSIX `chown` operation to change file ownership. Throws `NE_FS_CHWNERR` on failures.
+
+### Parameters
+
+- `path` String: Directory or file path.
+- `uid` Number: User identifier.
+- `gid` Number: Group identifier.
+
+```js
+await Neutralino.filesystem.chown('./dir', 1001, 1001);
+```
