@@ -304,7 +304,7 @@ await Neutralino.os.setTray(tray);
 Returns known platform-specific folders such as Downloads, Music, Videos, etc.
 
 ### Parameters
-- `name` String: Name of the folder. Accepted values are: `config`, `data`, `cache`, `documents`, `pictures`, `music`, `video`,
+- `name` String: Name of the folder. Accepted values are: `config`, `data`, `cache`, `home`, `desktop`, `documents`, `pictures`, `music`, `video`,
             `downloads`, `saveGames1`, `saveGames2`, and `temp`. Throws `NE_OS_INVKNPT` for invalid folder names.
 
 ### Return String (awaited):
@@ -328,4 +328,15 @@ If your application is running in the default web browser, this method will open
 
 ```js
 Neutralino.os.open('https://neutralino.js.org');
+```
+
+## os.trashItem(path)
+Sends a file or directory into the system trash container. Throws `NE_OS_UNLTRAS` on failures.
+
+### Parameters
+
+- `path` String: Directory or file path.
+
+```js
+await Neutralino.os.trashItem('./textFile.txt');
 ```

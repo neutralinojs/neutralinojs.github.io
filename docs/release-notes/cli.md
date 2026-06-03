@@ -5,6 +5,14 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v11.7.2
+
+### Bugfixes/improvements
+- Fix custom configuration file handling within the `build` command.
+- Handle HTTP call failures and display errors accordingly on download failures.
+- Improve local plugin testing commands implementations
+- Updating several project dependencies.
+
 ## v11.7.1
 
 ### DevOps

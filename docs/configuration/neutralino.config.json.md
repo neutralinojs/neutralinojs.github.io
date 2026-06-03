@@ -329,6 +329,21 @@ and `window.injectClientLibrary` scripts, so you can write initialization script
 Additional browser arguments (i.e., `--user-agent=<string>`) for the WebView2 instance on Windows. See all supported arguments from the official 
 [WebView2 developer documentation](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/webview-features-flags?tabs=dotnetcsharp#available-webview2-browser-flags).
 
+### `modes.window.emitDropEvents: boolean`
+Disables default system-webview-specific file drag and drop implementation that generats events for standard web APIs and registers Neutralinojs-specific event handlers.
+Once this is activated, you can retrive full paths (actual paths; standard web APIs present `C:\fakepath\..`-like paths for security concerns) of dropped files using 
+the `filesDropped` event data. 
+
+### `modes.window.newWindowPolicy: string`
+Configures how the framework should handle `target="_blank"` hyperlinks.
+
+Accepts the following values:
+
+- `system`: Uses the default behavior of the platform-specific system webview. Ignores or opens in a new webview window.
+- `browser`: Opens the URL in the default web browser.
+- `custom`: Emits the newWindowRequest event with the URL, you can implement custom logic (e.g., opening the specific URL in a 
+new Neutralinojs window, HTML popup, etc.).
+
 ## Chrome mode
 The following configuration values are used when the application starts with the chrome mode.
 

@@ -35,6 +35,18 @@ let arch = await Neutralino.computer.getArch();
 console.log(arch);
 ```
 
+## computer.getHostname()
+Returns the hostname.
+
+### Return String (awaited):
+Hostname.
+
+
+```js
+let hostname = await Neutralino.computer.getHostname();
+console.log(hostname);
+```
+
 ## computer.getKernelInfo()
 Returns operating system kernel information.
 
@@ -153,4 +165,23 @@ await Neutralino.computer.sendKey(105, 'down')    // Hold right control
 await Neutralino.computer.sendKey(55, 'down')     // Hold letter 'v' 
 await Neutralino.computer.sendKey(55, 'up')       // Release letter 'v'
 await Neutralino.computer.sendKey(105, 'up')      // Release right control
+```
+
+## computer.getNetworkInterfaces()
+Returns network interfaces information.
+
+### Return Object (awaited):
+Network interface addresses in a map that uses network interface name as the key and an array of `NetworkInterfaceAddress` objects.
+
+### NetworkInterfaceAddress
+- `isInternal` Boolean: `true` if the address is internal/loopback.
+- `address` String: IP address.
+- `family` String: IP address family: `ipv4` or `ipv6`.
+- `mac` String: MAC address. 
+
+```js
+let interfaces = await Neutralino.computer.getNetworkInterfaces();
+for(let [name, info] of Object.entries(interfaces)) {
+    console.log(name, info);
+}
 ```

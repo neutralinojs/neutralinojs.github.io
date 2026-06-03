@@ -5,13 +5,56 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v6.8.0
+
+### Core: new window policy
+In previous framework versions, `target="_blank"` hyperlinks didn't automatically open in the default web browser or a new Neutralinojs window. The new window policy feature offers a way to handle  `target="_blank"` hyperlinks properly using the `window.newWindowPolicy: string` configuration option. This option accepts three values:
+- `system`: Uses the default behavior of the platform-specific system webview. Ignores or opens in a new webview window.
+- `browser`: Opens the URL in the default web browser.
+- `custom`: Emits the `newWindowRequest` event with the URL, so the developer can implement custom logic (e.g., opening the specific URL in a new Neutralinojs window, HTML popup, etc.).
+
+### API: native file drag and drop
+By default, Neutralinojs webview enables the system webview's drag and drop implementation, so developers can add drag and drop features for Neutralinojs apps using standard JavaScript web APIs, but they can't retrieve the actual file path due to security concerns. Neutralinojs native filesystem API can't be used with `C:\fakepath\filename.ext`-like fake file paths. Now, you can disable webview-specific drag and drop handling and get full file paths of dropped files directly via Neutralinojs events using the `window.emitDropEvents: boolean` configuration option. If this option is set to `true`, you can get dropped files as follows:
+
+```js
+await Neutralino.events.on('filesDropped', (e) => {
+  console.log('Files: ', e.detail);
+});
+```
+
+### API: computer
+- Implement `os.getHostname()` to retrieve the hostname.
+- Implement `os.getNetworkInterfaces()` to retrieve network interface details, including name, IP, MAC, type (internal/loopback or not), and IP family (v4 or v6) for each network interface entity. This function produces a similar output to Node.js's `os.networkInterfaces()`
+
+### API: filesystem
+- Implement `filesystem.chmod(path, mode)` to change file access permissions using POSIX octal file modes — a POSIX-friendly alternative to the existing generic `filesystem.setPermissions()` function.
+- Implement `filesystem.access(path, mode)` to test file access permissions using POSIX access modes (`0`, `1`, `2`, and `4`) — a POSIX-friendly alternative to the existing generic `filesystem.getPermissions()` function.
+- Implement `filesystem.chown(path, uid, gid)` to change user/group ownership of files and directories. This method has no effect on Windows.
+
+### API: os
+- Implement `os.trashItem(path)` to send a file or directory into the system trash container.
+- Add `home` and `desktop` path name implementations to the `os.getPath(name)` function.
+
+### Core: static server
+- Implements HTTP 206 partial content feature to support HTML `<video>` progress changes (seeking).
+
+### Core: extensions
+- Allow extensions to use WebSocket binary mode for communicating with the Neutralinojs framework.
+
+### Improvements/bugfixes
+- Fix memory handling issues in the `os.setTray()` implementation.
+- Fix the crash that occurs while using the tray menu and window menu together on macOS.
+- Focus app content on the window focus event on Windows.
+- Using the theme color to fix the well-known white screen flashing bug on Linux.
+- Remove the registered system tray icon when the framework process exits on Windows.
+
 ## v6.7.0
 
 ### API: Input device simulation and handling
-New functions were added to the `computer` namespace to update the mouse position, confine the mouse cursor within the window, and simulate keyboard events. These functions work on Windows and macOS, but only work under the X windowing system on Linux (or FreeBSD). On Wayland, these functions will throw `NE_CO_UNLTOSC`, `NE_CO_UNLTOMG`, or `NE_CO_UNLTOSK` error messages.
+New functions were added to the `computer` namespace to update the mouse position, confine the mouse cursor within the window, and simulate keyboard events. These functions work on Windows and macOS, but only work under the X window system on Linux (or FreeBSD). On Wayland, these functions will throw `NE_CO_UNLTOSC`, `NE_CO_UNLTOMG`, or `NE_CO_UNLTOSK` error messages.
 
 - Implement `computer.setMousePosition(x, y)` to update the current mouse cursor position.
-- Implement `computer.setMouseGrabbing(grabbing; boolean)` to activate/deactivate confining the mouse cursor within the native app window. If `grabbing` is set to `true`, the mouse cursor always stays within the window boundaries, so this feature helps create interactive games and similar apps operated using the mouse.
+- Implement `computer.setMouseGrabbing(grabbing: boolean)` to activate/deactivate confining the mouse cursor within the native app window. If `grabbing` is set to `true`, the mouse cursor always stays within the window boundaries, so this feature helps create interactive games and similar apps operated using the mouse.
 - Implement `computer.sendKey(keyCode, keyState)` to simulate keyboard events. App developers can use a platform-specific key code and states (`press`, `down`, and `up`) to simulate from simple single key strokes to complex key combinations:
 ```js
 // Simulate letter 'a' press on GNU/Linux:
@@ -75,7 +118,7 @@ await Neutralino.computer.sendKey(105, 'up')      // Release right control
 - Fix the draggable region not working issue on Windows.
 - Replace deprecated macOS API with suitable modern APIs in the codebase.
 - Static file server enhancements.
-- Improve `window.getPositon()` in macOS.
+- Improve `window.getPosition()` in macOS.
 - Save the correct window size and position when a maximized/minimized window is being closed on Windows.
 - Fix the window disappearing issue while restoring the window on Windows
 
@@ -169,7 +212,7 @@ On GNU/Linux and Windows, the framework only displays the keyboard shortcut with
 ```json
 "definitions": {
     "*": [
-        "NEU_COMPILATION_DATA=\\\"build_number=${BZ_BUILDNUMBER};compiler_name=${BZ_CONPILERNAME}\\\"",
+        "NEU_COMPILATION_DATA=\\\"build_number=${BZ_BUILDNUMBER};compiler_name=${BZ_COMPILERNAME}\\\"",
 ```
 
 ## v6.0.0
@@ -388,7 +431,7 @@ The transparency mode can be activated using the `--window-transparent=<bool>` i
 ## v4.15.0
 
 ### Configuration: custom user agent string
-Developers sometimes use the user agent string to indentify the client in server-side and client-side source codes. Now, Neutralinojs lets app developers extend the default user agent string with a custom string via the `window.extendUserAgentWith` configuration property and the `--window-extend-user-agent-with=<string>` command-line option, as shown in the following example:
+Developers sometimes use the user agent string to identify the client in server-side and client-side source codes. Now, Neutralinojs lets app developers extend the default user agent string with a custom string via the `window.extendUserAgentWith` configuration property and the `--window-extend-user-agent-with=<string>` command-line option, as shown in the following example:
 ```js
 "window": {
   // ---
@@ -425,7 +468,7 @@ The Neutralinojs framework typically loads the application configuration content
 - Add a way to set current working directory for process creation functions: `os.execCommand(command, options)` now supports `cwd` via the options object and `os.spawnProcess(command, cwd)` accepts currently working directory via the second string parameter.
 
 ### Improvements/bugfixes
-- Fix Unicode charactor issues in the tray menu on Windows.
+- Fix Unicode character issues in the tray menu on Windows.
 - Avoid including null bytes to file reader events initiated by the `filesystem.openFile` function.
 - Discard `window` method executions on non-window modes.
 
@@ -539,7 +582,7 @@ To solve this issue, we offer an event-based file stream API with the following 
 
 #### Functions
 
-- `filesystem.openFile`: Creates a file stream by openning a file.
+- `filesystem.openFile`: Creates a file stream by opening a file.
 - `filesystem.updateOpenedFile`: Triggers a file `read`/`readAll` event or sets the file cursor.
 - `filesystem.getOpenedFileInfo`: Returns (awaited) information about the file stream (Props: `id`, `eof`, `pos`, and `lastRead`)
 
@@ -559,7 +602,7 @@ To solve this issue, we offer an event-based file stream API with the following 
 Added the `storage.getKeys` function to get an array of Neutralinojs storage keys. Now, developers don't need to write their own functions to retrieve storage keys with the filesystem API.
 
 ### API: computer.getMousePosition
-Returns the current mouse cursor position via a JavaScript object that has `x` and `y` props. This function is helpful for develping interactive desktop widgets on all supported platforms.
+Returns the current mouse cursor position via a JavaScript object that has `x` and `y` props. This function is helpful for developing interactive desktop widgets on all supported platforms.
 
 ### Bugfixes/improvements
 - Replaced string error codes with enums in the C++ source code.
@@ -568,7 +611,7 @@ Returns the current mouse cursor position via a JavaScript object that has `x` a
 ## v4.7.0
 
 ### API: System information API
-Ealier, we had the `getMemoryInfo` function in the `computer` namespace to retrieve system memory statistics. Now, we have added more functions to get details about the CPU, operating system, kernel, and connected displays:
+Earlier, we had the `getMemoryInfo` function in the `computer` namespace to retrieve system memory statistics. Now, we have added more functions to get details about the CPU, operating system, kernel, and connected displays:
 
 - `computer.getArch`: Returns the CPU architecture. i.e, `x64`, `arm`, etc.
 - `computer.getKernelInfo`: Returns the operating system's kernel details.
@@ -590,7 +633,7 @@ Ealier, we had the `getMemoryInfo` function in the `computer` namespace to retri
 ## v4.6.0
 
 ### API: Process spawning API
-We have `os.execCommand` for launching processes, but it's synchronous, meaning, the developer has to wait unti process completion to receive `pid`, `stdOut` and `stdErr`. `execCommand` is not suitable for long-running processes. The new spawning API offers API functions for handling long-running processes in a multi-threaded way.
+We have `os.execCommand` for launching processes, but it's synchronous, meaning, the developer has to wait until process completion to receive `pid`, `stdOut` and `stdErr`. `execCommand` is not suitable for long-running processes. The new spawning API offers API functions for handling long-running processes in a multi-threaded way.
 
 - `os.spawnProcess(command)`: Spawns a process and returns `id` (A virtual Neutralino-scoped pid) and `pid` (Operating system-level pid).
 - `os.getSpawnedProcesses()`: Returns a list of spawned processes.
@@ -748,7 +791,7 @@ Use `exportAuthInfo` to write auth details to `${NL_PATH}/.tmp/auth_info.json`. 
 ### Events
 - `appClientConnect` and `appClientDisconnect`: Occurs when a new app instance is launched and closed respectively.
 - `extClientConnect` and `extClientDisconnect`: Occurs when a new extension is connected and disconnected respectively.
-- `extensionReady` can be used to implement immediate extension calls. This is implemented from the client-side with `extensions.getStats` and `extClientConnect`. This event gurantees that it will be triggered regardless of the extension's start time.
+- `extensionReady` can be used to implement immediate extension calls. This is implemented from the client-side with `extensions.getStats` and `extClientConnect`. This event guarantees that it will be triggered regardless of the extension's start time.
 
 ### Error codes
 - `NE_EX_EXTNOTC`: Thrown by `extensions.dispatch` if the target extension is not connected.
