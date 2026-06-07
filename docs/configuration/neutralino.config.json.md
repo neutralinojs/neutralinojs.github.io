@@ -436,6 +436,30 @@ Use `|` character to set multiple regular expressions, as shown below.
 Enables frontend development tools (HMR, etc) for the `neu run` command. Learn more about frontend
 framework integration from [here](../getting-started/using-frontend-libraries.md)
 
+### `cli.frontendLibrary.patchFile: string`
+
+Sets a patch file for the project, when using a frontend library.
+
+### `cli.frontendLibrary.devUrl: string`
+
+The URL of the development server hosted by the frontend library. The site hosted on this URL is displayed when running `neu run`.
+
+### `cli.frontendLibrary.projectPath: string`
+
+Sets the project path of the host project. This path will be used as the current directory while executing frontend-library-related commands.
+
+### `cli.frontendLibrary.initCommand: string`
+
+A command that gets executed after downloading a frontend template with the `neu create` command.
+
+### `cli.frontendLibrary.devCommand: string`
+
+This command will run with the `neu run` command to start the frontend library's development server.
+
+### `cli.frontendLibrary.buildCommand: string`
+
+The `neu build` command will execute this command before generating the app bundle, so you can generate bundled version of frontend code.
+
 ### `cli.hostProject.projectPath: string`
 
 Sets the project path of the host project. This path will be used as the current directory while executing the host-project-related commands.
