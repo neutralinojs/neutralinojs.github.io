@@ -39,6 +39,19 @@ await Neutralino.app.restartProcess();
 await Neutralino.app.restartProcess({ args: '--restarted' });
 ```
 
+## app.getProcessId()
+Returns the process identifier (PID)
+
+### Return number (awaited):
+Process identifier
+
+```js
+let pid = await Neutralino.app.getProcessId();
+console.log('PID = ', pid);
+```
+
+
+
 ## app.getConfig()
 Returns the current application configuration as a JSON object.
 

@@ -28,6 +28,7 @@ module.exports = {
         'api/updater',
         'api/window',
         'api/resources',
+        'api/net',
         'api/server',
         'api/error-codes',
         'api/global-variables',

@@ -63,4 +63,9 @@ The error object has the following structure:
 | `NE_CO_UNLTOSC`| Unable to set mouse cursor position | `computer.setMousePosition`
 | `NE_CO_UNLTOMG`| Unable to set mouse grabbing | `computer.setMouseGrabbing`
 | `NE_CO_UNLTOSK`| Unable to simulate the key event | `computer.sendKey`
-| `NE_CO_UNLTONI`| Unable to retrieve network interface details | `computer.getNetworkInterfaces`
+| `NE_NW_SSLCONN`| SSL connection error | `computer.getNetworkInterfaces`
+| `NE_NW_SSLLOAD`| SSL certificate loading error | `net.*`
+| `NE_NW_SSLVERI`| SSL verification error | `net.*`
+| `NE_NW_SSLHOST`| SSL host error | `net.*`
+| `NE_NW_HTTPERR`| A generic HTTP error| `net.*`
+

@@ -47,6 +47,18 @@ let hostname = await Neutralino.computer.getHostname();
 console.log(hostname);
 ```
 
+## computer.getMachineId()
+Returns the platform-specific computer identifier.
+
+### Return String (awaited):
+Machine identifier.
+
+
+```js
+let mid = await Neutralino.computer.getMachineId();
+console.log(mid);
+```
+
 ## computer.getKernelInfo()
 Returns operating system kernel information.
 
@@ -183,5 +195,28 @@ Network interface addresses in a map that uses network interface name as the key
 let interfaces = await Neutralino.computer.getNetworkInterfaces();
 for(let [name, info] of Object.entries(interfaces)) {
     console.log(name, info);
+}
+```
+
+## computer.getDisks()
+Returns information about all connected disks.
+
+### Return Object (awaited):
+An array of `Disk` objects.
+
+### Disk
+- `id` Number: A virtual disk identifier.
+- `vendor` String: Disk vendor name.
+- `model` String: Disk model name.
+- `seriel` String: Disk seriel number.
+- `mountPoint` String: Primary mount point.
+- `total` Number: Disk size in bytes.
+- `free` Number: Available space in bytes.
+
+
+```js
+let disks = await Neutralino.computer.getDisks();
+for(let disk of disks) {
+    console.log(disk);
 }
 ```
