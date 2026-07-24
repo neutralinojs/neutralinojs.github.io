@@ -152,6 +152,17 @@ let envs = await Neutralino.os.getEnvs();
 console.log(envs);
 ```
 
+## os.setEnv(key, value)
+Creates or updates an environment key-value entity for the current process context. Throws `NE_OS_UNLTOUV` on failures.
+
+### Parameters
+- `key` String: Environment variable key.
+- `value` String: Environment variable value. 
+
+```js
+await Neutralino.window.setEnv('MY_ENV', 'Hello');
+```
+
 
 ## os.showOpenDialog(title, options)
 Shows the file open dialog. You can use this function to obtain paths of existing files.
@@ -340,3 +351,18 @@ Sends a file or directory into the system trash container. Throws `NE_OS_UNLTRAS
 ```js
 await Neutralino.os.trashItem('./textFile.txt');
 ```
+
+## os.getLocaleInfo()
+Retrieves the current system locale information.
+
+### Return Object (awaited):
+- `locale` String: Locale identifier, e.g., `en-US`.
+- `language` String: Parsed language segment, e.g., the language is `en` for the `en-US` locale.
+- `region` String: Parsed region segment, e.g., the region is `US` for the `en-US` locale.
+
+
+```js
+let localeInfo = await Neutralino.computer.getLocaleInfo();
+console.log(`Locale: ${localeInfo.locale}`);
+```
+
