@@ -123,8 +123,8 @@ module.exports = {
               href: 'https://discord.gg/cybpp4guTJ'
             },
             {
-              label: 'Reddit',
-              href: 'https://www.reddit.com/r/neutralinojs/'
+              label: 'GitHub Discussions',
+              href: 'https://github.com/neutralinojs/neutralinojs/discussions'
             }
           ],
         },
