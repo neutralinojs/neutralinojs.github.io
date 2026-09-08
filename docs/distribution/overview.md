@@ -63,6 +63,68 @@ The following table summarizes the difference:
 :::note
 Embedding resources makes it impossible to update application resources without rebuilding the binary. The standard two-file approach is recommended if you plan to patch resources independently between releases.
 :::
+## Creating portable application packages with `neu builder`
+
+The [`neu builder`](https://github.com/neutralinojs-community/neutralinojs-builder) is a community plugin for the Neutralinojs CLI that helps package Neutralinojs applications into platform-specific distributable formats. It works on top of the existing `neu build` workflow and uses the generated application binary and `resources.neu` to create the required package.
+
+The builder supports the following targets:
+
+* **Windows:** NSIS (`.exe`)
+* **GNU/Linux:** Debian (`.deb`) and AppImage (`.AppImage`)
+* **macOS:** DMG (`.dmg`)
+
+The builder also supports multiple CPU architectures where supported and is **SEA (Single Executable Application) aware**, allowing it to handle applications where resources have been embedded directly into the executable.
+
+### SEA Mode
+
+`neu builder` supports both standard and **SEA (Single Executable Application)** builds.
+
+The builder automatically determines which mode to use based on the contents of the application's `dist` directory. When `resources.neu` is present, the builder uses it as the application's external resource file and creates a standard package. When `resources.neu` is not present, the builder assumes that the application is using SEA mode and packages the appropriate self-contained executable.
+
+For example, a typical `neu build` output may look like:
+
+```text
+dist/
+└── neutralino_x64/
+    ├── neutralino_x64-linux_arm64
+    ├── neutralino_x64-linux_armhf
+    ├── neutralino_x64-linux_x64
+    ├── neutralino_x64-mac_arm64
+    ├── neutralino_x64-mac_universal
+    ├── neutralino_x64-mac_x64
+    ├── neutralino_x64-win_x64.exe
+    └── resources.neu
+```
+
+In this case, the presence of `resources.neu` indicates that the application is using the standard build format.
+
+With SEA builds, `resources.neu` is embedded into the application executable. Therefore, the file is not present in the build output, and `neu builder` automatically detects the absence of `resources.neu` and packages the appropriate executable as a single self-contained application.
+
+
+To get started, install the builder plugin:
+
+```bash
+neu plugins --add @neutralinojs-contrib/builder
+```
+
+You can then use the appropriate target:
+
+```bash
+neu builder nsis
+neu builder deb
+neu builder appimage
+neu builder dmg
+```
+
+For detailed instructions on creating packages for each platform, follow the platform-specific guides below.
+
+The following guides are not documented yet.
+
+- [Creating an application installer for Linux](linux-distribution)
+- [Creating an application installer for macOS](#)
+- [Creating an application installer for Windows](#)
+
+
 
 ## Creating portable application packages using build scripts 
 
@@ -183,13 +245,6 @@ The `buildScript/linux` JSON segment in the config-file contains the following f
 
 Visit the [build scripts official documentation](https://github.com/hschneider/neutralino-build-scripts/#build-for-linux) for more details.
 
-## Creating application installers
-
-The following guides are not documented yet.
-
-- [Creating an application installer for Linux](#)
-- [Creating an application installer for macOS](#)
-- [Creating an application installer for Windows](#)
 
 
 

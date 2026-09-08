@@ -64,6 +64,7 @@ module.exports = {
       label: 'Distribution',
       items: [
         'distribution/overview',
+        'distribution/linux-distribution',
       ],
     },
     {
