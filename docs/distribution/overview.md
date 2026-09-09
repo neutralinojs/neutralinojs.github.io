@@ -100,7 +100,6 @@ In this case, the presence of `resources.neu` indicates that the application is 
 
 With SEA builds, `resources.neu` is embedded into the application executable. Therefore, the file is not present in the build output, and `neu builder` automatically detects the absence of `resources.neu` and packages the appropriate executable as a single self-contained application.
 
-
 To get started, install the builder plugin:
 
 ```bash
@@ -115,6 +114,17 @@ neu builder deb
 neu builder appimage
 neu builder dmg
 ```
+
+
+## Platform compatibility
+`neu builder` supports cross-platform package generation, with some platform-specific limitations. The following table shows which packages can be generated from each host operating system.
+
+| Host Platform | Windows (NSIS) | Debian (`.deb`) | AppImage (`.AppImage`) | macOS (DMG) |
+|---------------|:--------------:|:---------------:|:----------------------:|:-----------:|
+| Windows       |       ✓        |        ✓        |           ✗            |      ✗      |
+| Linux         |       ✓        |        ✓        |           ✓            |      ✗      |
+| macOS         |       ✓        |        ✓        |           ✗            |      ✓      |
+
 
 For detailed instructions on creating packages for each platform, follow the platform-specific guides below.
 

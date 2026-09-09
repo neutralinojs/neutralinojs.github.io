@@ -4,8 +4,8 @@ title: Linux Distribution
 
 `neu builder` supports two Linux packaging targets:
 
-* **Debian (`deb`)** — Generates a Debian package (`.deb`).
-* **AppImage (`appimage`)** — Generates a portable AppImage package (`.AppImage`).
+* **Debian (`deb`)** - Generates a Debian package (`.deb`).
+* **AppImage (`appimage`)** - Generates a portable AppImage package (`.AppImage`).
 
 The packaging configuration is defined under the `cli.builder.linux.targets` section of `neutralino.config.json`.
 
@@ -150,10 +150,10 @@ If no architecture is provided, the first architecture in the `arch` array is us
 
 The following lifecycle scripts can be specified:
 
-* `preinst` — Runs before the package is installed or upgraded.
-* `postinst` — Runs after the package is installed or upgraded.
-* `prerm` — Runs before the package is removed or upgraded.
-* `postrm` — Runs after the package is removed or upgraded.
+* `preinst` - Runs before the package is installed or upgraded.
+* `postinst` - Runs after the package is installed or upgraded.
+* `prerm` - Runs before the package is removed or upgraded.
+* `postrm` - Runs after the package is removed or upgraded.
 
 These options are optional and can be omitted when the application does not require custom installation or removal steps.
 
@@ -226,15 +226,21 @@ Add the `appimage` target under `cli.builder.linux.targets`:
 
 ```json
 {
-  "target": "appimage",
-  "arch": [
-    "x64",
-    "arm64"
-  ],
-  "icon": "./installerassets/linux/appimage/app.png",
-  "license": "./installerassets/LICENSE.txt",
-  "output": "./dist/linux",
-  "maintainer": "NeutralinoJS"
+    "applicationId": "com.example.myapp",
+    "applicationName": "My First Builder App",
+    "version": "1.0.0",
+    
+    "cli": {
+    "target": "appimage",
+    "arch": [
+      "x64",
+      "arm64"
+    ],
+    "icon": "./installerassets/linux/appimage/app.png",
+    "license": "./installerassets/LICENSE.txt",
+    "output": "./dist/linux",
+    "maintainer": "NeutralinoJS"
+  }
 }
 ```
 
@@ -242,6 +248,8 @@ Add the `appimage` target under `cli.builder.linux.targets`:
 
 | Option       | Description                                                     |
 | ------------ | --------------------------------------------------------------- |
+| `applicationId`   | Unique identifier for the application, typically written as a reverse-domain-style identifier such as `com.example.myapp`. |
+| `applicationName` | Name of the application used when generating the package and its associated metadata.                                      |
 | `target`     | Specifies the packaging target. Must be `appimage`.             |
 | `arch`       | List of CPU architectures for which AppImages can be generated. |
 | `icon`       | Path to the application icon.                                   |
