@@ -2,7 +2,7 @@
 title: Windows Distribution
 ---
 
-`neu builder` supports the **NSIS (`nsis`)** packaging target for Windows. It generates a Windows installer with an `.exe` extension.
+`neu builder` supports the **NSIS (`nsis`)** packaging target for Windows. It generates a Windows installer with an `.exe` extension using NSIS (Nullsoft Scriptable Install System).
 
 The packaging configuration is defined under the `cli.builder.windows.targets` section of `neutralino.config.json`.
 
@@ -22,67 +22,11 @@ neu builder nsis --x64
 neu builder nsis --ia32
 ```
 
-The first argument specifies the packaging target. The optional architecture argument selects the CPU architecture to package.
+The first argument specifies the packaging target. The optional architecture flag selects the CPU architecture to package. If no architecture is provided, the builder uses the first architecture listed in the target's `arch` configuration.
 
-If no architecture is specified, the builder uses the first architecture defined in the target's `arch` configuration.
+## Configuration
 
-For example:
-
-```json
-{
-  "applicationId": "com.example.myapp",
-  "applicationName": "My First Builder App",
-  "version": "1.0.0",
-
-  "cli": {
-    "builder": {
-      "windows": {
-        "targets": [
-          {
-            "target": "nsis",
-            "arch": [
-              "x64",
-              "ia32"
-            ]
-          }
-        ]
-      }
-    }
-  }
-}
-```
-
-Running:
-
-```bash
-neu builder nsis
-```
-
-will use `x64` by default.
-
-## NSIS Installer
-
-The `nsis` target generates a Windows installer using NSIS (Nullsoft Scriptable Install System).
-
-### Installer Assets
-
-Windows-specific installer assets can be organized as follows:
-
-```text
-installerassets/
-├── LICENSE.txt
-└── windows/
-    └── nsis/
-        ├── app.ico
-        ├── sidebar.bmp
-        └── header.bmp
-```
-
-The assets are referenced from the `nsis` target configuration.
-
-### Configuration
-
-Add the `nsis` target under `cli.builder.windows.targets`:
+Each target is defined as an object inside the `targets` array. The following example shows a complete `nsis` target using every supported option:
 
 ```json
 {
@@ -96,10 +40,7 @@ Add the `nsis` target under `cli.builder.windows.targets`:
         "targets": [
           {
             "target": "nsis",
-            "arch": [
-              "x64",
-              "ia32"
-            ],
+            "arch": ["x64", "ia32"],
             "icon": "./installerassets/windows/nsis/app.ico",
             "sidebarImage": "./installerassets/windows/nsis/sidebar.bmp",
             "headerImage": "./installerassets/windows/nsis/header.bmp",
@@ -113,64 +54,49 @@ Add the `nsis` target under `cli.builder.windows.targets`:
 }
 ```
 
-### Configuration Options
+### Application Metadata
 
-| Option            | Description                                                              |
-| ----------------- | ------------------------------------------------------------------------ |
-| `applicationId`   | Unique identifier for the application, such as `com.example.myapp`.      |
-| `applicationName` | Name of the application used by the builder when generating the package. |
-| `version`         | Version of the application included in the generated package metadata.   |
-| `target`          | Specifies the packaging target. Must be `nsis`.                          |
-| `arch`            | List of CPU architectures for which Windows installers can be generated. |
-| `icon`            | Path to the application icon in `.ico` format.                           |
-| `sidebarImage`    | Path to the image displayed in the sidebar of the NSIS installer.        |
-| `headerImage`     | Path to the image displayed in the header of the NSIS installer.         |
-| `license`         | Path to the application's license file.                                  |
-| `output`          | Directory where the generated Windows installer is placed.               |
+`applicationId`, `applicationName`, and `version` are top-level properties of `neutralino.config.json`. They are shared by all build targets, so they only need to be specified once.
+
+* `applicationId` - a unique identifier for the application, such as `com.example.myapp`.
+* `applicationName` - the name of the application used by the builder when generating the package.
+* `version` - the version of the application included in the generated package metadata.
+
+## Configuration Options
+
+| Option         | Description                                                              |
+| -------------- | ------------------------------------------------------------------------ |
+| `target`       | Specifies the packaging target. Must be `nsis`.                          |
+| `arch`         | List of CPU architectures for which an installer can be generated.       |
+| `icon`         | Path to the installer icon in `.ico` format.                             |
+| `sidebarImage` | Path to the image displayed in the sidebar of the installer.             |
+| `headerImage`  | Path to the image displayed in the header of the installer.              |
+| `license`      | Path to the application's license file.                                  |
+| `output`       | Directory where the generated installer is placed.                       |
+
+## Option Reference
+
+Each option below is added to a target object inside `cli.builder.windows.targets`. The snippets show only the relevant part of the target definition.
 
 ### Architecture
 
-The `arch` option specifies the architectures supported by the NSIS target.
-
-For example:
+The `arch` option specifies the CPU architectures supported by the target:
 
 ```json
 {
-  "applicationId": "com.example.myapp",
-  "applicationName": "My First Builder App",
-  "version": "1.0.0",
-
-  "cli": {
-    "builder": {
-      "windows": {
-        "targets": [
-          {
-            "target": "nsis",
-            "arch": [
-              "x64",
-              "ia32"
-            ]
-          }
-        ]
-      }
-    }
-  }
+  "target": "nsis",
+  "arch": ["x64", "ia32"]
 }
 ```
 
-A specific architecture can be selected from the command line:
+Select an architecture from the command line:
 
 ```bash
 neu builder nsis --x64
-```
-
-or:
-
-```bash
 neu builder nsis --ia32
 ```
 
-If no architecture is provided, the first architecture in the `arch` array is used.
+When no architecture flag is given, the first entry of the `arch` array is used. With the example above, `neu builder nsis` builds an `x64` installer.
 
 ### Installer Icon
 
@@ -178,58 +104,19 @@ The `icon` option specifies the `.ico` file used by the installer:
 
 ```json
 {
-  "applicationId": "com.example.myapp",
-  "applicationName": "My First Builder App",
-  "version": "1.0.0",
-
-  "cli": {
-    "builder": {
-      "windows": {
-        "targets": [
-          {
-            "target": "nsis",
-            "arch": ["x64"],
-            "icon": "./installerassets/windows/nsis/app.ico"
-          }
-        ]
-      }
-    }
-  }
+  "target": "nsis",
+  "icon": "./installerassets/windows/nsis/app.ico"
 }
-```
-
-The icon can be placed in the project as:
-
-```text
-installerassets/
-└── windows/
-    └── nsis/
-        └── app.ico
 ```
 
 ### Sidebar Image
 
-The `sidebarImage` option specifies the image displayed in the sidebar of the NSIS installer:
+The `sidebarImage` option specifies the image displayed in the sidebar of the installer:
 
 ```json
 {
-  "applicationId": "com.example.myapp",
-  "applicationName": "My First Builder App",
-  "version": "1.0.0",
-
-  "cli": {
-    "builder": {
-      "windows": {
-        "targets": [
-          {
-            "target": "nsis",
-            "arch": ["x64"],
-            "sidebarImage": "./installerassets/windows/nsis/sidebar.bmp"
-          }
-        ]
-      }
-    }
-  }
+  "target": "nsis",
+  "sidebarImage": "./installerassets/windows/nsis/sidebar.bmp"
 }
 ```
 
@@ -237,27 +124,12 @@ The image should be provided in BMP format.
 
 ### Header Image
 
-The `headerImage` option specifies the image displayed in the header of the NSIS installer:
+The `headerImage` option specifies the image displayed in the header of the installer:
 
 ```json
 {
-  "applicationId": "com.example.myapp",
-  "applicationName": "My First Builder App",
-  "version": "1.0.0",
-
-  "cli": {
-    "builder": {
-      "windows": {
-        "targets": [
-          {
-            "target": "nsis",
-            "arch": ["x64"],
-            "headerImage": "./installerassets/windows/nsis/header.bmp"
-          }
-        ]
-      }
-    }
-  }
+  "target": "nsis",
+  "headerImage": "./installerassets/windows/nsis/header.bmp"
 }
 ```
 
@@ -269,29 +141,48 @@ The `license` option specifies the license file used by the installer:
 
 ```json
 {
-  "applicationId": "com.example.myapp",
-  "applicationName": "My First Builder App",
-  "version": "1.0.0",
-
-  "cli": {
-    "builder": {
-      "windows": {
-        "targets": [
-          {
-            "target": "nsis",
-            "arch": ["x64"],
-            "license": "./installerassets/LICENSE.txt"
-          }
-        ]
-      }
-    }
-  }
+  "target": "nsis",
+  "license": "./installerassets/LICENSE.txt"
 }
 ```
 
 The license file can be shared between different installer targets if required.
 
-### Building a Windows Installer
+### Output Directory
+
+The `output` option specifies where the generated installer is placed:
+
+```json
+{
+  "target": "nsis",
+  "output": "./dist/windows"
+}
+```
+
+The example above produces the installer under:
+
+```text
+dist/
+└── windows/
+```
+
+If `output` is omitted, the package is written to the default `dist/build-output` directory.
+
+## Installer Assets
+
+Windows-specific installer assets are referenced from the `nsis` target configuration and can be organized as follows:
+
+```text
+installerassets/
+├── LICENSE.txt
+└── windows/
+    └── nsis/
+        ├── app.ico
+        ├── sidebar.bmp
+        └── header.bmp
+```
+
+## Building
 
 Run:
 
@@ -305,83 +196,4 @@ Or select an architecture:
 neu builder nsis --x64
 ```
 
-The generated installer is placed in the directory specified by `output`.
-
-For example:
-
-```json
-{
-  "applicationId": "com.example.myapp",
-  "applicationName": "My First Builder App",
-  "version": "1.0.0",
-
-  "cli": {
-    "builder": {
-      "windows": {
-        "targets": [
-          {
-            "target": "nsis",
-            "arch": ["x64"],
-            "output": "./dist/windows"
-          }
-        ]
-      }
-    }
-  }
-}
-```
-
-produces the installer under:
-
-```text
-dist/
-└── windows/
-```
-
----
-
-## Complete Windows Configuration
-
-A complete Windows configuration containing the `nsis` target can look like this:
-
-```json
-{
-  "applicationId": "com.example.myapp",
-  "applicationName": "My First Builder App",
-  "version": "1.0.0",
-
-  "cli": {
-    "builder": {
-      "windows": {
-        "targets": [
-          {
-            "target": "nsis",
-            "arch": [
-              "x64",
-              "ia32"
-            ],
-            "icon": "./installerassets/windows/nsis/app.ico",
-            "sidebarImage": "./installerassets/windows/nsis/sidebar.bmp",
-            "headerImage": "./installerassets/windows/nsis/header.bmp",
-            "license": "./installerassets/LICENSE.txt",
-            "output": "./dist/windows"
-          }
-        ]
-      }
-    }
-  }
-}
-```
-
-After configuring the target, generate the Windows installer using:
-
-```bash
-neu builder nsis
-```
-
-For a specific architecture, append the architecture flag:
-
-```bash
-neu builder nsis --x64
-neu builder nsis --ia32
-```
+The resulting installer is placed in the location specified by the `output` option (see [Output Directory](#output-directory)).

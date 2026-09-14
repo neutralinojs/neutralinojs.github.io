@@ -66,6 +66,7 @@ module.exports = {
         'distribution/overview',
         'distribution/linux-distribution',
         'distribution/windows-distribution',
+        'distribution/macos-distribution',
       ],
     },
     {

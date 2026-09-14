@@ -127,18 +127,13 @@ neu builder dmg
 
 
 For detailed instructions on creating packages for each platform, follow the platform-specific guides below.
-
-The following guides are not documented yet.
-
 - [Creating an application installer for Linux](linux-distribution)
 - [Creating an application installer for macOS](#)
 - [Creating an application installer for Windows](#)
 
-
-
 ## Creating portable application packages using build scripts 
 
-The [`hschneider/neutralino-build-scripts`](https://github.com/hschneider/neutralino-build-scripts/) community project offers pre-developed build scripts for generating platform-specific application bundles. For example, it generates a standard app structure on GNU/Linux by generating `.desktop` file with app icon by also providing a shell script to install the app. 
+Apart from using the official `neu builder`. The [`hschneider/neutralino-build-scripts`](https://github.com/hschneider/neutralino-build-scripts/) community project offers pre-developed build scripts for generating platform-specific application bundles. For example, it generates a standard app structure on GNU/Linux by generating `.desktop` file with app icon by also providing a shell script to install the app. 
 
 
 Clone the scripts to your root directory of your app folder to get started with Neutralinojs build scripts:
