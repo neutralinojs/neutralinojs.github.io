@@ -114,13 +114,14 @@ cd react-src
 npm install @neutralinojs/lib
 ```
 
-The next step is to load Neutralinojs [global variables](../api/global-variables.md). You can achieve that by including JavaScript script in the root HTML file of a framework of your choice.
+The next step is to load Neutralinojs [global variables](../api/global-variables.md). You can achieve that by including `injectGlobals` in your `neutralino.config.json` file.
 
-React typically holds the main HTML file content in the `./public/index.html` file, so we can put the following
-HTML snippet there to load the client library.
-
-```html
-<script src="%PUBLIC_URL%/__neutralino_globals.js"></script>
+```json
+    "modes": {
+        "window": {
+            // --- other options
+            "injectGlobals": true
+        }
 ```
 
 Now make sure to initialize the client library from your frontend application entry point file. React's application entry-point is typically `./src/index.js`. Therefore, we can do the initialization process from there by calling the `init` function from `@neutralinojs/lib` package.
