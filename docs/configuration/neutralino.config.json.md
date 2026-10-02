@@ -450,15 +450,15 @@ Sets the frontend library project path, e.g., `/react-src/`.
 
 ### `cli.frontendLibrary.initCommand: string`
 
-This command will be automatically executed after downloading a frontend library template using the `neu create`.
+This command will be automatically executed after downloading a frontend library template using the `neu create`, e.g., `npm install`.
 
 ### `cli.frontendLibrary.devCommand: string`
 
-This command will run with the `neu run` command to start the frontend library's development server.
+This command will run with the `neu run` command to start the frontend library's development server, e.g., `"BROWSER=none npm start`.
 
 ### `cli.frontendLibrary.buildCommand: string`
 
-The `neu build` command will execute this command before generating the app bundle, so you can generate bundled version of your frontend code.
+The `neu build` command will execute this command before generating the app bundle, so you can generate bundled version of your frontend code, e.g., `npm run build`.
 
 ### `cli.hostProject.projectPath: string`
 
