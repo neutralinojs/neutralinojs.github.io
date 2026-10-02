@@ -9,7 +9,7 @@ find answers.
 - Using the [Slack](https://join.slack.com/t/neutralinojs/shared_invite/zt-b7mbivj5-pKpO6U5drmeT68vKD_pc6w)
     and [Discord](https://discord.gg/cybpp4guTJ) channels.
 - Mailing to `neutralinojs[AT]gmail.com`
-- Creating a discussion thread on [Github Discussions](https://github.com/neutralinojs/neutralinojs/discussions)
+- Creating a discussion thread on [GitHub Discussions](https://github.com/neutralinojs/neutralinojs/discussions)
 
 ## Bug reports and feature requests
 
