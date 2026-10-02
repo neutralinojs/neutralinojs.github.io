@@ -438,7 +438,7 @@ framework integration from [here](../getting-started/using-frontend-libraries.md
 
 ### `cli.frontendLibrary.patchFile: string`
 
-Specify which static HTML file should be patched with the client library or global variables served the Neutralinojs server, e.g., `/react-src/public/index.html`
+Specify which static HTML file should be patched with global variables served by the Neutralinojs server, e.g., `/react-src/public/index.html`
 
 ### `cli.frontendLibrary.devUrl: string`
 
