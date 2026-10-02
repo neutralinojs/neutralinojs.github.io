@@ -438,19 +438,19 @@ framework integration from [here](../getting-started/using-frontend-libraries.md
 
 ### `cli.frontendLibrary.patchFile: string`
 
-Sets a patch file for the project, when using a frontend library.
+Specify which static HTML file should be patched with the client library or global variables served the Neutralinojs server, e.g., `/react-src/public/index.html`
 
 ### `cli.frontendLibrary.devUrl: string`
 
-The URL of the development server hosted by the frontend library. The site hosted on this URL is displayed when running `neu run`.
+The URL of the frontend library's HMR-enabled, development server, e.g., `http://localhost:3000`
 
 ### `cli.frontendLibrary.projectPath: string`
 
-Sets the project path of the host project. This path will be used as the current directory while executing frontend-library-related commands.
+Sets the frontend library project path, e.g., `/react-src/`.
 
 ### `cli.frontendLibrary.initCommand: string`
 
-A command that gets executed after downloading a frontend template with the `neu create` command.
+This command will be automatically executed after downloading a frontend library template using the `neu create`.
 
 ### `cli.frontendLibrary.devCommand: string`
 
@@ -458,7 +458,7 @@ This command will run with the `neu run` command to start the frontend library's
 
 ### `cli.frontendLibrary.buildCommand: string`
 
-The `neu build` command will execute this command before generating the app bundle, so you can generate bundled version of frontend code.
+The `neu build` command will execute this command before generating the app bundle, so you can generate bundled version of your frontend code.
 
 ### `cli.hostProject.projectPath: string`
 
