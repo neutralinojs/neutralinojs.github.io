@@ -64,6 +64,9 @@ module.exports = {
       label: 'Distribution',
       items: [
         'distribution/overview',
+        'distribution/linux-distribution',
+        'distribution/windows-distribution',
+        'distribution/macos-distribution',
       ],
     },
     {
