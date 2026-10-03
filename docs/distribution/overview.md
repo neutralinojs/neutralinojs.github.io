@@ -127,9 +127,9 @@ neu builder dmg
 
 
 For detailed instructions on creating packages for each platform, follow the platform-specific guides below.
-- [Creating an application installer for Linux](linux-distribution)
-- [Creating an application installer for macOS](#)
-- [Creating an application installer for Windows](#)
+- [Creating an application installer for Linux](linux-distribution.md)
+- [Creating an application installer for macOS](macos-distribution.md)
+- [Creating an application installer for Windows](windows-distribution.md)
 
 ## Creating portable application packages using build scripts 
 
