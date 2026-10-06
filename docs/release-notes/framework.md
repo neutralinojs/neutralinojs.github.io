@@ -5,6 +5,51 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v6.10.0
+
+### Security: Shell command allow list
+The shell command allow-listing feature restricts `os.execCommand` and `os.spawnProcess` to a configurable set of allowed programs via the new `commandAllowList` configuration option. When this option is set with one or more entries, the framework rejects any command whose program name (`argv[0]`) does not match an entry with the new `NE_OS_CMDNALW` error. Patterns support `*` and `?` wildcards. The command is parsed with simple shell-quote rules; unquoted shell metacharacters (``;|&><$`(){}`` and newline) reject the command outright, so `commandAllowList` cannot be used to run piped or redirected commands, but it's very helpful for strengthening command execution security for simple commands that Neutralinojs apps execute or spawn.
+
+  Example configuration:
+
+  ```json
+  {
+    "commandAllowList": ["node", "python*", "gcc"]
+  }
+  ```
+
+  If the list is empty or omitted, no restriction is applied. A list containing only `*` (or any other pattern that matches every program) is equivalent to omitting the option.
+
+### Security: Filesystem scopes
+
+Restrict filesystem access to a set of allowed paths via the new `filesystemScopes` configuration option. Each entry is a path-to-mode mapping where the mode is `read`, `write`, or `read-write` and gates the corresponding read/write operations accordingly. Read-only filesystem API calls (`readFile`, `readBinaryFile`, `openFile`, `readDirectory`, `getStats`, `getPermissions`, `access`, and the source path of `copy`/`move`) require a scope entry whose mode is `read` or `read-write`. Write-style API calls (`writeFile`, `writeBinaryFile`, `appendFile`, `appendBinaryFile`, `createDirectory`, `remove`, `createWatcher`, `setPermissions`, `chmod`, `chown`, both paths of `move`, and the destination path of `copy`) require `write` or `read-write`. Calls outside any matching scope fail with the new `NE_FS_SCOPERR` error. Pure string-manipulation helpers (`getAbsolutePath`, `getRelativePath`, `getPathParts`, `getJoinedPath`, `getNormalizedPath`, `getUnnormalizedPath`) and in-memory handle operations (`updateOpenedFile`, `getOpenedFileInfo`) are not gated. Scope entries support `NL_PATH` and `NL_OS_*PATH` constants, and each entry may reference a directory (any nested path is allowed) or a file (only the exact file is allowed). If the map is empty or omitted, no restriction is applied.
+
+  Example configuration:
+
+  ```json
+  {
+    "filesystemScopes": {
+        "/path/to/location": "read-write",
+        "${NL_OSHOMEPATH}": "read",
+        "${NL_PATH}/resources": "write"
+    }
+  }
+  ```
+
+### Configuration
+- Add the `systemEnvs` config option to update or use custom environment variables. These environment variables are activated at the framework initialization stage, so developers can add GTK, webview-specific, or other library/system configurations here.
+```json
+{
+  "systemEnvs": {
+      "WEBKIT_DISABLE_COMPOSITING_MODE": "1",
+      "GDK_BACKEND": "x11"
+  }
+}
+```
+
+### API: computer
+- Add `computer.getGPUs()` to get a list of all GPUs in the computer.
+
 ## v6.9.0
 
 ### API: net

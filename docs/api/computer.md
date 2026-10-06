@@ -127,6 +127,27 @@ for(let display of displays) {
 }
 ```
 
+## computer.getGPUs()
+Returns information about all connected GPUs.
+
+### Return Object (awaited):
+An array of `GPU` objects.
+
+### GPU
+- `id` Number: A virtual GPU identifier.
+- `deviceId` String: Device identifier.
+- `vendorId` String: Vendor identifier.
+- `vendor` String: Vendor name.
+- `dedicatedMemory` Number: Dedicated memory in bytes.
+- `sharedMemory` Number: Shared memory in bytes.
+
+```js
+let gpus = await Neutralino.computer.getGPUs();
+for(let gpu of gpus) {
+    console.log(gpu);
+}
+```
+
 ## computer.getMousePosition()
 Returns the current mouse cursor position.
 

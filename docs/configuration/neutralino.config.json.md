@@ -175,6 +175,61 @@ inside entries.
 }
 ```
 
+### `commandAllowList: string[]`
+
+Restricts `os.execCommand()` and `os.spawnProcess()` to a configurable set of allowed commands/programs. When this option is 
+set with one or more entries, the framework rejects any command whose program name (`argv[0]`) does not match an entry 
+with the new `NE_OS_CMDNALW` error. Patterns support `*` and `?` wildcards. 
+
+The command is parsed with simple shell-quote rules; unquoted shell metacharacters (``;|&><$`(){}`` and newline) 
+reject the command outright, so `commandAllowList` cannot be used to run piped or redirected commands, but it's very 
+helpful for strengthening command execution security for simple commands that Neutralinojs apps execute or spawn.
+
+ ```json
+{
+    "commandAllowList": ["node", "python*", "gcc"]
+}
+ ```
+
+If the list is empty or omitted, no restriction is applied.
+
+### `filesystemScopes: object`
+
+Restrict filesystem access to a set of allowed paths. Each entry is a path-to-mode mapping where the mode is 
+`read`, `write`, or `read-write` and gates the corresponding read/write operations accordingly. Read-only filesystem
+API calls (`readFile`, `readBinaryFile`, `openFile`, `readDirectory`, `getStats`, `getPermissions`, `access`, and the 
+source path of `copy`/`move`) require a scope entry whose mode is `read` or `read-write`. Write-style API calls 
+(`writeFile`, `writeBinaryFile`, `appendFile`, `appendBinaryFile`, `createDirectory`, `remove`, `createWatcher`, 
+`setPermissions`, `chmod`, `chown`, both paths of `move`, and the destination path of `copy`) require `write` or `read-write`. 
+ 
+Calls outside any matching scope fail with the new `NE_FS_SCOPERR` error. Scope entries support `NL_PATH` and `NL_OS_*PATH` constants, 
+and each entry may reference a directory or a file. 
+
+```json
+{
+"filesystemScopes": {
+    "/path/to/location": "read-write",
+    "${NL_OSHOMEPATH}": "read",
+    "${NL_PATH}/resources": "write"
+    }
+}
+```
+If the map is empty or omitted, no restriction is applied.
+
+### `systemEnvs: object`
+
+Updates or uses custom environment variables while initializing the framework. Developers can add GTK, webview-specific, or other
+library/system configurations here.
+ 
+```json
+{
+  "systemEnvs": {
+      "WEBKIT_DISABLE_COMPOSITING_MODE": "1",
+      "GDK_BACKEND": "x11"
+  }
+}
+```
+
 ### `globalVariables: object`
 A key-value-based JavaScript object of custom [global variables](../api/global-variables.md#custom-global-variables).
 

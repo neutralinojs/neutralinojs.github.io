@@ -5,6 +5,16 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v11.8.0
+
+### Core: Runner
+- Automatically closing all frontend library development commands after closing the Neutralinojs app
+- Avoid patching HTML files if `window.injectGlobals` or `window.injectClientLibrary` is set to `true`
+
+### Bugfixes/improvements
+- Handle template downloading failures.
+- Improve WebSocket connection string generation code.
+
 ## v11.7.2
 
 ### Bugfixes/improvements

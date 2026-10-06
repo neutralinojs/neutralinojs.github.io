@@ -37,10 +37,12 @@ The error object has the following structure:
 | `NE_FS_ACSFAIL`| File access check failed       | `filesystem.access`
 | `NE_FS_CHMDERR`| File permission update failed       | `filesystem.chmod`
 | `NE_FS_CHWNERR`| File ownership change failed       | `filesystem.chown`
+| `NE_FS_SCOPERR`| Cannot access path outside configured filesystem scopes | `filesystem.*`
 | `NE_OS_UNLTOUP`| Unable to update the spawned process due to an invalid process identifier or action. | `os.updateSpawnedProcess`
 | `NE_OS_INVMSGA`| Invalid message box arguments.        | `os.showMessageBox`
 | `NE_OS_INVKNPT`| Invalid platform path name.        | `os.getPath`
 | `NE_OS_UNLTRAS`| Unable to move item to trash   | `os.trashItem`
+| `NE_OS_CMDNALW`| Shell command is not allowed | `os.execCommand`, `os.spawnCommand`
 | `NE_ST_INVSTKY`| Invalid storage key.        | `storage.getData`, `storage.setData`
 | `NE_ST_STKEYWE`| Storage write error.        | `storage.setData`
 | `NE_RT_INVTOKN`| Invalid access token.        | `*`
