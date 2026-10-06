@@ -91,6 +91,11 @@ const libraries = [
 
 const buildTools = [
     {
+        title: 'neutralinojs-builder',
+        description: 'A neu CLI extension to create Neutralinojs app packages',
+        githubLink: 'https://github.com/neutralinojs-community/neutralinojs-builder',
+    },
+    {
         title: 'neutralino-build-scripts',
         description: 'Neutralinojs build automation scripts for macOS, Windows and Linux',
         githubLink: 'https://github.com/hschneider/neutralino-build-scripts',
