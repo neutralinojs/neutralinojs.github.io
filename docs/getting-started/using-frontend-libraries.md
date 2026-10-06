@@ -114,14 +114,21 @@ cd react-src
 npm install @neutralinojs/lib
 ```
 
-The next step is to load Neutralinojs [global variables](../api/global-variables.md). You can achieve that by including `injectGlobals` in your `neutralino.config.json` file.
+The next step is to load Neutralinojs [global variables](../api/global-variables.md). If you always use the window mode for development, you can configure the framework to inject global variables directly to the Neutralinojs webview by adding setting the `modes.window.injectGlobals` option to `true` in your `neutralino.config.json` file:
 
 ```json
-    "modes": {
-        "window": {
-            // --- other options
-            "injectGlobals": true
-        }
+  "modes": {
+      "window": {
+          // --- other options
+          "injectGlobals": true
+      }
+```
+
+Otherwise, you should modify the frontend source to load global variables from the Neutralinojs resource server. For example, React typically holds the main HTML file content in the `./public/index.html` file, so we can put the following
+HTML snippet there to load global variables:
+
+```html
+<script src="%PUBLIC_URL%/__neutralino_globals.js"></script>
 ```
 
 Now make sure to initialize the client library from your frontend application entry point file. React's application entry-point is typically `./src/index.js`. Therefore, we can do the initialization process from there by calling the `init` function from `@neutralinojs/lib` package.
@@ -204,11 +211,22 @@ The current directory should be logged to the console. To open developer tools r
 Building every code change and testing your application is undoubtedly time-consuming. Therefore, you can use
 your frontend framework's HMR (Hot Module Replacement) features to speed up your development activities.
 But, we have a small issue here. There are now two HTTP servers: the Neutralinojs resource server and the
-frontend framework's development server. How can we load the Neutralinojs client library from the frontend
+frontend framework's development server. How can we load the Neutralinojs global variables from the frontend
 framework's development server?
 
-Don't worry &mdash; neu CLI provides a built-in feature to enable HMR by patching the main HTML file.
-You can add the following section to your configuration file for activating hot-reloading.
+Don't worry &mdash; if you use `injectGlobals: true`, you can simply ask neu CLI to load HMR-enabled development server as follows &mdash; everything will work as expected since global variables are already injected to the webview:
+
+```json
+  "cli": {
+    // --- other options
+    "frontendLibrary": {
+        "devUrl": "http://localhost:3000"
+    }
+  }
+}
+```
+
+If you don't use `injectGlobals: true`, you should to let neu CLI patch the main HTML file to load global variables from the Neutralinojs resource server:
 
 ```json
   "cli": {
@@ -220,8 +238,6 @@ You can add the following section to your configuration file for activating hot-
   }
 }
 ```
-
-The above options tell neu CLI about the main HTML file and development server URL.
 
 Next, configure your project by adding frontend-library-specific development commands as follows:
 
