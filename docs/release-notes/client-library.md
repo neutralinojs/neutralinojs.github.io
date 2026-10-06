@@ -5,6 +5,11 @@ toc_max_heading_level: 2
 
 ## Unreleased
 
+## v6.10.0
+
+### API: computer
+- Export the `computer.getGPUs()` function.
+
 ## v6.9.0
 
 ### API: net
